@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>第一个博客</title>
-    <url>/%E6%97%A5%E5%B8%B8/1/</url>
-    <content><![CDATA[<p>博客建成：Hello World</p>
-<span id="more"></span>
-
-<ul>
-<li>前言</li>
-</ul>
-<p>之前常常看博客学习内容，想着自己也可以做一个博客，记录自己的学习内容。所以此博客随之诞生。取名Fingsinz’s space。</p>
-<ul>
-<li>用途</li>
-</ul>
-<p>我想着，这个博客分为几个栏目，可以记录我的学习笔记，可以分享我平常使用体验较好的软件网站，甚至可以分享我毫无营养的日常……看看侧栏，于是分成了主页、日常、比较、好物分享、归档、关于几个模块。我还增加了搜索功能，便于搜索关键词。</p>
-<ul>
-<li>更多</li>
-</ul>
-<p>我并不是主攻前端方向，学习到的知识也较为浅薄，所以该博客还有很大改进空间。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-  </entry>
-  <entry>
     <title>记录Keil_C51和Keil_MDK的安装</title>
     <url>/%E6%97%A5%E5%B8%B8/2/</url>
     <content><![CDATA[<p>介绍Keil_C51和Keil_MDK的安装</p>
@@ -73,6 +50,29 @@
       <tags>
         <tag>Keil</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>第一个博客</title>
+    <url>/%E6%97%A5%E5%B8%B8/1/</url>
+    <content><![CDATA[<p>博客建成：Hello World</p>
+<span id="more"></span>
+
+<ul>
+<li>前言</li>
+</ul>
+<p>之前常常看博客学习内容，想着自己也可以做一个博客，记录自己的学习内容。所以此博客随之诞生。取名Fingsinz’s space。</p>
+<ul>
+<li>用途</li>
+</ul>
+<p>我想着，这个博客分为几个栏目，可以记录我的学习笔记，可以分享我平常使用体验较好的软件网站，甚至可以分享我毫无营养的日常……看看侧栏，于是分成了主页、日常、比较、好物分享、归档、关于几个模块。我还增加了搜索功能，便于搜索关键词。</p>
+<ul>
+<li>更多</li>
+</ul>
+<p>我并不是主攻前端方向，学习到的知识也较为浅薄，所以该博客还有很大改进空间。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
   </entry>
   <entry>
     <title>使用阿里云对象存储OSS实现图床</title>
@@ -327,86 +327,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows下Python3.11.4的安装记录</title>
-    <url>/%E6%97%A5%E5%B8%B8/8/</url>
-    <content><![CDATA[<p>记录一次安装Python</p>
-<p>关键词：Python</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#%E4%B8%8B%E8%BD%BDpython%E5%AE%89%E8%A3%85%E5%8C%85">下载Python安装包</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85python">安装Python</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95python">测试Python</a></li>
-<li><a href="#%E9%99%84%E6%9B%B4%E6%94%B9python%E7%9A%84pip%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84">附：更改Python的pip安装路径</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="下载python安装包">下载Python安装包</span></h1><p><a href="https://www.python.org/downloads/windows/">官网</a>选择尽量较新的Python版本下载。</p>
-<h1><span id="安装python">安装Python</span></h1><p>打开下载的Python安装包，选择<code>Customize installation</code>客制化安装，记得勾选下面的“Add python.exe to PATH”。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py1.jpg" alt="安装步骤1"></p>
-<p>接着默认勾选：</p>
-<ul>
-<li>pip：包管理器，下载包时使用。建议勾选上</li>
-</ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py2.jpg" alt="安装步骤2"></p>
-<p>再接着更改安装路径，建议安装在非系统盘。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py3.jpg" alt="安装步骤3"></p>
-<p>等待安装完成即可。</p>
-<h1><span id="测试python">测试Python</span></h1><p>按下<code>Win+R</code>输入<code>cmd</code>打开命令窗口，输入下面命令验证是否安装成功。</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">python -V</span><br></pre></td></tr></table></figure>
-
-<p>如果出现版本号，即为安装成功。</p>
-<h1><span id="附更改python的pip安装路径">附：更改Python的pip安装路径</span></h1><p>建议将pip安装的包放至非系统盘。进入Python的安装路径，如我的在<code>D:\Pyhton\Lib</code>，寻找文件<code>site.py</code>，使用记事本打开。使用<code>ctrl+f</code>查找关键字<code>USER_SITE</code>等字，将路径更改为自定义的路径。我更改情况如下图。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py.jpg" alt="更改路径"></p>
-<p>更改路径后，打开cmd，使用下面指令安装numpy包。</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
-
-<p>安装成功后，再使用下面指令查看numpy包的安装位置。</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">pip show numpy</span><br></pre></td></tr></table></figure>
-
-<p>我成功更改pip的安装路径，新下载的numpy包位于<code>D:\Pyhton\Lib\site-packages</code>。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py4.jpg" alt="更改路径后"></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>YOLOv5由pt文件转onnx文件报错解决</title>
-    <url>/%E6%97%A5%E5%B8%B8/7/</url>
-    <content><![CDATA[<p>ONNX: export failure ❌ 5.9s: Unsupported ONNX opset version: 17</p>
-<p>关键词：深度学习、YOLOv5、onnx</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#%E6%8A%A5%E9%94%99%E7%AA%97%E5%8F%A3">报错窗口</a></li>
-<li><a href="#%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0">报错原因</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="报错窗口">报错窗口</span></h1><p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/7_error.png" alt="报错"></p>
-<h1><span id="报错原因">报错原因</span></h1><p>export.py文件中parse_opt()函数设置的opset版本错误。</p>
-<h1><span id="解决方案">解决方案</span></h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#找到parse_opt()函数中的此行，将default值改为12</span></span><br><span class="line">parser.add_argument(<span class="string">&#x27;--opset&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">12</span>, <span class="built_in">help</span>=<span class="string">&#x27;ONNX: opset version&#x27;</span>)</span><br></pre></td></tr></table></figure><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>YOLOv5</tag>
-        <tag>onnx</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C++报错：表达式必须含有常量值</title>
     <url>/%E6%97%A5%E5%B8%B8/6/</url>
     <content><![CDATA[<p>关于在Visual Studio 2022使用C++ 20语法的表达式开辟数组空间报错</p>
@@ -460,6 +380,462 @@
       </categories>
       <tags>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>YOLOv5由pt文件转onnx文件报错解决</title>
+    <url>/%E6%97%A5%E5%B8%B8/7/</url>
+    <content><![CDATA[<p>ONNX: export failure ❌ 5.9s: Unsupported ONNX opset version: 17</p>
+<p>关键词：深度学习、YOLOv5、onnx</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E6%8A%A5%E9%94%99%E7%AA%97%E5%8F%A3">报错窗口</a></li>
+<li><a href="#%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0">报错原因</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="报错窗口">报错窗口</span></h1><p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/7_error.png" alt="报错"></p>
+<h1><span id="报错原因">报错原因</span></h1><p>export.py文件中parse_opt()函数设置的opset版本错误。</p>
+<h1><span id="解决方案">解决方案</span></h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#找到parse_opt()函数中的此行，将default值改为12</span></span><br><span class="line">parser.add_argument(<span class="string">&#x27;--opset&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">12</span>, <span class="built_in">help</span>=<span class="string">&#x27;ONNX: opset version&#x27;</span>)</span><br></pre></td></tr></table></figure><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>YOLOv5</tag>
+        <tag>onnx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Visual Studio2022的OpenCV_4.5.2和CUDA_12.0项目配置</title>
+    <url>/%E6%97%A5%E5%B8%B8/9/</url>
+    <content><![CDATA[<p>记录一次环境配置</p>
+<p>关键词：深度学习、OpenCV、CUDA</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#opencv%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">OpenCV的环境配置</a><ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">下载安装</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9Fpath%E5%8F%98%E9%87%8F">添加系统Path变量</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0opencv%E7%8E%AF%E5%A2%83%E5%88%B0vs%E9%A1%B9%E7%9B%AE">添加OpenCV环境到VS项目</a><ul>
+<li><a href="#vc%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE">VC++目录配置</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5%E5%99%A8%E9%85%8D%E7%BD%AE">链接器配置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">CUDA环境配置</a><ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-1">下载安装</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0cuda%E7%8E%AF%E5%A2%83%E5%88%B0vs%E9%A1%B9%E7%9B%AE">添加CUDA环境到VS项目</a><ul>
+<li><a href="#vc%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE-1">VC++目录配置</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5%E5%99%A8%E9%85%8D%E7%BD%AE-1">链接器配置</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%BA%90%E7%A0%81%E6%96%87%E4%BB%B6%E9%A3%8E%E6%A0%BC">配置源码文件风格</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B5%8B%E8%AF%95cuda%E4%BB%A3%E7%A0%81">测试CUDA代码</a></li>
+<li><a href="#cuda%E7%8E%AF%E5%A2%83%E7%9A%84%E4%B8%80%E4%BA%9B%E7%A2%B0%E5%A3%81">CUDA环境的一些碰壁</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="opencv的环境配置">OpenCV的环境配置</span></h1><h2><span id="下载安装">下载安装</span></h2><p>前往官网选择适合的OpenCV版本下载，并安装到合适的位置。</p>
+<p><a href="https://opencv.org/releases/">官网下载OpenCV</a></p>
+<p>我的OpenCV安装在：<code>D:\opencv4.5.2</code></p>
+<h2><span id="添加系统path变量">添加系统Path变量</span></h2><p>打开编辑系统环境变量，点击右下方的环境变量，在系统变量中找到PATH项，点击编辑添加OpenCV目录下的bin文件夹。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_opencv2PATH.jpg" alt="添加OpenCV至PATH"></p>
+<p>至于添加的是vc14还是vc15，参照下表</p>
+<table>
+<thead>
+<tr>
+<th align="center">VS版本</th>
+<th align="center">VC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">VS2015</td>
+<td align="center">VC14</td>
+</tr>
+<tr>
+<td align="center">VS2017及以上</td>
+<td align="center">VC15</td>
+</tr>
+</tbody></table>
+<h2><span id="添加opencv环境到vs项目">添加OpenCV环境到VS项目</span></h2><p>右键项目，选择最下方属性，打开属性配置窗口，选择是Debug模式或Release模式配置。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_vs1.jpg" alt="VS项目配置窗口"></p>
+<h3><span id="vc目录配置">VC++目录配置</span></h3><ol>
+<li><strong>点击包含目录</strong>，在包含目录中把OpenCV目录下的include文件夹添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\opencv4.5.2\build\include\opencv2</span><br><span class="line">D:\opencv4.5.2\build\include</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>点击库目录</strong>，在库目录中把OpenCV的lib文件添加，此处路径藏得比较深，参考我的添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\opencv4.5.2\build\x64\vc15\lib</span><br></pre></td></tr></table></figure>
+
+<h3><span id="链接器配置">链接器配置</span></h3><ol>
+<li><strong>点击输入，再点击附加依赖项</strong>，将OpenCV的lib文件添加，lib文件存放在上面库目录的文件夹中。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">opencv_world452.lib</span><br><span class="line">opencv_world452d.lib</span><br></pre></td></tr></table></figure>
+
+<p>注意，此处文件名带<code>d</code>的为Debug版本的依赖项，不带<code>d</code>的为Release版本的依赖项。<br>在配置Debug版本时把带<code>d</code>的文件放在不带<code>d</code>的文件之上，<br>在配置Release版本时把不带<code>d</code>的文件放在带<code>d</code>的文件之上。</p>
+<h1><span id="cuda环境配置">CUDA环境配置</span></h1><h2><span id="下载安装">下载安装</span></h2><p><a href="http://fingsinz.space/%E6%97%A5%E5%B8%B8/5/">参考此条博客</a></p>
+<p>我的CUDA目录在：<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code></p>
+<h2><span id="添加cuda环境到vs项目">添加CUDA环境到VS项目</span></h2><p>配置为x64平台。</p>
+<p>右键项目→生成依赖项→生成自定义→勾选“CUDA xxx”。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_cuda.jpg" alt="生成依赖项"></p>
+<h3><span id="vc目录配置">VC++目录配置</span></h3><ol>
+<li><strong>点击包含目录</strong>，在包含目录中把OpenCV目录下的include文件夹添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>点击库目录</strong>，在库目录中把OpenCV的lib文件夹添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64</span><br></pre></td></tr></table></figure>
+
+<h3><span id="链接器配置">链接器配置</span></h3><ol>
+<li><strong>点击常规，再点击附加库目录</strong>，添加下面的目录。<em>似乎不配置这一条也可以</em></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$(CUDA_PATH_V12_0)\lib\$(Platform)</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Debug配置下：</span><br><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\Win32</span><br><span class="line">Release配置下：</span><br><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>点击输入，再点击附加依赖项</strong>，将CUDA的lib文件添加，输入下面的内容。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64\*.lib</span><br></pre></td></tr></table></figure>
+
+<h3><span id="配置源码文件风格">配置源码文件风格</span></h3><p>右键源文件，可以添加新建项中选择“CUDA C&#x2F;C++ File”。<br>右键“xxx.cu”源文件，点击属性，选择配置属性中的常规，从项类型中找到“CUDA C&#x2F;C++”。</p>
+<h2><span id="测试cuda代码">测试CUDA代码</span></h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;cuda_runtime.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;device_launch_parameters.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">cudaError_t <span class="title">addWithCuda</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b, <span class="type">unsigned</span> <span class="type">int</span> size)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">addKernel</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i = threadIdx.x;</span><br><span class="line">    c[i] = a[i] + b[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> arraySize = <span class="number">5</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> a[arraySize] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> b[arraySize] = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span> &#125;;</span><br><span class="line">    <span class="type">int</span> c[arraySize] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Add vectors in parallel.</span></span><br><span class="line">    cudaError_t cudaStatus = <span class="built_in">addWithCuda</span>(c, a, b, arraySize);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;addWithCuda failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;&#123;1,2,3,4,5&#125; + &#123;10,20,30,40,50&#125; = &#123;%d,%d,%d,%d,%d&#125;\n&quot;</span>,</span><br><span class="line">        c[<span class="number">0</span>], c[<span class="number">1</span>], c[<span class="number">2</span>], c[<span class="number">3</span>], c[<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// cudaDeviceReset must be called before exiting in order for profiling and</span></span><br><span class="line">    <span class="comment">// tracing tools such as Nsight and Visual Profiler to show complete traces.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaDeviceReset</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaDeviceReset failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Helper function for using CUDA to add vectors in parallel.</span></span><br><span class="line"><span class="function">cudaError_t <span class="title">addWithCuda</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b, <span class="type">unsigned</span> <span class="type">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> *dev_a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> *dev_b = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> *dev_c = <span class="number">0</span>;</span><br><span class="line">    cudaError_t cudaStatus;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Choose which GPU to run on, change this on a multi-GPU system.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaSetDevice</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaSetDevice failed!  Do you have a CUDA-capable GPU installed?&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Allocate GPU buffers for three vectors (two input, one output)    .</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_c, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_a, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_b, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Copy input vectors from host memory to GPU buffers.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(dev_a, a, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(dev_b, b, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Launch a kernel on the GPU with one thread for each element.</span></span><br><span class="line">    addKernel&lt;&lt;&lt;<span class="number">1</span>, size&gt;&gt;&gt;(dev_c, dev_a, dev_b);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check for any errors launching the kernel</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaGetLastError</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;addKernel launch failed: %s\n&quot;</span>, <span class="built_in">cudaGetErrorString</span>(cudaStatus));</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// cudaDeviceSynchronize waits for the kernel to finish, and returns</span></span><br><span class="line">    <span class="comment">// any errors encountered during the launch.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaDeviceSynchronize returned error code %d after launching addKernel!\n&quot;</span>, cudaStatus);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Copy output vector from GPU buffer to host memory.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(c, dev_c, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyDeviceToHost);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Error:</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_c);</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_a);</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_b);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> cudaStatus;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>运行结果如下图：</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_result.jpg" alt="测试结果"></p>
+<h2><span id="cuda环境的一些碰壁">CUDA环境的一些碰壁</span></h2><ol>
+<li><p>我的CUDA安装在一个可移动固态硬盘（G盘）中，可能导致了我的CUDA项目只能位于G盘使用，复制粘贴到电脑的盘会出现问题。</p>
+</li>
+<li><p>如果出现了大段指令无法运行，像下面的错误显示，可以复制命令（引号部分）到cmd运行，查看更详细的报错原因。</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VS报错如下</span><br><span class="line">严重性	代码	说明	项目	文件	行	禁止显示状态</span><br><span class="line">错误	MSB3721	命令“&quot;G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\bin\nvcc.exe&quot; -gencode=arch=compute_52,code=\&quot;sm_52,compute_52\&quot; --use-local-env -ccbin &quot;E:\Microsoft_Visual_Studio\VS\VC\Tools\MSVC\14.33.31629\bin\HostX64\x64&quot; -x cu   -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -Xcompiler &quot;/EHsc /W3 /nologo /Od /FdG:\Data\Coding_Master\yolov5-trt\bin\immediate\x64\Debug\vc143.pdb /FS /Zi /RTC1 /MDd &quot; -o G:\Data\Coding_Master\yolov5-trt\bin\x64\File.cu.obj &quot;G:\Data\Coding_Master\yolov5-trt\File.cu&quot;”已退出，返回代码为 1。	yolov5-trt	E:\Microsoft_Visual_Studio\VS\MSBuild\Microsoft\VC\v170\BuildCustomizations\CUDA 12.0.targets	794</span><br><span class="line"></span><br><span class="line">// 复制命令部分，即下面部分到cmd输入</span><br><span class="line">&quot;G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\bin\nvcc.exe&quot; -gencode=arch=compute_52,code=\&quot;sm_52,compute_52\&quot; --use-local-env -ccbin &quot;E:\Microsoft_Visual_Studio\VS\VC\Tools\MSVC\14.33.31629\bin\HostX64\x64&quot; -x cu   -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -Xcompiler &quot;/EHsc /W3 /nologo /Od /FdG:\Data\Coding_Master\yolov5-trt\bin\immediate\x64\Debug\vc143.pdb /FS /Zi /RTC1 /MDd &quot; -o G:\Data\Coding_Master\yolov5-trt\bin\x64\File.cu.obj &quot;G:\Data\Coding_Master\yolov5-trt\File.cu&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>还遇到一些其他的坑可以自行必应。</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>OpenCV</tag>
+        <tag>CUDA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows下Python3.11.4的安装记录</title>
+    <url>/%E6%97%A5%E5%B8%B8/8/</url>
+    <content><![CDATA[<p>记录一次安装Python</p>
+<p>关键词：Python</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BDpython%E5%AE%89%E8%A3%85%E5%8C%85">下载Python安装包</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85python">安装Python</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95python">测试Python</a></li>
+<li><a href="#%E9%99%84%E6%9B%B4%E6%94%B9python%E7%9A%84pip%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84">附：更改Python的pip安装路径</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="下载python安装包">下载Python安装包</span></h1><p><a href="https://www.python.org/downloads/windows/">官网</a>选择尽量较新的Python版本下载。</p>
+<h1><span id="安装python">安装Python</span></h1><p>打开下载的Python安装包，选择<code>Customize installation</code>客制化安装，记得勾选下面的“Add python.exe to PATH”。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py1.jpg" alt="安装步骤1"></p>
+<p>接着默认勾选：</p>
+<ul>
+<li>pip：包管理器，下载包时使用。建议勾选上</li>
+</ul>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py2.jpg" alt="安装步骤2"></p>
+<p>再接着更改安装路径，建议安装在非系统盘。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py3.jpg" alt="安装步骤3"></p>
+<p>等待安装完成即可。</p>
+<h1><span id="测试python">测试Python</span></h1><p>按下<code>Win+R</code>输入<code>cmd</code>打开命令窗口，输入下面命令验证是否安装成功。</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">python -V</span><br></pre></td></tr></table></figure>
+
+<p>如果出现版本号，即为安装成功。</p>
+<h1><span id="附更改python的pip安装路径">附：更改Python的pip安装路径</span></h1><p>建议将pip安装的包放至非系统盘。进入Python的安装路径，如我的在<code>D:\Pyhton\Lib</code>，寻找文件<code>site.py</code>，使用记事本打开。使用<code>ctrl+f</code>查找关键字<code>USER_SITE</code>等字，将路径更改为自定义的路径。我更改情况如下图。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py.jpg" alt="更改路径"></p>
+<p>更改路径后，打开cmd，使用下面指令安装numpy包。</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure>
+
+<p>安装成功后，再使用下面指令查看numpy包的安装位置。</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">pip show numpy</span><br></pre></td></tr></table></figure>
+
+<p>我成功更改pip的安装路径，新下载的numpy包位于<code>D:\Pyhton\Lib\site-packages</code>。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py4.jpg" alt="更改路径后"></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OI Wiki，一个整合了编程竞赛的知识整合站点</title>
+    <url>/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/oiwiki/</url>
+    <content><![CDATA[<p>Github分享</p>
+<p>关键词：算法、数据结构、竞赛</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E6%98%AF%E4%BB%80%E4%B9%88">是什么</a></li>
+<li><a href="#%E5%86%85%E5%AE%B9%E9%93%BE%E6%8E%A5">内容链接</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8">如何使用</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="是什么">是什么</span></h1><p>“OI Wiki 致力于成为一个免费开放且持续更新的知识整合站点，大家可以在这里获取关于 编程竞赛 (competitive programming) 有趣又实用的知识，我们为大家准备了竞赛中的基础知识、常见题型、解题思路以及常用工具等内容，帮助大家更快速深入地学习编程竞赛。”</p>
+<h1><span id="内容链接">内容链接</span></h1><p><a href="https://oi-wiki.org/">OI Wiki——网页使用</a><br><a href="https://github.com/OI-wiki/OI-wiki">Github 仓库</a><br><a href="https://gitee.com/OI-wiki/OI-wiki">Gitee 仓库</a></p>
+<h1><span id="如何使用">如何使用</span></h1><p>在Github主页上有详细介绍。</p>
+<p>可以直接点击上面的OI Wiki链接使用。</p>
+<p>我在此用Windows 10做一个简单的 <strong>离线版</strong> 使用示例。</p>
+<ol>
+<li>直接或git方式下载仓库压缩包。</li>
+</ol>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_download.jpg" alt="下载"></p>
+<ol start="2">
+<li><p>解压压缩包</p>
+</li>
+<li><p>在Python下（没有Python的可以<a href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/8/#more">安装Python</a>），使用命令建立静态网页：在解压后的目录下地址栏输入cmd，接着输入下面的命令启动网页。</p>
+</li>
+</ol>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_run.jpg" alt="打开cmd"></p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># 如果是 python3</span><br><span class="line">python3 -m http.server</span><br><span class="line"># 如果是 python2</span><br><span class="line">python2 -m SimpleHTTPServer</span><br><span class="line"># 有些环境下找不到名叫 python3/python2 的可执行文件，不妨运行 python 试试</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_run2.jpg" alt="启动网页服务"></p>
+<ul>
+<li>如上图则为启动网页服务成功。我在此输入的是<code>python</code>，可以试试<code>python3</code>或者<code>python2</code>能不能运行。</li>
+<li>在浏览器地址栏中输入<code>http://localhost:8000/</code>或<code>127.0.0.1:8000</code>即可进入网页，其中<code>8000</code>为上图启动网页服务的端口，并不一定是<code>8000</code>。</li>
+</ul>
+<ol start="4">
+<li>页面如下图即可进行阅读学习</li>
+</ol>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_home.jpg" alt="OI Wiki"></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>其他分享</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+        <tag>竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于GPU服务器的选用</title>
+    <url>/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/gpuserver/</url>
+    <content><![CDATA[<p>介绍关于GPU服务器：租用、使用</p>
+<p>关键词：深度学习、GPU服务器</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#gpu%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%8D%E5%8A%A1%E5%95%86">GPU服务器服务商</a></li>
+<li><a href="#gpu%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8">GPU服务器使用</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="gpu服务器服务商">GPU服务器服务商</span></h1><ol>
+<li>AutoDL算力云</li>
+</ol>
+<ul>
+<li>网站：<a href="https://www.autodl.com/home">AutoDL算力云</a></li>
+<li>个人评价：本人具有使用经历，价格偏便宜，镜像有现成，适合新手入门尝试。</li>
+</ul>
+<ol start="2">
+<li><a href="https://mistgpu.com/">MistGPU</a></li>
+</ol>
+<ul>
+<li>网站：<a href="https://mistgpu.com/">MistGPU</a></li>
+<li>个人评价：价格还行，备用选择。</li>
+</ul>
+<ol start="3">
+<li>阿里云</li>
+</ol>
+<ul>
+<li>网站：<a href="https://www.aliyun.com/product/ecs/gpu">阿里云</a></li>
+<li>个人评价：阿里云，不多说，可靠也不便宜。</li>
+</ul>
+<h1><span id="gpu服务器使用">GPU服务器使用</span></h1><ol>
+<li>选择适合的GPU型号、显存大小、浮点算力、存储盘大小。</li>
+<li>选择合适的镜像进行环境配置。</li>
+<li>一般无图形窗口，命令行使用，文件上传下载。</li>
+<li>详细可参考各个服务商的帮助文档。</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>其他分享</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>GPU服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个小巧的Markdown编辑工具</title>
+    <url>/%E8%BD%AF%E4%BB%B6/tools1/</url>
+    <content><![CDATA[<p>介绍一个小巧方便的编写Markdown语言工具。</p>
+<ol>
+<li><p>什么是Markdown</p>
+</li>
+<li><p>MarkText</p>
+</li>
+<li><p>进阶使用</p>
+</li>
+</ol>
+<p>关键词：Markdown工具</p>
+<span id="more"></span>
+
+<hr>
+<h1><span id="什么是markdown">什么是Markdown</span></h1><ul>
+<li><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
+</li>
+<li><p>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
+</li>
+<li><p>Markdown可用于编写记录笔记、博客、电子书等电子文档。</p>
+</li>
+</ul>
+<h1><span id="marktext">MarkText</span></h1><ul>
+<li>MarkText是一款开源的Markdown工具，可用于编辑输出Markdown文件。本人推荐的是英文语言软件，如何汉化自行研究。</li>
+</ul>
+<p>软件地址：建议安装到非系统盘（非C盘）</p>
+<p><a href="https://github.com/marktext/marktext/releases">MarkText下载 - 官网</a></p>
+<p><a href="https://www.aliyundrive.com/s/CoADkVDj1Sq">MarkText下载 - 个人网盘（Windows64位）</a></p>
+<ul>
+<li>MarkText具有多个明暗主题选择，软件菜单内容明确，主打轻便，是一款很不错的小工具。</li>
+</ul>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A2.jpg" alt="软件界面（明亮主题）"></p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A22.jpg" alt="软件界面（灰暗主题）"></p>
+<ul>
+<li>使用方法</li>
+</ul>
+<p>输入<code>@</code>选择插入的模块，包括段落、分割线、标题、表格、数学公式、引用块、列表等。如果本身对于Markdown语言有一定基础的话，也可直接建立该模块。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BD%BF%E7%94%A81.jpg" alt="使用过程"></p>
+<p>在编写完内容后，可以直接保存为Markdown文件（<code>.md</code>后缀），也可以导出为PDF文件和HTML文件。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BF%9D%E5%AD%98.jpg" alt="选择保存"></p>
+<h1><span id="进阶使用">进阶使用</span></h1><ul>
+<li>有时候对于PDF文件，会有显示目录大纲的需求，但是该软件直接导出并不能设置，此时需要借助另一个工具：wkhtmltopdf。</li>
+</ul>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="带目录的PDF文件"></p>
+<ul>
+<li><strong>wkhtmltopdf</strong></li>
+</ul>
+<p>一款<strong>将HTML文件转化为PDF文件</strong>的小工具，但是其并没有软件UI界面，对小白不友好，但是万能的网络能搜到使用方法，此处针对如何导出带目录的PDF进行介绍。</p>
+<ol>
+<li>下载软件</li>
+</ol>
+<p>下载地址：可能提示有风险，建议安装到非系统盘（非C盘）</p>
+<p><a href="https://wkhtmltopdf.org/downloads.html">wkhtmltopdf下载 - 官网</a></p>
+<p><a href="https://www.aliyundrive.com/s/V4SBUcntBAv">wkhtmltopdf下载 - 个人网盘（Windows64位）</a></p>
+<ol start="2">
+<li>安装并配置</li>
+</ol>
+<p>安装后，需要记住安装的具体位置，比如我是安装在D盘，位置就是<code>D:\wkhtmltopdf</code>，接着进行系统环境变量的配置。在电脑设置中搜索环境变量，打开编辑页面。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="配置环境变量"></p>
+<p>具体步骤：编辑→新建→输入安装的位置里面的bin文件夹即<code>D:\wkhtmltopdf\bin</code>→确定所有系统设置窗口。</p>
+<p>（添加错误的环境变量并不会对电脑造成严重伤害，但不要胡乱删除环境变量）</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%90%8E.jpg" alt="配置环境变量后"></p>
+<p>再接着确认环境变量是否配置成功：按快捷键<code>win+r</code>，输入cmd，打开黑窗口，在窗口内输入<code>wkhtmltopdf -V</code>（查询wkhtmltopdf的版本），如果出现类似于版本号的数字，则说明添加环境变量成功。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_cmd.jpg" alt="配置成功"></p>
+<ol start="3">
+<li>软件使用</li>
+</ol>
+<p>在cmd黑窗口切换到想要HTML文件转换为PDF文件的位置，直接输入<code>F:</code>切换到不同的盘，输入<code>cd xx</code>可以进入不同文件夹。如果不知道自己是什么路径，可以先进入所在盘，再打开文件所在文件夹，在地址栏点击获得路径，然后复制粘贴到黑窗口进入。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BF%9B%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="进入工作文件夹"></p>
+<p>接着回到MarkText软件，将文件导出为HTML文件，保存在特定文件夹，该文件夹应该跟cmd黑窗口进入的文件夹一样。举例时，我将该文件保存为<code>test.html</code>文件在<code>F:\14.Books</code>文件夹。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E5%AF%BC%E5%87%BAHTML.jpg" alt="导出HTML"></p>
+<p>再回到黑窗口，使用命令<code>wkhtmltopdf 目的文件名字 新文件名字</code>转换，我这里应该是<code>wkhtmltopdf test.html test.pdf</code>。等待转换成功。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BD%AC%E6%8D%A2%E6%88%90%E5%8A%9F.jpg" alt="转换成功"></p>
+<p>此时回到文件夹，就可以看到转换完成的带目录的PDF文件。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_test.jpg" alt="转换成功的PDF文件"></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>Markdown工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个便捷的启动小工具</title>
+    <url>/%E8%BD%AF%E4%BB%B6/tools2/</url>
+    <content><![CDATA[<p>介绍一个便捷的启动工具、搜索工具——Flow Launcher</p>
+<p>关键词：启动工具</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#1-flow-launcher">1. Flow Launcher</a></li>
+<li><a href="#2%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C">2.使用体验</a></li>
+<li><a href="#3%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD">3.软件下载</a></li>
+<li><a href="#4%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE">4.使用建议</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="1-flow-launcher">1. Flow Launcher</span></h1><p>Flow Launcher是一款快速启动软件或者打开文件的工具。</p>
+<p>其特点有：</p>
+<ul>
+<li>整合了Everything搜索工具</li>
+<li>日期时间显示</li>
+<li>文件拖拽</li>
+<li>支持缩写</li>
+<li>可导入插件</li>
+<li>……</li>
+</ul>
+<h1><span id="2使用体验">2.使用体验</span></h1><p>软件界面简约，可设置多款主题、字体。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%95%B4%E4%BD%93%E9%A2%84%E8%A7%88.jpg" alt="软件界面"></p>
+<p>设置面板条理清晰，支持自定义，配置一个适合自己的工具。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E8%AE%BE%E7%BD%AE%E9%9D%A2%E6%9D%BF.jpg" alt="设置面板"></p>
+<p>搜索过程简单，直接输入马上得到结果，很适合文件太多不想一个个去翻的人。点击即可打开文件或打开应用。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%90%9C%E7%B4%A2%E4%BD%93%E9%AA%8C.jpg" alt="搜索过程"></p>
+<p>支持各种命令，支持缩写。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%8C%87%E4%BB%A4.jpg" alt="关机指令"></p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%8C%87%E4%BB%A42.jpg" alt="关机指令"></p>
+<h1><span id="3软件下载">3.软件下载</span></h1><p><a href="https://www.flowlauncher.com/">官网下载</a><br><a href="https://github.com/Flow-Launcher/Flow.Launcher">Github源码</a></p>
+<h1><span id="4使用建议">4.使用建议</span></h1><ul>
+<li>开机自启，占用率不算很高，很是方便。</li>
+<li>开启便携模式，增加结果显示个数。<br><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E5%BB%BA%E8%AE%AE.jpg" alt="使用建议1"></li>
+<li>设置好默认文件管理器，默认浏览器。</li>
+<li>自定义插件设置（如默认网页搜索引擎等）。<br><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E5%BB%BA%E8%AE%AE2.jpg" alt="使用建议2"></li>
+</ul>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>启动工具</tag>
       </tags>
   </entry>
   <entry>
@@ -1536,197 +1912,6 @@
       </categories>
       <tags>
         <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于GPU服务器的选用</title>
-    <url>/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/gpuserver/</url>
-    <content><![CDATA[<p>介绍关于GPU服务器：租用、使用</p>
-<p>关键词：深度学习、GPU服务器</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#gpu%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%8D%E5%8A%A1%E5%95%86">GPU服务器服务商</a></li>
-<li><a href="#gpu%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8">GPU服务器使用</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="gpu服务器服务商">GPU服务器服务商</span></h1><ol>
-<li>AutoDL算力云</li>
-</ol>
-<ul>
-<li>网站：<a href="https://www.autodl.com/home">AutoDL算力云</a></li>
-<li>个人评价：本人具有使用经历，价格偏便宜，镜像有现成，适合新手入门尝试。</li>
-</ul>
-<ol start="2">
-<li><a href="https://mistgpu.com/">MistGPU</a></li>
-</ol>
-<ul>
-<li>网站：<a href="https://mistgpu.com/">MistGPU</a></li>
-<li>个人评价：价格还行，备用选择。</li>
-</ul>
-<ol start="3">
-<li>阿里云</li>
-</ol>
-<ul>
-<li>网站：<a href="https://www.aliyun.com/product/ecs/gpu">阿里云</a></li>
-<li>个人评价：阿里云，不多说，可靠也不便宜。</li>
-</ul>
-<h1><span id="gpu服务器使用">GPU服务器使用</span></h1><ol>
-<li>选择适合的GPU型号、显存大小、浮点算力、存储盘大小。</li>
-<li>选择合适的镜像进行环境配置。</li>
-<li>一般无图形窗口，命令行使用，文件上传下载。</li>
-<li>详细可参考各个服务商的帮助文档。</li>
-</ol>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>其他分享</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>GPU服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个小巧的Markdown编辑工具</title>
-    <url>/%E8%BD%AF%E4%BB%B6/tools1/</url>
-    <content><![CDATA[<p>介绍一个小巧方便的编写Markdown语言工具。</p>
-<ol>
-<li><p>什么是Markdown</p>
-</li>
-<li><p>MarkText</p>
-</li>
-<li><p>进阶使用</p>
-</li>
-</ol>
-<p>关键词：Markdown工具</p>
-<span id="more"></span>
-
-<hr>
-<h1><span id="什么是markdown">什么是Markdown</span></h1><ul>
-<li><p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
-</li>
-<li><p>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
-</li>
-<li><p>Markdown可用于编写记录笔记、博客、电子书等电子文档。</p>
-</li>
-</ul>
-<h1><span id="marktext">MarkText</span></h1><ul>
-<li>MarkText是一款开源的Markdown工具，可用于编辑输出Markdown文件。本人推荐的是英文语言软件，如何汉化自行研究。</li>
-</ul>
-<p>软件地址：建议安装到非系统盘（非C盘）</p>
-<p><a href="https://github.com/marktext/marktext/releases">MarkText下载 - 官网</a></p>
-<p><a href="https://www.aliyundrive.com/s/CoADkVDj1Sq">MarkText下载 - 个人网盘（Windows64位）</a></p>
-<ul>
-<li>MarkText具有多个明暗主题选择，软件菜单内容明确，主打轻便，是一款很不错的小工具。</li>
-</ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A2.jpg" alt="软件界面（明亮主题）"></p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A22.jpg" alt="软件界面（灰暗主题）"></p>
-<ul>
-<li>使用方法</li>
-</ul>
-<p>输入<code>@</code>选择插入的模块，包括段落、分割线、标题、表格、数学公式、引用块、列表等。如果本身对于Markdown语言有一定基础的话，也可直接建立该模块。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BD%BF%E7%94%A81.jpg" alt="使用过程"></p>
-<p>在编写完内容后，可以直接保存为Markdown文件（<code>.md</code>后缀），也可以导出为PDF文件和HTML文件。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BF%9D%E5%AD%98.jpg" alt="选择保存"></p>
-<h1><span id="进阶使用">进阶使用</span></h1><ul>
-<li>有时候对于PDF文件，会有显示目录大纲的需求，但是该软件直接导出并不能设置，此时需要借助另一个工具：wkhtmltopdf。</li>
-</ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="带目录的PDF文件"></p>
-<ul>
-<li><strong>wkhtmltopdf</strong></li>
-</ul>
-<p>一款<strong>将HTML文件转化为PDF文件</strong>的小工具，但是其并没有软件UI界面，对小白不友好，但是万能的网络能搜到使用方法，此处针对如何导出带目录的PDF进行介绍。</p>
-<ol>
-<li>下载软件</li>
-</ol>
-<p>下载地址：可能提示有风险，建议安装到非系统盘（非C盘）</p>
-<p><a href="https://wkhtmltopdf.org/downloads.html">wkhtmltopdf下载 - 官网</a></p>
-<p><a href="https://www.aliyundrive.com/s/V4SBUcntBAv">wkhtmltopdf下载 - 个人网盘（Windows64位）</a></p>
-<ol start="2">
-<li>安装并配置</li>
-</ol>
-<p>安装后，需要记住安装的具体位置，比如我是安装在D盘，位置就是<code>D:\wkhtmltopdf</code>，接着进行系统环境变量的配置。在电脑设置中搜索环境变量，打开编辑页面。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="配置环境变量"></p>
-<p>具体步骤：编辑→新建→输入安装的位置里面的bin文件夹即<code>D:\wkhtmltopdf\bin</code>→确定所有系统设置窗口。</p>
-<p>（添加错误的环境变量并不会对电脑造成严重伤害，但不要胡乱删除环境变量）</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%90%8E.jpg" alt="配置环境变量后"></p>
-<p>再接着确认环境变量是否配置成功：按快捷键<code>win+r</code>，输入cmd，打开黑窗口，在窗口内输入<code>wkhtmltopdf -V</code>（查询wkhtmltopdf的版本），如果出现类似于版本号的数字，则说明添加环境变量成功。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_cmd.jpg" alt="配置成功"></p>
-<ol start="3">
-<li>软件使用</li>
-</ol>
-<p>在cmd黑窗口切换到想要HTML文件转换为PDF文件的位置，直接输入<code>F:</code>切换到不同的盘，输入<code>cd xx</code>可以进入不同文件夹。如果不知道自己是什么路径，可以先进入所在盘，再打开文件所在文件夹，在地址栏点击获得路径，然后复制粘贴到黑窗口进入。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BF%9B%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="进入工作文件夹"></p>
-<p>接着回到MarkText软件，将文件导出为HTML文件，保存在特定文件夹，该文件夹应该跟cmd黑窗口进入的文件夹一样。举例时，我将该文件保存为<code>test.html</code>文件在<code>F:\14.Books</code>文件夹。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E5%AF%BC%E5%87%BAHTML.jpg" alt="导出HTML"></p>
-<p>再回到黑窗口，使用命令<code>wkhtmltopdf 目的文件名字 新文件名字</code>转换，我这里应该是<code>wkhtmltopdf test.html test.pdf</code>。等待转换成功。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BD%AC%E6%8D%A2%E6%88%90%E5%8A%9F.jpg" alt="转换成功"></p>
-<p>此时回到文件夹，就可以看到转换完成的带目录的PDF文件。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_test.jpg" alt="转换成功的PDF文件"></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>Markdown工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OI Wiki，一个整合了编程竞赛的知识整合站点</title>
-    <url>/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/oiwiki/</url>
-    <content><![CDATA[<p>Github分享</p>
-<p>关键词：算法、数据结构、竞赛</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#%E6%98%AF%E4%BB%80%E4%B9%88">是什么</a></li>
-<li><a href="#%E5%86%85%E5%AE%B9%E9%93%BE%E6%8E%A5">内容链接</a></li>
-<li><a href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8">如何使用</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="是什么">是什么</span></h1><p>“OI Wiki 致力于成为一个免费开放且持续更新的知识整合站点，大家可以在这里获取关于 编程竞赛 (competitive programming) 有趣又实用的知识，我们为大家准备了竞赛中的基础知识、常见题型、解题思路以及常用工具等内容，帮助大家更快速深入地学习编程竞赛。”</p>
-<h1><span id="内容链接">内容链接</span></h1><p><a href="https://oi-wiki.org/">OI Wiki——网页使用</a><br><a href="https://github.com/OI-wiki/OI-wiki">Github 仓库</a><br><a href="https://gitee.com/OI-wiki/OI-wiki">Gitee 仓库</a></p>
-<h1><span id="如何使用">如何使用</span></h1><p>在Github主页上有详细介绍。</p>
-<p>可以直接点击上面的OI Wiki链接使用。</p>
-<p>我在此用Windows 10做一个简单的 <strong>离线版</strong> 使用示例。</p>
-<ol>
-<li>直接或git方式下载仓库压缩包。</li>
-</ol>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_download.jpg" alt="下载"></p>
-<ol start="2">
-<li><p>解压压缩包</p>
-</li>
-<li><p>在Python下（没有Python的可以<a href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/8/#more">安装Python</a>），使用命令建立静态网页：在解压后的目录下地址栏输入cmd，接着输入下面的命令启动网页。</p>
-</li>
-</ol>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_run.jpg" alt="打开cmd"></p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># 如果是 python3</span><br><span class="line">python3 -m http.server</span><br><span class="line"># 如果是 python2</span><br><span class="line">python2 -m SimpleHTTPServer</span><br><span class="line"># 有些环境下找不到名叫 python3/python2 的可执行文件，不妨运行 python 试试</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_run2.jpg" alt="启动网页服务"></p>
-<ul>
-<li>如上图则为启动网页服务成功。我在此输入的是<code>python</code>，可以试试<code>python3</code>或者<code>python2</code>能不能运行。</li>
-<li>在浏览器地址栏中输入<code>http://localhost:8000/</code>或<code>127.0.0.1:8000</code>即可进入网页，其中<code>8000</code>为上图启动网页服务的端口，并不一定是<code>8000</code>。</li>
-</ul>
-<ol start="4">
-<li>页面如下图即可进行阅读学习</li>
-</ol>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_home.jpg" alt="OI Wiki"></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>其他分享</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>数据结构</tag>
-        <tag>竞赛</tag>
       </tags>
   </entry>
   <entry>
@@ -3352,58 +3537,6 @@
       </categories>
       <tags>
         <tag>导航页</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个便捷的启动小工具</title>
-    <url>/%E8%BD%AF%E4%BB%B6/tools2/</url>
-    <content><![CDATA[<p>介绍一个便捷的启动工具、搜索工具——Flow Launcher</p>
-<p>关键词：启动工具</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#1-flow-launcher">1. Flow Launcher</a></li>
-<li><a href="#2%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C">2.使用体验</a></li>
-<li><a href="#3%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD">3.软件下载</a></li>
-<li><a href="#4%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE">4.使用建议</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="1-flow-launcher">1. Flow Launcher</span></h1><p>Flow Launcher是一款快速启动软件或者打开文件的工具。</p>
-<p>其特点有：</p>
-<ul>
-<li>整合了Everything搜索工具</li>
-<li>日期时间显示</li>
-<li>文件拖拽</li>
-<li>支持缩写</li>
-<li>可导入插件</li>
-<li>……</li>
-</ul>
-<h1><span id="2使用体验">2.使用体验</span></h1><p>软件界面简约，可设置多款主题、字体。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%95%B4%E4%BD%93%E9%A2%84%E8%A7%88.jpg" alt="软件界面"></p>
-<p>设置面板条理清晰，支持自定义，配置一个适合自己的工具。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E8%AE%BE%E7%BD%AE%E9%9D%A2%E6%9D%BF.jpg" alt="设置面板"></p>
-<p>搜索过程简单，直接输入马上得到结果，很适合文件太多不想一个个去翻的人。点击即可打开文件或打开应用。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%90%9C%E7%B4%A2%E4%BD%93%E9%AA%8C.jpg" alt="搜索过程"></p>
-<p>支持各种命令，支持缩写。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%8C%87%E4%BB%A4.jpg" alt="关机指令"></p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%8C%87%E4%BB%A42.jpg" alt="关机指令"></p>
-<h1><span id="3软件下载">3.软件下载</span></h1><p><a href="https://www.flowlauncher.com/">官网下载</a><br><a href="https://github.com/Flow-Launcher/Flow.Launcher">Github源码</a></p>
-<h1><span id="4使用建议">4.使用建议</span></h1><ul>
-<li>开机自启，占用率不算很高，很是方便。</li>
-<li>开启便携模式，增加结果显示个数。<br><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E5%BB%BA%E8%AE%AE.jpg" alt="使用建议1"></li>
-<li>设置好默认文件管理器，默认浏览器。</li>
-<li>自定义插件设置（如默认网页搜索引擎等）。<br><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E5%BB%BA%E8%AE%AE2.jpg" alt="使用建议2"></li>
-</ul>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>启动工具</tag>
       </tags>
   </entry>
 </search>

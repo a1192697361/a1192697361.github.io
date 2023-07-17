@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/favicon.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-loading-bar.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"fingsinz.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.17.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"show_result":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="记录一次环境配置 关键词：深度学习、OpenCV、CUDA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Visual Studio2022的OpenCV_4.5.2和CUDA_12.0项目配置">
+<meta property="og:url" content="https://fingsinz.github.io/%E6%97%A5%E5%B8%B8/9/index.html">
+<meta property="og:site_name" content="Fingsinz&#39;s space">
+<meta property="og:description" content="记录一次环境配置 关键词：深度学习、OpenCV、CUDA">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_opencv2PATH.jpg">
+<meta property="og:image" content="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_vs1.jpg">
+<meta property="og:image" content="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_cuda.jpg">
+<meta property="og:image" content="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_result.jpg">
+<meta property="article:published_time" content="2023-07-14T02:46:44.000Z">
+<meta property="article:modified_time" content="2023-07-17T05:25:31.738Z">
+<meta property="article:author" content="Fingsinz">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="OpenCV">
+<meta property="article:tag" content="CUDA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_opencv2PATH.jpg">
+
+
+<link rel="canonical" href="https://fingsinz.github.io/%E6%97%A5%E5%B8%B8/9/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://fingsinz.github.io/%E6%97%A5%E5%B8%B8/9/","path":"日常/9/","title":"Visual Studio2022的OpenCV_4.5.2和CUDA_12.0项目配置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Visual Studio2022的OpenCV_4.5.2和CUDA_12.0项目配置 | Fingsinz's space</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Fingsinz's space</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">风信梓的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-主页home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>主页Home</a></li><li class="menu-item menu-item-日常daily"><a href="/categories/%E6%97%A5%E5%B8%B8/" rel="section"><i class="fa fa-calendar fa-fw"></i>日常Daily</a></li><li class="menu-item menu-item-笔记notes"><a href="/notes/" rel="section"><i class="fa fa-circle-nodes fa-fw"></i>笔记Notes</a></li><li class="menu-item menu-item-好物分享share"><a href="/share/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>好物分享Share</a></li><li class="menu-item menu-item-归档archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档Archives</a></li><li class="menu-item menu-item-关于about"><a href="/about/" rel="section"><i class="fa fa-person fa-fw"></i>关于About</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">OpenCV的环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">添加系统Path变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">添加OpenCV环境到VS项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">VC++目录配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">链接器配置</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">CUDA环境配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">添加CUDA环境到VS项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">VC++目录配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">链接器配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">配置源码文件风格</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">测试CUDA代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">CUDA环境的一些碰壁</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fingsinz"
+      src="/images/favicon.png">
+  <p class="site-author-name" itemprop="name">Fingsinz</p>
+  <div class="site-description" itemprop="description">不忘初心，方得始终</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="mailto:fingsinz@foxmail.com" title="E-Mail → mailto:fingsinz@foxmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          链接
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://fingsinz.space/" title="https:&#x2F;&#x2F;fingsinz.space" rel="noopener" target="_blank">我的博客</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="http://guozhivip.com/" title="http:&#x2F;&#x2F;guozhivip.com&#x2F;" rel="noopener" target="_blank">果汁导航</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://fingsinz.github.io/%E6%97%A5%E5%B8%B8/9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/favicon.png">
+      <meta itemprop="name" content="Fingsinz">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fingsinz's space">
+      <meta itemprop="description" content="不忘初心，方得始终">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Visual Studio2022的OpenCV_4.5.2和CUDA_12.0项目配置 | Fingsinz's space">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Visual Studio2022的OpenCV_4.5.2和CUDA_12.0项目配置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-07-14 10:46:44" itemprop="dateCreated datePublished" datetime="2023-07-14T10:46:44+08:00">2023-07-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-07-17 13:25:31" itemprop="dateModified" datetime="2023-07-17T13:25:31+08:00">2023-07-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%97%A5%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">日常</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>12 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>记录一次环境配置</p>
+<p>关键词：深度学习、OpenCV、CUDA</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#opencv%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">OpenCV的环境配置</a><ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85">下载安装</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E7%B3%BB%E7%BB%9Fpath%E5%8F%98%E9%87%8F">添加系统Path变量</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0opencv%E7%8E%AF%E5%A2%83%E5%88%B0vs%E9%A1%B9%E7%9B%AE">添加OpenCV环境到VS项目</a><ul>
+<li><a href="#vc%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE">VC++目录配置</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5%E5%99%A8%E9%85%8D%E7%BD%AE">链接器配置</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">CUDA环境配置</a><ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-1">下载安装</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0cuda%E7%8E%AF%E5%A2%83%E5%88%B0vs%E9%A1%B9%E7%9B%AE">添加CUDA环境到VS项目</a><ul>
+<li><a href="#vc%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE-1">VC++目录配置</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5%E5%99%A8%E9%85%8D%E7%BD%AE-1">链接器配置</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%BA%90%E7%A0%81%E6%96%87%E4%BB%B6%E9%A3%8E%E6%A0%BC">配置源码文件风格</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B5%8B%E8%AF%95cuda%E4%BB%A3%E7%A0%81">测试CUDA代码</a></li>
+<li><a href="#cuda%E7%8E%AF%E5%A2%83%E7%9A%84%E4%B8%80%E4%BA%9B%E7%A2%B0%E5%A3%81">CUDA环境的一些碰壁</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="opencv的环境配置">OpenCV的环境配置</span></h1><h2><span id="下载安装">下载安装</span></h2><p>前往官网选择适合的OpenCV版本下载，并安装到合适的位置。</p>
+<p><a target="_blank" rel="noopener" href="https://opencv.org/releases/">官网下载OpenCV</a></p>
+<p>我的OpenCV安装在：<code>D:\opencv4.5.2</code></p>
+<h2><span id="添加系统path变量">添加系统Path变量</span></h2><p>打开编辑系统环境变量，点击右下方的环境变量，在系统变量中找到PATH项，点击编辑添加OpenCV目录下的bin文件夹。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_opencv2PATH.jpg" alt="添加OpenCV至PATH"></p>
+<p>至于添加的是vc14还是vc15，参照下表</p>
+<table>
+<thead>
+<tr>
+<th align="center">VS版本</th>
+<th align="center">VC</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">VS2015</td>
+<td align="center">VC14</td>
+</tr>
+<tr>
+<td align="center">VS2017及以上</td>
+<td align="center">VC15</td>
+</tr>
+</tbody></table>
+<h2><span id="添加opencv环境到vs项目">添加OpenCV环境到VS项目</span></h2><p>右键项目，选择最下方属性，打开属性配置窗口，选择是Debug模式或Release模式配置。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_vs1.jpg" alt="VS项目配置窗口"></p>
+<h3><span id="vc目录配置">VC++目录配置</span></h3><ol>
+<li><strong>点击包含目录</strong>，在包含目录中把OpenCV目录下的include文件夹添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\opencv4.5.2\build\include\opencv2</span><br><span class="line">D:\opencv4.5.2\build\include</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>点击库目录</strong>，在库目录中把OpenCV的lib文件添加，此处路径藏得比较深，参考我的添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\opencv4.5.2\build\x64\vc15\lib</span><br></pre></td></tr></table></figure>
+
+<h3><span id="链接器配置">链接器配置</span></h3><ol>
+<li><strong>点击输入，再点击附加依赖项</strong>，将OpenCV的lib文件添加，lib文件存放在上面库目录的文件夹中。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opencv_world452.lib</span><br><span class="line">opencv_world452d.lib</span><br></pre></td></tr></table></figure>
+
+<p>注意，此处文件名带<code>d</code>的为Debug版本的依赖项，不带<code>d</code>的为Release版本的依赖项。<br>在配置Debug版本时把带<code>d</code>的文件放在不带<code>d</code>的文件之上，<br>在配置Release版本时把不带<code>d</code>的文件放在带<code>d</code>的文件之上。</p>
+<h1><span id="cuda环境配置">CUDA环境配置</span></h1><h2><span id="下载安装">下载安装</span></h2><p><a target="_blank" rel="noopener" href="http://fingsinz.space/%E6%97%A5%E5%B8%B8/5/">参考此条博客</a></p>
+<p>我的CUDA目录在：<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code></p>
+<h2><span id="添加cuda环境到vs项目">添加CUDA环境到VS项目</span></h2><p>配置为x64平台。</p>
+<p>右键项目→生成依赖项→生成自定义→勾选“CUDA xxx”。</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_cuda.jpg" alt="生成依赖项"></p>
+<h3><span id="vc目录配置">VC++目录配置</span></h3><ol>
+<li><strong>点击包含目录</strong>，在包含目录中把OpenCV目录下的include文件夹添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>点击库目录</strong>，在库目录中把OpenCV的lib文件夹添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64</span><br></pre></td></tr></table></figure>
+
+<h3><span id="链接器配置">链接器配置</span></h3><ol>
+<li><strong>点击常规，再点击附加库目录</strong>，添加下面的目录。<em>似乎不配置这一条也可以</em></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(CUDA_PATH_V12_0)\lib\$(Platform)</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Debug配置下：</span><br><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\Win32</span><br><span class="line">Release配置下：</span><br><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><strong>点击输入，再点击附加依赖项</strong>，将CUDA的lib文件添加，输入下面的内容。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64\*.lib</span><br></pre></td></tr></table></figure>
+
+<h3><span id="配置源码文件风格">配置源码文件风格</span></h3><p>右键源文件，可以添加新建项中选择“CUDA C&#x2F;C++ File”。<br>右键“xxx.cu”源文件，点击属性，选择配置属性中的常规，从项类型中找到“CUDA C&#x2F;C++”。</p>
+<h2><span id="测试cuda代码">测试CUDA代码</span></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;cuda_runtime.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;device_launch_parameters.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">cudaError_t <span class="title">addWithCuda</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b, <span class="type">unsigned</span> <span class="type">int</span> size)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">addKernel</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i = threadIdx.x;</span><br><span class="line">    c[i] = a[i] + b[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> arraySize = <span class="number">5</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> a[arraySize] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> b[arraySize] = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span> &#125;;</span><br><span class="line">    <span class="type">int</span> c[arraySize] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Add vectors in parallel.</span></span><br><span class="line">    cudaError_t cudaStatus = <span class="built_in">addWithCuda</span>(c, a, b, arraySize);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;addWithCuda failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;&#123;1,2,3,4,5&#125; + &#123;10,20,30,40,50&#125; = &#123;%d,%d,%d,%d,%d&#125;\n&quot;</span>,</span><br><span class="line">        c[<span class="number">0</span>], c[<span class="number">1</span>], c[<span class="number">2</span>], c[<span class="number">3</span>], c[<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// cudaDeviceReset must be called before exiting in order for profiling and</span></span><br><span class="line">    <span class="comment">// tracing tools such as Nsight and Visual Profiler to show complete traces.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaDeviceReset</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaDeviceReset failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Helper function for using CUDA to add vectors in parallel.</span></span><br><span class="line"><span class="function">cudaError_t <span class="title">addWithCuda</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b, <span class="type">unsigned</span> <span class="type">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> *dev_a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> *dev_b = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> *dev_c = <span class="number">0</span>;</span><br><span class="line">    cudaError_t cudaStatus;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Choose which GPU to run on, change this on a multi-GPU system.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaSetDevice</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaSetDevice failed!  Do you have a CUDA-capable GPU installed?&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Allocate GPU buffers for three vectors (two input, one output)    .</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_c, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_a, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_b, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Copy input vectors from host memory to GPU buffers.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(dev_a, a, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(dev_b, b, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Launch a kernel on the GPU with one thread for each element.</span></span><br><span class="line">    addKernel&lt;&lt;&lt;<span class="number">1</span>, size&gt;&gt;&gt;(dev_c, dev_a, dev_b);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check for any errors launching the kernel</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaGetLastError</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;addKernel launch failed: %s\n&quot;</span>, <span class="built_in">cudaGetErrorString</span>(cudaStatus));</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// cudaDeviceSynchronize waits for the kernel to finish, and returns</span></span><br><span class="line">    <span class="comment">// any errors encountered during the launch.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaDeviceSynchronize returned error code %d after launching addKernel!\n&quot;</span>, cudaStatus);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Copy output vector from GPU buffer to host memory.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(c, dev_c, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyDeviceToHost);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Error:</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_c);</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_a);</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_b);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> cudaStatus;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>运行结果如下图：</p>
+<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_result.jpg" alt="测试结果"></p>
+<h2><span id="cuda环境的一些碰壁">CUDA环境的一些碰壁</span></h2><ol>
+<li><p>我的CUDA安装在一个可移动固态硬盘（G盘）中，可能导致了我的CUDA项目只能位于G盘使用，复制粘贴到电脑的盘会出现问题。</p>
+</li>
+<li><p>如果出现了大段指令无法运行，像下面的错误显示，可以复制命令（引号部分）到cmd运行，查看更详细的报错原因。</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// VS报错如下</span><br><span class="line">严重性	代码	说明	项目	文件	行	禁止显示状态</span><br><span class="line">错误	MSB3721	命令“&quot;G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\bin\nvcc.exe&quot; -gencode=arch=compute_52,code=\&quot;sm_52,compute_52\&quot; --use-local-env -ccbin &quot;E:\Microsoft_Visual_Studio\VS\VC\Tools\MSVC\14.33.31629\bin\HostX64\x64&quot; -x cu   -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -Xcompiler &quot;/EHsc /W3 /nologo /Od /FdG:\Data\Coding_Master\yolov5-trt\bin\immediate\x64\Debug\vc143.pdb /FS /Zi /RTC1 /MDd &quot; -o G:\Data\Coding_Master\yolov5-trt\bin\x64\File.cu.obj &quot;G:\Data\Coding_Master\yolov5-trt\File.cu&quot;”已退出，返回代码为 1。	yolov5-trt	E:\Microsoft_Visual_Studio\VS\MSBuild\Microsoft\VC\v170\BuildCustomizations\CUDA 12.0.targets	794</span><br><span class="line"></span><br><span class="line">// 复制命令部分，即下面部分到cmd输入</span><br><span class="line">&quot;G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\bin\nvcc.exe&quot; -gencode=arch=compute_52,code=\&quot;sm_52,compute_52\&quot; --use-local-env -ccbin &quot;E:\Microsoft_Visual_Studio\VS\VC\Tools\MSVC\14.33.31629\bin\HostX64\x64&quot; -x cu   -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -Xcompiler &quot;/EHsc /W3 /nologo /Od /FdG:\Data\Coding_Master\yolov5-trt\bin\immediate\x64\Debug\vc143.pdb /FS /Zi /RTC1 /MDd &quot; -o G:\Data\Coding_Master\yolov5-trt\bin\x64\File.cu.obj &quot;G:\Data\Coding_Master\yolov5-trt\File.cu&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>还遇到一些其他的坑可以自行必应。</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+              <a href="/tags/OpenCV/" rel="tag"><i class="fa fa-tag"></i> OpenCV</a>
+              <a href="/tags/CUDA/" rel="tag"><i class="fa fa-tag"></i> CUDA</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/%E6%97%A5%E5%B8%B8/8/" rel="prev" title="Windows下Python3.11.4的安装记录">
+                  <i class="fa fa-chevron-left"></i> Windows下Python3.11.4的安装记录
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/oiwiki/" rel="next" title="OI Wiki，一个整合了编程竞赛的知识整合站点">
+                  OI Wiki，一个整合了编程竞赛的知识整合站点 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="true"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fingsinz</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">73k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:13</span>
+  </span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.11/pdfobject.min.js","integrity":"sha256-N6JtCNwaYm6kizuG92UtOOXamRHPwu+V1yF10g3bu/c="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":false,"archive":false,"delay":true,"timeout":3000,"priority":true,"url":"https://fingsinz.github.io/%E6%97%A5%E5%B8%B8/9/"}</script>
+  <script src="/js/third-party/quicklink.js"></script>
+
+</body>
+</html>
