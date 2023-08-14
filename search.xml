@@ -104,55 +104,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python源代码打包成.exe文件记录</title>
-    <url>/%E6%97%A5%E5%B8%B8/12/</url>
-    <content><![CDATA[<p>使用auto-py-to-exe将.py打包成.exe</p>
-<p>关键词：Python</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#%E5%AE%89%E8%A3%85auto-py-to-exe">安装auto-py-to-exe</a></li>
-<li><a href="#%E4%BD%BF%E7%94%A8auto-py-to-exe">使用auto-py-to-exe</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="安装auto-py-to-exe">安装auto-py-to-exe</span></h1><p>打开cmd命令提示符，输入：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">pip install auto-py-to-exe</span><br></pre></td></tr></table></figure></div>
-
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/12_download.jpg" alt="下载auto-py-to-exe"><figcaption>下载auto-py-to-exe</figcaption></figure></p>
-<p>等待下载完成……</p>
-<h1><span id="使用auto-py-to-exe">使用auto-py-to-exe</span></h1><p>下载安装完成后，选择文件夹作为输出文件夹，我的选择的路径为 <code>F:\</code>，在此路径打开cmd命令提示符或者通过cmd命令进入到该路径。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/12_cmd.jpg" alt="cmd窗口"><figcaption>cmd窗口</figcaption></figure></p>
-<p>输入：</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">auto-py-to-exe</span><br></pre></td></tr></table></figure></div>
-
-<p>即可打开打包窗口。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/12_use.jpg" alt="打包窗口"><figcaption>打包窗口</figcaption></figure></p>
-<ul>
-<li><p>脚本位置：选择需要打包的.py文件</p>
-</li>
-<li><p>单文件&#x2F;单目录：选择打包的形式，选择将依赖整体打包成一个.exe还是依赖库分离+.exe文件</p>
-</li>
-<li><p>控制台窗口：自行选择</p>
-</li>
-<li><p>图标、附加文件、高级、设置：自行选择</p>
-</li>
-</ul>
-<p>我的打包结果：</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/12_result.jpg" alt="单文件打包结果"><figcaption>单文件打包结果</figcaption></figure></p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/12_result1.jpg" alt="单目录打包结果"><figcaption>单目录打包结果</figcaption></figure></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Qt的安装记录</title>
     <url>/%E6%97%A5%E5%B8%B8/14/</url>
     <content><![CDATA[<p>Qt（C++）和pyQt的安装记录</p>
@@ -209,6 +160,55 @@
       </categories>
       <tags>
         <tag>Qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python源代码打包成.exe文件记录</title>
+    <url>/%E6%97%A5%E5%B8%B8/12/</url>
+    <content><![CDATA[<p>使用auto-py-to-exe将.py打包成.exe</p>
+<p>关键词：Python</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85auto-py-to-exe">安装auto-py-to-exe</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8auto-py-to-exe">使用auto-py-to-exe</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="安装auto-py-to-exe">安装auto-py-to-exe</span></h1><p>打开cmd命令提示符，输入：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">pip install auto-py-to-exe</span><br></pre></td></tr></table></figure></div>
+
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/12_download.jpg" alt="下载auto-py-to-exe"><figcaption>下载auto-py-to-exe</figcaption></figure></p>
+<p>等待下载完成……</p>
+<h1><span id="使用auto-py-to-exe">使用auto-py-to-exe</span></h1><p>下载安装完成后，选择文件夹作为输出文件夹，我的选择的路径为 <code>F:\</code>，在此路径打开cmd命令提示符或者通过cmd命令进入到该路径。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/12_cmd.jpg" alt="cmd窗口"><figcaption>cmd窗口</figcaption></figure></p>
+<p>输入：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">auto-py-to-exe</span><br></pre></td></tr></table></figure></div>
+
+<p>即可打开打包窗口。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/12_use.jpg" alt="打包窗口"><figcaption>打包窗口</figcaption></figure></p>
+<ul>
+<li><p>脚本位置：选择需要打包的.py文件</p>
+</li>
+<li><p>单文件&#x2F;单目录：选择打包的形式，选择将依赖整体打包成一个.exe还是依赖库分离+.exe文件</p>
+</li>
+<li><p>控制台窗口：自行选择</p>
+</li>
+<li><p>图标、附加文件、高级、设置：自行选择</p>
+</li>
+</ul>
+<p>我的打包结果：</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/12_result.jpg" alt="单文件打包结果"><figcaption>单文件打包结果</figcaption></figure></p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/12_result1.jpg" alt="单目录打包结果"><figcaption>单目录打包结果</figcaption></figure></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -375,6 +375,62 @@
       </tags>
   </entry>
   <entry>
+    <title>C++报错：表达式必须含有常量值</title>
+    <url>/%E6%97%A5%E5%B8%B8/6/</url>
+    <content><![CDATA[<p>关于在Visual Studio 2022使用C++ 20语法的表达式开辟数组空间报错</p>
+<p>关键词：C++</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0">错误原因</a></li>
+<li><a href="#%E9%94%99%E8%AF%AF%E7%A4%BA%E4%BE%8B">错误示例</a></li>
+<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="错误原因">错误原因</span></h1><ol>
+<li><p>c++中不允许使用变量作为数组的长度定义数组，必须为常量值，c++中所有的内存需求都是在程序执行前通过定义的常量来确定的。</p>
+</li>
+<li><p>声明为const或constexpr的表达式在编译时计算结果不是常数。</p>
+</li>
+<li><p>编译器必须能够在表达式被使用时确定表达式的值。</p>
+</li>
+</ol>
+<h1><span id="错误示例">错误示例</span></h1><div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//错误示范1</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>, b = <span class="number">4</span>, c = <span class="number">5</span>;</span><br><span class="line">	<span class="type">int</span> d[a * b * c]; <span class="comment">// error</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//错误示范2</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>, b = <span class="number">4</span>, c = <span class="number">5</span>;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> tmp = a * b * c;</span><br><span class="line">	<span class="type">int</span> d[tmp]; <span class="comment">// error，如错误原因2</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//错误示范3</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">test</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">int</span> array_size; <span class="comment">// error</span></span><br><span class="line">    <span class="type">int</span> size_array[array_size];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> test::array_size = <span class="number">42</span>;</span><br></pre></td></tr></table></figure></div>
+
+<h1><span id="解决方案">解决方案</span></h1><p>使用<code>new</code>进行动态内存分配，<strong>记得通过<code>delete</code>回收分配的内存</strong>，如上述代码改为：</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>, b = <span class="number">4</span>, c = <span class="number">5</span>;</span><br><span class="line">	<span class="type">int</span> *d = <span class="keyword">new</span> <span class="type">int</span>[a * b * c];</span><br><span class="line">	<span class="keyword">delete</span>[] d;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>关于new分配内存的使用：</p>
+<ol>
+<li>单变量分配</li>
+</ol>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">Type *p = <span class="keyword">new</span> Type;</span><br><span class="line"><span class="keyword">delete</span> p;</span><br><span class="line"></span><br><span class="line">Type *p = <span class="keyword">new</span> <span class="built_in">Type</span>(<span class="number">2</span>); <span class="comment">//动态分配内存并初始化</span></span><br><span class="line"><span class="keyword">delete</span> p;</span><br></pre></td></tr></table></figure></div>
+
+<ol start="2">
+<li>一维数组申请</li>
+</ol>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">Type *p = <span class="keyword">new</span> Type[n];</span><br><span class="line"><span class="keyword">delete</span>[] p;</span><br><span class="line"></span><br><span class="line">Type *p = <span class="keyword">new</span> Type[n]();<span class="comment">//动态分配内存并初始化全部为0</span></span><br><span class="line"><span class="keyword">delete</span>[] p;</span><br></pre></td></tr></table></figure></div>
+
+<ol start="3">
+<li>二维数组申请</li>
+</ol>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">Type **p = <span class="keyword">new</span> Type *[m];</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">&#123;</span><br><span class="line">	p[i] = <span class="keyword">new</span> Type[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搭建一个自己的简单博客</title>
     <url>/%E6%97%A5%E5%B8%B8/4/</url>
     <content><![CDATA[<p>简单几步，基于Hexo搭建一个属于自己的简单博客</p>
@@ -498,111 +554,32 @@
       </tags>
   </entry>
   <entry>
-    <title>使用阿里云对象存储OSS实现图床</title>
-    <url>/%E6%97%A5%E5%B8%B8/3/</url>
-    <content><![CDATA[<p>注册登录阿里云👉开启对象存储👉配置Key👉放心上传</p>
-<p>关键词：对象存储OSS</p>
+    <title>YOLOv5由pt文件转onnx文件报错解决</title>
+    <url>/%E6%97%A5%E5%B8%B8/7/</url>
+    <content><![CDATA[<p>ONNX: export failure ❌ 5.9s: Unsupported ONNX opset version: 17</p>
+<p>关键词：深度学习、YOLOv5、onnx</p>
 <span id="more"></span>
 
 <hr>
 <!-- toc -->
 
 <ul>
-<li><a href="#1%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%BA%8A">1.什么是图床</a></li>
-<li><a href="#2%E5%BC%80%E5%90%AF%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1">2.开启对象存储服务</a></li>
-<li><a href="#3%E4%BD%BF%E7%94%A8picgo%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0">3.使用PicGo工具进行图片上传</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="1什么是图床">1.什么是图床</span></h1><p>图床是一种概念，顾名思义用于网络上存放图片。当网站图片过多时，整个网站的存储大小会变得较大，负担也变得较大。为了减轻负担，可以选择把图片置于一种存储容器（图床）中，之后显示图片就只需引用网络链接即可。</p>
-<h1><span id="2开启对象存储服务">2.开启对象存储服务</span></h1><p> 进入<a class="link" href="https://cn.aliyun.com/">阿里云官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，点击右上角控制台，搜索对象存储OSS。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/3_1.png" alt="阿里云页面"><figcaption>阿里云页面</figcaption></figure></p>
-<p>选择创建Bucket，设置建议如下：</p>
-<ul>
-<li>Bucket名称：自定义</li>
-<li>地域：选择距离自己较近的</li>
-<li>存储类型：默认不动</li>
-<li>存储荣誉类型：默认不动</li>
-<li>读写权限：公共读</li>
-</ul>
-<p>创建成功后可在Bucket列表查看。</p>
-<h1><span id="3使用picgo工具进行图片上传">3.使用PicGo工具进行图片上传</span></h1><p><a class="link" href="https://picgo.github.io/PicGo-Doc/zh/guide/">下载地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>下载后选择合适的盘符安装，打开软件。<br>初始时可能不显示界面，需要去系统任务栏右键软件图标，选择打开主窗口。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/3_2.png" alt="软件打开"><figcaption>软件打开</figcaption></figure></p>
-<p>接着选择图床设置，此处使用阿里云OSS。</p>
-<p>回到阿里云OSS控制台，移动至右上角悬浮，点击AccessKey管理。创建一个新AccessKey，复制并粘贴到PicGo中。</p>
-<p>配置参数建议如下：</p>
-<ul>
-<li>设定KeyID：AccessKey中复制得来</li>
-<li>设定KeySecret：AccessKey中复制得来</li>
-<li>设定Bucket：你Bucket得名字</li>
-<li>设定存储区域：OSS选择的地域</li>
-<li>设定存储路径：图片上传至OSS的文件夹或路径</li>
-</ul>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/3_3.png" alt="配置Key"><figcaption>配置Key</figcaption></figure></p>
-<p>配置完成后即可上传图片，在PicGo的相册中可以获得图片的连接，可在HTML或者Markdown等文件中调用。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>对象存储OSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++报错：表达式必须含有常量值</title>
-    <url>/%E6%97%A5%E5%B8%B8/6/</url>
-    <content><![CDATA[<p>关于在Visual Studio 2022使用C++ 20语法的表达式开辟数组空间报错</p>
-<p>关键词：C++</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0">错误原因</a></li>
-<li><a href="#%E9%94%99%E8%AF%AF%E7%A4%BA%E4%BE%8B">错误示例</a></li>
+<li><a href="#%E6%8A%A5%E9%94%99%E7%AA%97%E5%8F%A3">报错窗口</a></li>
+<li><a href="#%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0">报错原因</a></li>
 <li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a></li>
 </ul>
 <!-- tocstop -->
 
-<h1><span id="错误原因">错误原因</span></h1><ol>
-<li><p>c++中不允许使用变量作为数组的长度定义数组，必须为常量值，c++中所有的内存需求都是在程序执行前通过定义的常量来确定的。</p>
-</li>
-<li><p>声明为const或constexpr的表达式在编译时计算结果不是常数。</p>
-</li>
-<li><p>编译器必须能够在表达式被使用时确定表达式的值。</p>
-</li>
-</ol>
-<h1><span id="错误示例">错误示例</span></h1><div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//错误示范1</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>, b = <span class="number">4</span>, c = <span class="number">5</span>;</span><br><span class="line">	<span class="type">int</span> d[a * b * c]; <span class="comment">// error</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//错误示范2</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>, b = <span class="number">4</span>, c = <span class="number">5</span>;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> tmp = a * b * c;</span><br><span class="line">	<span class="type">int</span> d[tmp]; <span class="comment">// error，如错误原因2</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//错误示范3</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">test</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">int</span> array_size; <span class="comment">// error</span></span><br><span class="line">    <span class="type">int</span> size_array[array_size];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> test::array_size = <span class="number">42</span>;</span><br></pre></td></tr></table></figure></div>
-
-<h1><span id="解决方案">解决方案</span></h1><p>使用<code>new</code>进行动态内存分配，<strong>记得通过<code>delete</code>回收分配的内存</strong>，如上述代码改为：</p>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>, b = <span class="number">4</span>, c = <span class="number">5</span>;</span><br><span class="line">	<span class="type">int</span> *d = <span class="keyword">new</span> <span class="type">int</span>[a * b * c];</span><br><span class="line">	<span class="keyword">delete</span>[] d;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
-<p>关于new分配内存的使用：</p>
-<ol>
-<li>单变量分配</li>
-</ol>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">Type *p = <span class="keyword">new</span> Type;</span><br><span class="line"><span class="keyword">delete</span> p;</span><br><span class="line"></span><br><span class="line">Type *p = <span class="keyword">new</span> <span class="built_in">Type</span>(<span class="number">2</span>); <span class="comment">//动态分配内存并初始化</span></span><br><span class="line"><span class="keyword">delete</span> p;</span><br></pre></td></tr></table></figure></div>
-
-<ol start="2">
-<li>一维数组申请</li>
-</ol>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">Type *p = <span class="keyword">new</span> Type[n];</span><br><span class="line"><span class="keyword">delete</span>[] p;</span><br><span class="line"></span><br><span class="line">Type *p = <span class="keyword">new</span> Type[n]();<span class="comment">//动态分配内存并初始化全部为0</span></span><br><span class="line"><span class="keyword">delete</span>[] p;</span><br></pre></td></tr></table></figure></div>
-
-<ol start="3">
-<li>二维数组申请</li>
-</ol>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line">Type **p = <span class="keyword">new</span> Type *[m];</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">&#123;</span><br><span class="line">	p[i] = <span class="keyword">new</span> Type[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+<h1><span id="报错窗口">报错窗口</span></h1><p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/7_error.png" alt="报错"><figcaption>报错</figcaption></figure></p>
+<h1><span id="报错原因">报错原因</span></h1><p>export.py文件中parse_opt()函数设置的opset版本错误。</p>
+<h1><span id="解决方案">解决方案</span></h1><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#找到parse_opt()函数中的此行，将default值改为12</span></span><br><span class="line">parser.add_argument(<span class="string">&#x27;--opset&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">12</span>, <span class="built_in">help</span>=<span class="string">&#x27;ONNX: opset version&#x27;</span>)</span><br></pre></td></tr></table></figure></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>日常</category>
       </categories>
       <tags>
-        <tag>C++</tag>
+        <tag>深度学习</tag>
+        <tag>YOLOv5</tag>
+        <tag>onnx</tag>
       </tags>
   </entry>
   <entry>
@@ -654,35 +631,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>YOLOv5由pt文件转onnx文件报错解决</title>
-    <url>/%E6%97%A5%E5%B8%B8/7/</url>
-    <content><![CDATA[<p>ONNX: export failure ❌ 5.9s: Unsupported ONNX opset version: 17</p>
-<p>关键词：深度学习、YOLOv5、onnx</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#%E6%8A%A5%E9%94%99%E7%AA%97%E5%8F%A3">报错窗口</a></li>
-<li><a href="#%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0">报错原因</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="报错窗口">报错窗口</span></h1><p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/7_error.png" alt="报错"><figcaption>报错</figcaption></figure></p>
-<h1><span id="报错原因">报错原因</span></h1><p>export.py文件中parse_opt()函数设置的opset版本错误。</p>
-<h1><span id="解决方案">解决方案</span></h1><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#找到parse_opt()函数中的此行，将default值改为12</span></span><br><span class="line">parser.add_argument(<span class="string">&#x27;--opset&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">12</span>, <span class="built_in">help</span>=<span class="string">&#x27;ONNX: opset version&#x27;</span>)</span><br></pre></td></tr></table></figure></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>YOLOv5</tag>
-        <tag>onnx</tag>
       </tags>
   </entry>
   <entry>
@@ -816,6 +764,58 @@
         <tag>深度学习</tag>
         <tag>OpenCV</tag>
         <tag>CUDA</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用阿里云对象存储OSS实现图床</title>
+    <url>/%E6%97%A5%E5%B8%B8/3/</url>
+    <content><![CDATA[<p>注册登录阿里云👉开启对象存储👉配置Key👉放心上传</p>
+<p>关键词：对象存储OSS</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#1%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%BE%E5%BA%8A">1.什么是图床</a></li>
+<li><a href="#2%E5%BC%80%E5%90%AF%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8%E6%9C%8D%E5%8A%A1">2.开启对象存储服务</a></li>
+<li><a href="#3%E4%BD%BF%E7%94%A8picgo%E5%B7%A5%E5%85%B7%E8%BF%9B%E8%A1%8C%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0">3.使用PicGo工具进行图片上传</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="1什么是图床">1.什么是图床</span></h1><p>图床是一种概念，顾名思义用于网络上存放图片。当网站图片过多时，整个网站的存储大小会变得较大，负担也变得较大。为了减轻负担，可以选择把图片置于一种存储容器（图床）中，之后显示图片就只需引用网络链接即可。</p>
+<h1><span id="2开启对象存储服务">2.开启对象存储服务</span></h1><p> 进入<a class="link" href="https://cn.aliyun.com/">阿里云官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，点击右上角控制台，搜索对象存储OSS。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/3_1.png" alt="阿里云页面"><figcaption>阿里云页面</figcaption></figure></p>
+<p>选择创建Bucket，设置建议如下：</p>
+<ul>
+<li>Bucket名称：自定义</li>
+<li>地域：选择距离自己较近的</li>
+<li>存储类型：默认不动</li>
+<li>存储荣誉类型：默认不动</li>
+<li>读写权限：公共读</li>
+</ul>
+<p>创建成功后可在Bucket列表查看。</p>
+<h1><span id="3使用picgo工具进行图片上传">3.使用PicGo工具进行图片上传</span></h1><p><a class="link" href="https://picgo.github.io/PicGo-Doc/zh/guide/">下载地址 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>下载后选择合适的盘符安装，打开软件。<br>初始时可能不显示界面，需要去系统任务栏右键软件图标，选择打开主窗口。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/3_2.png" alt="软件打开"><figcaption>软件打开</figcaption></figure></p>
+<p>接着选择图床设置，此处使用阿里云OSS。</p>
+<p>回到阿里云OSS控制台，移动至右上角悬浮，点击AccessKey管理。创建一个新AccessKey，复制并粘贴到PicGo中。</p>
+<p>配置参数建议如下：</p>
+<ul>
+<li>设定KeyID：AccessKey中复制得来</li>
+<li>设定KeySecret：AccessKey中复制得来</li>
+<li>设定Bucket：你Bucket得名字</li>
+<li>设定存储区域：OSS选择的地域</li>
+<li>设定存储路径：图片上传至OSS的文件夹或路径</li>
+</ul>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/3_3.png" alt="配置Key"><figcaption>配置Key</figcaption></figure></p>
+<p>配置完成后即可上传图片，在PicGo的相册中可以获得图片的连接，可在HTML或者Markdown等文件中调用。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>对象存储OSS</tag>
       </tags>
   </entry>
   <entry>
@@ -1895,84 +1895,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于GPU服务器的选用</title>
-    <url>/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/gpuserver/</url>
-    <content><![CDATA[<p>介绍关于GPU服务器：租用、使用</p>
-<p>关键词：深度学习、GPU服务器</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#gpu%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%8D%E5%8A%A1%E5%95%86">GPU服务器服务商</a></li>
-<li><a href="#gpu%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8">GPU服务器使用</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="gpu服务器服务商">GPU服务器服务商</span></h1><ol>
-<li>AutoDL算力云</li>
-</ol>
-<ul>
-<li>网站：<a class="link" href="https://www.autodl.com/home">AutoDL算力云 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>个人评价：本人具有使用经历，价格偏便宜，镜像有现成，适合新手入门尝试。</li>
-</ul>
-<ol start="2">
-<li><a class="link" href="https://mistgpu.com/">MistGPU <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ol>
-<ul>
-<li>网站：<a class="link" href="https://mistgpu.com/">MistGPU <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>个人评价：价格还行，备用选择。</li>
-</ul>
-<ol start="3">
-<li>阿里云</li>
-</ol>
-<ul>
-<li>网站：<a class="link" href="https://www.aliyun.com/product/ecs/gpu">阿里云 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>个人评价：阿里云，不多说，可靠也不便宜。</li>
-</ul>
-<h1><span id="gpu服务器使用">GPU服务器使用</span></h1><ol>
-<li>选择适合的GPU型号、显存大小、浮点算力、存储盘大小。</li>
-<li>选择合适的镜像进行环境配置。</li>
-<li>一般无图形窗口，命令行使用，文件上传下载。</li>
-<li>详细可参考各个服务商的帮助文档。</li>
-</ol>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>其他分享</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>GPU服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于Qt的音频播放器程序设计记录</title>
-    <url>/%E7%AC%94%E8%AE%B0/fmusicplayer/</url>
-    <content><![CDATA[<p>使用Qt的工具完成一个音频播放器——FMusicPlayer</p>
-<p>待补充</p>
-<p>关键词：Qt、C++</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-
-
-<!-- tocstop -->
-
-
-
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>Qt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C语言入门学习教程</title>
     <url>/%E7%AC%94%E8%AE%B0/c-language-learning/</url>
     <content><![CDATA[<p>个人认为面向入门基础级别的C语言学习教程。</p>
@@ -2650,7 +2572,7 @@
 <div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// test.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i = <span class="number">9</span>, o = <span class="number">6</span>, q;</span><br><span class="line">	i &gt; o ? i : o;</span><br><span class="line">	<span class="comment">// i大于o吗，大于（真）则返回i的值，小于（假）则返回o的值。</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <ul>
-<li><strong>逗号运算符</strong> <code>,</code> ：其形式为 <code>表达式1,表达式2</code> ，逗号运算符确保操作数被顺序地处理：先计算左边的操作数，再计算右边的操作数。右操作数的类型和值作为整个表达式的结果。左操作数只是为了副作用需要而被计算，它其值会被丢弃。</li>
+<li><strong>逗号运算符</strong> <code>,</code> ：其形式为 <code>表达式1,表达式2</code> ，逗号运算符确保操作数被顺序地处理：先计算左边的操作数，再计算右边的操作数。右操作数的类型和值作为整个表达式的结果，而左操作数只是当作副作用被计算，其值和类型不会被返回。</li>
 </ul>
 <div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// test.c</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> i = <span class="number">9</span>, o = <span class="number">6</span>, q;</span><br><span class="line">	q = (i + o, i - o);</span><br><span class="line">	<span class="comment">// q = 3</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
@@ -3470,6 +3392,84 @@
       </tags>
   </entry>
   <entry>
+    <title>基于Qt的音频播放器程序设计记录</title>
+    <url>/%E7%AC%94%E8%AE%B0/fmusicplayer/</url>
+    <content><![CDATA[<p>使用Qt的工具完成一个音频播放器——FMusicPlayer</p>
+<p>待补充</p>
+<p>关键词：Qt、C++</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+
+
+<!-- tocstop -->
+
+
+
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>Qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于GPU服务器的选用</title>
+    <url>/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/gpuserver/</url>
+    <content><![CDATA[<p>介绍关于GPU服务器：租用、使用</p>
+<p>关键词：深度学习、GPU服务器</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#gpu%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9C%8D%E5%8A%A1%E5%95%86">GPU服务器服务商</a></li>
+<li><a href="#gpu%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BD%BF%E7%94%A8">GPU服务器使用</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="gpu服务器服务商">GPU服务器服务商</span></h1><ol>
+<li>AutoDL算力云</li>
+</ol>
+<ul>
+<li>网站：<a class="link" href="https://www.autodl.com/home">AutoDL算力云 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>个人评价：本人具有使用经历，价格偏便宜，镜像有现成，适合新手入门尝试。</li>
+</ul>
+<ol start="2">
+<li><a class="link" href="https://mistgpu.com/">MistGPU <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ol>
+<ul>
+<li>网站：<a class="link" href="https://mistgpu.com/">MistGPU <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>个人评价：价格还行，备用选择。</li>
+</ul>
+<ol start="3">
+<li>阿里云</li>
+</ol>
+<ul>
+<li>网站：<a class="link" href="https://www.aliyun.com/product/ecs/gpu">阿里云 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>个人评价：阿里云，不多说，可靠也不便宜。</li>
+</ul>
+<h1><span id="gpu服务器使用">GPU服务器使用</span></h1><ol>
+<li>选择适合的GPU型号、显存大小、浮点算力、存储盘大小。</li>
+<li>选择合适的镜像进行环境配置。</li>
+<li>一般无图形窗口，命令行使用，文件上传下载。</li>
+<li>详细可参考各个服务商的帮助文档。</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>其他分享</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>GPU服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>单周期性MIPS硬件仿真综合设计记录</title>
     <url>/%E7%AC%94%E8%AE%B0/mips/</url>
     <content><![CDATA[<p>使用仿真工具实现一个计算机硬件系统，并编写程序，在自己设计的硬件系统上运行、测试，实现要求的功能。</p>
@@ -3747,6 +3747,58 @@
       </categories>
       <tags>
         <tag>Markdown工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个便捷的启动小工具</title>
+    <url>/%E8%BD%AF%E4%BB%B6/tools2/</url>
+    <content><![CDATA[<p>介绍一个便捷的启动工具、搜索工具——Flow Launcher</p>
+<p>关键词：启动工具</p>
+<span id="more"></span>
+
+<hr>
+<!-- toc -->
+
+<ul>
+<li><a href="#1-flow-launcher">1. Flow Launcher</a></li>
+<li><a href="#2%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C">2.使用体验</a></li>
+<li><a href="#3%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD">3.软件下载</a></li>
+<li><a href="#4%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE">4.使用建议</a></li>
+</ul>
+<!-- tocstop -->
+
+<h1><span id="1-flow-launcher">1. Flow Launcher</span></h1><p>Flow Launcher是一款快速启动软件或者打开文件的工具。</p>
+<p>其特点有：</p>
+<ul>
+<li>整合了Everything搜索工具</li>
+<li>日期时间显示</li>
+<li>文件拖拽</li>
+<li>支持缩写</li>
+<li>可导入插件</li>
+<li>……</li>
+</ul>
+<h1><span id="2使用体验">2.使用体验</span></h1><p>软件界面简约，可设置多款主题、字体。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%95%B4%E4%BD%93%E9%A2%84%E8%A7%88.jpg" alt="软件界面"><figcaption>软件界面</figcaption></figure></p>
+<p>设置面板条理清晰，支持自定义，配置一个适合自己的工具。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E8%AE%BE%E7%BD%AE%E9%9D%A2%E6%9D%BF.jpg" alt="设置面板"><figcaption>设置面板</figcaption></figure></p>
+<p>搜索过程简单，直接输入马上得到结果，很适合文件太多不想一个个去翻的人。点击即可打开文件或打开应用。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%90%9C%E7%B4%A2%E4%BD%93%E9%AA%8C.jpg" alt="搜索过程"><figcaption>搜索过程</figcaption></figure></p>
+<p>支持各种命令，支持缩写。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%8C%87%E4%BB%A4.jpg" alt="关机指令"><figcaption>关机指令</figcaption></figure></p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%8C%87%E4%BB%A42.jpg" alt="关机指令"><figcaption>关机指令</figcaption></figure></p>
+<h1><span id="3软件下载">3.软件下载</span></h1><p><a class="link" href="https://www.flowlauncher.com/">官网下载 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link" href="https://github.com/Flow-Launcher/Flow.Launcher">Github源码 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1><span id="4使用建议">4.使用建议</span></h1><ul>
+<li>开机自启，占用率不算很高，很是方便。</li>
+<li>开启便携模式，增加结果显示个数。<br><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E5%BB%BA%E8%AE%AE.jpg" alt="使用建议1"><figcaption>使用建议1</figcaption></figure></li>
+<li>设置好默认文件管理器，默认浏览器。</li>
+<li>自定义插件设置（如默认网页搜索引擎等）。<br><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E5%BB%BA%E8%AE%AE2.jpg" alt="使用建议2"><figcaption>使用建议2</figcaption></figure></li>
+</ul>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>启动工具</tag>
       </tags>
   </entry>
   <entry>
@@ -4148,58 +4200,6 @@
         <tag>TensorRT</tag>
         <tag>C++推演</tag>
         <tag>OpenCV</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个便捷的启动小工具</title>
-    <url>/%E8%BD%AF%E4%BB%B6/tools2/</url>
-    <content><![CDATA[<p>介绍一个便捷的启动工具、搜索工具——Flow Launcher</p>
-<p>关键词：启动工具</p>
-<span id="more"></span>
-
-<hr>
-<!-- toc -->
-
-<ul>
-<li><a href="#1-flow-launcher">1. Flow Launcher</a></li>
-<li><a href="#2%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C">2.使用体验</a></li>
-<li><a href="#3%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD">3.软件下载</a></li>
-<li><a href="#4%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE">4.使用建议</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="1-flow-launcher">1. Flow Launcher</span></h1><p>Flow Launcher是一款快速启动软件或者打开文件的工具。</p>
-<p>其特点有：</p>
-<ul>
-<li>整合了Everything搜索工具</li>
-<li>日期时间显示</li>
-<li>文件拖拽</li>
-<li>支持缩写</li>
-<li>可导入插件</li>
-<li>……</li>
-</ul>
-<h1><span id="2使用体验">2.使用体验</span></h1><p>软件界面简约，可设置多款主题、字体。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%95%B4%E4%BD%93%E9%A2%84%E8%A7%88.jpg" alt="软件界面"><figcaption>软件界面</figcaption></figure></p>
-<p>设置面板条理清晰，支持自定义，配置一个适合自己的工具。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E8%AE%BE%E7%BD%AE%E9%9D%A2%E6%9D%BF.jpg" alt="设置面板"><figcaption>设置面板</figcaption></figure></p>
-<p>搜索过程简单，直接输入马上得到结果，很适合文件太多不想一个个去翻的人。点击即可打开文件或打开应用。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%90%9C%E7%B4%A2%E4%BD%93%E9%AA%8C.jpg" alt="搜索过程"><figcaption>搜索过程</figcaption></figure></p>
-<p>支持各种命令，支持缩写。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%8C%87%E4%BB%A4.jpg" alt="关机指令"><figcaption>关机指令</figcaption></figure></p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E6%8C%87%E4%BB%A42.jpg" alt="关机指令"><figcaption>关机指令</figcaption></figure></p>
-<h1><span id="3软件下载">3.软件下载</span></h1><p><a class="link" href="https://www.flowlauncher.com/">官网下载 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link" href="https://github.com/Flow-Launcher/Flow.Launcher">Github源码 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h1><span id="4使用建议">4.使用建议</span></h1><ul>
-<li>开机自启，占用率不算很高，很是方便。</li>
-<li>开启便携模式，增加结果显示个数。<br><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E5%BB%BA%E8%AE%AE.jpg" alt="使用建议1"><figcaption>使用建议1</figcaption></figure></li>
-<li>设置好默认文件管理器，默认浏览器。</li>
-<li>自定义插件设置（如默认网页搜索引擎等）。<br><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools2_%E5%BB%BA%E8%AE%AE2.jpg" alt="使用建议2"><figcaption>使用建议2</figcaption></figure></li>
-</ul>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>启动工具</tag>
       </tags>
   </entry>
   <entry>
