@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/py-language-leaning_break.png">
 <meta property="og:image" content="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/py-language-leaning_continue.png">
 <meta property="article:published_time" content="2023-08-18T08:09:00.000Z">
-<meta property="article:modified_time" content="2023-08-22T03:02:03.833Z">
+<meta property="article:modified_time" content="2023-08-23T01:59:48.571Z">
 <meta property="article:author" content="Fingsinz">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -503,8 +503,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-08-22 11:02:03</span>
-            <span class="mobile">2023-08-22 11:02:03</span>
+            <span class="desktop">2023-08-23 09:59:48</span>
+            <span class="mobile">2023-08-23 09:59:48</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -542,12 +542,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>17.2k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>16.4k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>68 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>65 分钟</span>
         </span>
     
     
@@ -566,172 +566,13 @@
 <hr>
 <!-- toc -->
 
-<ul>
-<li><a href="#%E4%B8%80-python%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%82%E5%BF%B5">一. Python的基本观念</a><ul>
-<li><a href="#11-%E4%BB%80%E4%B9%88%E6%98%AFpython%E8%AF%AD%E8%A8%80">1.1 什么是Python语言</a></li>
-<li><a href="#12-%E6%80%8E%E4%B9%88%E5%86%99python%E7%A8%8B%E5%BA%8F">1.2 怎么写Python程序</a></li>
-<li><a href="#13-import%E6%A8%A1%E5%9D%97">1.3 import模块</a></li>
-</ul>
-</li>
-<li><a href="#%E4%BA%8C-%E5%87%BD%E6%95%B0">二. 函数</a><ul>
-<li><a href="#21-%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84">2.1 函数的基本结构</a></li>
-<li><a href="#22-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89">2.2 函数的定义</a></li>
-<li><a href="#23-%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E5%92%8C%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0">2.3 传递参数和调用函数</a></li>
-<li><a href="#24-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0">2.4 内置函数</a></li>
-<li><a href="#25-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">2.5 匿名函数</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%89-python%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97">三. Python的变量与基本运算</a><ul>
-<li><a href="#31-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%98%E9%87%8F">3.1 什么是变量</a></li>
-<li><a href="#32-%E8%BF%90%E7%AE%97%E7%AC%A6">3.2 运算符</a><ul>
-<li><a href="#321-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6">3.2.1 算术运算符</a></li>
-<li><a href="#322-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6">3.2.2 赋值运算符</a></li>
-<li><a href="#323-%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6">3.2.3 比较运算符</a></li>
-<li><a href="#324-%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6">3.2.4 位运算符</a></li>
-<li><a href="#325-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6">3.2.5 逻辑运算符</a></li>
-<li><a href="#326-%E6%88%90%E5%91%98%E8%BF%90%E7%AE%97%E7%AC%A6">3.2.6 成员运算符</a></li>
-<li><a href="#327-%E8%BA%AB%E4%BB%BD%E8%BF%90%E7%AE%97%E7%AC%A6">3.2.7 身份运算符</a></li>
-<li><a href="#328-%E5%88%A0%E9%99%A4%E5%8F%98%E9%87%8F">3.2.8 删除变量</a></li>
-</ul>
-</li>
-<li><a href="#33-python%E7%9A%84%E6%96%AD%E8%A1%8C">3.3 Python的断行</a></li>
-</ul>
-</li>
-<li><a href="#%E5%9B%9B-python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">四. Python的基本数据类型</a><ul>
-<li><a href="#41-type%E5%87%BD%E6%95%B0">4.1 type()函数</a></li>
-<li><a href="#42-%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">4.2 数值数据类型</a><ul>
-<li><a href="#421-%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">4.2.1 什么是数值数据类型</a></li>
-<li><a href="#422-%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BF%90%E7%AE%97">4.2.2 数值类型的运算</a></li>
-<li><a href="#423-%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95">4.2.3 数值类型的方法</a></li>
-</ul>
-</li>
-<li><a href="#43-%E5%B8%83%E5%B0%94%E5%80%BC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">4.3 布尔值数据类型</a></li>
-<li><a href="#44-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">4.4 字符串数据类型</a><ul>
-<li><a href="#441-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">4.4.1 什么是字符串数据类型</a></li>
-<li><a href="#441-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%90%E7%AE%97">4.4.1 字符串的运算</a></li>
-<li><a href="#442-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">4.4.2 字符串的类型转换</a></li>
-<li><a href="#443-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6">4.4.3 转义字符</a></li>
-<li><a href="#444-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95">4.4.4 字符串的函数方法</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E4%BA%94-python%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA">五. Python的输入和输出</a><ul>
-<li><a href="#51-%E8%BE%85%E5%8A%A9%E5%B8%AE%E5%8A%A9%E8%AF%B4%E6%98%8E%E8%BE%93%E5%87%BA">5.1 辅助帮助说明输出</a></li>
-<li><a href="#52-%E8%BE%93%E5%87%BA">5.2 输出</a><ul>
-<li><a href="#521-%E9%80%9A%E8%BF%87print%E5%87%BD%E6%95%B0%E8%BE%93%E5%87%BA">5.2.1 通过print()函数输出</a></li>
-<li><a href="#522-%E6%A0%BC%E5%BC%8F%E5%8C%96print%E7%9A%84%E8%BE%93%E5%87%BA">5.2.2 格式化print()的输出</a></li>
-<li><a href="#523-format%E5%87%BD%E6%95%B0">5.2.3 format()函数</a></li>
-<li><a href="#524-dir%E5%87%BD%E6%95%B0">5.2.4 dir()函数</a></li>
-</ul>
-</li>
-<li><a href="#53-%E8%BE%93%E5%85%A5">5.3 输入</a></li>
-</ul>
-</li>
-<li><a href="#%E5%85%AD-python%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84">六. Python的条件结构</a><ul>
-<li><a href="#61-if%E8%AF%AD%E5%8F%A5">6.1 if语句</a></li>
-<li><a href="#62-if-else%E8%AF%AD%E5%8F%A5">6.2 if-else语句</a></li>
-<li><a href="#63-if-elif-else%E8%AF%AD%E5%8F%A5">6.3 if-elif-else语句</a></li>
-<li><a href="#64-%E5%B5%8C%E5%A5%97%E7%9A%84if%E8%AF%AD%E5%8F%A5">6.4 嵌套的if语句</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B8%83-python%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84">七. Python的循环结构</a><ul>
-<li><a href="#71-for%E5%BE%AA%E7%8E%AF">7.1 for循环</a></li>
-<li><a href="#72-while%E5%BE%AA%E7%8E%AF">7.2 while循环</a></li>
-<li><a href="#73-break-continue%E5%92%8Cpass">7.3 break、continue和pass</a></li>
-</ul>
-</li>
-<li><a href="#%E5%85%AB-python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">八. Python面向对象</a><ul>
-<li><a href="#81-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5">8.1 面向对象的相关概念</a></li>
-<li><a href="#82-%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89">8.2 类的定义</a></li>
-<li><a href="#83-%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95">8.3 类的方法</a><ul>
-<li><a href="#831-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95">8.3.1 构造方法</a></li>
-<li><a href="#832-%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95">8.3.2 其他方法</a></li>
-</ul>
-</li>
-<li><a href="#84-%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF">8.4 类的继承</a></li>
-</ul>
-</li>
-<li><a href="#%E4%B9%9D-%E5%88%97%E8%A1%A8-list">九. 列表 List</a><ul>
-<li><a href="#91-%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%97%E8%A1%A8">9.1 什么是列表</a></li>
-<li><a href="#92-%E5%88%97%E8%A1%A8%E7%9A%84%E8%BF%90%E7%AE%97%E5%92%8C%E6%96%B9%E6%B3%95">9.2 列表的运算和方法</a><ul>
-<li><a href="#921-%E8%BE%93%E5%87%BA%E5%88%97%E8%A1%A8">9.2.1 输出列表</a></li>
-<li><a href="#922-%E8%AF%BB%E5%8F%96-%E4%BF%AE%E6%94%B9%E5%92%8C%E5%88%A0%E9%99%A4%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0">9.2.2 读取、修改和删除列表元素</a></li>
-<li><a href="#923-%E5%88%97%E8%A1%A8%E5%88%87%E7%89%87">9.2.3 列表切片</a></li>
-<li><a href="#924-%E5%88%97%E8%A1%A8%E7%9A%84%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95">9.2.4 列表的统计方法</a></li>
-<li><a href="#925-%E5%88%97%E8%A1%A8%E7%9A%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0">9.2.5 列表的元素个数</a></li>
-<li><a href="#926-%E5%88%97%E8%A1%A8%E7%9A%84%E5%8A%A0%E6%B3%95-%E4%B9%98%E6%B3%95">9.2.6 列表的加法、乘法</a></li>
-</ul>
-</li>
-<li><a href="#93-%E5%88%97%E8%A1%A8%E7%9A%84%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95">9.3 列表的其他方法</a></li>
-</ul>
-</li>
-<li><a href="#%E5%8D%81-%E5%85%83%E7%BB%84-tuple">十. 元组 Tuple</a><ul>
-<li><a href="#101-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%83%E7%BB%84">10.1 什么是元组</a></li>
-<li><a href="#102-%E5%85%83%E7%BB%84%E7%9A%84%E8%BF%90%E7%AE%97%E5%92%8C%E6%96%B9%E6%B3%95">10.2 元组的运算和方法</a><ul>
-<li><a href="#1021-%E8%BE%93%E5%87%BA%E5%85%83%E7%BB%84">10.2.1 输出元组</a></li>
-<li><a href="#1022-%E8%AF%BB%E5%8F%96%E5%85%83%E7%BB%84%E5%85%83%E7%B4%A0">10.2.2 读取元组元素</a></li>
-<li><a href="#1023-%E5%85%83%E7%BB%84%E6%88%AA%E5%8F%96">10.2.3 元组截取</a></li>
-<li><a href="#1024-%E5%88%97%E8%A1%A8%E7%9A%84%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0">10.2.4 列表的统计函数</a></li>
-<li><a href="#1025-%E5%85%83%E7%BB%84%E7%9A%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0">10.2.5 元组的元素个数</a></li>
-<li><a href="#1026-%E5%85%83%E7%BB%84%E7%9A%84%E5%8A%A0%E6%B3%95-%E4%B9%98%E6%B3%95">10.2.6 元组的加法、乘法</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#%E5%8D%81%E4%B8%80-%E5%AD%97%E5%85%B8-dict">十一. 字典 Dict</a><ul>
-<li><a href="#111-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%97%E5%85%B8">11.1 什么是字典</a></li>
-<li><a href="#112-%E5%AD%97%E5%85%B8%E7%9A%84%E8%BF%90%E7%AE%97%E5%92%8C%E6%96%B9%E6%B3%95">11.2 字典的运算和方法</a><ul>
-<li><a href="#1121-%E8%BE%93%E5%87%BA%E5%85%83%E7%BB%84">11.2.1 输出元组</a></li>
-<li><a href="#1122-%E8%AF%BB%E5%8F%96-%E4%BF%AE%E6%94%B9%E5%92%8C%E5%88%A0%E9%99%A4%E5%AD%97%E5%85%B8">11.2.2 读取、修改和删除字典</a></li>
-<li><a href="#1123-%E5%AD%97%E5%85%B8%E7%9A%84%E9%94%AE%E5%80%BC%E5%AF%B9%E6%95%B0">11.2.3 字典的键值对数</a></li>
-</ul>
-</li>
-<li><a href="#113-%E5%AD%97%E5%85%B8%E7%9A%84%E6%96%B9%E6%B3%95">11.3 字典的方法</a></li>
-</ul>
-</li>
-<li><a href="#%E5%8D%81%E4%BA%8C-%E9%9B%86%E5%90%88-set">十二. 集合 Set</a><ul>
-<li><a href="#121-%E4%BB%80%E4%B9%88%E6%98%AF%E9%9B%86%E5%90%88">12.1 什么是集合</a></li>
-<li><a href="#122-%E9%9B%86%E5%90%88%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C">12.2 集合基本操作</a><ul>
-<li><a href="#1221-%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0">12.2.1 添加元素</a></li>
-<li><a href="#1222-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0">12.2.2 移除元素</a></li>
-<li><a href="#1223-%E8%AE%A1%E7%AE%97%E9%9B%86%E5%90%88%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0">12.2.3 计算集合元素个数</a></li>
-<li><a href="#1224-%E6%B8%85%E7%A9%BA%E9%9B%86%E5%90%88">12.2.4 清空集合</a></li>
-<li><a href="#1225-%E5%88%A4%E6%96%AD%E5%85%83%E7%B4%A0%E6%98%AF%E5%90%A6%E5%9C%A8%E9%9B%86%E5%90%88%E4%B8%AD">12.2.5 判断元素是否在集合中</a></li>
-</ul>
-</li>
-<li><a href="#123-%E9%9B%86%E5%90%88%E7%9A%84%E6%96%B9%E6%B3%95">12.3 集合的方法</a></li>
-</ul>
-</li>
-<li><a href="#%E5%8D%81%E4%B8%89-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8">十三. 迭代器和生成器</a><ul>
-<li><a href="#131-%E8%BF%AD%E4%BB%A3%E5%99%A8">13.1 迭代器</a></li>
-<li><a href="#132-%E7%94%9F%E6%88%90%E5%99%A8">13.2 生成器</a></li>
-</ul>
-</li>
-<li><a href="#%E5%8D%81%E5%9B%9B-%E6%8E%A8%E5%AF%BC%E5%BC%8F">十四. 推导式</a><ul>
-<li><a href="#141-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F">14.1 列表推导式</a></li>
-<li><a href="#142-%E5%AD%97%E5%85%B8%E6%8E%A8%E5%AF%BC%E5%BC%8F">14.2 字典推导式</a></li>
-<li><a href="#143-%E9%9B%86%E5%90%88%E6%8E%A8%E5%AF%BC%E5%BC%8F">14.3 集合推导式</a></li>
-<li><a href="#144-%E5%85%83%E7%BB%84%E6%8E%A8%E5%AF%BC%E5%BC%8F%E7%94%9F%E6%88%90%E5%99%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F">14.4 元组推导式（生成器表达式）</a></li>
-</ul>
-</li>
-<li><a href="#%E5%8D%81%E4%BA%94-%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99">十五. 文件的读写</a><ul>
-<li><a href="#151-%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6">15.1 打开文件</a></li>
-<li><a href="#152-%E6%96%87%E4%BB%B6%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95">15.2 文件对象的方法</a></li>
-<li><a href="#153-%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6">15.3 读取文件</a></li>
-<li><a href="#154-%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5">15.4 文件写入</a></li>
-</ul>
-</li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="一-python的基本观念">一. Python的基本观念</span></h1><h2><span id="11-什么是python语言">1.1 什么是Python语言</span></h2><p>Python是一种 <strong>直译的</strong> 、 <strong>面向对象的</strong> 、 <strong>拥有许多函数库</strong> 的语言。</p>
+<h1 id="一-Python的基本观念"><a href="#一-Python的基本观念" class="headerlink" title="一. Python的基本观念"></a>一. Python的基本观念</h1><h2 id="1-1-什么是Python语言"><a href="#1-1-什么是Python语言" class="headerlink" title="1.1 什么是Python语言"></a>1.1 什么是Python语言</h2><p>Python是一种 <strong>直译的</strong> 、 <strong>面向对象的</strong> 、 <strong>拥有许多函数库</strong> 的语言。</p>
 <p><strong>直译</strong>表明它不需要经过像C语言一样的编译过程，直接由直译器运行。这有好处也有坏处，好处是方便简洁直接运行；坏处是没有编译器的错误检查，即运行到某行才知道错误。</p>
 <p><strong>面向对象</strong>表明它是一门高级语言，具有抽象化的概念（也就是对象），能完成众多工作。Python中一切都是对象，而对象的函数称作方法。</p>
 <p><strong>拥有许多函数库</strong>表明它有很多内置的套件或者是模块，开源且每个人可贡献，我们直接import调用这些模块即可完成一些复杂的任务。 <em>由于Python的模块众多，此教程只介绍最基本的语法，模块的使用建议查看模块的帮助文档，建议善于查阅资料</em></p>
 <p>当然Python也具有垃圾回收的功能，即程序执行时直译器会主动回收不再需要的动态内存空间，减少程序员犯错的机会。</p>
 <p>Python也经历了很多版本的迭代，从最初的Python 2.0到Python 3.0、Python 3.x。Python 3在开发时与Python 2不兼容，所以可以认为是两个独立的版本，但后面官方把Python 3.x版本的特性移植到Python 2.6&#x2F;2.7x中。本教程的演示代码经过Python 3.11.4测试。</p>
-<h2><span id="12-怎么写python程序">1.2 怎么写Python程序</span></h2><p>首先具备Python的直译器，即下载安装Python。<a class="link" target="_blank" rel="noopener" href="https://www.python.org/downloads/windows/">官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>选择尽量较新的Python版本下载。打开下载的Python安装包，选择<code>Customize installation</code>客制化安装，记得勾选下面的“Add python.exe to PATH”。接着默认勾选pip：包管理器，下载包时使用。建议勾选上，再接着更改安装路径，建议安装在非系统盘。最后等待安装完成即可。具体可参考<a class="link" target="_blank" rel="noopener" href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/8/">这篇博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="1-2-怎么写Python程序"><a href="#1-2-怎么写Python程序" class="headerlink" title="1.2 怎么写Python程序"></a>1.2 怎么写Python程序</h2><p>首先具备Python的直译器，即下载安装Python。<a class="link" target="_blank" rel="noopener" href="https://www.python.org/downloads/windows/">官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>选择尽量较新的Python版本下载。打开下载的Python安装包，选择<code>Customize installation</code>客制化安装，记得勾选下面的“Add python.exe to PATH”。接着默认勾选pip：包管理器，下载包时使用。建议勾选上，再接着更改安装路径，建议安装在非系统盘。最后等待安装完成即可。具体可参考<a class="link" target="_blank" rel="noopener" href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/8/">这篇博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <p>接着编写Python并执行，Python的后缀名为 <code>.py</code> 。在此介绍两种方式编写Python：记事本和Visual Studio Code。</p>
 <ol>
 <li>记事本方式：新建记事本，命名为 <code>xxx.py</code> ，在里面编写Python代码，之后启用命令提示符cmd使用python命令直译运行。</li>
@@ -743,7 +584,7 @@
 <p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/py-language-leaning_write2.jpg" alt="VSCode编写Python"><figcaption>VSCode编写Python</figcaption></figure></p>
 <p>在Python中，使用 <code>#</code> 作为整行注释符号，三个单引号或双引号作为整段注释符号。</p>
 <p>同时，Python不像C语言，Python的每句最后不需要添加分号 <code>;</code> ，还把相同的缩进作为一整个语句块，这些特性会在后面的代码慢慢体现。</p>
-<h2><span id="13-import模块">1.3 import模块</span></h2><p>想使用 Python 源文件或者特殊模块，只需在另一个源文件里执行 import 语句，语法如下：</p>
+<h2 id="1-3-import模块"><a href="#1-3-import模块" class="headerlink" title="1.3 import模块"></a>1.3 import模块</h2><p>想使用 Python 源文件或者特殊模块，只需在另一个源文件里执行 import 语句，语法如下：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> module1[, module2[,... moduleN]</span><br></pre></td></tr></table></figure></div>
 
 <p>比如引入系统模块： <code>impory sys</code></p>
@@ -767,7 +608,7 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a.py的非main中运行</span><br><span class="line">b.py运行</span><br></pre></td></tr></table></figure></div>
 
 <p><br><br><br></p>
-<h1><span id="二-函数">二. 函数</span></h1><h2><span id="21-函数的基本结构">2.1 函数的基本结构</span></h2><p>函数的结构应当如下，包括 <strong>函数名字function_name</strong> 、 <strong>参数arguments</strong> 和 <strong>函数主体Body</strong> 。</p>
+<h1 id="二-函数"><a href="#二-函数" class="headerlink" title="二. 函数"></a>二. 函数</h1><h2 id="2-1-函数的基本结构"><a href="#2-1-函数的基本结构" class="headerlink" title="2.1 函数的基本结构"></a>2.1 函数的基本结构</h2><p>函数的结构应当如下，包括 <strong>函数名字function_name</strong> 、 <strong>参数arguments</strong> 和 <strong>函数主体Body</strong> 。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">function_name</span>(<span class="params">arguments</span>):</span><br><span class="line">	<span class="comment"># body1</span></span><br><span class="line">	<span class="comment"># body2</span></span><br></pre></td></tr></table></figure></div>
 
 <ul>
@@ -780,12 +621,12 @@
 <li><p><strong>函数主体</strong>：函数内容以冒号 <code>:</code> 开始，并且具有相同的缩进。函数主体包含一组定义函数执行任务的语句。若有返回值的函数使用 <code>return</code> 返回，没有 <code>return</code> 相当于返回 <code>None</code> 。函数主体中遇到返回表示结束函数。</p>
 </li>
 </ul>
-<h2><span id="22-函数的定义">2.2 函数的定义</span></h2><p>Python与C语言不一样，不存在函数提前声明一说。即想要调用某函数，必先在前面定义该函数，并不存在调用前先使用函数声明而调用后再函数定义。</p>
+<h2 id="2-2-函数的定义"><a href="#2-2-函数的定义" class="headerlink" title="2.2 函数的定义"></a>2.2 函数的定义</h2><p>Python与C语言不一样，不存在函数提前声明一说。即想要调用某函数，必先在前面定义该函数，并不存在调用前先使用函数声明而调用后再函数定义。</p>
 <p>定义一个函数十分简单，就如：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">a, b</span>):</span><br><span class="line">	<span class="keyword">return</span> a + b</span><br></pre></td></tr></table></figure></div>
 
 
-<h2><span id="23-传递参数和调用函数">2.3 传递参数和调用函数</span></h2><p>直接使用函数名加上传递参数即可调用函数。当函数不需要传递参数时：</p>
+<h2 id="2-3-传递参数和调用函数"><a href="#2-3-传递参数和调用函数" class="headerlink" title="2.3 传递参数和调用函数"></a>2.3 传递参数和调用函数</h2><p>直接使用函数名加上传递参数即可调用函数。当函数不需要传递参数时：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">doNothing</span>():</span><br><span class="line">	<span class="comment"># do Nothing</span></span><br><span class="line">doNothing()	<span class="comment"># 函数调用</span></span><br></pre></td></tr></table></figure></div>
 
 <p>在Python中，变量是没有类型的，而对象有不同类型的区分。当函数需要传递参数时，参数列表就简单写个变量名：</p>
@@ -825,7 +666,7 @@
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params">a, b, /, c, d, *, e, f</span>):</span><br><span class="line">	<span class="keyword">return</span> a + b + c + d + e + f</span><br><span class="line">f(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, d = <span class="number">40</span>, e = <span class="number">50</span>, f = <span class="number">60</span>)</span><br><span class="line"><span class="comment"># 形参 a 和 b 必须使用指定位置参数，c 或 d 可以是位置形参或关键字形参，而 e 和 f 要求为关键字形参</span></span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="24-内置函数">2.4 内置函数</span></h2><p>内置函数有：</p>
+<h2 id="2-4-内置函数"><a href="#2-4-内置函数" class="headerlink" title="2.4 内置函数"></a>2.4 内置函数</h2><p>内置函数有：</p>
 <table>
 <thead>
 <tr>
@@ -928,7 +769,7 @@
 <td align="center"></td>
 </tr>
 </tbody></table>
-<h2><span id="25-匿名函数">2.5 匿名函数</span></h2><p>Python 使用 <code>lambda</code> 来创建匿名函数。匿名函数即不再使用 <code>def</code> 语句这样标准的形式定义一个函数。</p>
+<h2 id="2-5-匿名函数"><a href="#2-5-匿名函数" class="headerlink" title="2.5 匿名函数"></a>2.5 匿名函数</h2><p>Python 使用 <code>lambda</code> 来创建匿名函数。匿名函数即不再使用 <code>def</code> 语句这样标准的形式定义一个函数。</p>
 <ul>
 <li><p><code>lambda</code> 只是一个表达式，函数体比 <code>def</code> 简单很多。</p>
 </li>
@@ -944,7 +785,7 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add = <span class="keyword">lambda</span> a, b : a + b</span><br><span class="line">c = add(<span class="number">1</span>, <span class="number">2</span>)	<span class="comment"># c = 3</span></span><br></pre></td></tr></table></figure></div>
 
 <p><br><br><br></p>
-<h1><span id="三-python的变量与基本运算">三. Python的变量与基本运算</span></h1><h2><span id="31-什么是变量">3.1 什么是变量</span></h2><p>变量是没有类型的，它仅仅是一个对象的引用。而对象具有数据类型。</p>
+<h1 id="三-Python的变量与基本运算"><a href="#三-Python的变量与基本运算" class="headerlink" title="三. Python的变量与基本运算"></a>三. Python的变量与基本运算</h1><h2 id="3-1-什么是变量"><a href="#3-1-什么是变量" class="headerlink" title="3.1 什么是变量"></a>3.1 什么是变量</h2><p>变量是没有类型的，它仅仅是一个对象的引用。而对象具有数据类型。</p>
 <p>变量命名应当合法且易懂</p>
 <ol>
 <li><p>必须由英文字母、_（下画线）或中文字开头，建议使用英文字母；</p>
@@ -978,7 +819,7 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">5</span>	<span class="comment"># x 是全局变量</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun1</span>():</span><br><span class="line">	x = <span class="number">4</span>	<span class="comment"># x 是局部变量</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">fun2</span>():	<span class="comment"># 构成闭包</span></span><br><span class="line">		x = <span class="number">3</span>	<span class="comment"># x 是闭包环境变量</span></span><br><span class="line">	<span class="keyword">return</span> fun2</span><br><span class="line">	</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fun3</span>():</span><br><span class="line">	<span class="keyword">global</span> x	<span class="comment"># 告诉直译器变量x应该从全局中寻找，x 是全局变量</span></span><br><span class="line">	<span class="keyword">return</span> x</span><br></pre></td></tr></table></figure></div>
 
 <p>由此，使用 <code>global</code> 关键字可以在局部内声明并使用一个全局变量</p>
-<h2><span id="32-运算符">3.2 运算符</span></h2><h3><span id="321-算术运算符">3.2.1 算术运算符</span></h3><ol>
+<h2 id="3-2-运算符"><a href="#3-2-运算符" class="headerlink" title="3.2 运算符"></a>3.2 运算符</h2><h3 id="3-2-1-算术运算符"><a href="#3-2-1-算术运算符" class="headerlink" title="3.2.1 算术运算符"></a>3.2.1 算术运算符</h3><ol>
 <li><p>四则运算： <code>+</code> 、 <code>-</code> 、 <code>*</code> 、 <code>/</code> 。</p>
 </li>
 <li><p>取余运算： <code>%</code> ，计算除法运算中的余数。</p>
@@ -988,7 +829,7 @@
 <li><p>次幂运算： <code>**</code> ，计算次幂。</p>
 </li>
 </ol>
-<h3><span id="322-赋值运算符">3.2.2 赋值运算符</span></h3><ul>
+<h3 id="3-2-2-赋值运算符"><a href="#3-2-2-赋值运算符" class="headerlink" title="3.2.2 赋值运算符"></a>3.2.2 赋值运算符</h3><ul>
 <li>赋值运算： <code>=</code> ，为变量设定值，并由其引申得下表。</li>
 </ul>
 <table>
@@ -1040,7 +881,7 @@
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = y = z = <span class="number">10</span> <span class="comment"># 连等，合法</span></span><br><span class="line">x, y, z = <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span> <span class="comment"># 多重指定赋值，合法</span></span><br><span class="line">x, y = y, x <span class="comment"># 交换，合法</span></span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="323-比较运算符">3.2.3 比较运算符</span></h3><table>
+<h3 id="3-2-3-比较运算符"><a href="#3-2-3-比较运算符" class="headerlink" title="3.2.3 比较运算符"></a>3.2.3 比较运算符</h3><table>
 <thead>
 <tr>
 <th align="center">关系运算符</th>
@@ -1086,7 +927,7 @@
 <td align="center">检查a是否不等于b</td>
 </tr>
 </tbody></table>
-<h3><span id="324-位运算符">3.2.4 位运算符</span></h3><p>位运算符是对数据转化为二进制，再逐位进行运算。如$60_{10} &#x3D; 00111100_{2}$，再对每一位进行逻辑运算。</p>
+<h3 id="3-2-4-位运算符"><a href="#3-2-4-位运算符" class="headerlink" title="3.2.4 位运算符"></a>3.2.4 位运算符</h3><p>位运算符是对数据转化为二进制，再逐位进行运算。如$60_{10} &#x3D; 00111100_{2}$，再对每一位进行逻辑运算。</p>
 <table>
 <thead>
 <tr>
@@ -1126,7 +967,7 @@
 <td align="center"><code>A &gt;&gt; n</code></td>
 </tr>
 </tbody></table>
-<h3><span id="325-逻辑运算符">3.2.5 逻辑运算符</span></h3><table>
+<h3 id="3-2-5-逻辑运算符"><a href="#3-2-5-逻辑运算符" class="headerlink" title="3.2.5 逻辑运算符"></a>3.2.5 逻辑运算符</h3><table>
 <thead>
 <tr>
 <th align="center">运算符</th>
@@ -1150,7 +991,7 @@
 <td align="center">not A</td>
 </tr>
 </tbody></table>
-<h3><span id="326-成员运算符">3.2.6 成员运算符</span></h3><table>
+<h3 id="3-2-6-成员运算符"><a href="#3-2-6-成员运算符" class="headerlink" title="3.2.6 成员运算符"></a>3.2.6 成员运算符</h3><table>
 <thead>
 <tr>
 <th align="center">运算符</th>
@@ -1169,7 +1010,7 @@
 <td align="center">x 不在 y 序列中 , 如果 x 不在 y 序列中返回 True。</td>
 </tr>
 </tbody></table>
-<h3><span id="327-身份运算符">3.2.7 身份运算符</span></h3><table>
+<h3 id="3-2-7-身份运算符"><a href="#3-2-7-身份运算符" class="headerlink" title="3.2.7 身份运算符"></a>3.2.7 身份运算符</h3><table>
 <thead>
 <tr>
 <th align="center">运算符</th>
@@ -1188,12 +1029,12 @@
 <td align="center">x 不在 y 序列中 , 如果 x 不在 y 序列中返回 True。</td>
 </tr>
 </tbody></table>
-<h3><span id="328-删除变量">3.2.8 删除变量</span></h3><ul>
+<h3 id="3-2-8-删除变量"><a href="#3-2-8-删除变量" class="headerlink" title="3.2.8 删除变量"></a>3.2.8 删除变量</h3><ul>
 <li>使用 <code>del</code> 删除变量，回收所占的内存空间。</li>
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">10</span></span><br><span class="line"><span class="keyword">del</span> x</span><br><span class="line"><span class="comment"># 后面不能再使用x</span></span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="33-python的断行">3.3 Python的断行</span></h2><ul>
+<h2 id="3-3-Python的断行"><a href="#3-3-Python的断行" class="headerlink" title="3.3 Python的断行"></a>3.3 Python的断行</h2><ul>
 <li><p>Python的语句可以不使用 <code>;</code> ，但也可以 <code>;</code> 进行语句分割。总体上不推荐使用。</p>
 </li>
 <li><p>Python中若语句过长，可以使用 <code>\</code> 或 <code>#</code> 进行分行。</p>
@@ -1202,12 +1043,12 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">z = (a +\</span><br><span class="line">	 b +\</span><br><span class="line">	 c)</span><br><span class="line"></span><br><span class="line">y = (d + <span class="comment"># 可做注释</span></span><br><span class="line">	 e + <span class="comment"># 可做注释</span></span><br><span class="line">	 f )</span><br></pre></td></tr></table></figure></div>
 
 <p><br><br><br></p>
-<h1><span id="四-python的基本数据类型">四. Python的基本数据类型</span></h1><h2><span id="41-type函数">4.1 type()函数</span></h2><ul>
+<h1 id="四-Python的基本数据类型"><a href="#四-Python的基本数据类型" class="headerlink" title="四. Python的基本数据类型"></a>四. Python的基本数据类型</h1><h2 id="4-1-type-函数"><a href="#4-1-type-函数" class="headerlink" title="4.1 type()函数"></a>4.1 type()函数</h2><ul>
 <li><code>type()</code> 可以返回变量的数据类型。如</li>
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">10</span></span><br><span class="line"><span class="built_in">type</span>(x) <span class="comment"># &lt;class &#x27;int&#x27;&gt;</span></span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="42-数值数据类型">4.2 数值数据类型</span></h2><h3><span id="421-什么是数值数据类型">4.2.1 什么是数值数据类型</span></h3><p>数值数据类型用于存储数值。数据类型是不允许改变的,这就意味着如果改变数字数据类型的值，将重新分配内存空间。</p>
+<h2 id="4-2-数值数据类型"><a href="#4-2-数值数据类型" class="headerlink" title="4.2 数值数据类型"></a>4.2 数值数据类型</h2><h3 id="4-2-1-什么是数值数据类型"><a href="#4-2-1-什么是数值数据类型" class="headerlink" title="4.2.1 什么是数值数据类型"></a>4.2.1 什么是数值数据类型</h3><p>数值数据类型用于存储数值。数据类型是不允许改变的,这就意味着如果改变数字数据类型的值，将重新分配内存空间。</p>
 <p>Python 支持三种不同的数值类型：</p>
 <ul>
 <li><p>整型(int)：通常被称为是整型或整数，是正或负整数，不带小数点。Python3 整型是没有限制大小的，可以当作 Long 类型使用，所以 Python3 没有 Python2 的 Long 类型。布尔(bool)是整型的子类型。</p>
@@ -1217,14 +1058,14 @@
 <li><p>复数(comple)：复数由实数部分和虚数部分构成，可以用a + bj,或者complex(a,b)表示， 复数的实部a和虚部b都是浮点型</p>
 </li>
 </ul>
-<h3><span id="422-数值类型的运算">4.2.2 数值类型的运算</span></h3><p>普通的算术运算可以运行在数值数据类型中：</p>
+<h3 id="4-2-2-数值类型的运算"><a href="#4-2-2-数值类型的运算" class="headerlink" title="4.2.2 数值类型的运算"></a>4.2.2 数值类型的运算</h3><p>普通的算术运算可以运行在数值数据类型中：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">b = <span class="number">2</span></span><br><span class="line"></span><br><span class="line">a + b</span><br><span class="line">a - b</span><br><span class="line">a * b</span><br><span class="line">a / b</span><br><span class="line">a // b</span><br><span class="line">a ** b</span><br><span class="line">a % b</span><br></pre></td></tr></table></figure></div>
 
 <p>当浮点数与整数运算时，同样会进行隐式类型转换为更高级的浮点数。</p>
 <p>同样也可以使用强制类型转换： <code>int()</code> 、 <code>float()</code> 。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="built_in">float</span>(a)</span><br><span class="line">b = <span class="number">5.5</span></span><br><span class="line"><span class="built_in">int</span>(b)</span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="423-数值类型的方法">4.2.3 数值类型的方法</span></h3><p>进制转换类型方法：</p>
+<h3 id="4-2-3-数值类型的方法"><a href="#4-2-3-数值类型的方法" class="headerlink" title="4.2.3 数值类型的方法"></a>4.2.3 数值类型的方法</h3><p>进制转换类型方法：</p>
 <ol>
 <li><p>转二进制： <code>bin()</code></p>
 </li>
@@ -1263,7 +1104,7 @@
 </li>
 </ol>
 <p>除此之外还有三角函数、随机数函数等……</p>
-<h2><span id="43-布尔值数据类型">4.3 布尔值数据类型</span></h2><ul>
+<h2 id="4-3-布尔值数据类型"><a href="#4-3-布尔值数据类型" class="headerlink" title="4.3 布尔值数据类型"></a>4.3 布尔值数据类型</h2><ul>
 <li>Python的布尔值（Boolean）数据类型具有两种值：True（真）或False（假）。数据类型代号是bool。</li>
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="literal">True</span></span><br><span class="line"><span class="built_in">type</span>(x) <span class="comment"># &lt;class &#x27;bool&#x27;&gt;</span></span><br></pre></td></tr></table></figure></div>
@@ -1271,7 +1112,7 @@
 <ul>
 <li>如果使用类型转换，True对应1，False对应0。</li>
 </ul>
-<h2><span id="44-字符串数据类型">4.4 字符串数据类型</span></h2><h3><span id="441-什么是字符串数据类型">4.4.1 什么是字符串数据类型</span></h3><ul>
+<h2 id="4-4-字符串数据类型"><a href="#4-4-字符串数据类型" class="headerlink" title="4.4 字符串数据类型"></a>4.4 字符串数据类型</h2><h3 id="4-4-1-什么是字符串数据类型"><a href="#4-4-1-什么是字符串数据类型" class="headerlink" title="4.4.1 什么是字符串数据类型"></a>4.4.1 什么是字符串数据类型</h3><ul>
 <li>Python的字符串没有严格规定是单引号还是双引号，只要匹配即可。其数据类型代号是str。如果字符串中有单引号，为了避免出错，使用双引号。</li>
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="string">&#x27;python&#x27;</span></span><br><span class="line">y = <span class="string">&quot;Tom&#x27;s house&quot;</span></span><br><span class="line"><span class="built_in">type</span>(x) <span class="comment"># &lt;class &#x27;str&#x27;&gt;</span></span><br></pre></td></tr></table></figure></div>
@@ -1284,7 +1125,7 @@
 <ul>
 <li>Python 不支持单字符类型，单字符在Python中也是作为一个字符串使用。</li>
 </ul>
-<h3><span id="441-字符串的运算">4.4.1 字符串的运算</span></h3><ul>
+<h3 id="4-4-1-字符串的运算"><a href="#4-4-1-字符串的运算" class="headerlink" title="4.4.1 字符串的运算"></a>4.4.1 字符串的运算</h3><ul>
 <li>字符串的连接可以直接使用 <code>+</code> 运算。</li>
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="string">&#x27;1&#x27;</span></span><br><span class="line">y = <span class="string">&#x27;2&#x27;</span></span><br><span class="line">z = x + y <span class="comment"># z为12</span></span><br></pre></td></tr></table></figure></div>
@@ -1334,7 +1175,7 @@
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span> = <span class="string">&quot;hello&quot;</span></span><br><span class="line"><span class="string">&#x27;h&#x27;</span> <span class="keyword">in</span> <span class="built_in">str</span>		<span class="comment"># 为真</span></span><br><span class="line"><span class="string">&#x27;h&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> <span class="built_in">str</span>	<span class="comment"># 为假</span></span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="442-字符串的类型转换">4.4.2 字符串的类型转换</span></h3><ul>
+<h3 id="4-4-2-字符串的类型转换"><a href="#4-4-2-字符串的类型转换" class="headerlink" title="4.4.2 字符串的类型转换"></a>4.4.2 字符串的类型转换</h3><ul>
 <li>强制转换为字符串： <code>str()</code> 函数。</li>
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">111</span>	<span class="comment"># x为111，是整型</span></span><br><span class="line">y = <span class="number">222</span>	<span class="comment"># y为222，是整型</span></span><br><span class="line">z = <span class="built_in">str</span>(<span class="number">111</span>) + <span class="built_in">str</span>(<span class="number">222</span>) <span class="comment"># z为111222，是字符串</span></span><br></pre></td></tr></table></figure></div>
@@ -1347,7 +1188,7 @@
 <ul>
 <li>字符串转换为码值： <code>chr(x)</code> 函数返回x的ASCII码值， <code>ord(x)</code> 函数返回x的Unicode码值。</li>
 </ul>
-<h3><span id="443-转义字符">4.4.3 转义字符</span></h3><ul>
+<h3 id="4-4-3-转义字符"><a href="#4-4-3-转义字符" class="headerlink" title="4.4.3 转义字符"></a>4.4.3 转义字符</h3><ul>
 <li>转义字符</li>
 </ul>
 <table>
@@ -1424,7 +1265,7 @@
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">&quot;Hello\nWorld&quot;</span>	<span class="comment"># 换行符生效</span></span><br><span class="line">str2 = <span class="string">r&quot;Hello\nWorld&quot;</span>	<span class="comment"># 换行符不生效，原样输出</span></span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="444-字符串的函数方法">4.4.4 字符串的函数方法</span></h3><p>字符串的函数方法有许多，此处列出常用的几个。</p>
+<h3 id="4-4-4-字符串的函数方法"><a href="#4-4-4-字符串的函数方法" class="headerlink" title="4.4.4 字符串的函数方法"></a>4.4.4 字符串的函数方法</h3><p>字符串的函数方法有许多，此处列出常用的几个。</p>
 <ol>
 <li><p><code>count(str, beg=0,end=len(string))</code>，返回 str 在 string 里面出现的次数，如果 beg 或者 end 指定则返回指定范围内 str 出现的次数。</p>
 </li>
@@ -1477,10 +1318,10 @@
 </ol>
 <p>具体的函数解释用法可以边用边搜索。</p>
 <p><br><br><br></p>
-<h1><span id="五-python的输入和输出">五. Python的输入和输出</span></h1><h2><span id="51-辅助帮助说明输出">5.1 辅助帮助说明输出</span></h2><ul>
+<h1 id="五-Python的输入和输出"><a href="#五-Python的输入和输出" class="headerlink" title="五. Python的输入和输出"></a>五. Python的输入和输出</h1><h2 id="5-1-辅助帮助说明输出"><a href="#5-1-辅助帮助说明输出" class="headerlink" title="5.1 辅助帮助说明输出"></a>5.1 辅助帮助说明输出</h2><ul>
 <li>使用 <code>help()</code> 函数可以列出Python指令或函数的使用说明。</li>
 </ul>
-<h2><span id="52-输出">5.2 输出</span></h2><h3><span id="521-通过print函数输出">5.2.1 通过print()函数输出</span></h3><p>该函数的语法格式为： <code>print(*args, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)</code></p>
+<h2 id="5-2-输出"><a href="#5-2-输出" class="headerlink" title="5.2 输出"></a>5.2 输出</h2><h3 id="5-2-1-通过print-函数输出"><a href="#5-2-1-通过print-函数输出" class="headerlink" title="5.2.1 通过print()函数输出"></a>5.2.1 通过print()函数输出</h3><p>该函数的语法格式为： <code>print(*args, sep=&#39; &#39;, end=&#39;\n&#39;, file=None, flush=False)</code></p>
 <ul>
 <li><p><code>*args</code> ：输出的数据，可以输出多个，使用逗号隔开。</p>
 </li>
@@ -1497,7 +1338,7 @@
 
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出结果：15.0    10,1.5</span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="522-格式化print的输出">5.2.2 格式化print()的输出</span></h3><p>可以使用这样的格式输出： <code>print(&quot;输出格式字符串&quot; % (变量))</code> ，输出格式字符串中，与C语言类似。</p>
+<h3 id="5-2-2-格式化print-的输出"><a href="#5-2-2-格式化print-的输出" class="headerlink" title="5.2.2 格式化print()的输出"></a>5.2.2 格式化print()的输出</h3><p>可以使用这样的格式输出： <code>print(&quot;输出格式字符串&quot; % (变量))</code> ，输出格式字符串中，与C语言类似。</p>
 <ul>
 <li><p><code>%d</code> 表示格式化整数输出。</p>
 </li>
@@ -1535,7 +1376,7 @@
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = <span class="number">3.14159</span></span><br><span class="line">x = <span class="number">3.14159</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;|%5f| |%10f| |%5.2f| |%+5.2f| |%-5.2f|&quot;</span> % (x, x, x, x, x))</span><br><span class="line"><span class="comment"># 输出结果：|3.141590| |  3.141590| | 3.14| |+3.14| |3.14 |</span></span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="523-format函数">5.2.3 format()函数</span></h3><p>使用 <code>format()</code> 函数的输出格式为： <code>print(&quot;输出格式字符串&quot; .format(变量, ...))</code></p>
+<h3 id="5-2-3-format-函数"><a href="#5-2-3-format-函数" class="headerlink" title="5.2.3 format()函数"></a>5.2.3 format()函数</h3><p>使用 <code>format()</code> 函数的输出格式为： <code>print(&quot;输出格式字符串&quot; .format(变量, ...))</code></p>
 <ul>
 <li><p>输出格式字符串中输出变量的位置使用 <code>&#123;&#125;</code> 表示。</p>
 </li>
@@ -1668,12 +1509,12 @@
 <td align="center">十六进制表示</td>
 </tr>
 </tbody></table>
-<h3><span id="524-dir函数">5.2.4 dir()函数</span></h3><p>通过 <code>dir()</code> 函数可以列出Python的函数。</p>
+<h3 id="5-2-4-dir-函数"><a href="#5-2-4-dir-函数" class="headerlink" title="5.2.4 dir()函数"></a>5.2.4 dir()函数</h3><p>通过 <code>dir()</code> 函数可以列出Python的函数。</p>
 <p>其格式为： <code>dir(__builtins__)</code> 。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(dit(a)) <span class="comment"># 列出int的所有函数</span></span><br></pre></td></tr></table></figure></div>
 
 <p>再结合 <code>help()</code> 函数即可了解每个函数的意义。</p>
-<h2><span id="53-输入">5.3 输入</span></h2><p>通过 <code>input()</code> 函数输入一行文本。</p>
+<h2 id="5-3-输入"><a href="#5-3-输入" class="headerlink" title="5.3 输入"></a>5.3 输入</h2><p>通过 <code>input()</code> 函数输入一行文本。</p>
 <p>该函数的格式为： <code>value = input(&quot;promt:&quot;)</code></p>
 <ul>
 <li><p>value：输入数据存入到该变量中，不论输入什么，value都是字符串数据类型，需要进行处理。</p>
@@ -1684,7 +1525,7 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="built_in">input</span>(<span class="string">&quot;请输入一个数字：&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;输入的数字是&#123;&#125;，其类型是&#123;&#125;&quot;</span>.<span class="built_in">format</span>(a, <span class="built_in">type</span>(a)))</span><br><span class="line"></span><br><span class="line">b = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入一个数字：&quot;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;输入的数字是&#123;&#125;，其类型是&#123;&#125;&quot;</span>.<span class="built_in">format</span>(b, <span class="built_in">type</span>(b)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行窗口：</span></span><br><span class="line"><span class="comment"># 请输入一个数字：6</span></span><br><span class="line"><span class="comment"># 输入的数字是6，其类型是&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="comment"># 请输入一个数字：6</span></span><br><span class="line"><span class="comment"># 输入的数字是6，其类型是&lt;class &#x27;int&#x27;&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <p><br><br><br></p>
-<h1><span id="六-python的条件结构">六. Python的条件结构</span></h1><h2><span id="61-if语句">6.1 if语句</span></h2><p>if语句的基本语法如下：</p>
+<h1 id="六-Python的条件结构"><a href="#六-Python的条件结构" class="headerlink" title="六. Python的条件结构"></a>六. Python的条件结构</h1><h2 id="6-1-if语句"><a href="#6-1-if语句" class="headerlink" title="6.1 if语句"></a>6.1 if语句</h2><p>if语句的基本语法如下：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (条件判断):</span><br><span class="line">	程序代码块</span><br></pre></td></tr></table></figure></div>
 
 <p>如果条件判断是True，则执行程序代码区块，如果条件判断是False,则不执行程序代码区块。如果程序代码区块只有一道指令，可将上述语法写成： <code>if(条件判断): 程序代码</code></p>
@@ -1693,22 +1534,22 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="keyword">if</span> (age &gt;= <span class="number">18</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;你成年了&quot;</span>)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;你的年龄是&#123;&#125;&quot;</span>.<span class="built_in">format</span>(age))</span><br></pre></td></tr></table></figure></div>
 
 <p>实际上不一定非得缩进4格字符空间，任意相同缩进的连续语句都可看作是同一代码块。</p>
-<h2><span id="62-if-else语句">6.2 if-else语句</span></h2><p>程序设计时更常用的功能是条件判断为True时执行某一个程序代码区块，当条件判断为False时执行另一段程序代码区块，此时可以使用if…else语句，它的语法格式如下：</p>
+<h2 id="6-2-if-else语句"><a href="#6-2-if-else语句" class="headerlink" title="6.2 if-else语句"></a>6.2 if-else语句</h2><p>程序设计时更常用的功能是条件判断为True时执行某一个程序代码区块，当条件判断为False时执行另一段程序代码区块，此时可以使用if…else语句，它的语法格式如下：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (条件判断):</span><br><span class="line">	程序代码块一</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	程序代码块二</span><br></pre></td></tr></table></figure></div>
 
 <p>如果条件判断是True,则执行程序代码区块一，如果条件判断是False,则执行程序代码区块二。</p>
-<h2><span id="63-if-elif-else语句">6.3 if-elif-else语句</span></h2><p>当程序进行多重判断时，可以使用if-elif-else语句，它的语法格式如下：</p>
+<h2 id="6-3-if-elif-else语句"><a href="#6-3-if-elif-else语句" class="headerlink" title="6.3 if-elif-else语句"></a>6.3 if-elif-else语句</h2><p>当程序进行多重判断时，可以使用if-elif-else语句，它的语法格式如下：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (条件判断一):</span><br><span class="line">	程序代码块一</span><br><span class="line"><span class="keyword">elif</span> (条件判断二):</span><br><span class="line">	程序代码块二</span><br><span class="line">……</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	程序代码块n</span><br></pre></td></tr></table></figure></div>
 
 <p>如果条件判断一是True则执行程序代码区块一，然后离开条件判断。否则检查条件判断二，如果是True则执行程序代码区块二，然后离开条件判断。如果条件判断是False则持续进行检查，上述elif的条件判断可以不断扩充，如果所有条件判断是False则执行程序代码区块。</p>
 <p>举个例子，分数采取A、B、C、D、F，通常90-100分是A，80-89分是B，70-79分是C，60-69分是D，低于60分是F。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">score = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&quot;请输入你的分数：&quot;</span>))</span><br><span class="line"><span class="keyword">if</span> (score &gt;= <span class="number">90</span> <span class="keyword">and</span> score &lt;= <span class="number">100</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;你的成绩是A&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> (score &gt;= <span class="number">80</span> <span class="keyword">and</span> score &lt;= <span class="number">89</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;你的成绩是B&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> (score &gt;= <span class="number">70</span> <span class="keyword">and</span> score &lt;= <span class="number">79</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;你的成绩是C&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> (score &gt;= <span class="number">60</span> <span class="keyword">and</span> score &lt;= <span class="number">69</span>):</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;你的成绩是D&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">&quot;你的成绩是F&quot;</span>)</span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="64-嵌套的if语句">6.4 嵌套的if语句</span></h2><p>if语句中有其他的if语句，称作if的嵌套。</p>
+<h2 id="6-4-嵌套的if语句"><a href="#6-4-嵌套的if语句" class="headerlink" title="6.4 嵌套的if语句"></a>6.4 嵌套的if语句</h2><p>if语句中有其他的if语句，称作if的嵌套。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (条件判断一):</span><br><span class="line">	<span class="keyword">if</span> (条件判断A):</span><br><span class="line">		程序代码块A</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		程序代码块B</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	程序代码块二</span><br></pre></td></tr></table></figure></div>
 
 <p><br><br><br></p>
-<h1><span id="七-python的循环结构">七. Python的循环结构</span></h1><h2><span id="71-for循环">7.1 for循环</span></h2><p>for循环的一般格式如下：</p>
+<h1 id="七-Python的循环结构"><a href="#七-Python的循环结构" class="headerlink" title="七. Python的循环结构"></a>七. Python的循环结构</h1><h2 id="7-1-for循环"><a href="#7-1-for循环" class="headerlink" title="7.1 for循环"></a>7.1 for循环</h2><p>for循环的一般格式如下：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> variable <span class="keyword">in</span> sequence:</span><br><span class="line">    <span class="comment"># statements</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="comment"># statements</span></span><br></pre></td></tr></table></figure></div>
 
 <p>for循环可以遍历任何可迭代对象，如一个列表、元组或者一个字符串。</p>
@@ -1726,7 +1567,7 @@
 
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输出结果：</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">Finally finished!</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="72-while循环">7.2 while循环</span></h2><p><code>while</code> 语句的一般形式如下：</p>
+<h2 id="7-2-while循环"><a href="#7-2-while循环" class="headerlink" title="7.2 while循环"></a>7.2 while循环</h2><p><code>while</code> 语句的一般形式如下：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>( condition <span class="keyword">is</span> true ):</span><br><span class="line">	sentences;</span><br></pre></td></tr></table></figure></div>
 
 <p>此处 <code>condition</code> 为表达式，只有当循环条件为真，即表达式为真，就执行循环体语句。循环体可以是一条语句，也可以是一个语句块（用花括号包起来）。 <code>while</code> 循环的特点是先判断条件表达式，后执行循环体语句。</p>
@@ -1740,7 +1581,7 @@
 
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输出结果：</span><br><span class="line">0  小于 5</span><br><span class="line">1  小于 5</span><br><span class="line">2  小于 5</span><br><span class="line">3  小于 5</span><br><span class="line">4  小于 5</span><br><span class="line">5  大于或等于 5</span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="73-break-continue和pass">7.3 break、continue和pass</span></h2><ul>
+<h2 id="7-3-break、continue和pass"><a href="#7-3-break、continue和pass" class="headerlink" title="7.3 break、continue和pass"></a>7.3 break、continue和pass</h2><ul>
 <li><code>break</code> 语句可以跳出 <code>for</code> 和 <code>while</code> 的循环体。如果从 <code>for</code> 或 <code>while</code> 循环中终止，任何对应的循环 else 块将不执行。</li>
 </ul>
 <p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/py-language-leaning_break.png" alt="break的过程"><figcaption>break的过程</figcaption></figure></p>
@@ -1754,7 +1595,7 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;finish&quot;</span>)</span><br><span class="line"><span class="comment"># 输出：finish</span></span><br></pre></td></tr></table></figure></div>
 
 <p><br><br><br></p>
-<h1><span id="八-python面向对象">八. Python面向对象</span></h1><h2><span id="81-面向对象的相关概念">8.1 面向对象的相关概念</span></h2><p>这里有一些关于面向对象的概念：</p>
+<h1 id="八-Python面向对象"><a href="#八-Python面向对象" class="headerlink" title="八. Python面向对象"></a>八. Python面向对象</h1><h2 id="8-1-面向对象的相关概念"><a href="#8-1-面向对象的相关概念" class="headerlink" title="8.1 面向对象的相关概念"></a>8.1 面向对象的相关概念</h2><p>这里有一些关于面向对象的概念：</p>
 <ul>
 <li><p>类(Class): 用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。对象是类的实例。</p>
 </li>
@@ -1777,7 +1618,7 @@
 <li><p>对象：通过类定义的数据结构实例。对象包括两个数据成员（类变量和实例变量）和方法。</p>
 </li>
 </ul>
-<h2><span id="82-类的定义">8.2 类的定义</span></h2><p>语法格式如下：</p>
+<h2 id="8-2-类的定义"><a href="#8-2-类的定义" class="headerlink" title="8.2 类的定义"></a>8.2 类的定义</h2><p>语法格式如下：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ClassName</span>:</span><br><span class="line">    &lt;statement-<span class="number">1</span>&gt;</span><br><span class="line">    .</span><br><span class="line">    .</span><br><span class="line">    .</span><br><span class="line">    &lt;statement-N&gt;</span><br></pre></td></tr></table></figure></div>
 
 <p>比如，我有一个类，它是描述狗的：</p>
@@ -1786,13 +1627,13 @@
 <p>对于属性而言，公有属性一般是基本属性，在类外部可以直接访问（比如 <code>dog.weight</code> ）；私有属性不可以在类外部访问（比如 <code>dog.__name</code> 是不允许的），在类内部的属性中使用时 <code>self.__name</code> 。同理方法也有公有和私有之分，私有方法以两个下划线开头。</p>
 <p>对于类的方法而言，与普通的函数只有一个特别的区别，就是类的方法必须有一个额外的第一个参数名称, 按照惯例它的名称是 <code>self</code> 。 <code>self</code> 代表了类的实例，代表当前对象的地址。</p>
 <p>实际上也不非得是 <code>self</code> ，全部换成别的也行。</p>
-<h2><span id="83-类的方法">8.3 类的方法</span></h2><h3><span id="831-构造方法">8.3.1 构造方法</span></h3><p>构造方法的函数名为 <code>__init__</code> ，语法像这样：</p>
+<h2 id="8-3-类的方法"><a href="#8-3-类的方法" class="headerlink" title="8.3 类的方法"></a>8.3 类的方法</h2><h3 id="8-3-1-构造方法"><a href="#8-3-1-构造方法" class="headerlink" title="8.3.1 构造方法"></a>8.3.1 构造方法</h3><p>构造方法的函数名为 <code>__init__</code> ，语法像这样：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">	self.data = <span class="literal">None</span></span><br></pre></td></tr></table></figure></div>
 
 <p>类定义了 <code>__init__()</code> 方法，类的实例化操作会自动调用 <code>__init__()</code> 方法。如上面的狗类，给他完善一下：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span>:</span><br><span class="line">	weight = <span class="literal">None</span>	<span class="comment"># 类的属性，此处是狗的体重</span></span><br><span class="line">	color = <span class="literal">None</span>	<span class="comment"># 类的属性，此处是狗的颜色</span></span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, w, c</span>):</span><br><span class="line">		self.weight = w</span><br><span class="line">		self.color = c</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">sound</span>(<span class="params">self</span>):	<span class="comment"># 类的方法，此处是发出声音方法</span></span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;汪&quot;</span>)</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">about</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">&quot;这是一只&#123;&#125;色的狗，重量是&#123;&#125;kg&quot;</span>.<span class="built_in">format</span>(self.color, self.weight))</span><br><span class="line"></span><br><span class="line">dog = Dog(<span class="number">10</span>, <span class="string">&#x27;黑&#x27;</span>)	<span class="comment"># 类的实例化，并且实例化时设定属性值</span></span><br><span class="line">dog.about()	<span class="comment"># 输出关于狗狗的信息</span></span><br><span class="line">dog.sound()	<span class="comment"># 类的实例调用类的方法</span></span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="832-其他方法">8.3.2 其他方法</span></h3><p>有构造方法，自然也有析构方法，他们是对立的。析构方法是释放对象时使用。一般隐式自动调用，函数名为 <code>__del__</code> 。</p>
+<h3 id="8-3-2-其他方法"><a href="#8-3-2-其他方法" class="headerlink" title="8.3.2 其他方法"></a>8.3.2 其他方法</h3><p>有构造方法，自然也有析构方法，他们是对立的。析构方法是释放对象时使用。一般隐式自动调用，函数名为 <code>__del__</code> 。</p>
 <p>类还有一些方法：</p>
 <ul>
 <li><p><code>__repr__</code> : 打印，转换</p>
@@ -1820,7 +1661,7 @@
 <li><p><code>__pow__</code>: 乘方</p>
 </li>
 </ul>
-<h2><span id="84-类的继承">8.4 类的继承</span></h2><p>类的继承允许一个子类继承另一个类（称作父类），继承父类的属性和方法。集成的语法如下：</p>
+<h2 id="8-4-类的继承"><a href="#8-4-类的继承" class="headerlink" title="8.4 类的继承"></a>8.4 类的继承</h2><p>类的继承允许一个子类继承另一个类（称作父类），继承父类的属性和方法。集成的语法如下：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">DerivedClassName</span>(<span class="title class_ inherited__">BaseClassName</span>):</span><br><span class="line">    &lt;statement-<span class="number">1</span>&gt;</span><br><span class="line">    .</span><br><span class="line">    .</span><br><span class="line">    .</span><br><span class="line">    &lt;statement-N&gt;</span><br></pre></td></tr></table></figure></div>
 
 <p>拿回上面的例子，狗类应该是继承自动物类的，因为狗包含在动物里。而动物都有重量这个属性；在狗类里，除了继承重量这一属性，还可以添加新的属性，比如颜色：</p>
@@ -1842,15 +1683,15 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">super</span>(子类, self).__init__(...)</span><br><span class="line"><span class="comment"># 或者是：父类名称.__init__(self, ...)</span></span><br></pre></td></tr></table></figure></div>
 
 <p><br><br><br></p>
-<h1><span id="九-列表-list">九. 列表 List</span></h1><h2><span id="91-什么是列表">9.1 什么是列表</span></h2><p>Python的列表可以存储相同数据类型的数据，也可以存储不同数据类型的数据。</p>
+<h1 id="九-列表-List"><a href="#九-列表-List" class="headerlink" title="九. 列表 List"></a>九. 列表 List</h1><h2 id="9-1-什么是列表"><a href="#9-1-什么是列表" class="headerlink" title="9.1 什么是列表"></a>9.1 什么是列表</h2><p>Python的列表可以存储相同数据类型的数据，也可以存储不同数据类型的数据。</p>
 <p>定义列表的语法格式为： <code>listName = [元素1, …, 元素n]</code></p>
 <p>列表的每一个数据称作元素，置于括号 <code>[]</code> 中，用逗号隔开。</p>
 <p>其中空列表为没有任何元素的列表。</p>
 <p>同样，当我们不需要这个列表时，使用 <code>del</code> 删除列表。</p>
-<h2><span id="92-列表的运算和方法">9.2 列表的运算和方法</span></h2><h3><span id="921-输出列表">9.2.1 输出列表</span></h3><p>当我们有一个列表时，直接使用print()函数即可输出整个列表。</p>
+<h2 id="9-2-列表的运算和方法"><a href="#9-2-列表的运算和方法" class="headerlink" title="9.2 列表的运算和方法"></a>9.2 列表的运算和方法</h2><h3 id="9-2-1-输出列表"><a href="#9-2-1-输出列表" class="headerlink" title="9.2.1 输出列表"></a>9.2.1 输出列表</h3><p>当我们有一个列表时，直接使用print()函数即可输出整个列表。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>)</span><br><span class="line"><span class="comment"># 输出结果：[1, 2, 3]</span></span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="922-读取-修改和删除列表元素">9.2.2 读取、修改和删除列表元素</span></h3><p>可以通过列表名称与索引读取列表元素的内容，元素的索引值从0开始。修改同理，只需要更改存储的数据即可。</p>
+<h3 id="9-2-2-读取、修改和删除列表元素"><a href="#9-2-2-读取、修改和删除列表元素" class="headerlink" title="9.2.2 读取、修改和删除列表元素"></a>9.2.2 读取、修改和删除列表元素</h3><p>可以通过列表名称与索引读取列表元素的内容，元素的索引值从0开始。修改同理，只需要更改存储的数据即可。</p>
 <p>当索引值为负值时，表示从列表结尾数起，-1为最后一个元素，-2为最后第2个元素。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>[<span class="number">2</span>]) 	<span class="comment"># 5</span></span><br><span class="line"><span class="built_in">list</span>[<span class="number">2</span>] = <span class="number">6</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>)		<span class="comment"># [1, 3, 6, 7]</span></span><br></pre></td></tr></table></figure></div>
 
@@ -1868,7 +1709,7 @@
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>)	<span class="comment"># [1, 3, 5, 7, 9]</span></span><br><span class="line"><span class="keyword">del</span> <span class="built_in">list</span>[<span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>)	<span class="comment"># [1, 3, 7, 9]</span></span><br><span class="line"><span class="keyword">del</span> <span class="built_in">list</span>[<span class="number">2</span>:<span class="number">4</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>)	<span class="comment"># [1, 3]</span></span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="923-列表切片">9.2.3 列表切片</span></h3><p>在设计程序时，常会需要取得列表前几个元素、后几个元素、某区间元素或是依照一定规则排序的元素，所取得的系列元素也可称子列表，这个过程也称列表切片(list slices)。</p>
+<h3 id="9-2-3-列表切片"><a href="#9-2-3-列表切片" class="headerlink" title="9.2.3 列表切片"></a>9.2.3 列表切片</h3><p>在设计程序时，常会需要取得列表前几个元素、后几个元素、某区间元素或是依照一定规则排序的元素，所取得的系列元素也可称子列表，这个过程也称列表切片(list slices)。</p>
 <ul>
 <li><p><code>list[start:end]</code> ：读取从索引start到(end-1)索引的列表元素。</p>
 </li>
@@ -1883,7 +1724,7 @@
 <li><p><code>list[start:end:step]</code> ：每隔step,读取从索引start到(end-l)<br>索引的列表元素。</p>
 </li>
 </ul>
-<h3><span id="924-列表的统计方法">9.2.4 列表的统计方法</span></h3><ul>
+<h3 id="9-2-4-列表的统计方法"><a href="#9-2-4-列表的统计方法" class="headerlink" title="9.2.4 列表的统计方法"></a>9.2.4 列表的统计方法</h3><ul>
 <li><code>max()</code> ：取得列表的最大值。</li>
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">max</span>(<span class="built_in">list</span>)) <span class="comment"># 3</span></span><br></pre></td></tr></table></figure></div>
@@ -1898,19 +1739,19 @@
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>(<span class="built_in">list</span>)) <span class="comment"># 6</span></span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="925-列表的元素个数">9.2.5 列表的元素个数</span></h3><ul>
+<h3 id="9-2-5-列表的元素个数"><a href="#9-2-5-列表的元素个数" class="headerlink" title="9.2.5 列表的元素个数"></a>9.2.5 列表的元素个数</h3><ul>
 <li><code>len()</code> ：判断列表中元素个数。</li>
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(<span class="built_in">list</span>)) <span class="comment"># 3</span></span><br></pre></td></tr></table></figure></div>
 
 <p>也可通过 <code>len()</code> 函数判断列表是否为空。</p>
-<h3><span id="926-列表的加法-乘法">9.2.6 列表的加法、乘法</span></h3><p>列表与列表相加表示列表的结合。</p>
+<h3 id="9-2-6-列表的加法、乘法"><a href="#9-2-6-列表的加法、乘法" class="headerlink" title="9.2.6 列表的加法、乘法"></a>9.2.6 列表的加法、乘法</h3><p>列表与列表相加表示列表的结合。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">list2 = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="built_in">print</span>(list1 + list2) <span class="comment"># [1, 2, 3, 4, 5, 6]</span></span><br></pre></td></tr></table></figure></div>
 
 <p>列表与数字相乘表示列表元素重复多少次。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span> * <span class="number">3</span>) <span class="comment"># [1, 2, 3, 1, 2, 3, 1, 2, 3]</span></span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="93-列表的其他方法">9.3 列表的其他方法</span></h2><ol>
+<h2 id="9-3-列表的其他方法"><a href="#9-3-列表的其他方法" class="headerlink" title="9.3 列表的其他方法"></a>9.3 列表的其他方法</h2><ol>
 <li><p><code>list.append(obj)</code> ：在列表末尾添加新的对象。</p>
 </li>
 <li><p><code>list.count(obj)</code> ：统计某个元素在列表中出现的次数。</p>
@@ -1936,22 +1777,22 @@
 </ol>
 <p>具体的函数解释用法可以边用边搜索。</p>
 <p><br><br><br></p>
-<h1><span id="十-元组-tuple">十. 元组 Tuple</span></h1><h2><span id="101-什么是元组">10.1 什么是元组</span></h2><p>Python的元组与列表类似，不同之处在于元组的元素 <strong>不能修改</strong> 。元组使用小括号 <code>( )</code> ，列表使用方括号 <code>[ ]</code> 。</p>
+<h1 id="十-元组-Tuple"><a href="#十-元组-Tuple" class="headerlink" title="十. 元组 Tuple"></a>十. 元组 Tuple</h1><h2 id="10-1-什么是元组"><a href="#10-1-什么是元组" class="headerlink" title="10.1 什么是元组"></a>10.1 什么是元组</h2><p>Python的元组与列表类似，不同之处在于元组的元素 <strong>不能修改</strong> 。元组使用小括号 <code>( )</code> ，列表使用方括号 <code>[ ]</code> 。</p>
 <p>定义元组的语法格式为： <code>tupName = (元素1, 元素2, ...)</code></p>
 <p>元组的每一个数据称作元素，置于括号 <code>()</code> 中，用逗号隔开。如果元组中只包含一个元素时，需要在元素后面添加逗号 <code>,</code> ，否则括号会被当作运算符使用。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tup = (<span class="number">1</span>,)</span><br></pre></td></tr></table></figure></div>
 
 <p>其中空元组为没有任何元素的元组。</p>
 <p>同样，当我们不需要这个元组时，使用 <code>del</code> 删除元组。</p>
-<h2><span id="102-元组的运算和方法">10.2 元组的运算和方法</span></h2><h3><span id="1021-输出元组">10.2.1 输出元组</span></h3><p>当我们有一个元组时，直接使用print()函数即可输出整个元组。</p>
+<h2 id="10-2-元组的运算和方法"><a href="#10-2-元组的运算和方法" class="headerlink" title="10.2 元组的运算和方法"></a>10.2 元组的运算和方法</h2><h3 id="10-2-1-输出元组"><a href="#10-2-1-输出元组" class="headerlink" title="10.2.1 输出元组"></a>10.2.1 输出元组</h3><p>当我们有一个元组时，直接使用print()函数即可输出整个元组。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tup = (<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">print</span>(tup)</span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="1022-读取元组元素">10.2.2 读取元组元素</span></h3><p>元组同样通过下标索引访问元组中的值。与列表类似。</p>
+<h3 id="10-2-2-读取元组元素"><a href="#10-2-2-读取元组元素" class="headerlink" title="10.2.2 读取元组元素"></a>10.2.2 读取元组元素</h3><p>元组同样通过下标索引访问元组中的值。与列表类似。</p>
 <p>但通过索引修改元组元素的操作是不被允许的，但是可以通过 <code>+</code> 进行元组的拼接。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tup1 = (<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">tup2 = (<span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">tup3 = tup1 + tup2</span><br><span class="line"><span class="built_in">print</span>(tup3)</span><br></pre></td></tr></table></figure></div>
 
 <p>同时也不允许删除元组中的元素值，只能通过 <code>del</code> 删除整个元组。</p>
-<h3><span id="1023-元组截取">10.2.3 元组截取</span></h3><p>因为元组也是一个序列，所以我们可以访问元组中的指定位置的元素，也可以截取索引中的一段元素。</p>
+<h3 id="10-2-3-元组截取"><a href="#10-2-3-元组截取" class="headerlink" title="10.2.3 元组截取"></a>10.2.3 元组截取</h3><p>因为元组也是一个序列，所以我们可以访问元组中的指定位置的元素，也可以截取索引中的一段元素。</p>
 <ul>
 <li><p><code>tup[start:end]</code> ：读取从索引start到(end-1)索引的列表元素。</p>
 </li>
@@ -1966,7 +1807,7 @@
 <li><p><code>tup[start:end:step]</code> ：每隔step,读取从索引start到(end-l)<br>索引的列表元素。</p>
 </li>
 </ul>
-<h3><span id="1024-列表的统计函数">10.2.4 列表的统计函数</span></h3><ul>
+<h3 id="10-2-4-列表的统计函数"><a href="#10-2-4-列表的统计函数" class="headerlink" title="10.2.4 列表的统计函数"></a>10.2.4 列表的统计函数</h3><ul>
 <li><code>max()</code> ：取得元组的最大值。</li>
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tup = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">max</span>(tup)) <span class="comment"># 3</span></span><br></pre></td></tr></table></figure></div>
@@ -1976,8 +1817,8 @@
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tup = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">min</span>(tup)) <span class="comment"># 1</span></span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="1025-元组的元素个数">10.2.5 元组的元素个数</span></h3><p>函数 <code>len()</code> 计算元组中元素个数。</p>
-<h3><span id="1026-元组的加法-乘法">10.2.6 元组的加法、乘法</span></h3><p>元组支持 <code>+</code> 、 <code>+=</code> 、 <code>*</code> 运算。</p>
+<h3 id="10-2-5-元组的元素个数"><a href="#10-2-5-元组的元素个数" class="headerlink" title="10.2.5 元组的元素个数"></a>10.2.5 元组的元素个数</h3><p>函数 <code>len()</code> 计算元组中元素个数。</p>
+<h3 id="10-2-6-元组的加法、乘法"><a href="#10-2-6-元组的加法、乘法" class="headerlink" title="10.2.6 元组的加法、乘法"></a>10.2.6 元组的加法、乘法</h3><p>元组支持 <code>+</code> 、 <code>+=</code> 、 <code>*</code> 运算。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tup1 = (<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">tup2 = (<span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>)</span><br><span class="line">tup3 = tup1 + tup2</span><br><span class="line"><span class="built_in">print</span>(tup3)</span><br></pre></td></tr></table></figure></div>
 
 <p>tup3 就是一个新的元组，它包含了 tup1 和 tup2 中的所有元素。</p>
@@ -1988,17 +1829,17 @@
 
 <p>乘法的作用依然是复制。</p>
 <p><br><br><br></p>
-<h1><span id="十一-字典-dict">十一. 字典 Dict</span></h1><h2><span id="111-什么是字典">11.1 什么是字典</span></h2><p>字典是另一种可变容器模型，由键值对组成，且可存储任意类型对象。</p>
+<h1 id="十一-字典-Dict"><a href="#十一-字典-Dict" class="headerlink" title="十一. 字典 Dict"></a>十一. 字典 Dict</h1><h2 id="11-1-什么是字典"><a href="#11-1-什么是字典" class="headerlink" title="11.1 什么是字典"></a>11.1 什么是字典</h2><p>字典是另一种可变容器模型，由键值对组成，且可存储任意类型对象。</p>
 <p>字典的每个键值对用冒号 <code>:</code> 分割，每个对之间用逗号 <code>,</code> 分割，整个字典包括在花括号 <code>&#123;&#125;</code> 中 ,格式如下所示：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;key1 : value1, key2 : value2, ...&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>需要注意的是，键值对的键必须是唯一的，值可以不唯一。 <strong>创建时如果同一个键被赋值两次，后一个值会被记住。</strong></p>
 <p>键必须不可变，所以可以用数字，字符串或元组充当，而用列表就不行。</p>
 <p>同时创建空字典时，可以使用 <code>d = &#123;&#125;</code> 直接创建，也可以使用 <code>d= dict()</code> 函数创建。所以字典的名字不能取dict。</p>
-<h2><span id="112-字典的运算和方法">11.2 字典的运算和方法</span></h2><h3><span id="1121-输出元组">11.2.1 输出元组</span></h3><p>直接使用 <code>print()</code> 输出：</p>
+<h2 id="11-2-字典的运算和方法"><a href="#11-2-字典的运算和方法" class="headerlink" title="11.2 字典的运算和方法"></a>11.2 字典的运算和方法</h2><h3 id="11-2-1-输出元组"><a href="#11-2-1-输出元组" class="headerlink" title="11.2.1 输出元组"></a>11.2.1 输出元组</h3><p>直接使用 <code>print()</code> 输出：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;apple&#x27;</span> : <span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;banana&#x27;</span> : <span class="string">&#x27;香蕉&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(d)</span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="1122-读取-修改和删除字典">11.2.2 读取、修改和删除字典</span></h3><p>与列表、元组使用索引值不同，字典需要把键放到方括号中。如果访问了字典里没有的键，就会报错。</p>
+<h3 id="11-2-2-读取、修改和删除字典"><a href="#11-2-2-读取、修改和删除字典" class="headerlink" title="11.2.2 读取、修改和删除字典"></a>11.2.2 读取、修改和删除字典</h3><p>与列表、元组使用索引值不同，字典需要把键放到方括号中。如果访问了字典里没有的键，就会报错。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;apple&#x27;</span> : <span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;banana&#x27;</span> : <span class="string">&#x27;香蕉&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(d[<span class="string">&#x27;apple&#x27;</span>])</span><br></pre></td></tr></table></figure></div>
 
 <p>修改字典内容也是直接使用键访问设定新值：</p>
@@ -2013,8 +1854,8 @@
 <p>字典还有删除整个字典和清空字典的功能：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;apple&#x27;</span> : <span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;banana&#x27;</span> : <span class="string">&#x27;香蕉&#x27;</span>&#125;</span><br><span class="line">d = clear()	<span class="comment"># 清空字典</span></span><br><span class="line"><span class="keyword">del</span> d	<span class="comment"># 删除字典</span></span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="1123-字典的键值对数">11.2.3 字典的键值对数</span></h3><p>函数 <code>len()</code> 计算字典中键值对数。</p>
-<h2><span id="113-字典的方法">11.3 字典的方法</span></h2><ol>
+<h3 id="11-2-3-字典的键值对数"><a href="#11-2-3-字典的键值对数" class="headerlink" title="11.2.3 字典的键值对数"></a>11.2.3 字典的键值对数</h3><p>函数 <code>len()</code> 计算字典中键值对数。</p>
+<h2 id="11-3-字典的方法"><a href="#11-3-字典的方法" class="headerlink" title="11.3 字典的方法"></a>11.3 字典的方法</h2><ol>
 <li><p><code>dict.clear()</code> ：删除字典内所有元素</p>
 </li>
 <li><p><code>dict.copy()</code> ：返回一个字典的复制</p>
@@ -2041,21 +1882,21 @@
 </li>
 </ol>
 <p><br><br><br></p>
-<h1><span id="十二-集合-set">十二. 集合 Set</span></h1><h2><span id="121-什么是集合">12.1 什么是集合</span></h2><p>集合（set）是一个无序的不重复元素序列。集合中的元素不会重复，并且可以进行交集、并集、差集等常见的集合操作。</p>
+<h1 id="十二-集合-Set"><a href="#十二-集合-Set" class="headerlink" title="十二. 集合 Set"></a>十二. 集合 Set</h1><h2 id="12-1-什么是集合"><a href="#12-1-什么是集合" class="headerlink" title="12.1 什么是集合"></a>12.1 什么是集合</h2><p>集合（set）是一个无序的不重复元素序列。集合中的元素不会重复，并且可以进行交集、并集、差集等常见的集合操作。</p>
 <p>可以使用大括号 <code>&#123; &#125;</code> 创建集合，元素之间用逗号 , 分隔， 或者也可以使用 <code>set()</code> 函数创建集合。创建一个空集合必须用 <code>set()</code> ，因为 { } 是用来创建一个空字典。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parame1 = &#123;value01,value02,...&#125;</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">parame2 = <span class="built_in">set</span>(value)</span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="122-集合基本操作">12.2 集合基本操作</span></h2><h3><span id="1221-添加元素">12.2.1 添加元素</span></h3><p><code>s.add(x)</code> ，将元素 x 添加到集合 s 中，如果元素已存在，则不进行任何操作。</p>
+<h2 id="12-2-集合基本操作"><a href="#12-2-集合基本操作" class="headerlink" title="12.2 集合基本操作"></a>12.2 集合基本操作</h2><h3 id="12-2-1-添加元素"><a href="#12-2-1-添加元素" class="headerlink" title="12.2.1 添加元素"></a>12.2.1 添加元素</h3><p><code>s.add(x)</code> ，将元素 x 添加到集合 s 中，如果元素已存在，则不进行任何操作。</p>
 <p><code>s.update(x)</code> 也可以添加元素，且参数可以是列表，元组，字典等。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;<span class="number">1</span>, <span class="number">3</span>&#125;</span><br><span class="line">s.add(<span class="number">2</span>)</span><br><span class="line">s.update([<span class="number">4</span>,<span class="number">6</span>], [<span class="number">5</span>])</span><br><span class="line"><span class="built_in">print</span>(s)</span><br></pre></td></tr></table></figure></div>
 
-<h3><span id="1222-移除元素">12.2.2 移除元素</span></h3><p><code>s.remove(x)</code> ，将元素 x 从集合 s 中移除，如果元素不存在，则会发生错误。</p>
+<h3 id="12-2-2-移除元素"><a href="#12-2-2-移除元素" class="headerlink" title="12.2.2 移除元素"></a>12.2.2 移除元素</h3><p><code>s.remove(x)</code> ，将元素 x 从集合 s 中移除，如果元素不存在，则会发生错误。</p>
 <p><code>s.discard(x)</code> ，将元素 x 从集合 s 中移除，如果元素不存在，不会发生错误。</p>
 <p><code>s.pop()</code> ，随机删除集合中的一个元素。</p>
-<h3><span id="1223-计算集合元素个数">12.2.3 计算集合元素个数</span></h3><p><code>len(s)</code> ，计算集合 s 元素的个数。</p>
-<h3><span id="1224-清空集合">12.2.4 清空集合</span></h3><p><code>s.clear()</code> ，清空集合 s 。</p>
-<h3><span id="1225-判断元素是否在集合中">12.2.5 判断元素是否在集合中</span></h3><p><code>x in s</code> ，存在返回True，不存在返回False。</p>
-<h2><span id="123-集合的方法">12.3 集合的方法</span></h2><ul>
+<h3 id="12-2-3-计算集合元素个数"><a href="#12-2-3-计算集合元素个数" class="headerlink" title="12.2.3 计算集合元素个数"></a>12.2.3 计算集合元素个数</h3><p><code>len(s)</code> ，计算集合 s 元素的个数。</p>
+<h3 id="12-2-4-清空集合"><a href="#12-2-4-清空集合" class="headerlink" title="12.2.4 清空集合"></a>12.2.4 清空集合</h3><p><code>s.clear()</code> ，清空集合 s 。</p>
+<h3 id="12-2-5-判断元素是否在集合中"><a href="#12-2-5-判断元素是否在集合中" class="headerlink" title="12.2.5 判断元素是否在集合中"></a>12.2.5 判断元素是否在集合中</h3><p><code>x in s</code> ，存在返回True，不存在返回False。</p>
+<h2 id="12-3-集合的方法"><a href="#12-3-集合的方法" class="headerlink" title="12.3 集合的方法"></a>12.3 集合的方法</h2><ul>
 <li><p><code>add()</code> ：为集合添加元素</p>
 </li>
 <li><p><code>clear()</code> ：移除集合中的所有元素</p>
@@ -2093,7 +1934,7 @@
 </ul>
 <p>具体使用解释可自行搜索。</p>
 <p><br><br><br></p>
-<h1><span id="十三-迭代器和生成器">十三. 迭代器和生成器</span></h1><h2><span id="131-迭代器">13.1 迭代器</span></h2><p>迭代器是一个可以 <strong>记住遍历的位置</strong> 的对象。</p>
+<h1 id="十三-迭代器和生成器"><a href="#十三-迭代器和生成器" class="headerlink" title="十三. 迭代器和生成器"></a>十三. 迭代器和生成器</h1><h2 id="13-1-迭代器"><a href="#13-1-迭代器" class="headerlink" title="13.1 迭代器"></a>13.1 迭代器</h2><p>迭代器是一个可以 <strong>记住遍历的位置</strong> 的对象。</p>
 <p>迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。</p>
 <p>迭代器有两个基本的方法： </p>
 <ul>
@@ -2112,7 +1953,7 @@
 <p>当迭代完成时，会触发 <code>StopIteration</code> ，可以在 <code>__next__()</code> 中设置。</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyNumbers</span>:</span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__iter__</span>(<span class="params">self</span>):</span><br><span class="line">		self.a = <span class="number">1</span></span><br><span class="line">		<span class="keyword">return</span> self</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">def</span> <span class="title function_">__next__</span>(<span class="params">self</span>):</span><br><span class="line">		<span class="keyword">if</span> self.a &lt;= <span class="number">20</span>:</span><br><span class="line">			x = self.a</span><br><span class="line">			self.a += <span class="number">1</span></span><br><span class="line">			<span class="keyword">return</span> x</span><br><span class="line">		<span class="keyword">else</span>:	<span class="comment"># 设置迭代完成条件</span></span><br><span class="line">			<span class="keyword">raise</span> StopIteration</span><br><span class="line"> </span><br><span class="line">myclass = MyNumbers()</span><br><span class="line">myiter = <span class="built_in">iter</span>(myclass)</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> myiter:</span><br><span class="line">  <span class="built_in">print</span>(x)</span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="132-生成器">13.2 生成器</span></h2><p>在 Python 中，使用了 <code>yield</code> 的函数被称为生成器（generator）。</p>
+<h2 id="13-2-生成器"><a href="#13-2-生成器" class="headerlink" title="13.2 生成器"></a>13.2 生成器</h2><p>在 Python 中，使用了 <code>yield</code> 的函数被称为生成器（generator）。</p>
 <p><code>yield</code>  是一个关键字，用于定义生成器函数，生成器函数是一种特殊的函数，可以在迭代过程中逐步产生值，而不是一次性返回所有结果。</p>
 <p>跟普通函数不同的是，生成器是一个返回迭代器的函数，只能用于迭代操作，更简单点理解生成器就是一个迭代器。</p>
 <p>当在生成器函数中使用 <code>yield</code> 语句时，函数的执行将会暂停，并将 <code>yield</code> 后面的表达式作为当前迭代的值返回。</p>
@@ -2125,7 +1966,7 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"> </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fibonacci</span>(<span class="params">n</span>): 	<span class="comment"># 生成器函数计算斐波那契</span></span><br><span class="line">    a, b, counter = <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> (counter &gt; n): </span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">yield</span> a		<span class="comment"># 在此返回数列的项 a</span></span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        counter += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">f = fibonacci(<span class="number">10</span>) <span class="comment"># f 是一个迭代器，由生成器返回生成</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="built_in">print</span> (<span class="built_in">next</span>(f), end=<span class="string">&quot; &quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> StopIteration:</span><br><span class="line">        sys.exit()</span><br></pre></td></tr></table></figure></div>
 
 <p><br><br><br></p>
-<h1><span id="十四-推导式">十四. 推导式</span></h1><h2><span id="141-列表推导式">14.1 列表推导式</span></h2><p>格式为：</p>
+<h1 id="十四-推导式"><a href="#十四-推导式" class="headerlink" title="十四. 推导式"></a>十四. 推导式</h1><h2 id="14-1-列表推导式"><a href="#14-1-列表推导式" class="headerlink" title="14.1 列表推导式"></a>14.1 列表推导式</h2><p>格式为：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># [表达式 for 变量 in 列表] </span></span><br><span class="line">[out_exp_res <span class="keyword">for</span> out_exp <span class="keyword">in</span> input_list]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者 </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># [表达式 for 变量 in 列表 if 条件]</span></span><br><span class="line">[out_exp_res <span class="keyword">for</span> out_exp <span class="keyword">in</span> input_list <span class="keyword">if</span> condition]</span><br></pre></td></tr></table></figure></div>
 
 <ul>
@@ -2143,7 +1984,7 @@
 <p>再举个例子，求列表中长度大于3的字符串并大写：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="string">&quot;aaa&quot;</span>, <span class="string">&quot;aasdad&quot;</span>, <span class="string">&quot;asdw&quot;</span>, <span class="string">&quot;wadhjuio&quot;</span>]</span><br><span class="line"><span class="built_in">str</span> = [x.upper() <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">list</span> <span class="keyword">if</span> <span class="built_in">len</span>(x) &gt; <span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>)</span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="142-字典推导式">14.2 字典推导式</span></h2><p>格式为：</p>
+<h2 id="14-2-字典推导式"><a href="#14-2-字典推导式" class="headerlink" title="14.2 字典推导式"></a>14.2 字典推导式</h2><p>格式为：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123; key_expr: value_expr <span class="keyword">for</span> value <span class="keyword">in</span> collection &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"></span><br><span class="line">&#123; key_expr: value_expr <span class="keyword">for</span> value <span class="keyword">in</span> collection <span class="keyword">if</span> condition &#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>原理与列表推导式类似，推导出来的是一个字典。看一个例子，给出三个数字作为键，以对应的平方作为值，创建字典：</p>
@@ -2152,11 +1993,11 @@
 <p>再来一个例子，以列表中偶数索引为键，奇数索引为值创建字典：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;苹果&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;香蕉&#x27;</span>]</span><br><span class="line">d = &#123;<span class="built_in">list</span>[i] : <span class="built_in">list</span>[i + <span class="number">1</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(<span class="built_in">list</span>), <span class="number">2</span>) <span class="keyword">if</span> i &lt; <span class="built_in">len</span>(<span class="built_in">list</span>) - <span class="number">1</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(d)	<span class="comment"># &#123;&#x27;apple&#x27;: &#x27;苹果&#x27;, &#x27;banana&#x27;: &#x27;香蕉&#x27;&#125;</span></span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="143-集合推导式">14.3 集合推导式</span></h2><p>格式为：</p>
+<h2 id="14-3-集合推导式"><a href="#14-3-集合推导式" class="headerlink" title="14.3 集合推导式"></a>14.3 集合推导式</h2><p>格式为：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123; expression <span class="keyword">for</span> item <span class="keyword">in</span> <span class="type">Sequence</span> &#125;</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">&#123; expression <span class="keyword">for</span> item <span class="keyword">in</span> <span class="type">Sequence</span> <span class="keyword">if</span> conditional &#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>原理类似，推导出来的是一个集合。</p>
-<h2><span id="144-元组推导式生成器表达式">14.4 元组推导式（生成器表达式）</span></h2><p>元组推导式可以利用 range 区间、元组、列表、字典和集合等数据类型，快速生成一个满足指定需求的元组。</p>
+<h2 id="14-4-元组推导式（生成器表达式）"><a href="#14-4-元组推导式（生成器表达式）" class="headerlink" title="14.4 元组推导式（生成器表达式）"></a>14.4 元组推导式（生成器表达式）</h2><p>元组推导式可以利用 range 区间、元组、列表、字典和集合等数据类型，快速生成一个满足指定需求的元组。</p>
 <p>格式为：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(expression <span class="keyword">for</span> item <span class="keyword">in</span> <span class="type">Sequence</span> )</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">(expression <span class="keyword">for</span> item <span class="keyword">in</span> <span class="type">Sequence</span> <span class="keyword">if</span> conditional )</span><br></pre></td></tr></table></figure></div>
 
@@ -2164,7 +2005,7 @@
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = (x <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10</span>))</span><br><span class="line"><span class="built_in">print</span>(a)		<span class="comment"># &lt;generator object &lt;genexpr&gt; at 0x000002B53CC81FF0&gt;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(a))	<span class="comment"># &lt;class &#x27;generator&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">tuple</span>(a))	<span class="comment"># (1, 2, 3, 4, 5, 6, 7, 8, 9)</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(<span class="built_in">tuple</span>(a)))	<span class="comment"># &lt;class &#x27;tuple&#x27;&gt;</span></span><br></pre></td></tr></table></figure></div>
 
 <p><br><br><br></p>
-<h1><span id="十五-文件的读写">十五. 文件的读写</span></h1><h2><span id="151-打开文件">15.1 打开文件</span></h2><p>Python的 <code>open()</code> 方法用于打开一个文件，并返回文件对象。注意打开文件使用完后记得关闭文件 <code>close()</code></p>
+<h1 id="十五-文件的读写"><a href="#十五-文件的读写" class="headerlink" title="十五. 文件的读写"></a>十五. 文件的读写</h1><h2 id="15-1-打开文件"><a href="#15-1-打开文件" class="headerlink" title="15.1 打开文件"></a>15.1 打开文件</h2><p>Python的 <code>open()</code> 方法用于打开一个文件，并返回文件对象。注意打开文件使用完后记得关闭文件 <code>close()</code></p>
 <p>在对文件进行处理过程都需要使用到这个函数，如果该文件无法被打开，会抛出 <code>OSError</code> 异常。</p>
 <p>该函数的完整格式为：</p>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">open</span>(file, mode=<span class="string">&#x27;r&#x27;</span>, buffering=-<span class="number">1</span>, encoding=<span class="literal">None</span>, errors=<span class="literal">None</span>, newline=<span class="literal">None</span>, closefd=<span class="literal">True</span>, opener=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure></div>
@@ -2223,7 +2064,7 @@
 <li><p><code>ab+</code> ：以二进制格式打开一个文件用于追加。如果该文件已存在，文件指针将会放在文件的结尾。如果该文件不存在，创建新文件用于读写。</p>
 </li>
 </ul>
-<h2><span id="152-文件对象的方法">15.2 文件对象的方法</span></h2><p>使用 <code>open()</code> 函数会创建一个file对象，file对象有以下常用函数：</p>
+<h2 id="15-2-文件对象的方法"><a href="#15-2-文件对象的方法" class="headerlink" title="15.2 文件对象的方法"></a>15.2 文件对象的方法</h2><p>使用 <code>open()</code> 函数会创建一个file对象，file对象有以下常用函数：</p>
 <ol>
 <li><p><code>file.close()</code> ：关闭文件。关闭后文件不能再进行读写操作。</p>
 </li>
@@ -2251,7 +2092,7 @@
 </li>
 </ol>
 <p>方法众多，需要时再查阅资料再学习。</p>
-<h2><span id="153-读取文件">15.3 读取文件</span></h2><p><code>file.read()</code> 方法：</p>
+<h2 id="15-3-读取文件"><a href="#15-3-读取文件" class="headerlink" title="15.3 读取文件"></a>15.3 读取文件</h2><p><code>file.read()</code> 方法：</p>
 <ul>
 <li><p>为了读取一个文件的内容，调用 <code>file.read(size)</code>, 这将读取一定数目的数据, 然后作为字符串或字节对象返回。</p>
 </li>
@@ -2272,7 +2113,7 @@
 </ul>
 <div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test.txt中内容：</span></span><br><span class="line"><span class="comment"># 111</span></span><br><span class="line"><span class="comment"># 222</span></span><br><span class="line"></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"><span class="built_in">str</span> = f.readlines()</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>)	<span class="comment"># 输出结果：[&#x27;111\n&#x27;, &#x27;222&#x27;]</span></span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></div>
 
-<h2><span id="154-文件写入">15.4 文件写入</span></h2><p><code>file.write()</code> 方法：</p>
+<h2 id="15-4-文件写入"><a href="#15-4-文件写入" class="headerlink" title="15.4 文件写入"></a>15.4 文件写入</h2><p><code>file.write()</code> 方法：</p>
 <ul>
 <li><code>f.write(string)</code> 将 string 写入到文件中, 然后返回写入的字符数。</li>
 </ul>
@@ -2325,7 +2166,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">Python语言入门学习教程</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">一. Python的基本观念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1.1 什么是Python语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1.2 怎么写Python程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">1.3 import模块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">二. 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2.1 函数的基本结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2.2 函数的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2.3 传递参数和调用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2.4 内置函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">2.5 匿名函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">三. Python的变量与基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3.1 什么是变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3.2 运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.2.1 算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.2.2 赋值运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.2.3 比较运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.2.4 位运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.2.5 逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.2.6 成员运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.2.7 身份运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">3.2.8 删除变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">3.3 Python的断行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">四. Python的基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4.1 type()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4.2 数值数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4.2.1 什么是数值数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4.2.2 数值类型的运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4.2.3 数值类型的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4.3 布尔值数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">4.4 字符串数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4.4.1 什么是字符串数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4.4.1 字符串的运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4.4.2 字符串的类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4.4.3 转义字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">4.4.4 字符串的函数方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">五. Python的输入和输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5.1 辅助帮助说明输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5.2 输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5.2.1 通过print()函数输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5.2.2 格式化print()的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5.2.3 format()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">5.2.4 dir()函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">5.3 输入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">六. Python的条件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6.1 if语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6.2 if-else语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6.3 if-elif-else语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">6.4 嵌套的if语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">七. Python的循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">7.1 for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">7.2 while循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">7.3 break、continue和pass</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">八. Python面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">8.1 面向对象的相关概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">8.2 类的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">8.3 类的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">8.3.1 构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">8.3.2 其他方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">8.4 类的继承</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">九. 列表 List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">9.1 什么是列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">9.2 列表的运算和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">9.2.1 输出列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">9.2.2 读取、修改和删除列表元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">9.2.3 列表切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">9.2.4 列表的统计方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">9.2.5 列表的元素个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">9.2.6 列表的加法、乘法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">9.3 列表的其他方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">十. 元组 Tuple</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">10.1 什么是元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">10.2 元组的运算和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">10.2.1 输出元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">10.2.2 读取元组元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">10.2.3 元组截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">10.2.4 列表的统计函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">10.2.5 元组的元素个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">10.2.6 元组的加法、乘法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">十一. 字典 Dict</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">11.1 什么是字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">11.2 字典的运算和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">11.2.1 输出元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">11.2.2 读取、修改和删除字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">11.2.3 字典的键值对数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">11.3 字典的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">十二. 集合 Set</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">12.1 什么是集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">12.2 集合基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">12.2.1 添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">12.2.2 移除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">12.2.3 计算集合元素个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">12.2.4 清空集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-text">12.2.5 判断元素是否在集合中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">12.3 集合的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">十三. 迭代器和生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">13.1 迭代器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">13.2 生成器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">十四. 推导式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">14.1 列表推导式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">14.2 字典推导式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">14.3 集合推导式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">14.4 元组推导式（生成器表达式）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">十五. 文件的读写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">15.1 打开文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">15.2 文件对象的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">15.3 读取文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">15.4 文件写入</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%82%E5%BF%B5"><span class="nav-text">一. Python的基本观念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AFPython%E8%AF%AD%E8%A8%80"><span class="nav-text">1.1 什么是Python语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E6%80%8E%E4%B9%88%E5%86%99Python%E7%A8%8B%E5%BA%8F"><span class="nav-text">1.2 怎么写Python程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-import%E6%A8%A1%E5%9D%97"><span class="nav-text">1.3 import模块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-%E5%87%BD%E6%95%B0"><span class="nav-text">二. 函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E5%87%BD%E6%95%B0%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="nav-text">2.1 函数的基本结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">2.2 函数的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E4%BC%A0%E9%80%92%E5%8F%82%E6%95%B0%E5%92%8C%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-text">2.3 传递参数和调用函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="nav-text">2.4 内置函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="nav-text">2.5 匿名函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89-Python%E7%9A%84%E5%8F%98%E9%87%8F%E4%B8%8E%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="nav-text">三. Python的变量与基本运算</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%98%E9%87%8F"><span class="nav-text">3.1 什么是变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">3.2 运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">3.2.1 算术运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">3.2.2 赋值运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">3.2.3 比较运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-4-%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">3.2.4 位运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-5-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">3.2.5 逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-6-%E6%88%90%E5%91%98%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">3.2.6 成员运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-7-%E8%BA%AB%E4%BB%BD%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">3.2.7 身份运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-8-%E5%88%A0%E9%99%A4%E5%8F%98%E9%87%8F"><span class="nav-text">3.2.8 删除变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-Python%E7%9A%84%E6%96%AD%E8%A1%8C"><span class="nav-text">3.3 Python的断行</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B-Python%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">四. Python的基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-type-%E5%87%BD%E6%95%B0"><span class="nav-text">4.1 type()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">4.2 数值数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E5%80%BC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">4.2.1 什么是数值数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2-%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-text">4.2.2 数值类型的运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-3-%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">4.2.3 数值类型的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E5%B8%83%E5%B0%94%E5%80%BC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">4.3 布尔值数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">4.4 字符串数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text">4.4.1 什么是字符串数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E8%BF%90%E7%AE%97"><span class="nav-text">4.4.1 字符串的运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-text">4.4.2 字符串的类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-3-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="nav-text">4.4.3 转义字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-4-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95"><span class="nav-text">4.4.4 字符串的函数方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94-Python%E7%9A%84%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="nav-text">五. Python的输入和输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E8%BE%85%E5%8A%A9%E5%B8%AE%E5%8A%A9%E8%AF%B4%E6%98%8E%E8%BE%93%E5%87%BA"><span class="nav-text">5.1 辅助帮助说明输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E8%BE%93%E5%87%BA"><span class="nav-text">5.2 输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-1-%E9%80%9A%E8%BF%87print-%E5%87%BD%E6%95%B0%E8%BE%93%E5%87%BA"><span class="nav-text">5.2.1 通过print()函数输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-2-%E6%A0%BC%E5%BC%8F%E5%8C%96print-%E7%9A%84%E8%BE%93%E5%87%BA"><span class="nav-text">5.2.2 格式化print()的输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-3-format-%E5%87%BD%E6%95%B0"><span class="nav-text">5.2.3 format()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-4-dir-%E5%87%BD%E6%95%B0"><span class="nav-text">5.2.4 dir()函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E8%BE%93%E5%85%A5"><span class="nav-text">5.3 输入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD-Python%E7%9A%84%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-text">六. Python的条件结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-if%E8%AF%AD%E5%8F%A5"><span class="nav-text">6.1 if语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-if-else%E8%AF%AD%E5%8F%A5"><span class="nav-text">6.2 if-else语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-if-elif-else%E8%AF%AD%E5%8F%A5"><span class="nav-text">6.3 if-elif-else语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-4-%E5%B5%8C%E5%A5%97%E7%9A%84if%E8%AF%AD%E5%8F%A5"><span class="nav-text">6.4 嵌套的if语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83-Python%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-text">七. Python的循环结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-for%E5%BE%AA%E7%8E%AF"><span class="nav-text">7.1 for循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-while%E5%BE%AA%E7%8E%AF"><span class="nav-text">7.2 while循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-break%E3%80%81continue%E5%92%8Cpass"><span class="nav-text">7.3 break、continue和pass</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB-Python%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-text">八. Python面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-text">8.1 面向对象的相关概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">8.2 类的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-%E7%B1%BB%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">8.3 类的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-1-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-text">8.3.1 构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-2-%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95"><span class="nav-text">8.3.2 其他方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-4-%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="nav-text">8.4 类的继承</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B9%9D-%E5%88%97%E8%A1%A8-List"><span class="nav-text">九. 列表 List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%97%E8%A1%A8"><span class="nav-text">9.1 什么是列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-%E5%88%97%E8%A1%A8%E7%9A%84%E8%BF%90%E7%AE%97%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-text">9.2 列表的运算和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-1-%E8%BE%93%E5%87%BA%E5%88%97%E8%A1%A8"><span class="nav-text">9.2.1 输出列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-2-%E8%AF%BB%E5%8F%96%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E5%88%A0%E9%99%A4%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0"><span class="nav-text">9.2.2 读取、修改和删除列表元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-3-%E5%88%97%E8%A1%A8%E5%88%87%E7%89%87"><span class="nav-text">9.2.3 列表切片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-4-%E5%88%97%E8%A1%A8%E7%9A%84%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="nav-text">9.2.4 列表的统计方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-5-%E5%88%97%E8%A1%A8%E7%9A%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0"><span class="nav-text">9.2.5 列表的元素个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-6-%E5%88%97%E8%A1%A8%E7%9A%84%E5%8A%A0%E6%B3%95%E3%80%81%E4%B9%98%E6%B3%95"><span class="nav-text">9.2.6 列表的加法、乘法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-3-%E5%88%97%E8%A1%A8%E7%9A%84%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95"><span class="nav-text">9.3 列表的其他方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81-%E5%85%83%E7%BB%84-Tuple"><span class="nav-text">十. 元组 Tuple</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#10-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%85%83%E7%BB%84"><span class="nav-text">10.1 什么是元组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-2-%E5%85%83%E7%BB%84%E7%9A%84%E8%BF%90%E7%AE%97%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-text">10.2 元组的运算和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-1-%E8%BE%93%E5%87%BA%E5%85%83%E7%BB%84"><span class="nav-text">10.2.1 输出元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-2-%E8%AF%BB%E5%8F%96%E5%85%83%E7%BB%84%E5%85%83%E7%B4%A0"><span class="nav-text">10.2.2 读取元组元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-3-%E5%85%83%E7%BB%84%E6%88%AA%E5%8F%96"><span class="nav-text">10.2.3 元组截取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-4-%E5%88%97%E8%A1%A8%E7%9A%84%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><span class="nav-text">10.2.4 列表的统计函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-5-%E5%85%83%E7%BB%84%E7%9A%84%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0"><span class="nav-text">10.2.5 元组的元素个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-6-%E5%85%83%E7%BB%84%E7%9A%84%E5%8A%A0%E6%B3%95%E3%80%81%E4%B9%98%E6%B3%95"><span class="nav-text">10.2.6 元组的加法、乘法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%B8%80-%E5%AD%97%E5%85%B8-Dict"><span class="nav-text">十一. 字典 Dict</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#11-1-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AD%97%E5%85%B8"><span class="nav-text">11.1 什么是字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-2-%E5%AD%97%E5%85%B8%E7%9A%84%E8%BF%90%E7%AE%97%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-text">11.2 字典的运算和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-2-1-%E8%BE%93%E5%87%BA%E5%85%83%E7%BB%84"><span class="nav-text">11.2.1 输出元组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-2-2-%E8%AF%BB%E5%8F%96%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E5%88%A0%E9%99%A4%E5%AD%97%E5%85%B8"><span class="nav-text">11.2.2 读取、修改和删除字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-2-3-%E5%AD%97%E5%85%B8%E7%9A%84%E9%94%AE%E5%80%BC%E5%AF%B9%E6%95%B0"><span class="nav-text">11.2.3 字典的键值对数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-3-%E5%AD%97%E5%85%B8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">11.3 字典的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C-%E9%9B%86%E5%90%88-Set"><span class="nav-text">十二. 集合 Set</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#12-1-%E4%BB%80%E4%B9%88%E6%98%AF%E9%9B%86%E5%90%88"><span class="nav-text">12.1 什么是集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-2-%E9%9B%86%E5%90%88%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-text">12.2 集合基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#12-2-1-%E6%B7%BB%E5%8A%A0%E5%85%83%E7%B4%A0"><span class="nav-text">12.2.1 添加元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-2-2-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0"><span class="nav-text">12.2.2 移除元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-2-3-%E8%AE%A1%E7%AE%97%E9%9B%86%E5%90%88%E5%85%83%E7%B4%A0%E4%B8%AA%E6%95%B0"><span class="nav-text">12.2.3 计算集合元素个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-2-4-%E6%B8%85%E7%A9%BA%E9%9B%86%E5%90%88"><span class="nav-text">12.2.4 清空集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-2-5-%E5%88%A4%E6%96%AD%E5%85%83%E7%B4%A0%E6%98%AF%E5%90%A6%E5%9C%A8%E9%9B%86%E5%90%88%E4%B8%AD"><span class="nav-text">12.2.5 判断元素是否在集合中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-3-%E9%9B%86%E5%90%88%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">12.3 集合的方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%B8%89-%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-text">十三. 迭代器和生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#13-1-%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text">13.1 迭代器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-2-%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-text">13.2 生成器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E5%9B%9B-%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="nav-text">十四. 推导式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#14-1-%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="nav-text">14.1 列表推导式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-2-%E5%AD%97%E5%85%B8%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="nav-text">14.2 字典推导式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-3-%E9%9B%86%E5%90%88%E6%8E%A8%E5%AF%BC%E5%BC%8F"><span class="nav-text">14.3 集合推导式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-4-%E5%85%83%E7%BB%84%E6%8E%A8%E5%AF%BC%E5%BC%8F%EF%BC%88%E7%94%9F%E6%88%90%E5%99%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%89"><span class="nav-text">14.4 元组推导式（生成器表达式）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%81%E4%BA%94-%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99"><span class="nav-text">十五. 文件的读写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#15-1-%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6"><span class="nav-text">15.1 打开文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-2-%E6%96%87%E4%BB%B6%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">15.2 文件对象的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-3-%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="nav-text">15.3 读取文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-4-%E6%96%87%E4%BB%B6%E5%86%99%E5%85%A5"><span class="nav-text">15.4 文件写入</span></a></li></ol></li></ol>
 
     </div>
 </div>

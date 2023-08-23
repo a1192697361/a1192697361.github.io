@@ -539,7 +539,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>348 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>327 字</span>
         </span>
     
     
@@ -563,16 +563,8 @@
 <hr>
 <!-- toc -->
 
-<ul>
-<li><a href="#%E4%B8%8B%E8%BD%BDpython%E5%AE%89%E8%A3%85%E5%8C%85">下载Python安装包</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85python">安装Python</a></li>
-<li><a href="#%E6%B5%8B%E8%AF%95python">测试Python</a></li>
-<li><a href="#%E9%99%84%E6%9B%B4%E6%94%B9python%E7%9A%84pip%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84">附：更改Python的pip安装路径</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="下载python安装包">下载Python安装包</span></h1><p><a class="link" target="_blank" rel="noopener" href="https://www.python.org/downloads/windows/">官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>选择尽量较新的Python版本下载。</p>
-<h1><span id="安装python">安装Python</span></h1><p>打开下载的Python安装包，选择<code>Customize installation</code>客制化安装，记得勾选下面的“Add python.exe to PATH”。</p>
+<h1 id="下载Python安装包"><a href="#下载Python安装包" class="headerlink" title="下载Python安装包"></a>下载Python安装包</h1><p><a class="link" target="_blank" rel="noopener" href="https://www.python.org/downloads/windows/">官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>选择尽量较新的Python版本下载。</p>
+<h1 id="安装Python"><a href="#安装Python" class="headerlink" title="安装Python"></a>安装Python</h1><p>打开下载的Python安装包，选择<code>Customize installation</code>客制化安装，记得勾选下面的“Add python.exe to PATH”。</p>
 <p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py1.jpg" alt="安装步骤1"><figcaption>安装步骤1</figcaption></figure></p>
 <p>接着默认勾选：</p>
 <ul>
@@ -582,11 +574,11 @@
 <p>再接着更改安装路径，建议安装在非系统盘。</p>
 <p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py3.jpg" alt="安装步骤3"><figcaption>安装步骤3</figcaption></figure></p>
 <p>等待安装完成即可。</p>
-<h1><span id="测试python">测试Python</span></h1><p>按下<code>Win+R</code>输入<code>cmd</code>打开命令窗口，输入下面命令验证是否安装成功。</p>
+<h1 id="测试Python"><a href="#测试Python" class="headerlink" title="测试Python"></a>测试Python</h1><p>按下<code>Win+R</code>输入<code>cmd</code>打开命令窗口，输入下面命令验证是否安装成功。</p>
 <div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -V</span><br></pre></td></tr></table></figure></div>
 
 <p>如果出现版本号，即为安装成功。</p>
-<h1><span id="附更改python的pip安装路径">附：更改Python的pip安装路径</span></h1><p>建议将pip安装的包放至非系统盘。进入Python的安装路径，如我的在<code>D:\Pyhton\Lib</code>，寻找文件<code>site.py</code>，使用记事本打开。使用<code>ctrl+f</code>查找关键字<code>USER_SITE</code>等字，将路径更改为自定义的路径。我更改情况如下图。</p>
+<h1 id="附：更改Python的pip安装路径"><a href="#附：更改Python的pip安装路径" class="headerlink" title="附：更改Python的pip安装路径"></a>附：更改Python的pip安装路径</h1><p>建议将pip安装的包放至非系统盘。进入Python的安装路径，如我的在<code>D:\Pyhton\Lib</code>，寻找文件<code>site.py</code>，使用记事本打开。使用<code>ctrl+f</code>查找关键字<code>USER_SITE</code>等字，将路径更改为自定义的路径。我更改情况如下图。</p>
 <p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py.jpg" alt="更改路径"><figcaption>更改路径</figcaption></figure></p>
 <p>更改路径后，打开cmd，使用下面指令安装numpy包。</p>
 <div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install numpy</span><br></pre></td></tr></table></figure></div>
@@ -660,7 +652,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">Windows下Python3.11.4的安装记录</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">下载Python安装包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">安装Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">测试Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">附：更改Python的pip安装路径</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDPython%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-text">下载Python安装包</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Python"><span class="nav-text">安装Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95Python"><span class="nav-text">测试Python</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%99%84%EF%BC%9A%E6%9B%B4%E6%94%B9Python%E7%9A%84pip%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84"><span class="nav-text">附：更改Python的pip安装路径</span></a></li></ol>
 
     </div>
 </div>

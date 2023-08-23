@@ -538,7 +538,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>307 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>295 字</span>
         </span>
     
     
@@ -562,15 +562,9 @@
 <hr>
 <!-- toc -->
 
-<ul>
-<li><a href="#1%E7%BC%96%E8%AF%91%E5%87%BAexe%E6%96%87%E4%BB%B6">1.编译出.exe文件</a></li>
-<li><a href="#2%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE">2.打包项目</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="1编译出exe文件">1.编译出.exe文件</span></h1><p>选择Release生成，我在此是<code>Realease x64</code>编译。</p>
+<h1 id="1-编译出-exe文件"><a href="#1-编译出-exe文件" class="headerlink" title="1.编译出.exe文件"></a>1.编译出.exe文件</h1><p>选择Release生成，我在此是<code>Realease x64</code>编译。</p>
 <p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/11_vs.jpg" alt="编译"><figcaption>编译</figcaption></figure></p>
-<h1><span id="2打包项目">2.打包项目</span></h1><p>将刚才构建出来的.exe文件复制到一个新的文件夹（目录尽量不带中文），该目录作为软件的工作目录。比如我复制到F:\test\HelloWorld1.0，软件工作目录就是这个文件夹，test目录下的一个新建文件夹。</p>
+<h1 id="2-打包项目"><a href="#2-打包项目" class="headerlink" title="2.打包项目"></a>2.打包项目</h1><p>将刚才构建出来的.exe文件复制到一个新的文件夹（目录尽量不带中文），该目录作为软件的工作目录。比如我复制到F:\test\HelloWorld1.0，软件工作目录就是这个文件夹，test目录下的一个新建文件夹。</p>
 <p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/11_exe.jpg" alt="软件工作目录"><figcaption>软件工作目录</figcaption></figure></p>
 <p>打开Visual Studio的安装目录，找到<code>dumpbin.exe</code>并复制其路径，可以按照下面的路径查找：<br><code>E:\Microsoft_Visual_Studio\VS\VC\Tools\MSVC\14.36.32532\bin\Hostx64\x64</code></p>
 <p>回到软件工作目录，在地址栏输入cmd打开命令提示符，按格式输入：<br><code>dumpbin.exe路径 /dependents 发布软件的路径</code></p>
@@ -646,7 +640,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">Visual Studio2022的C++项目打包成软件记录</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">1.编译出.exe文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">2.打包项目</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E7%BC%96%E8%AF%91%E5%87%BA-exe%E6%96%87%E4%BB%B6"><span class="nav-text">1.编译出.exe文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E6%89%93%E5%8C%85%E9%A1%B9%E7%9B%AE"><span class="nav-text">2.打包项目</span></a></li></ol>
 
     </div>
 </div>

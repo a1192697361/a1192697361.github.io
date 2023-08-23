@@ -533,7 +533,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>401 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>389 字</span>
         </span>
     
     
@@ -557,14 +557,7 @@
 <hr>
 <!-- toc -->
 
-<ul>
-<li><a href="#%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0">错误原因</a></li>
-<li><a href="#%E9%94%99%E8%AF%AF%E7%A4%BA%E4%BE%8B">错误示例</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="错误原因">错误原因</span></h1><ol>
+<h1 id="错误原因"><a href="#错误原因" class="headerlink" title="错误原因"></a>错误原因</h1><ol>
 <li><p>c++中不允许使用变量作为数组的长度定义数组，必须为常量值，c++中所有的内存需求都是在程序执行前通过定义的常量来确定的。</p>
 </li>
 <li><p>声明为const或constexpr的表达式在编译时计算结果不是常数。</p>
@@ -572,13 +565,13 @@
 <li><p>编译器必须能够在表达式被使用时确定表达式的值。</p>
 </li>
 </ol>
-<h1><span id="错误示例">错误示例</span></h1><div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//错误示范1</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>, b = <span class="number">4</span>, c = <span class="number">5</span>;</span><br><span class="line">	<span class="type">int</span> d[a * b * c]; <span class="comment">// error</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h1 id="错误示例"><a href="#错误示例" class="headerlink" title="错误示例"></a>错误示例</h1><div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//错误示范1</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>, b = <span class="number">4</span>, c = <span class="number">5</span>;</span><br><span class="line">	<span class="type">int</span> d[a * b * c]; <span class="comment">// error</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//错误示范2</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>, b = <span class="number">4</span>, c = <span class="number">5</span>;</span><br><span class="line">	<span class="type">const</span> <span class="type">int</span> tmp = a * b * c;</span><br><span class="line">	<span class="type">int</span> d[tmp]; <span class="comment">// error，如错误原因2</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
 <div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//错误示范3</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">test</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">const</span> <span class="type">int</span> array_size; <span class="comment">// error</span></span><br><span class="line">    <span class="type">int</span> size_array[array_size];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> test::array_size = <span class="number">42</span>;</span><br></pre></td></tr></table></figure></div>
 
-<h1><span id="解决方案">解决方案</span></h1><p>使用<code>new</code>进行动态内存分配，<strong>记得通过<code>delete</code>回收分配的内存</strong>，如上述代码改为：</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>使用<code>new</code>进行动态内存分配，<strong>记得通过<code>delete</code>回收分配的内存</strong>，如上述代码改为：</p>
 <div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">3</span>, b = <span class="number">4</span>, c = <span class="number">5</span>;</span><br><span class="line">	<span class="type">int</span> *d = <span class="keyword">new</span> <span class="type">int</span>[a * b * c];</span><br><span class="line">	<span class="keyword">delete</span>[] d;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>关于new分配内存的使用：</p>
@@ -659,7 +652,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">C++报错：表达式必须含有常量值</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">错误原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">错误示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">解决方案</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%8E%9F%E5%9B%A0"><span class="nav-text">错误原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E7%A4%BA%E4%BE%8B"><span class="nav-text">错误示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-text">解决方案</span></a></li></ol>
 
     </div>
 </div>

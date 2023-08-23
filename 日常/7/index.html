@@ -545,7 +545,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>89 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>77 字</span>
         </span>
     
     
@@ -569,16 +569,9 @@
 <hr>
 <!-- toc -->
 
-<ul>
-<li><a href="#%E6%8A%A5%E9%94%99%E7%AA%97%E5%8F%A3">报错窗口</a></li>
-<li><a href="#%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0">报错原因</a></li>
-<li><a href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">解决方案</a></li>
-</ul>
-<!-- tocstop -->
-
-<h1><span id="报错窗口">报错窗口</span></h1><p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/7_error.png" alt="报错"><figcaption>报错</figcaption></figure></p>
-<h1><span id="报错原因">报错原因</span></h1><p>export.py文件中parse_opt()函数设置的opset版本错误。</p>
-<h1><span id="解决方案">解决方案</span></h1><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#找到parse_opt()函数中的此行，将default值改为12</span></span><br><span class="line">parser.add_argument(<span class="string">&#x27;--opset&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">12</span>, <span class="built_in">help</span>=<span class="string">&#x27;ONNX: opset version&#x27;</span>)</span><br></pre></td></tr></table></figure></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<h1 id="报错窗口"><a href="#报错窗口" class="headerlink" title="报错窗口"></a>报错窗口</h1><p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/7_error.png" alt="报错"><figcaption>报错</figcaption></figure></p>
+<h1 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h1><p>export.py文件中parse_opt()函数设置的opset版本错误。</p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#找到parse_opt()函数中的此行，将default值改为12</span></span><br><span class="line">parser.add_argument(<span class="string">&#x27;--opset&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">12</span>, <span class="built_in">help</span>=<span class="string">&#x27;ONNX: opset version&#x27;</span>)</span><br></pre></td></tr></table></figure></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
         </div>
 
         
@@ -650,7 +643,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">YOLOv5由pt文件转onnx文件报错解决</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">报错窗口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">报错原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text">解决方案</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%A5%E9%94%99%E7%AA%97%E5%8F%A3"><span class="nav-text">报错窗口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8A%A5%E9%94%99%E5%8E%9F%E5%9B%A0"><span class="nav-text">报错原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-text">解决方案</span></a></li></ol>
 
     </div>
 </div>
