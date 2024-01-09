@@ -9827,6 +9827,7 @@ div.tabs .tab-content .tab-pane .highlight:last-child,
 div.tabs .tab-content .tab-pane .note:last-child {
   margin-bottom: 0;
 }
+@import "https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css";
 .page-title-header {
   font-size: 3.2rem;
   line-height: 1;
