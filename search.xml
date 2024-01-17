@@ -215,6 +215,50 @@
       </tags>
   </entry>
   <entry>
+    <title>利用Ping指令进行基本网络检测</title>
+    <url>/%E6%97%A5%E5%B8%B8/15/</url>
+    <content><![CDATA[<p>利用Ping指令对本地IP、网关和远程网站等进行基本网络检测</p>
+<p>关键词：网络</p>
+<span id="more"></span>
+<hr>
+<h1>测试TCP/IP协议栈</h1>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> <span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span></span><br></pre></td></tr></table></figure></div>
+<p><code>127.0.0.1</code> 是你本地主机的环回地址，实际上只要是 <code>127.0.0.1</code> 到 <code>127.255.255.254</code> 都是本地主机环回地址。</p>
+<ul>
+<li>作用：用于检查本地主机TCP/IP协议栈是否正常。</li>
+</ul>
+<h1>测试本地网卡</h1>
+<p>打开cmd（命令提示符），输入：</p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span></span><br></pre></td></tr></table></figure></div>
+<p>记住自己的本地ip，接着输入：</p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> [本地ip]</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>作用：用于检查本地网卡工作是否正常。</li>
+</ul>
+<h1>测试与网关的链路</h1>
+<p>打开cmd（命令提示符），输入：</p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span></span><br></pre></td></tr></table></figure></div>
+<p>记住自己的默认网关，接着输入：</p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> [默认网关]</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>用于检查本地主机与网关的链路是否正常。</li>
+</ul>
+<h1>测试与外网远程网站的链路</h1>
+<p>以连通百度网站为测试：</p>
+<p>打开cmd（命令提示符），输入：</p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> www.baidu.com</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>用于检查本地主机与外网远程网站的链路是否正常。</li>
+</ul>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Qt for Android配置记录</title>
     <url>/%E6%97%A5%E5%B8%B8/16/</url>
     <content><![CDATA[<p>关键词：Qt、C++、Android</p>
@@ -278,93 +322,6 @@
       </tags>
   </entry>
   <entry>
-    <title>利用Ping指令进行基本网络检测</title>
-    <url>/%E6%97%A5%E5%B8%B8/15/</url>
-    <content><![CDATA[<p>利用Ping指令对本地IP、网关和远程网站等进行基本网络检测</p>
-<p>关键词：网络</p>
-<span id="more"></span>
-<hr>
-<h1>测试TCP/IP协议栈</h1>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> <span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span></span><br></pre></td></tr></table></figure></div>
-<p><code>127.0.0.1</code> 是你本地主机的环回地址，实际上只要是 <code>127.0.0.1</code> 到 <code>127.255.255.254</code> 都是本地主机环回地址。</p>
-<ul>
-<li>作用：用于检查本地主机TCP/IP协议栈是否正常。</li>
-</ul>
-<h1>测试本地网卡</h1>
-<p>打开cmd（命令提示符），输入：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span></span><br></pre></td></tr></table></figure></div>
-<p>记住自己的本地ip，接着输入：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> [本地ip]</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>作用：用于检查本地网卡工作是否正常。</li>
-</ul>
-<h1>测试与网关的链路</h1>
-<p>打开cmd（命令提示符），输入：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span></span><br></pre></td></tr></table></figure></div>
-<p>记住自己的默认网关，接着输入：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> [默认网关]</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>用于检查本地主机与网关的链路是否正常。</li>
-</ul>
-<h1>测试与外网远程网站的链路</h1>
-<p>以连通百度网站为测试：</p>
-<p>打开cmd（命令提示符），输入：</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ping</span> www.baidu.com</span><br></pre></td></tr></table></figure></div>
-<ul>
-<li>用于检查本地主机与外网远程网站的链路是否正常。</li>
-</ul>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记录Keil_C51和Keil_MDK的安装</title>
-    <url>/%E6%97%A5%E5%B8%B8/2/</url>
-    <content><![CDATA[<p>介绍Keil_C51和Keil_MDK的安装</p>
-<p>关键词：Keil</p>
-<span id="more"></span>
-<hr>
-<!-- toc -->
-<h1>什么是Keil C51和Keil MDK</h1>
-<ul>
-<li>
-<p>Keil是一家公司名称，也是一款软件名称。Keil 有四大软件（IDE），包括 MDK、C51、C251、C166。</p>
-</li>
-<li>
-<p>Keil C51和MDK是针对不同类型MCU的两款集成开发工具。</p>
-</li>
-</ul>
-<h1>Keil C51</h1>
-<h2 id="下载安装程序">下载安装程序</h2>
-<p><a class="link" href="https://www.keil.com/download/product/">Keil官网下载 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="安装过程">安装过程</h2>
-<p>像正常软件安装一样，按需要更改安装的磁盘，建立新的文件夹空间安装，个人信息随便填，等待安装完成。</p>
-<p>此次我安装路径设置为<code>G:\Keil_C51</code>中。</p>
-<h2 id="启动软件">启动软件</h2>
-<p>UV4可执行文件位于：<code>G:\Keil_C51\UV4</code></p>
-<h1>Keil MDK</h1>
-<h2 id="下载安装程序">下载安装程序</h2>
-<p><a class="link" href="https://www.keil.com/download/product/">Keil官网下载 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="安装过程">安装过程</h2>
-<p>像正常软件安装一样，按需要更改安装的磁盘，建立新的文件夹空间安装本体和Pack文件，个人信息随便填，等待安装完成。</p>
-<p>此次我将本体路径设置为<code>G:\Keil_MDK</code>中，Pack路径设置为<code>G:\Keil_MDK\</code>。</p>
-<h2 id="启动软件">启动软件</h2>
-<p>UV4可执行文件位于：<code>G:\Keil_MDK\UV4</code></p>
-<h1>Keil Key Generator</h1>
-<p><a class="link" href="https://blog.csdn.net/qq_22329595/article/details/108703002">参考此博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>Keil</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用阿里云对象存储OSS实现图床</title>
     <url>/%E6%97%A5%E5%B8%B8/3/</url>
     <content><![CDATA[<p>注册登录阿里云👉开启对象存储👉配置Key👉放心上传</p>
@@ -412,74 +369,46 @@
       </tags>
   </entry>
   <entry>
-    <title>Windows 10下安装CUDA、TensorRT记录</title>
-    <url>/%E6%97%A5%E5%B8%B8/5/</url>
-    <content><![CDATA[<p>GPU：NVIDIA GeFOrce GTX 1050</p>
-<p>关键词：深度学习、YOLOv5、TensorRT、C++推演</p>
+    <title>记录Keil_C51和Keil_MDK的安装</title>
+    <url>/%E6%97%A5%E5%B8%B8/2/</url>
+    <content><![CDATA[<p>介绍Keil_C51和Keil_MDK的安装</p>
+<p>关键词：Keil</p>
 <span id="more"></span>
 <hr>
 <!-- toc -->
-<h1>一、下载CUDA</h1>
-<h2 id="1-确定适配本机显卡驱动的cuda版本">1.确定适配本机显卡驱动的CUDA版本</h2>
-<p>系统搜索打开NVIDIA控制面板，点击帮助，选择系统信息-&gt;组件，找到CUDA字样。此处我的CUDA适配版本为<code>12.0</code>。</p>
-<p><figure class="image-caption"><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_CUDA%E7%89%88%E6%9C%AC.jpg" alt="CUDA版本查看"><figcaption>CUDA版本查看</figcaption></figure></p>
-<h2 id="2-下载对应版本的cuda">2.下载对应版本的CUDA</h2>
-<p><a class="link" href="https://developer.nvidia.com/cuda-toolkit-archive">下载地址 - NVIDIA官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="3-安装cuda">3.安装CUDA</h2>
-<p>点击下载的安装exe文件，可以更改文件安装位置，记住文件安装位置。此处我的安装位置是<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code>。</p>
-<h1>二、下载cuDNN包</h1>
-<h2 id="1-选择适配cuda的版本下载对应的cudnn包">1.选择适配CUDA的版本下载对应的cuDNN包</h2>
-<p><a class="link" href="https://developer.nvidia.com/rdp/cudnn-archive">下载地址 - NVIDIA官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h2 id="2-选择合适的位置解压cudnn压缩包">2.选择合适的位置解压cuDNN压缩包</h2>
-<p><figure class="image-caption"><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN.jpg" alt="解压cuDNN后的文件"><figcaption>解压cuDNN后的文件</figcaption></figure></p>
-<h2 id="3-复制文件">3.复制文件</h2>
-<p>cuDNN属于是CUDA的一个补丁包，因此无需安装。需要将<code>bin</code>、<code>include</code>、<code>lib</code>文件夹中的相关文件拷贝到CUDA安装位置的<code>bin</code>、<code>include</code>、<code>lib的x64</code>文件夹中。</p>
-<p>我的CUDA安装位置是：<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code>。</p>
-<h2 id="4-验证是否成功">4.验证是否成功</h2>
-<p><code>Win + R</code>输入cmd打开cmd窗口。<br>
-直接输入盘符如<code>F:</code>跳转到F盘，<code>cd</code>进入到具体地址。<br>
-比如我的CUDA安装在<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code>，<br>
-那么进入到<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\extras\demo_suite</code></p>
-<p>接着在cmd窗口输入下面的指令分别运行两个exe文件，结果出现PASS（如图）则验证成功。</p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line">bandwidthTest.exe</span><br></pre></td></tr></table></figure></div>
-<p><figure class="image-caption"><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN%E9%AA%8C%E8%AF%81.jpg" alt="第一个exe运行结果"><figcaption>第一个exe运行结果</figcaption></figure></p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line">deviceQuery.exe</span><br></pre></td></tr></table></figure></div>
-<p><figure class="image-caption"><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN%E9%AA%8C%E8%AF%812.jpg" alt="第二个exe运行结果"><figcaption>第二个exe运行结果</figcaption></figure></p>
-<h1>三、下载TensorRT包</h1>
-<h2 id="1-选择适配cuda版本的tensorrt包下载">1.选择适配CUDA版本的TensorRT包下载</h2>
-<p>进入<a class="link" href="https://developer.nvidia.com/nvidia-tensorrt-download">官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，选择较新的大版本，再选择适合自己安装的CUDA版本下载。</p>
-<p>我在此处下载Windows的支持CUDA12.0的版本。</p>
-<h2 id="2-选择合适的位置解压tensorrt压缩包">2.选择合适的位置解压TensorRT压缩包</h2>
-<p><figure class="image-caption"><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_TensorRT.jpg" alt="解压TensorRT后的文件"><figcaption>解压TensorRT后的文件</figcaption></figure></p>
-<h2 id="3-安装tensorrt">3.安装TensorRT</h2>
-<ul>
-<li>将TensorRT的<code>include</code>文件夹中文件复制到CUDA安装位置的<code>include</code>文件夹。</li>
-</ul>
-<p>我的操作是：<code>copy \TensorRT-8.6.1.6\include → NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include</code></p>
+<h1>什么是Keil C51和Keil MDK</h1>
 <ul>
 <li>
-<p>将TensorRT的<code>lib</code>中所有lib文件复制到CUDA安装位置的<code>lib\x64</code>文件夹</p>
+<p>Keil是一家公司名称，也是一款软件名称。Keil 有四大软件（IDE），包括 MDK、C51、C251、C166。</p>
 </li>
 <li>
-<p>将TensorRT的<code>lib</code>中所有dll文件复制到CUDA安装位置的<code>bin</code>文件夹</p>
+<p>Keil C51和MDK是针对不同类型MCU的两款集成开发工具。</p>
 </li>
 </ul>
-<h2 id="4-验证tensort">4.验证TensoRT</h2>
-<p>检查系统环境变量中是否有包含了CUDA的bin文件夹，没有则添加。</p>
-<p>使用Visual Studio打开sampleMNIST示例，即打开<code>../TensorRT-8.6.1.6\samples\sampleOnnxMNIST</code>文件夹中的sln文件，必要时对项目属性的常规、VC++目录、C/C++里面的环境进行配置，添加依赖。<a class="link" href="https://blog.csdn.net/shanglianlm/article/details/92847719">参考 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>右键项目，点击重新生成。可以点击不调试运行测试。</p>
-<h1>参考</h1>
-<p><a class="link" href="https://blog.csdn.net/shanglianlm/article/details/92847719">TensorRT之安装与测试（Windows和Linux环境下安装TensorRT） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link" href="https://zhuanlan.zhihu.com/p/305854081">Window下Python+CUDA+PyTorch安装 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1>Keil C51</h1>
+<h2 id="下载安装程序">下载安装程序</h2>
+<p><a class="link" href="https://www.keil.com/download/product/">Keil官网下载 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="安装过程">安装过程</h2>
+<p>像正常软件安装一样，按需要更改安装的磁盘，建立新的文件夹空间安装，个人信息随便填，等待安装完成。</p>
+<p>此次我安装路径设置为<code>G:\Keil_C51</code>中。</p>
+<h2 id="启动软件">启动软件</h2>
+<p>UV4可执行文件位于：<code>G:\Keil_C51\UV4</code></p>
+<h1>Keil MDK</h1>
+<h2 id="下载安装程序">下载安装程序</h2>
+<p><a class="link" href="https://www.keil.com/download/product/">Keil官网下载 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="安装过程">安装过程</h2>
+<p>像正常软件安装一样，按需要更改安装的磁盘，建立新的文件夹空间安装本体和Pack文件，个人信息随便填，等待安装完成。</p>
+<p>此次我将本体路径设置为<code>G:\Keil_MDK</code>中，Pack路径设置为<code>G:\Keil_MDK\</code>。</p>
+<h2 id="启动软件">启动软件</h2>
+<p>UV4可执行文件位于：<code>G:\Keil_MDK\UV4</code></p>
+<h1>Keil Key Generator</h1>
+<p><a class="link" href="https://blog.csdn.net/qq_22329595/article/details/108703002">参考此博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
         <category>日常</category>
       </categories>
       <tags>
-        <tag>深度学习</tag>
-        <tag>YOLOv5</tag>
-        <tag>TensorRT</tag>
-        <tag>C++推演</tag>
+        <tag>Keil</tag>
       </tags>
   </entry>
   <entry>
@@ -579,6 +508,100 @@
       </tags>
   </entry>
   <entry>
+    <title>Windows 10下安装CUDA、TensorRT记录</title>
+    <url>/%E6%97%A5%E5%B8%B8/5/</url>
+    <content><![CDATA[<p>GPU：NVIDIA GeFOrce GTX 1050</p>
+<p>关键词：深度学习、YOLOv5、TensorRT、C++推演</p>
+<span id="more"></span>
+<hr>
+<!-- toc -->
+<h1>一、下载CUDA</h1>
+<h2 id="1-确定适配本机显卡驱动的cuda版本">1.确定适配本机显卡驱动的CUDA版本</h2>
+<p>系统搜索打开NVIDIA控制面板，点击帮助，选择系统信息-&gt;组件，找到CUDA字样。此处我的CUDA适配版本为<code>12.0</code>。</p>
+<p><figure class="image-caption"><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_CUDA%E7%89%88%E6%9C%AC.jpg" alt="CUDA版本查看"><figcaption>CUDA版本查看</figcaption></figure></p>
+<h2 id="2-下载对应版本的cuda">2.下载对应版本的CUDA</h2>
+<p><a class="link" href="https://developer.nvidia.com/cuda-toolkit-archive">下载地址 - NVIDIA官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="3-安装cuda">3.安装CUDA</h2>
+<p>点击下载的安装exe文件，可以更改文件安装位置，记住文件安装位置。此处我的安装位置是<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code>。</p>
+<h1>二、下载cuDNN包</h1>
+<h2 id="1-选择适配cuda的版本下载对应的cudnn包">1.选择适配CUDA的版本下载对应的cuDNN包</h2>
+<p><a class="link" href="https://developer.nvidia.com/rdp/cudnn-archive">下载地址 - NVIDIA官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="2-选择合适的位置解压cudnn压缩包">2.选择合适的位置解压cuDNN压缩包</h2>
+<p><figure class="image-caption"><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN.jpg" alt="解压cuDNN后的文件"><figcaption>解压cuDNN后的文件</figcaption></figure></p>
+<h2 id="3-复制文件">3.复制文件</h2>
+<p>cuDNN属于是CUDA的一个补丁包，因此无需安装。需要将<code>bin</code>、<code>include</code>、<code>lib</code>文件夹中的相关文件拷贝到CUDA安装位置的<code>bin</code>、<code>include</code>、<code>lib的x64</code>文件夹中。</p>
+<p>我的CUDA安装位置是：<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code>。</p>
+<h2 id="4-验证是否成功">4.验证是否成功</h2>
+<p><code>Win + R</code>输入cmd打开cmd窗口。<br>
+直接输入盘符如<code>F:</code>跳转到F盘，<code>cd</code>进入到具体地址。<br>
+比如我的CUDA安装在<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code>，<br>
+那么进入到<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\extras\demo_suite</code></p>
+<p>接着在cmd窗口输入下面的指令分别运行两个exe文件，结果出现PASS（如图）则验证成功。</p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line">bandwidthTest.exe</span><br></pre></td></tr></table></figure></div>
+<p><figure class="image-caption"><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN%E9%AA%8C%E8%AF%81.jpg" alt="第一个exe运行结果"><figcaption>第一个exe运行结果</figcaption></figure></p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line">deviceQuery.exe</span><br></pre></td></tr></table></figure></div>
+<p><figure class="image-caption"><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN%E9%AA%8C%E8%AF%812.jpg" alt="第二个exe运行结果"><figcaption>第二个exe运行结果</figcaption></figure></p>
+<h1>三、下载TensorRT包</h1>
+<h2 id="1-选择适配cuda版本的tensorrt包下载">1.选择适配CUDA版本的TensorRT包下载</h2>
+<p>进入<a class="link" href="https://developer.nvidia.com/nvidia-tensorrt-download">官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，选择较新的大版本，再选择适合自己安装的CUDA版本下载。</p>
+<p>我在此处下载Windows的支持CUDA12.0的版本。</p>
+<h2 id="2-选择合适的位置解压tensorrt压缩包">2.选择合适的位置解压TensorRT压缩包</h2>
+<p><figure class="image-caption"><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_TensorRT.jpg" alt="解压TensorRT后的文件"><figcaption>解压TensorRT后的文件</figcaption></figure></p>
+<h2 id="3-安装tensorrt">3.安装TensorRT</h2>
+<ul>
+<li>将TensorRT的<code>include</code>文件夹中文件复制到CUDA安装位置的<code>include</code>文件夹。</li>
+</ul>
+<p>我的操作是：<code>copy \TensorRT-8.6.1.6\include → NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include</code></p>
+<ul>
+<li>
+<p>将TensorRT的<code>lib</code>中所有lib文件复制到CUDA安装位置的<code>lib\x64</code>文件夹</p>
+</li>
+<li>
+<p>将TensorRT的<code>lib</code>中所有dll文件复制到CUDA安装位置的<code>bin</code>文件夹</p>
+</li>
+</ul>
+<h2 id="4-验证tensort">4.验证TensoRT</h2>
+<p>检查系统环境变量中是否有包含了CUDA的bin文件夹，没有则添加。</p>
+<p>使用Visual Studio打开sampleMNIST示例，即打开<code>../TensorRT-8.6.1.6\samples\sampleOnnxMNIST</code>文件夹中的sln文件，必要时对项目属性的常规、VC++目录、C/C++里面的环境进行配置，添加依赖。<a class="link" href="https://blog.csdn.net/shanglianlm/article/details/92847719">参考 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>右键项目，点击重新生成。可以点击不调试运行测试。</p>
+<h1>参考</h1>
+<p><a class="link" href="https://blog.csdn.net/shanglianlm/article/details/92847719">TensorRT之安装与测试（Windows和Linux环境下安装TensorRT） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link" href="https://zhuanlan.zhihu.com/p/305854081">Window下Python+CUDA+PyTorch安装 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>YOLOv5</tag>
+        <tag>TensorRT</tag>
+        <tag>C++推演</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>YOLOv5由pt文件转onnx文件报错解决</title>
+    <url>/%E6%97%A5%E5%B8%B8/7/</url>
+    <content><![CDATA[<p>ONNX: export failure ❌ 5.9s: Unsupported ONNX opset version: 17</p>
+<p>关键词：深度学习、YOLOv5、onnx</p>
+<span id="more"></span>
+<hr>
+<!-- toc -->
+<h1>报错窗口</h1>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/7_error.png" alt="报错"><figcaption>报错</figcaption></figure></p>
+<h1>报错原因</h1>
+<p>export.py文件中parse_opt()函数设置的opset版本错误。</p>
+<h1>解决方案</h1>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#找到parse_opt()函数中的此行，将default值改为12</span></span><br><span class="line">parser.add_argument(<span class="string">&#x27;--opset&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">12</span>, <span class="built_in">help</span>=<span class="string">&#x27;ONNX: opset version&#x27;</span>)</span><br></pre></td></tr></table></figure></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>YOLOv5</tag>
+        <tag>onnx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C++报错：表达式必须含有常量值</title>
     <url>/%E6%97%A5%E5%B8%B8/6/</url>
     <content><![CDATA[<p>关于在Visual Studio 2022使用C++ 20语法的表达式开辟数组空间报错</p>
@@ -626,29 +649,6 @@
       </tags>
   </entry>
   <entry>
-    <title>YOLOv5由pt文件转onnx文件报错解决</title>
-    <url>/%E6%97%A5%E5%B8%B8/7/</url>
-    <content><![CDATA[<p>ONNX: export failure ❌ 5.9s: Unsupported ONNX opset version: 17</p>
-<p>关键词：深度学习、YOLOv5、onnx</p>
-<span id="more"></span>
-<hr>
-<!-- toc -->
-<h1>报错窗口</h1>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/7_error.png" alt="报错"><figcaption>报错</figcaption></figure></p>
-<h1>报错原因</h1>
-<p>export.py文件中parse_opt()函数设置的opset版本错误。</p>
-<h1>解决方案</h1>
-<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#找到parse_opt()函数中的此行，将default值改为12</span></span><br><span class="line">parser.add_argument(<span class="string">&#x27;--opset&#x27;</span>, <span class="built_in">type</span>=<span class="built_in">int</span>, default=<span class="number">12</span>, <span class="built_in">help</span>=<span class="string">&#x27;ONNX: opset version&#x27;</span>)</span><br></pre></td></tr></table></figure></div><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>YOLOv5</tag>
-        <tag>onnx</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows下Python3.11.4的安装记录</title>
     <url>/%E6%97%A5%E5%B8%B8/8/</url>
     <content><![CDATA[<p>记录一次安装Python</p>
@@ -688,124 +688,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Visual Studio2022的OpenCV4.5.2和CUDA12.0项目配置</title>
-    <url>/%E6%97%A5%E5%B8%B8/9/</url>
-    <content><![CDATA[<p>记录一次环境配置</p>
-<p>关键词：深度学习、OpenCV、CUDA</p>
-<span id="more"></span>
-<hr>
-<!-- toc -->
-<h1>OpenCV的环境配置</h1>
-<h2 id="opencv下载安装">OpenCV下载安装</h2>
-<p>前往官网选择适合的OpenCV版本下载，并安装到合适的位置。</p>
-<p><a class="link" href="https://opencv.org/releases/">官网下载OpenCV <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>我的OpenCV安装在：<code>D:\opencv4.5.2</code></p>
-<h2 id="添加opencv到系统path变量">添加OpenCV到系统Path变量</h2>
-<p>打开编辑系统环境变量，点击右下方的环境变量，在系统变量中找到PATH项，点击编辑添加OpenCV目录下的bin文件夹。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_opencv2PATH.jpg" alt="添加OpenCV至PATH"><figcaption>添加OpenCV至PATH</figcaption></figure></p>
-<p>至于添加的是vc14还是vc15，参照下表</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">VS版本</th>
-<th style="text-align:center">VC</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">VS2015</td>
-<td style="text-align:center">VC14</td>
-</tr>
-<tr>
-<td style="text-align:center">VS2017及以上</td>
-<td style="text-align:center">VC15</td>
-</tr>
-</tbody>
-</table>
-<h2 id="添加opencv环境到vs项目">添加OpenCV环境到VS项目</h2>
-<p>右键项目，选择最下方属性，打开属性配置窗口，选择是Debug模式或Release模式配置。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_vs1.jpg" alt="VS项目配置窗口"><figcaption>VS项目配置窗口</figcaption></figure></p>
-<h3 id="vc-目录配置opencv">VC++目录配置OpenCV</h3>
-<ol>
-<li><strong>点击包含目录</strong>，在包含目录中把OpenCV目录下的include文件夹添加。</li>
-</ol>
-<p>此处我的添加是：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\opencv4.5.2\build\include\opencv2</span><br><span class="line">D:\opencv4.5.2\build\include</span><br></pre></td></tr></table></figure></div>
-<ol start="2">
-<li><strong>点击库目录</strong>，在库目录中把OpenCV的lib文件添加，此处路径藏得比较深，参考我的添加。</li>
-</ol>
-<p>此处我的添加是：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\opencv4.5.2\build\x64\vc15\lib</span><br></pre></td></tr></table></figure></div>
-<h3 id="链接器配置opencv">链接器配置OpenCV</h3>
-<ol>
-<li><strong>点击输入，再点击附加依赖项</strong>，将OpenCV的lib文件添加，lib文件存放在上面库目录的文件夹中。</li>
-</ol>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">opencv_world452.lib</span><br><span class="line">opencv_world452d.lib</span><br></pre></td></tr></table></figure></div>
-<p>注意，此处文件名带<code>d</code>的为Debug版本的依赖项，不带<code>d</code>的为Release版本的依赖项。<br>
-在配置Debug版本时把带<code>d</code>的文件放在不带<code>d</code>的文件之上，<br>
-在配置Release版本时把不带<code>d</code>的文件放在带<code>d</code>的文件之上。</p>
-<p><strong>如果显示找不到opencv_worldxxx.dll</strong> ，请把opencv_worldxxx.dll的路径添加到系统环境变量。</p>
-<h1>CUDA环境配置</h1>
-<h2 id="cuda下载安装">CUDA下载安装</h2>
-<p><a class="link" href="http://fingsinz.space/%E6%97%A5%E5%B8%B8/5/">参考此条博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p>我的CUDA目录在：<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code></p>
-<h2 id="添加cuda环境到vs项目">添加CUDA环境到VS项目</h2>
-<p>配置为x64平台。</p>
-<p>右键项目→生成依赖项→生成自定义→勾选“CUDA xxx”。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_cuda.jpg" alt="生成依赖项"><figcaption>生成依赖项</figcaption></figure></p>
-<h3 id="vc-目录配置cuda">VC++目录配置CUDA</h3>
-<ol>
-<li><strong>点击包含目录</strong>，在包含目录中把OpenCV目录下的include文件夹添加。</li>
-</ol>
-<p>此处我的添加是：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include</span><br></pre></td></tr></table></figure></div>
-<ol start="2">
-<li><strong>点击库目录</strong>，在库目录中把OpenCV的lib文件夹添加。</li>
-</ol>
-<p>此处我的添加是：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64</span><br></pre></td></tr></table></figure></div>
-<h3 id="链接器配置cuda">链接器配置CUDA</h3>
-<ol>
-<li><strong>点击常规，再点击附加库目录</strong>，添加下面的目录。<em>似乎不配置这一条也可以</em></li>
-</ol>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">$(CUDA_PATH_V12_0)\lib\$(Platform)</span><br></pre></td></tr></table></figure></div>
-<p>或</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64</span><br></pre></td></tr></table></figure></div>
-<ol start="2">
-<li><strong>点击输入，再点击附加依赖项</strong>，将CUDA的lib文件添加，输入下面的内容。</li>
-</ol>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64\*.lib</span><br></pre></td></tr></table></figure></div>
-<h3 id="配置源码文件风格">配置源码文件风格</h3>
-<p>右键源文件，可以添加新建项中选择“CUDA C/C++ File”。<br>
-右键“<a class="link" href="http://xxx.cu">xxx.cu <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>”源文件，点击属性，选择配置属性中的常规，从项类型中找到“CUDA C/C++”。</p>
-<h2 id="测试cuda代码">测试CUDA代码</h2>
-<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;cuda_runtime.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;device_launch_parameters.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">cudaError_t <span class="title">addWithCuda</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b, <span class="type">unsigned</span> <span class="type">int</span> size)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">addKernel</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i = threadIdx.x;</span><br><span class="line">    c[i] = a[i] + b[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> arraySize = <span class="number">5</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> a[arraySize] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> b[arraySize] = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span> &#125;;</span><br><span class="line">    <span class="type">int</span> c[arraySize] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Add vectors in parallel.</span></span><br><span class="line">    cudaError_t cudaStatus = <span class="built_in">addWithCuda</span>(c, a, b, arraySize);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;addWithCuda failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;&#123;1,2,3,4,5&#125; + &#123;10,20,30,40,50&#125; = &#123;%d,%d,%d,%d,%d&#125;\n&quot;</span>,</span><br><span class="line">        c[<span class="number">0</span>], c[<span class="number">1</span>], c[<span class="number">2</span>], c[<span class="number">3</span>], c[<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// cudaDeviceReset must be called before exiting in order for profiling and</span></span><br><span class="line">    <span class="comment">// tracing tools such as Nsight and Visual Profiler to show complete traces.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaDeviceReset</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaDeviceReset failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Helper function for using CUDA to add vectors in parallel.</span></span><br><span class="line"><span class="function">cudaError_t <span class="title">addWithCuda</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b, <span class="type">unsigned</span> <span class="type">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> *dev_a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> *dev_b = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> *dev_c = <span class="number">0</span>;</span><br><span class="line">    cudaError_t cudaStatus;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Choose which GPU to run on, change this on a multi-GPU system.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaSetDevice</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaSetDevice failed!  Do you have a CUDA-capable GPU installed?&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Allocate GPU buffers for three vectors (two input, one output)    .</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_c, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_a, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_b, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Copy input vectors from host memory to GPU buffers.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(dev_a, a, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(dev_b, b, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Launch a kernel on the GPU with one thread for each element.</span></span><br><span class="line">    addKernel&lt;&lt;&lt;<span class="number">1</span>, size&gt;&gt;&gt;(dev_c, dev_a, dev_b);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check for any errors launching the kernel</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaGetLastError</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;addKernel launch failed: %s\n&quot;</span>, <span class="built_in">cudaGetErrorString</span>(cudaStatus));</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// cudaDeviceSynchronize waits for the kernel to finish, and returns</span></span><br><span class="line">    <span class="comment">// any errors encountered during the launch.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaDeviceSynchronize returned error code %d after launching addKernel!\n&quot;</span>, cudaStatus);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Copy output vector from GPU buffer to host memory.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(c, dev_c, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyDeviceToHost);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Error:</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_c);</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_a);</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_b);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> cudaStatus;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<p>运行结果如下图：</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_result.jpg" alt="测试结果"><figcaption>测试结果</figcaption></figure></p>
-<h2 id="cuda环境的一些碰壁">CUDA环境的一些碰壁</h2>
-<ol>
-<li>
-<p>我的CUDA安装在一个可移动固态硬盘（G盘）中，可能导致了我的CUDA项目只能位于G盘使用，复制粘贴到电脑的盘会出现问题。</p>
-</li>
-<li>
-<p>如果出现了大段指令无法运行，像下面的错误显示，可以复制命令（引号部分）到cmd运行，查看更详细的报错原因。</p>
-</li>
-</ol>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VS报错如下</span><br><span class="line">严重性	代码	说明	项目	文件	行	禁止显示状态</span><br><span class="line">错误	MSB3721	命令“&quot;G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\bin\nvcc.exe&quot; -gencode=arch=compute_52,code=\&quot;sm_52,compute_52\&quot; --use-local-env -ccbin &quot;E:\Microsoft_Visual_Studio\VS\VC\Tools\MSVC\14.33.31629\bin\HostX64\x64&quot; -x cu   -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -Xcompiler &quot;/EHsc /W3 /nologo /Od /FdG:\Data\Coding_Master\yolov5-trt\bin\immediate\x64\Debug\vc143.pdb /FS /Zi /RTC1 /MDd &quot; -o G:\Data\Coding_Master\yolov5-trt\bin\x64\File.cu.obj &quot;G:\Data\Coding_Master\yolov5-trt\File.cu&quot;”已退出，返回代码为 1。	yolov5-trt	E:\Microsoft_Visual_Studio\VS\MSBuild\Microsoft\VC\v170\BuildCustomizations\CUDA 12.0.targets	794</span><br><span class="line"></span><br><span class="line">// 复制命令部分，即下面部分到cmd输入</span><br><span class="line">&quot;G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\bin\nvcc.exe&quot; -gencode=arch=compute_52,code=\&quot;sm_52,compute_52\&quot; --use-local-env -ccbin &quot;E:\Microsoft_Visual_Studio\VS\VC\Tools\MSVC\14.33.31629\bin\HostX64\x64&quot; -x cu   -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -Xcompiler &quot;/EHsc /W3 /nologo /Od /FdG:\Data\Coding_Master\yolov5-trt\bin\immediate\x64\Debug\vc143.pdb /FS /Zi /RTC1 /MDd &quot; -o G:\Data\Coding_Master\yolov5-trt\bin\x64\File.cu.obj &quot;G:\Data\Coding_Master\yolov5-trt\File.cu&quot;</span><br></pre></td></tr></table></figure></div>
-<ol start="3">
-<li>还遇到一些其他的坑可以自行必应。</li>
-</ol>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>日常</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>OpenCV</tag>
-        <tag>CUDA</tag>
       </tags>
   </entry>
   <entry>
@@ -2028,6 +1910,124 @@ iPad 和 iPhone 不能显示 Flash 视频。<br>
       </tags>
   </entry>
   <entry>
+    <title>Visual Studio2022的OpenCV4.5.2和CUDA12.0项目配置</title>
+    <url>/%E6%97%A5%E5%B8%B8/9/</url>
+    <content><![CDATA[<p>记录一次环境配置</p>
+<p>关键词：深度学习、OpenCV、CUDA</p>
+<span id="more"></span>
+<hr>
+<!-- toc -->
+<h1>OpenCV的环境配置</h1>
+<h2 id="opencv下载安装">OpenCV下载安装</h2>
+<p>前往官网选择适合的OpenCV版本下载，并安装到合适的位置。</p>
+<p><a class="link" href="https://opencv.org/releases/">官网下载OpenCV <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>我的OpenCV安装在：<code>D:\opencv4.5.2</code></p>
+<h2 id="添加opencv到系统path变量">添加OpenCV到系统Path变量</h2>
+<p>打开编辑系统环境变量，点击右下方的环境变量，在系统变量中找到PATH项，点击编辑添加OpenCV目录下的bin文件夹。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_opencv2PATH.jpg" alt="添加OpenCV至PATH"><figcaption>添加OpenCV至PATH</figcaption></figure></p>
+<p>至于添加的是vc14还是vc15，参照下表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">VS版本</th>
+<th style="text-align:center">VC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">VS2015</td>
+<td style="text-align:center">VC14</td>
+</tr>
+<tr>
+<td style="text-align:center">VS2017及以上</td>
+<td style="text-align:center">VC15</td>
+</tr>
+</tbody>
+</table>
+<h2 id="添加opencv环境到vs项目">添加OpenCV环境到VS项目</h2>
+<p>右键项目，选择最下方属性，打开属性配置窗口，选择是Debug模式或Release模式配置。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_vs1.jpg" alt="VS项目配置窗口"><figcaption>VS项目配置窗口</figcaption></figure></p>
+<h3 id="vc-目录配置opencv">VC++目录配置OpenCV</h3>
+<ol>
+<li><strong>点击包含目录</strong>，在包含目录中把OpenCV目录下的include文件夹添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\opencv4.5.2\build\include\opencv2</span><br><span class="line">D:\opencv4.5.2\build\include</span><br></pre></td></tr></table></figure></div>
+<ol start="2">
+<li><strong>点击库目录</strong>，在库目录中把OpenCV的lib文件添加，此处路径藏得比较深，参考我的添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">D:\opencv4.5.2\build\x64\vc15\lib</span><br></pre></td></tr></table></figure></div>
+<h3 id="链接器配置opencv">链接器配置OpenCV</h3>
+<ol>
+<li><strong>点击输入，再点击附加依赖项</strong>，将OpenCV的lib文件添加，lib文件存放在上面库目录的文件夹中。</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">opencv_world452.lib</span><br><span class="line">opencv_world452d.lib</span><br></pre></td></tr></table></figure></div>
+<p>注意，此处文件名带<code>d</code>的为Debug版本的依赖项，不带<code>d</code>的为Release版本的依赖项。<br>
+在配置Debug版本时把带<code>d</code>的文件放在不带<code>d</code>的文件之上，<br>
+在配置Release版本时把不带<code>d</code>的文件放在带<code>d</code>的文件之上。</p>
+<p><strong>如果显示找不到opencv_worldxxx.dll</strong> ，请把opencv_worldxxx.dll的路径添加到系统环境变量。</p>
+<h1>CUDA环境配置</h1>
+<h2 id="cuda下载安装">CUDA下载安装</h2>
+<p><a class="link" href="http://fingsinz.space/%E6%97%A5%E5%B8%B8/5/">参考此条博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>我的CUDA目录在：<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code></p>
+<h2 id="添加cuda环境到vs项目">添加CUDA环境到VS项目</h2>
+<p>配置为x64平台。</p>
+<p>右键项目→生成依赖项→生成自定义→勾选“CUDA xxx”。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_cuda.jpg" alt="生成依赖项"><figcaption>生成依赖项</figcaption></figure></p>
+<h3 id="vc-目录配置cuda">VC++目录配置CUDA</h3>
+<ol>
+<li><strong>点击包含目录</strong>，在包含目录中把OpenCV目录下的include文件夹添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include</span><br></pre></td></tr></table></figure></div>
+<ol start="2">
+<li><strong>点击库目录</strong>，在库目录中把OpenCV的lib文件夹添加。</li>
+</ol>
+<p>此处我的添加是：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64</span><br></pre></td></tr></table></figure></div>
+<h3 id="链接器配置cuda">链接器配置CUDA</h3>
+<ol>
+<li><strong>点击常规，再点击附加库目录</strong>，添加下面的目录。<em>似乎不配置这一条也可以</em></li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">$(CUDA_PATH_V12_0)\lib\$(Platform)</span><br></pre></td></tr></table></figure></div>
+<p>或</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64</span><br></pre></td></tr></table></figure></div>
+<ol start="2">
+<li><strong>点击输入，再点击附加依赖项</strong>，将CUDA的lib文件添加，输入下面的内容。</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\lib\x64\*.lib</span><br></pre></td></tr></table></figure></div>
+<h3 id="配置源码文件风格">配置源码文件风格</h3>
+<p>右键源文件，可以添加新建项中选择“CUDA C/C++ File”。<br>
+右键“<a class="link" href="http://xxx.cu">xxx.cu <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>”源文件，点击属性，选择配置属性中的常规，从项类型中找到“CUDA C/C++”。</p>
+<h2 id="测试cuda代码">测试CUDA代码</h2>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;cuda_runtime.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;device_launch_parameters.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">cudaError_t <span class="title">addWithCuda</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b, <span class="type">unsigned</span> <span class="type">int</span> size)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">addKernel</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> i = threadIdx.x;</span><br><span class="line">    c[i] = a[i] + b[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> arraySize = <span class="number">5</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> a[arraySize] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> b[arraySize] = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span> &#125;;</span><br><span class="line">    <span class="type">int</span> c[arraySize] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Add vectors in parallel.</span></span><br><span class="line">    cudaError_t cudaStatus = <span class="built_in">addWithCuda</span>(c, a, b, arraySize);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;addWithCuda failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;&#123;1,2,3,4,5&#125; + &#123;10,20,30,40,50&#125; = &#123;%d,%d,%d,%d,%d&#125;\n&quot;</span>,</span><br><span class="line">        c[<span class="number">0</span>], c[<span class="number">1</span>], c[<span class="number">2</span>], c[<span class="number">3</span>], c[<span class="number">4</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// cudaDeviceReset must be called before exiting in order for profiling and</span></span><br><span class="line">    <span class="comment">// tracing tools such as Nsight and Visual Profiler to show complete traces.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaDeviceReset</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaDeviceReset failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Helper function for using CUDA to add vectors in parallel.</span></span><br><span class="line"><span class="function">cudaError_t <span class="title">addWithCuda</span><span class="params">(<span class="type">int</span> *c, <span class="type">const</span> <span class="type">int</span> *a, <span class="type">const</span> <span class="type">int</span> *b, <span class="type">unsigned</span> <span class="type">int</span> size)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> *dev_a = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> *dev_b = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> *dev_c = <span class="number">0</span>;</span><br><span class="line">    cudaError_t cudaStatus;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Choose which GPU to run on, change this on a multi-GPU system.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaSetDevice</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaSetDevice failed!  Do you have a CUDA-capable GPU installed?&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Allocate GPU buffers for three vectors (two input, one output)    .</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_c, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_a, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;dev_b, size * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMalloc failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Copy input vectors from host memory to GPU buffers.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(dev_a, a, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(dev_b, b, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Launch a kernel on the GPU with one thread for each element.</span></span><br><span class="line">    addKernel&lt;&lt;&lt;<span class="number">1</span>, size&gt;&gt;&gt;(dev_c, dev_a, dev_b);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Check for any errors launching the kernel</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaGetLastError</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;addKernel launch failed: %s\n&quot;</span>, <span class="built_in">cudaGetErrorString</span>(cudaStatus));</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// cudaDeviceSynchronize waits for the kernel to finish, and returns</span></span><br><span class="line">    <span class="comment">// any errors encountered during the launch.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaDeviceSynchronize returned error code %d after launching addKernel!\n&quot;</span>, cudaStatus);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Copy output vector from GPU buffer to host memory.</span></span><br><span class="line">    cudaStatus = <span class="built_in">cudaMemcpy</span>(c, dev_c, size * <span class="built_in">sizeof</span>(<span class="type">int</span>), cudaMemcpyDeviceToHost);</span><br><span class="line">    <span class="keyword">if</span> (cudaStatus != cudaSuccess) &#123;</span><br><span class="line">        <span class="built_in">fprintf</span>(stderr, <span class="string">&quot;cudaMemcpy failed!&quot;</span>);</span><br><span class="line">        <span class="keyword">goto</span> Error;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Error:</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_c);</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_a);</span><br><span class="line">    <span class="built_in">cudaFree</span>(dev_b);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> cudaStatus;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<p>运行结果如下图：</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/9_result.jpg" alt="测试结果"><figcaption>测试结果</figcaption></figure></p>
+<h2 id="cuda环境的一些碰壁">CUDA环境的一些碰壁</h2>
+<ol>
+<li>
+<p>我的CUDA安装在一个可移动固态硬盘（G盘）中，可能导致了我的CUDA项目只能位于G盘使用，复制粘贴到电脑的盘会出现问题。</p>
+</li>
+<li>
+<p>如果出现了大段指令无法运行，像下面的错误显示，可以复制命令（引号部分）到cmd运行，查看更详细的报错原因。</p>
+</li>
+</ol>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VS报错如下</span><br><span class="line">严重性	代码	说明	项目	文件	行	禁止显示状态</span><br><span class="line">错误	MSB3721	命令“&quot;G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\bin\nvcc.exe&quot; -gencode=arch=compute_52,code=\&quot;sm_52,compute_52\&quot; --use-local-env -ccbin &quot;E:\Microsoft_Visual_Studio\VS\VC\Tools\MSVC\14.33.31629\bin\HostX64\x64&quot; -x cu   -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -Xcompiler &quot;/EHsc /W3 /nologo /Od /FdG:\Data\Coding_Master\yolov5-trt\bin\immediate\x64\Debug\vc143.pdb /FS /Zi /RTC1 /MDd &quot; -o G:\Data\Coding_Master\yolov5-trt\bin\x64\File.cu.obj &quot;G:\Data\Coding_Master\yolov5-trt\File.cu&quot;”已退出，返回代码为 1。	yolov5-trt	E:\Microsoft_Visual_Studio\VS\MSBuild\Microsoft\VC\v170\BuildCustomizations\CUDA 12.0.targets	794</span><br><span class="line"></span><br><span class="line">// 复制命令部分，即下面部分到cmd输入</span><br><span class="line">&quot;G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\bin\nvcc.exe&quot; -gencode=arch=compute_52,code=\&quot;sm_52,compute_52\&quot; --use-local-env -ccbin &quot;E:\Microsoft_Visual_Studio\VS\VC\Tools\MSVC\14.33.31629\bin\HostX64\x64&quot; -x cu   -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include -IG:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\include  -G   --keep-dir x64\Debug  -maxrregcount=0  --machine 64 --compile -cudart static  -g  -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -Xcompiler &quot;/EHsc /W3 /nologo /Od /FdG:\Data\Coding_Master\yolov5-trt\bin\immediate\x64\Debug\vc143.pdb /FS /Zi /RTC1 /MDd &quot; -o G:\Data\Coding_Master\yolov5-trt\bin\x64\File.cu.obj &quot;G:\Data\Coding_Master\yolov5-trt\File.cu&quot;</span><br></pre></td></tr></table></figure></div>
+<ol start="3">
+<li>还遇到一些其他的坑可以自行必应。</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>OpenCV</tag>
+        <tag>CUDA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>个人整理的C++学习路线</title>
     <url>/%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/cpproad/</url>
     <content><![CDATA[<p>个人整理的C++大概学习路线</p>
@@ -2522,52 +2522,6 @@ iPad 和 iPhone 不能显示 Flash 视频。<br>
       </tags>
   </entry>
   <entry>
-    <title>关于GPU服务器的选用</title>
-    <url>/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/gpuserver/</url>
-    <content><![CDATA[<p>介绍关于GPU服务器：租用、使用</p>
-<p>关键词：深度学习、GPU服务器</p>
-<span id="more"></span>
-<hr>
-<!-- toc -->
-<h1>GPU服务器服务商</h1>
-<ol>
-<li>AutoDL算力云</li>
-</ol>
-<ul>
-<li>网站：<a class="link" href="https://www.autodl.com/home">AutoDL算力云 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>个人评价：本人具有使用经历，价格偏便宜，镜像有现成，适合新手入门尝试。</li>
-</ul>
-<ol start="2">
-<li><a class="link" href="https://mistgpu.com/">MistGPU <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-</ol>
-<ul>
-<li>网站：<a class="link" href="https://mistgpu.com/">MistGPU <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>个人评价：价格还行，备用选择。</li>
-</ul>
-<ol start="3">
-<li>阿里云</li>
-</ol>
-<ul>
-<li>网站：<a class="link" href="https://www.aliyun.com/product/ecs/gpu">阿里云 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
-<li>个人评价：阿里云，不多说，可靠也不便宜。</li>
-</ul>
-<h1>GPU服务器使用</h1>
-<ol>
-<li>选择适合的GPU型号、显存大小、浮点算力、存储盘大小。</li>
-<li>选择合适的镜像进行环境配置。</li>
-<li>一般无图形窗口，命令行使用，文件上传下载。</li>
-<li>详细可参考各个服务商的帮助文档。</li>
-</ol>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>其他分享</category>
-      </categories>
-      <tags>
-        <tag>深度学习</tag>
-        <tag>GPU服务器</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于Qt的音频播放器程序设计记录</title>
     <url>/%E7%AC%94%E8%AE%B0/fmusicplayer/</url>
     <content><![CDATA[<p>使用Qt的工具完成一个音频播放器——FMusicPlayer</p>
@@ -2718,6 +2672,71 @@ main.cpp</p>
       <tags>
         <tag>C++</tag>
         <tag>Qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>单周期性MIPS硬件仿真综合设计记录</title>
+    <url>/%E7%AC%94%E8%AE%B0/mips/</url>
+    <content><![CDATA[<p>使用仿真工具实现一个计算机硬件系统，并编写程序，在自己设计的硬件系统上运行、测试，实现要求的功能。</p>
+<p>待补充</p>
+<p>关键词：MIPS、CPU、硬件</p>
+<span id="more"></span>
+<hr>
+<p>aaaaaaaaaa</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>MIPS</tag>
+        <tag>CPU</tag>
+        <tag>硬件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于GPU服务器的选用</title>
+    <url>/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/gpuserver/</url>
+    <content><![CDATA[<p>介绍关于GPU服务器：租用、使用</p>
+<p>关键词：深度学习、GPU服务器</p>
+<span id="more"></span>
+<hr>
+<!-- toc -->
+<h1>GPU服务器服务商</h1>
+<ol>
+<li>AutoDL算力云</li>
+</ol>
+<ul>
+<li>网站：<a class="link" href="https://www.autodl.com/home">AutoDL算力云 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>个人评价：本人具有使用经历，价格偏便宜，镜像有现成，适合新手入门尝试。</li>
+</ul>
+<ol start="2">
+<li><a class="link" href="https://mistgpu.com/">MistGPU <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ol>
+<ul>
+<li>网站：<a class="link" href="https://mistgpu.com/">MistGPU <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>个人评价：价格还行，备用选择。</li>
+</ul>
+<ol start="3">
+<li>阿里云</li>
+</ol>
+<ul>
+<li>网站：<a class="link" href="https://www.aliyun.com/product/ecs/gpu">阿里云 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>个人评价：阿里云，不多说，可靠也不便宜。</li>
+</ul>
+<h1>GPU服务器使用</h1>
+<ol>
+<li>选择适合的GPU型号、显存大小、浮点算力、存储盘大小。</li>
+<li>选择合适的镜像进行环境配置。</li>
+<li>一般无图形窗口，命令行使用，文件上传下载。</li>
+<li>详细可参考各个服务商的帮助文档。</li>
+</ol>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>其他分享</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>GPU服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -4154,76 +4173,6 @@ D返回语句<br>
       </categories>
       <tags>
         <tag>C</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>单周期性MIPS硬件仿真综合设计记录</title>
-    <url>/%E7%AC%94%E8%AE%B0/mips/</url>
-    <content><![CDATA[<p>使用仿真工具实现一个计算机硬件系统，并编写程序，在自己设计的硬件系统上运行、测试，实现要求的功能。</p>
-<p>待补充</p>
-<p>关键词：MIPS、CPU、硬件</p>
-<span id="more"></span>
-<hr>
-<p>aaaaaaaaaa</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>MIPS</tag>
-        <tag>CPU</tag>
-        <tag>硬件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OI Wiki，一个整合了编程竞赛的知识整合站点</title>
-    <url>/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/oiwiki/</url>
-    <content><![CDATA[<p>Github分享</p>
-<p>关键词：算法、数据结构、竞赛</p>
-<span id="more"></span>
-<hr>
-<!-- toc -->
-<h1>是什么</h1>
-<p>“OI Wiki 致力于成为一个免费开放且持续更新的知识整合站点，大家可以在这里获取关于 编程竞赛 (competitive programming) 有趣又实用的知识，我们为大家准备了竞赛中的基础知识、常见题型、解题思路以及常用工具等内容，帮助大家更快速深入地学习编程竞赛。”</p>
-<h1>内容链接</h1>
-<p><a class="link" href="https://oi-wiki.org/">OI Wiki——网页使用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>
-<a class="link" href="https://github.com/OI-wiki/OI-wiki">Github 仓库 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>
-<a class="link" href="https://gitee.com/OI-wiki/OI-wiki">Gitee 仓库 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<h1>如何使用</h1>
-<p>在Github主页上有详细介绍。</p>
-<p>可以直接点击上面的OI Wiki链接使用。</p>
-<p>我在此用Windows 10做一个简单的 <strong>离线版</strong> 使用示例。</p>
-<ol>
-<li>直接或git方式下载仓库压缩包。</li>
-</ol>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_download.jpg" alt="下载"><figcaption>下载</figcaption></figure></p>
-<ol start="2">
-<li>
-<p>解压压缩包</p>
-</li>
-<li>
-<p>在Python下（没有Python的可以<a class="link" href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/8/#more">安装Python <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>），使用命令建立静态网页：在解压后的目录下地址栏输入cmd，接着输入下面的命令启动网页。</p>
-</li>
-</ol>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_run.jpg" alt="打开cmd"><figcaption>打开cmd</figcaption></figure></p>
-<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"># 如果是 python3</span><br><span class="line">python3 -m http.server</span><br><span class="line"># 如果是 python2</span><br><span class="line">python2 -m SimpleHTTPServer</span><br><span class="line"># 有些环境下找不到名叫 python3/python2 的可执行文件，不妨运行 python 试试</span><br></pre></td></tr></table></figure></div>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_run2.jpg" alt="启动网页服务"><figcaption>启动网页服务</figcaption></figure></p>
-<ul>
-<li>如上图则为启动网页服务成功。我在此输入的是<code>python</code>，可以试试<code>python3</code>或者<code>python2</code>能不能运行。</li>
-<li>在浏览器地址栏中输入<code>http://localhost:8000/</code>或<code>127.0.0.1:8000</code>即可进入网页，其中<code>8000</code>为上图启动网页服务的端口，并不一定是<code>8000</code>。</li>
-</ul>
-<ol start="4">
-<li>页面如下图即可进行阅读学习</li>
-</ol>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_home.jpg" alt="OI Wiki"><figcaption>OI Wiki</figcaption></figure></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>其他分享</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>数据结构</tag>
-        <tag>竞赛</tag>
       </tags>
   </entry>
   <entry>
@@ -6475,104 +6424,137 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
-    <title>给大一的你</title>
-    <url>/%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/tofreshman/</url>
-    <content><![CDATA[<p>如今大二将完，给大一朋友的一些话。</p>
-<p>关键词：经验</p>
+    <title>OI Wiki，一个整合了编程竞赛的知识整合站点</title>
+    <url>/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/oiwiki/</url>
+    <content><![CDATA[<p>Github分享</p>
+<p>关键词：算法、数据结构、竞赛</p>
 <span id="more"></span>
 <hr>
 <!-- toc -->
-<p><font face="kaiti">刚高考完就像是刚解放了一样，有的人安排得忙忙的：把好久没看的纪录片、电视剧、电影看个遍；有的人还不知道干什么，日复一日看手机无聊度过。</font></p>
-<p><font face="kaiti">在我自己看来，大一的你可以是这样：</font></p>
+<h1>是什么</h1>
+<p>“OI Wiki 致力于成为一个免费开放且持续更新的知识整合站点，大家可以在这里获取关于 编程竞赛 (competitive programming) 有趣又实用的知识，我们为大家准备了竞赛中的基础知识、常见题型、解题思路以及常用工具等内容，帮助大家更快速深入地学习编程竞赛。”</p>
+<h1>内容链接</h1>
+<p><a class="link" href="https://oi-wiki.org/">OI Wiki——网页使用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>
+<a class="link" href="https://github.com/OI-wiki/OI-wiki">Github 仓库 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>
+<a class="link" href="https://gitee.com/OI-wiki/OI-wiki">Gitee 仓库 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h1>如何使用</h1>
+<p>在Github主页上有详细介绍。</p>
+<p>可以直接点击上面的OI Wiki链接使用。</p>
+<p>我在此用Windows 10做一个简单的 <strong>离线版</strong> 使用示例。</p>
+<ol>
+<li>直接或git方式下载仓库压缩包。</li>
+</ol>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_download.jpg" alt="下载"><figcaption>下载</figcaption></figure></p>
+<ol start="2">
+<li>
+<p>解压压缩包</p>
+</li>
+<li>
+<p>在Python下（没有Python的可以<a class="link" href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/8/#more">安装Python <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>），使用命令建立静态网页：在解压后的目录下地址栏输入cmd，接着输入下面的命令启动网页。</p>
+</li>
+</ol>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_run.jpg" alt="打开cmd"><figcaption>打开cmd</figcaption></figure></p>
+<div class="highlight-container" data-rel="Cmd"><figure class="iseeu highlight cmd"><table><tr><td class="code"><pre><span class="line"># 如果是 python3</span><br><span class="line">python3 -m http.server</span><br><span class="line"># 如果是 python2</span><br><span class="line">python2 -m SimpleHTTPServer</span><br><span class="line"># 有些环境下找不到名叫 python3/python2 的可执行文件，不妨运行 python 试试</span><br></pre></td></tr></table></figure></div>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_run2.jpg" alt="启动网页服务"><figcaption>启动网页服务</figcaption></figure></p>
 <ul>
-<li>
-<p><font face="kaiti">广泛阅读，看看文学，看看历史等等；</font></p>
-</li>
-<li>
-<p><font face="kaiti">广泛交友，识得良师益友；</font></p>
-</li>
-<li>
-<p><font face="kaiti">进入一两个社团组织，培养技能，提高能力；</font></p>
-</li>
-<li>
-<p><font face="kaiti">……</font></p>
-</li>
+<li>如上图则为启动网页服务成功。我在此输入的是<code>python</code>，可以试试<code>python3</code>或者<code>python2</code>能不能运行。</li>
+<li>在浏览器地址栏中输入<code>http://localhost:8000/</code>或<code>127.0.0.1:8000</code>即可进入网页，其中<code>8000</code>为上图启动网页服务的端口，并不一定是<code>8000</code>。</li>
 </ul>
-<p><font face="kaiti">大一其实还算处于一种很自由，很空闲的状态。这个时候拥有很多试错的机会，可以去长见识。</font></p>
-<p><font face="kaiti">如果说你想拼搏努力地度过大一，那就去关注比赛等学术上的活动，同样也是获得经验的过程。如果说你想时而摆烂，不想逼得自己那么紧，那也完全可以，慢慢提升自己。你可以走得很慢，但绝不后退。</font></p>
-<p><font face="kaiti">趁着大一，我觉得最好是提高广度。更重要的是，你是你，无需别人怎么样你也怎么样。有时候遇到的室友、同学摆烂或者很卷，你可以不受他们影响，自个过自个的。注意，这个观念很简单，做到其实很难。</font></p>
-<p><font face="kaiti">其实还有一点，大一是视野逐渐开阔的过程，这个过程中也有很多骗子趁机而入，希望能够三思，能够谨慎，能够小心，谨防诈骗。</font></p>
-<hr>
-<p>接着，我想说一些计算机专业相关的建议。其实很多同学大一之前对于计算机的知识是不全面的，更不用说丰富，你可以当作从零开始慢慢积累。</p>
-<p>计算机并不是一门单纯地如何如何敲代码的学科，它其实更多是一门综合学科。你不用担心高中怎么偏科带来的影响，你可以先把高中带来的放到一边。</p>
-<p>我个人觉得，计算机专业大一应该学习与实践结合，多用电脑，养成计算机的大局观：</p>
-<div class="tabs" id="tab-分类"><ul class="nav-tabs"><li class="tab active"><a class="#分类-1">学习方面</a></li><li class="tab"><a class="#分类-2">实践方面</a></li><li class="tab"><a class="#分类-3">比赛方面</a></li></ul><div class="tab-content"><div class="tab-pane active" id="分类-1"><ul>
-<li>
-<p>编程语言：C语言或C++或者Python等其他语言，这是你的基本能力之一，学会一门编程语言之后便可以用计算机语言去解决一些问题。本博客也有部分编程语言的教程，可参考学习。</p>
-</li>
-<li>
-<p>计算机导论：关于计算机的部分术语和基本内容，开始慢慢了解计算机，便于养成计算机大局观。推荐两个课程，<a class="link" href="https://www.bilibili.com/video/BV1EW411u7th/">【计算机科学速成课】40集全/精校 - Crash Course Computer Science <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，<a class="link" href="https://www.bilibili.com/video/BV1Rb411378V/?spm_id_from=333.880.my_history.page.click&amp;vd_source=2accbe36e414045d5297e94e0d032887">【哈佛】计算机科学CS50-哈佛大学 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</li>
-<li>
-<p>计算机组成原理：关于计算机硬件方面的知识，慢慢知道从最小的逻辑门到整个CPU的组成原理，知道计算机的运作过程。</p>
-</li>
-<li>
-<p>计算机网络：关于网络方面的知识，慢慢知道不同设备之间的连接通信的协议。</p>
-</li>
-<li>
-<p>数据结构：关于编程基础的知识，用于进一步处理编程问题。</p>
-</li>
-<li>
-<p>操作系统：关于计算机硬件和软件之间的内容，慢慢建立系统观念，了解如Windows系统和Linux系统。</p>
-</li>
-</ul>
-<p>上面的这些内容可能大一的时候还没开始学，但是个人大一学是很好的机会。通过对这些方面的了解，会更好地认识计算机这一专业甚至行业。如果跟着学习的话，知识量上、方向上会超过同龄人很多。</p>
-<p>还有一些很平常，学校不会怎么教学但很重要的内容：</p>
-<ul>
-<li>
-<p>英语能力：尤其是阅读英语文章的能力，很多先进的理念知识都是由国外引进，直接阅读原文比别人翻译后喂到嘴里的感觉不一样的。很多国内的课程都可以找找国外大学有无网课，锻炼英语的同时也学到了技术。</p>
-</li>
-<li>
-<p>学会使用Github和Gitee：<a class="link" href="https://www.github.com">Github（国外） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>和<a class="link" href="https://www.gitee.com">Gitee（国内） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>是较为出名的代码保管仓库，简单来说就是有很多大牛在上面发布他们的代码。</p>
-</li>
-<li>
-<p>了解编程语言到程序的过程：比如知道C语言是怎么编程可执行文件，知道一些编译的事情。</p>
-</li>
-<li>
-<p>了解编程工具的配置使用：编程工具的使用，比如Visual Studio，Visual Studio Code、Vim等工具。</p>
-</li>
-<li>
-<p>养成良好的代码风格习惯：比如代码的格式，何时对齐，何时缩进。</p>
-</li>
-<li>
-<p>程序项目和文件的管理：对于电脑上的文件敏感，懂得安排位置；对于项目知道大概的方向等等。</p>
-</li>
-</ul></div><div class="tab-pane" id="分类-2"><ul>
-<li>
-<p>光有理论还不行，在以上学习之余，也建议多去做一些小东西。哪怕是很简单的程序，哪怕就是一个黑窗口，都可以试着写一遍、运行一遍。有一些很简单的问题可以写程序解决，如一元二次方程求解、斐波那契数列求解等。</p>
-</li>
-<li>
-<p>刷题：除了学校那一点的计算机作业，刷题是提高计算机代码能力的一个不错的途径，国内比较好的刷题网站有：<a class="link" href="https://ac.nowcoder.com/">牛客竞赛 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>、<a class="link" href="https://www.luogu.com.cn/">洛谷 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>、<a class="link" href="https://leetcode.cn/problemset/all/">力扣Leetcode <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>、<a class="link" href="https://www.acwing.com/problem/">Acwing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，在刷题的过程中不断解决问题，学习到算法，渐渐找找算法比赛的兴趣。如果实在没有算法也可以保持每日刷个一两题。</p>
-</li>
-</ul></div><div class="tab-pane" id="分类-3"><ul>
-<li>
-<p>算法比赛/程序设计比赛：实际上与算法息息相关，如果你是有兴趣、或者对数学比较热爱，建议全身投入到算法的学习上，参加几个比赛看看成效。</p>
-</li>
-<li>
-<p>常见的算法比赛有蓝桥杯、ACM等，可以关注学校、学院发布的消息。</p>
-</li>
-</ul></div></div></div>
-<p>其实，大学里计算机的上课并不一定重要，要学会学习，不要盲目上课。如果你觉得老师授课模糊，理解不了，根本不能学习， <strong>上课时就坐到后排，及时上网找网课补救</strong> 。学校里的课程考试，考前突击、弄懂作业，一般及格就行（如果你是希望走保研、拿奖学金的方向，那还是得花功夫把考试考好），真正重要的是你是否学习到了知识。</p>
-<p>如若你在大一结束时真能了解计算机组成原理、计算机网络、数据结构和操作系统这四门课，恭喜你，这是计算机考研408的专业课，你也比其他人提前了许多，后面做项目的意识也会改变许多。如果自己很忙，大一学不了学不完也无所谓，这本来就是比别人提前的课程。</p>
-<p>希望在大一里扩宽自己的认识面，找到自己的发展方向。</p>
-<hr>
-<p>最后，如果想和我交流，或者是想要资料，欢迎<u>QQ：1192697361</u></p>
+<ol start="4">
+<li>页面如下图即可进行阅读学习</li>
+</ol>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/oiwiki_home.jpg" alt="OI Wiki"><figcaption>OI Wiki</figcaption></figure></p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
       <categories>
-        <category>经验之谈</category>
+        <category>其他分享</category>
       </categories>
       <tags>
-        <tag>经验</tag>
+        <tag>算法</tag>
+        <tag>数据结构</tag>
+        <tag>竞赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个小巧的Markdown编辑工具</title>
+    <url>/%E8%BD%AF%E4%BB%B6/tools1/</url>
+    <content><![CDATA[<p>介绍一个小巧方便的编写Markdown语言工具——MarkText。</p>
+<p>关键词：Markdown工具</p>
+<span id="more"></span>
+<hr>
+<!-- toc -->
+<h1>什么是Markdown</h1>
+<ul>
+<li>
+<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
+</li>
+<li>
+<p>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
+</li>
+<li>
+<p>Markdown可用于编写记录笔记、博客、电子书等电子文档。</p>
+</li>
+</ul>
+<h1>MarkText</h1>
+<ul>
+<li>MarkText是一款开源的Markdown工具，可用于编辑输出Markdown文件。本人推荐的是英文语言软件，如何汉化自行研究。</li>
+</ul>
+<p>软件地址：建议安装到非系统盘（非C盘）</p>
+<p><a class="link" href="https://github.com/marktext/marktext/releases">MarkText下载 - 官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link" href="https://www.aliyundrive.com/s/CoADkVDj1Sq">MarkText下载 - 个人网盘（Windows64位） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<ul>
+<li>MarkText具有多个明暗主题选择，软件菜单内容明确，主打轻便，是一款很不错的小工具。</li>
+</ul>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A2.jpg" alt="软件界面（明亮主题）"><figcaption>软件界面（明亮主题）</figcaption></figure></p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A22.jpg" alt="软件界面（灰暗主题）"><figcaption>软件界面（灰暗主题）</figcaption></figure></p>
+<ul>
+<li>使用方法</li>
+</ul>
+<p>输入<code>@</code>选择插入的模块，包括段落、分割线、标题、表格、数学公式、引用块、列表等。如果本身对于Markdown语言有一定基础的话，也可直接建立该模块。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BD%BF%E7%94%A81.jpg" alt="使用过程"><figcaption>使用过程</figcaption></figure></p>
+<p>在编写完内容后，可以直接保存为Markdown文件（<code>.md</code>后缀），也可以导出为PDF文件和HTML文件。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BF%9D%E5%AD%98.jpg" alt="选择保存"><figcaption>选择保存</figcaption></figure></p>
+<h1>进阶使用</h1>
+<ul>
+<li>有时候对于PDF文件，会有显示目录大纲的需求，但是该软件直接导出并不能设置，此时需要借助另一个工具：wkhtmltopdf。</li>
+</ul>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="带目录的PDF文件"><figcaption>带目录的PDF文件</figcaption></figure></p>
+<ul>
+<li><strong>wkhtmltopdf</strong></li>
+</ul>
+<p>一款<strong>将HTML文件转化为PDF文件</strong>的小工具，但是其并没有软件UI界面，对小白不友好，但是万能的网络能搜到使用方法，此处针对如何导出带目录的PDF进行介绍。</p>
+<ol>
+<li>下载软件</li>
+</ol>
+<p>下载地址：可能提示有风险，建议安装到非系统盘（非C盘）</p>
+<p><a class="link" href="https://wkhtmltopdf.org/downloads.html">wkhtmltopdf下载 - 官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link" href="https://www.aliyundrive.com/s/V4SBUcntBAv">wkhtmltopdf下载 - 个人网盘（Windows64位） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<ol start="2">
+<li>安装并配置</li>
+</ol>
+<p>安装后，需要记住安装的具体位置，比如我是安装在D盘，位置就是<code>D:\wkhtmltopdf</code>，接着进行系统环境变量的配置。在电脑设置中搜索环境变量，打开编辑页面。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="配置环境变量"><figcaption>配置环境变量</figcaption></figure></p>
+<p>具体步骤：编辑→新建→输入安装的位置里面的bin文件夹即<code>D:\wkhtmltopdf\bin</code>→确定所有系统设置窗口。</p>
+<p>（添加错误的环境变量并不会对电脑造成严重伤害，但不要胡乱删除环境变量）</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%90%8E.jpg" alt="配置环境变量后"><figcaption>配置环境变量后</figcaption></figure></p>
+<p>再接着确认环境变量是否配置成功：按快捷键<code>win+r</code>，输入cmd，打开黑窗口，在窗口内输入<code>wkhtmltopdf -V</code>（查询wkhtmltopdf的版本），如果出现类似于版本号的数字，则说明添加环境变量成功。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_cmd.jpg" alt="配置成功"><figcaption>配置成功</figcaption></figure></p>
+<ol start="3">
+<li>软件使用</li>
+</ol>
+<p>在cmd黑窗口切换到想要HTML文件转换为PDF文件的位置，直接输入<code>F:</code>切换到不同的盘，输入<code>cd xx</code>可以进入不同文件夹。如果不知道自己是什么路径，可以先进入所在盘，再打开文件所在文件夹，在地址栏点击获得路径，然后复制粘贴到黑窗口进入。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BF%9B%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="进入工作文件夹"><figcaption>进入工作文件夹</figcaption></figure></p>
+<p>接着回到MarkText软件，将文件导出为HTML文件，保存在特定文件夹，该文件夹应该跟cmd黑窗口进入的文件夹一样。举例时，我将该文件保存为<code>test.html</code>文件在<code>F:\14.Books</code>文件夹。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E5%AF%BC%E5%87%BAHTML.jpg" alt="导出HTML"><figcaption>导出HTML</figcaption></figure></p>
+<p>再回到黑窗口，使用命令<code>wkhtmltopdf 目的文件名字 新文件名字</code>转换，我这里应该是<code>wkhtmltopdf test.html test.pdf</code>。等待转换成功。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BD%AC%E6%8D%A2%E6%88%90%E5%8A%9F.jpg" alt="转换成功"><figcaption>转换成功</figcaption></figure></p>
+<p>此时回到文件夹，就可以看到转换完成的带目录的PDF文件。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_test.jpg" alt="转换成功的PDF文件"><figcaption>转换成功的PDF文件</figcaption></figure></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>Markdown工具</tag>
       </tags>
   </entry>
   <entry>
@@ -8358,6 +8340,107 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
       </tags>
   </entry>
   <entry>
+    <title>给大一的你</title>
+    <url>/%E7%BB%8F%E9%AA%8C%E4%B9%8B%E8%B0%88/tofreshman/</url>
+    <content><![CDATA[<p>如今大二将完，给大一朋友的一些话。</p>
+<p>关键词：经验</p>
+<span id="more"></span>
+<hr>
+<!-- toc -->
+<p><font face="kaiti">刚高考完就像是刚解放了一样，有的人安排得忙忙的：把好久没看的纪录片、电视剧、电影看个遍；有的人还不知道干什么，日复一日看手机无聊度过。</font></p>
+<p><font face="kaiti">在我自己看来，大一的你可以是这样：</font></p>
+<ul>
+<li>
+<p><font face="kaiti">广泛阅读，看看文学，看看历史等等；</font></p>
+</li>
+<li>
+<p><font face="kaiti">广泛交友，识得良师益友；</font></p>
+</li>
+<li>
+<p><font face="kaiti">进入一两个社团组织，培养技能，提高能力；</font></p>
+</li>
+<li>
+<p><font face="kaiti">……</font></p>
+</li>
+</ul>
+<p><font face="kaiti">大一其实还算处于一种很自由，很空闲的状态。这个时候拥有很多试错的机会，可以去长见识。</font></p>
+<p><font face="kaiti">如果说你想拼搏努力地度过大一，那就去关注比赛等学术上的活动，同样也是获得经验的过程。如果说你想时而摆烂，不想逼得自己那么紧，那也完全可以，慢慢提升自己。你可以走得很慢，但绝不后退。</font></p>
+<p><font face="kaiti">趁着大一，我觉得最好是提高广度。更重要的是，你是你，无需别人怎么样你也怎么样。有时候遇到的室友、同学摆烂或者很卷，你可以不受他们影响，自个过自个的。注意，这个观念很简单，做到其实很难。</font></p>
+<p><font face="kaiti">其实还有一点，大一是视野逐渐开阔的过程，这个过程中也有很多骗子趁机而入，希望能够三思，能够谨慎，能够小心，谨防诈骗。</font></p>
+<hr>
+<p>接着，我想说一些计算机专业相关的建议。其实很多同学大一之前对于计算机的知识是不全面的，更不用说丰富，你可以当作从零开始慢慢积累。</p>
+<p>计算机并不是一门单纯地如何如何敲代码的学科，它其实更多是一门综合学科。你不用担心高中怎么偏科带来的影响，你可以先把高中带来的放到一边。</p>
+<p>我个人觉得，计算机专业大一应该学习与实践结合，多用电脑，养成计算机的大局观：</p>
+<div class="tabs" id="tab-分类"><ul class="nav-tabs"><li class="tab active"><a class="#分类-1">学习方面</a></li><li class="tab"><a class="#分类-2">实践方面</a></li><li class="tab"><a class="#分类-3">比赛方面</a></li></ul><div class="tab-content"><div class="tab-pane active" id="分类-1"><ul>
+<li>
+<p>编程语言：C语言或C++或者Python等其他语言，这是你的基本能力之一，学会一门编程语言之后便可以用计算机语言去解决一些问题。本博客也有部分编程语言的教程，可参考学习。</p>
+</li>
+<li>
+<p>计算机导论：关于计算机的部分术语和基本内容，开始慢慢了解计算机，便于养成计算机大局观。推荐两个课程，<a class="link" href="https://www.bilibili.com/video/BV1EW411u7th/">【计算机科学速成课】40集全/精校 - Crash Course Computer Science <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，<a class="link" href="https://www.bilibili.com/video/BV1Rb411378V/?spm_id_from=333.880.my_history.page.click&amp;vd_source=2accbe36e414045d5297e94e0d032887">【哈佛】计算机科学CS50-哈佛大学 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+<li>
+<p>计算机组成原理：关于计算机硬件方面的知识，慢慢知道从最小的逻辑门到整个CPU的组成原理，知道计算机的运作过程。</p>
+</li>
+<li>
+<p>计算机网络：关于网络方面的知识，慢慢知道不同设备之间的连接通信的协议。</p>
+</li>
+<li>
+<p>数据结构：关于编程基础的知识，用于进一步处理编程问题。</p>
+</li>
+<li>
+<p>操作系统：关于计算机硬件和软件之间的内容，慢慢建立系统观念，了解如Windows系统和Linux系统。</p>
+</li>
+</ul>
+<p>上面的这些内容可能大一的时候还没开始学，但是个人大一学是很好的机会。通过对这些方面的了解，会更好地认识计算机这一专业甚至行业。如果跟着学习的话，知识量上、方向上会超过同龄人很多。</p>
+<p>还有一些很平常，学校不会怎么教学但很重要的内容：</p>
+<ul>
+<li>
+<p>英语能力：尤其是阅读英语文章的能力，很多先进的理念知识都是由国外引进，直接阅读原文比别人翻译后喂到嘴里的感觉不一样的。很多国内的课程都可以找找国外大学有无网课，锻炼英语的同时也学到了技术。</p>
+</li>
+<li>
+<p>学会使用Github和Gitee：<a class="link" href="https://www.github.com">Github（国外） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>和<a class="link" href="https://www.gitee.com">Gitee（国内） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>是较为出名的代码保管仓库，简单来说就是有很多大牛在上面发布他们的代码。</p>
+</li>
+<li>
+<p>了解编程语言到程序的过程：比如知道C语言是怎么编程可执行文件，知道一些编译的事情。</p>
+</li>
+<li>
+<p>了解编程工具的配置使用：编程工具的使用，比如Visual Studio，Visual Studio Code、Vim等工具。</p>
+</li>
+<li>
+<p>养成良好的代码风格习惯：比如代码的格式，何时对齐，何时缩进。</p>
+</li>
+<li>
+<p>程序项目和文件的管理：对于电脑上的文件敏感，懂得安排位置；对于项目知道大概的方向等等。</p>
+</li>
+</ul></div><div class="tab-pane" id="分类-2"><ul>
+<li>
+<p>光有理论还不行，在以上学习之余，也建议多去做一些小东西。哪怕是很简单的程序，哪怕就是一个黑窗口，都可以试着写一遍、运行一遍。有一些很简单的问题可以写程序解决，如一元二次方程求解、斐波那契数列求解等。</p>
+</li>
+<li>
+<p>刷题：除了学校那一点的计算机作业，刷题是提高计算机代码能力的一个不错的途径，国内比较好的刷题网站有：<a class="link" href="https://ac.nowcoder.com/">牛客竞赛 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>、<a class="link" href="https://www.luogu.com.cn/">洛谷 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>、<a class="link" href="https://leetcode.cn/problemset/all/">力扣Leetcode <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>、<a class="link" href="https://www.acwing.com/problem/">Acwing <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，在刷题的过程中不断解决问题，学习到算法，渐渐找找算法比赛的兴趣。如果实在没有算法也可以保持每日刷个一两题。</p>
+</li>
+</ul></div><div class="tab-pane" id="分类-3"><ul>
+<li>
+<p>算法比赛/程序设计比赛：实际上与算法息息相关，如果你是有兴趣、或者对数学比较热爱，建议全身投入到算法的学习上，参加几个比赛看看成效。</p>
+</li>
+<li>
+<p>常见的算法比赛有蓝桥杯、ACM等，可以关注学校、学院发布的消息。</p>
+</li>
+</ul></div></div></div>
+<p>其实，大学里计算机的上课并不一定重要，要学会学习，不要盲目上课。如果你觉得老师授课模糊，理解不了，根本不能学习， <strong>上课时就坐到后排，及时上网找网课补救</strong> 。学校里的课程考试，考前突击、弄懂作业，一般及格就行（如果你是希望走保研、拿奖学金的方向，那还是得花功夫把考试考好），真正重要的是你是否学习到了知识。</p>
+<p>如若你在大一结束时真能了解计算机组成原理、计算机网络、数据结构和操作系统这四门课，恭喜你，这是计算机考研408的专业课，你也比其他人提前了许多，后面做项目的意识也会改变许多。如果自己很忙，大一学不了学不完也无所谓，这本来就是比别人提前的课程。</p>
+<p>希望在大一里扩宽自己的认识面，找到自己的发展方向。</p>
+<hr>
+<p>最后，如果想和我交流，或者是想要资料，欢迎<u>QQ：1192697361</u></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>经验之谈</category>
+      </categories>
+      <tags>
+        <tag>经验</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一个便捷的启动小工具</title>
     <url>/%E8%BD%AF%E4%BB%B6/tools2/</url>
     <content><![CDATA[<p>介绍一个便捷的启动工具、搜索工具——Flow Launcher</p>
@@ -8404,122 +8487,6 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
       </categories>
       <tags>
         <tag>启动工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个小巧的Markdown编辑工具</title>
-    <url>/%E8%BD%AF%E4%BB%B6/tools1/</url>
-    <content><![CDATA[<p>介绍一个小巧方便的编写Markdown语言工具——MarkText。</p>
-<p>关键词：Markdown工具</p>
-<span id="more"></span>
-<hr>
-<!-- toc -->
-<h1>什么是Markdown</h1>
-<ul>
-<li>
-<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档。</p>
-</li>
-<li>
-<p>Markdown 编写的文档可以导出 HTML 、Word、图像、PDF、Epub 等多种格式的文档。</p>
-</li>
-<li>
-<p>Markdown可用于编写记录笔记、博客、电子书等电子文档。</p>
-</li>
-</ul>
-<h1>MarkText</h1>
-<ul>
-<li>MarkText是一款开源的Markdown工具，可用于编辑输出Markdown文件。本人推荐的是英文语言软件，如何汉化自行研究。</li>
-</ul>
-<p>软件地址：建议安装到非系统盘（非C盘）</p>
-<p><a class="link" href="https://github.com/marktext/marktext/releases">MarkText下载 - 官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link" href="https://www.aliyundrive.com/s/CoADkVDj1Sq">MarkText下载 - 个人网盘（Windows64位） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<ul>
-<li>MarkText具有多个明暗主题选择，软件菜单内容明确，主打轻便，是一款很不错的小工具。</li>
-</ul>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A2.jpg" alt="软件界面（明亮主题）"><figcaption>软件界面（明亮主题）</figcaption></figure></p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A22.jpg" alt="软件界面（灰暗主题）"><figcaption>软件界面（灰暗主题）</figcaption></figure></p>
-<ul>
-<li>使用方法</li>
-</ul>
-<p>输入<code>@</code>选择插入的模块，包括段落、分割线、标题、表格、数学公式、引用块、列表等。如果本身对于Markdown语言有一定基础的话，也可直接建立该模块。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BD%BF%E7%94%A81.jpg" alt="使用过程"><figcaption>使用过程</figcaption></figure></p>
-<p>在编写完内容后，可以直接保存为Markdown文件（<code>.md</code>后缀），也可以导出为PDF文件和HTML文件。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BF%9D%E5%AD%98.jpg" alt="选择保存"><figcaption>选择保存</figcaption></figure></p>
-<h1>进阶使用</h1>
-<ul>
-<li>有时候对于PDF文件，会有显示目录大纲的需求，但是该软件直接导出并不能设置，此时需要借助另一个工具：wkhtmltopdf。</li>
-</ul>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="带目录的PDF文件"><figcaption>带目录的PDF文件</figcaption></figure></p>
-<ul>
-<li><strong>wkhtmltopdf</strong></li>
-</ul>
-<p>一款<strong>将HTML文件转化为PDF文件</strong>的小工具，但是其并没有软件UI界面，对小白不友好，但是万能的网络能搜到使用方法，此处针对如何导出带目录的PDF进行介绍。</p>
-<ol>
-<li>下载软件</li>
-</ol>
-<p>下载地址：可能提示有风险，建议安装到非系统盘（非C盘）</p>
-<p><a class="link" href="https://wkhtmltopdf.org/downloads.html">wkhtmltopdf下载 - 官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><a class="link" href="https://www.aliyundrive.com/s/V4SBUcntBAv">wkhtmltopdf下载 - 个人网盘（Windows64位） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<ol start="2">
-<li>安装并配置</li>
-</ol>
-<p>安装后，需要记住安装的具体位置，比如我是安装在D盘，位置就是<code>D:\wkhtmltopdf</code>，接着进行系统环境变量的配置。在电脑设置中搜索环境变量，打开编辑页面。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="配置环境变量"><figcaption>配置环境变量</figcaption></figure></p>
-<p>具体步骤：编辑→新建→输入安装的位置里面的bin文件夹即<code>D:\wkhtmltopdf\bin</code>→确定所有系统设置窗口。</p>
-<p>（添加错误的环境变量并不会对电脑造成严重伤害，但不要胡乱删除环境变量）</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%90%8E.jpg" alt="配置环境变量后"><figcaption>配置环境变量后</figcaption></figure></p>
-<p>再接着确认环境变量是否配置成功：按快捷键<code>win+r</code>，输入cmd，打开黑窗口，在窗口内输入<code>wkhtmltopdf -V</code>（查询wkhtmltopdf的版本），如果出现类似于版本号的数字，则说明添加环境变量成功。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_cmd.jpg" alt="配置成功"><figcaption>配置成功</figcaption></figure></p>
-<ol start="3">
-<li>软件使用</li>
-</ol>
-<p>在cmd黑窗口切换到想要HTML文件转换为PDF文件的位置，直接输入<code>F:</code>切换到不同的盘，输入<code>cd xx</code>可以进入不同文件夹。如果不知道自己是什么路径，可以先进入所在盘，再打开文件所在文件夹，在地址栏点击获得路径，然后复制粘贴到黑窗口进入。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BF%9B%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="进入工作文件夹"><figcaption>进入工作文件夹</figcaption></figure></p>
-<p>接着回到MarkText软件，将文件导出为HTML文件，保存在特定文件夹，该文件夹应该跟cmd黑窗口进入的文件夹一样。举例时，我将该文件保存为<code>test.html</code>文件在<code>F:\14.Books</code>文件夹。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E5%AF%BC%E5%87%BAHTML.jpg" alt="导出HTML"><figcaption>导出HTML</figcaption></figure></p>
-<p>再回到黑窗口，使用命令<code>wkhtmltopdf 目的文件名字 新文件名字</code>转换，我这里应该是<code>wkhtmltopdf test.html test.pdf</code>。等待转换成功。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BD%AC%E6%8D%A2%E6%88%90%E5%8A%9F.jpg" alt="转换成功"><figcaption>转换成功</figcaption></figure></p>
-<p>此时回到文件夹，就可以看到转换完成的带目录的PDF文件。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_test.jpg" alt="转换成功的PDF文件"><figcaption>转换成功的PDF文件</figcaption></figure></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>软件</category>
-      </categories>
-      <tags>
-        <tag>Markdown工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>两个用过的导航页</title>
-    <url>/%E7%BD%91%E9%A1%B5/%E5%AF%BC%E8%88%AA%E9%A1%B5/</url>
-    <content><![CDATA[<p>介绍两个我常用的导航页——果汁导航页和青柠起始页。导航页就是一个网站的目录，其包含了很多常用其他网站的快捷方式。</p>
-<p>关键词：导航页</p>
-<span id="more"></span>
-<hr>
-<ol>
-<li>果汁导航</li>
-</ol>
-<p>果汁导航页包括互联网搜索功能，还有各种生活学习用到的网页快捷方式。每层目录下还收纳了很多相关网站，包括影视、知识、新闻、等网站，丰富度很高，也很容易因为内容太多眼花缭乱忘记了有这么样的功能。更多功能可以自己探索发现收藏。可登录使用也可不登录使用。</p>
-<p>地址：<a class="link" href="http://guozhivip.com">果汁导航 - guozhivip.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/%E5%AF%BC%E8%88%AA%E9%A1%B5_%E6%9E%9C%E6%B1%81%E8%B5%84%E6%BA%90%E5%AF%BC%E8%88%AA.png" alt="果汁导航"><figcaption>果汁导航</figcaption></figure></p>
-<ol start="2">
-<li>青柠起始页</li>
-</ol>
-<p>一个简约的起始页，具有搜索功能，当搜索框聚焦时，背景具有毛玻璃效果。点击时钟可以到达另一页，此页可以添加一些常用的网站快捷方式（需登录），自定义程度高。丰富度不高，简约型网站。</p>
-<p>地址：<a class="link" href="https://limestart.cn/">青柠起始页 - limestart.cn <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/%E5%AF%BC%E8%88%AA%E9%A1%B5_%E9%9D%92%E6%9F%A0%E8%B5%B7%E5%A7%8B%E9%A1%B5.jpg" alt="青柠起始页主页"><figcaption>青柠起始页主页</figcaption></figure></p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/%E5%AF%BC%E8%88%AA%E9%A1%B5_%E9%9D%92%E6%9F%A0%E8%B5%B7%E5%A7%8B%E9%A1%B51.jpg" alt="青柠起始页附页"><figcaption>青柠起始页附页</figcaption></figure></p>
-<ul>
-<li>附：设置为浏览器起始页</li>
-</ul>
-<p>以Edge浏览器为例，打开设置页面，选择<code>开始、主页和新建标签页</code>，将启动时页面改为想要的导航页，更方便自己浏览器使用。</p>
-<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/%E5%AF%BC%E8%88%AA%E9%A1%B5_%E8%AE%BE%E7%BD%AE.jpg" alt="设置"><figcaption>设置</figcaption></figure></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
-      <categories>
-        <category>网页</category>
-      </categories>
-      <tags>
-        <tag>导航页</tag>
       </tags>
   </entry>
   <entry>
@@ -8856,6 +8823,39 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
         <tag>TensorRT</tag>
         <tag>C++推演</tag>
         <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两个用过的导航页</title>
+    <url>/%E7%BD%91%E9%A1%B5/%E5%AF%BC%E8%88%AA%E9%A1%B5/</url>
+    <content><![CDATA[<p>介绍两个我常用的导航页——果汁导航页和青柠起始页。导航页就是一个网站的目录，其包含了很多常用其他网站的快捷方式。</p>
+<p>关键词：导航页</p>
+<span id="more"></span>
+<hr>
+<ol>
+<li>果汁导航</li>
+</ol>
+<p>果汁导航页包括互联网搜索功能，还有各种生活学习用到的网页快捷方式。每层目录下还收纳了很多相关网站，包括影视、知识、新闻、等网站，丰富度很高，也很容易因为内容太多眼花缭乱忘记了有这么样的功能。更多功能可以自己探索发现收藏。可登录使用也可不登录使用。</p>
+<p>地址：<a class="link" href="http://guozhivip.com">果汁导航 - guozhivip.com <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/%E5%AF%BC%E8%88%AA%E9%A1%B5_%E6%9E%9C%E6%B1%81%E8%B5%84%E6%BA%90%E5%AF%BC%E8%88%AA.png" alt="果汁导航"><figcaption>果汁导航</figcaption></figure></p>
+<ol start="2">
+<li>青柠起始页</li>
+</ol>
+<p>一个简约的起始页，具有搜索功能，当搜索框聚焦时，背景具有毛玻璃效果。点击时钟可以到达另一页，此页可以添加一些常用的网站快捷方式（需登录），自定义程度高。丰富度不高，简约型网站。</p>
+<p>地址：<a class="link" href="https://limestart.cn/">青柠起始页 - limestart.cn <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/%E5%AF%BC%E8%88%AA%E9%A1%B5_%E9%9D%92%E6%9F%A0%E8%B5%B7%E5%A7%8B%E9%A1%B5.jpg" alt="青柠起始页主页"><figcaption>青柠起始页主页</figcaption></figure></p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/%E5%AF%BC%E8%88%AA%E9%A1%B5_%E9%9D%92%E6%9F%A0%E8%B5%B7%E5%A7%8B%E9%A1%B51.jpg" alt="青柠起始页附页"><figcaption>青柠起始页附页</figcaption></figure></p>
+<ul>
+<li>附：设置为浏览器起始页</li>
+</ul>
+<p>以Edge浏览器为例，打开设置页面，选择<code>开始、主页和新建标签页</code>，将启动时页面改为想要的导航页，更方便自己浏览器使用。</p>
+<p><figure class="image-caption"><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/%E5%AF%BC%E8%88%AA%E9%A1%B5_%E8%AE%BE%E7%BD%AE.jpg" alt="设置"><figcaption>设置</figcaption></figure></p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>]]></content>
+      <categories>
+        <category>网页</category>
+      </categories>
+      <tags>
+        <tag>导航页</tag>
       </tags>
   </entry>
 </search>
