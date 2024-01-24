@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/learnCpp_cmdlinein.jpg">
 <meta property="og:image" content="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/learnCpp_cmdlineout.jpg">
 <meta property="article:published_time" content="2024-01-09T13:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-21T13:47:41.299Z">
+<meta property="article:modified_time" content="2024-01-24T13:00:43.575Z">
 <meta property="article:author" content="Fingsinz">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
@@ -465,8 +465,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-01-21 21:47:41</span>
-            <span class="mobile">2024-01-21 21:47:41</span>
+            <span class="desktop">2024-01-24 21:43</span>
+            <span class="mobile">2024-01-24 21:43</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -504,12 +504,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>11.3k 字</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>12.6k 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>46 分钟</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>51 分钟</span>
         </span>
     
     
@@ -1496,6 +1496,196 @@
 </ul>
 </li>
 </ul>
+<h2 id="指针">指针</h2>
+<h3 id="为什么需要指针？">为什么需要指针？</h3>
+<ul>
+<li>观察对象
+<ul>
+<li>引用/跟踪对象</li>
+<li>在运行时更改间接的目标</li>
+</ul>
+</li>
+<li>访问动态内存
+<ul>
+<li>访问动态存储持续时间的对象，即生命周期不与变量/作用域绑定的对象</li>
+</ul>
+</li>
+<li>构建动态、基于结点的数据结构
+<ul>
+<li>动态数组</li>
+<li>链表</li>
+<li>树/图</li>
+</ul>
+</li>
+</ul>
+<p>有时候可以用于前向声明：定义一个类型，它的所有成员的内存大小必须是已知的。</p>
+<p>例子中，Hub 类和 Device 类相互类型引用。</p>
+<ul>
+<li>因为，所有指针类型都具有相同的大小。</li>
+<li>所以先声明 Hub 的存在。</li>
+<li>然后 Device 只需要一个指向 Hub 的指针，即已知成员内存大小。</li>
+</ul>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Hub</span>;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Device</span> &#123;</span><br><span class="line">  Hub* hub_;</span><br><span class="line">  …</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Hub</span> &#123;</span><br><span class="line">  std::vector&lt;Device <span class="type">const</span>*&gt; devs_;</span><br><span class="line">  …</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+<h3 id="指向类型为t的对象的指针">指向类型为T的对象的指针</h3>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">T* ptr;</span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>存储类型为 T 的对象 <code>ptr</code> 的内存地址；</li>
+<li>可以用来检查/观察/修改目标对象；</li>
+<li>可以重定向到不同的目标（不同于引用，引用不可以重定向）；</li>
+<li>也可能根本不指向任何对象，为空指针。</li>
+</ul>
+<p>原始指针：<code>T *</code></p>
+<ul>
+<li>本质：一个存储内存地址的（无符号）整数变量</li>
+<li>大小：64位，8个字节（64位机）</li>
+<li>许多原始指针可以指向相同的地址/对象</li>
+<li>指针和目标（被指向）对象的生存期是独立的，可能会出现野指针。
+<ul>
+<li>野指针：指向一个已经销毁的对象的指针或指向一个未定义内容的内存地址。</li>
+</ul>
+</li>
+</ul>
+<p>智能指针：（C++11及以后）</p>
+<ul>
+<li><code>std::unique_pointer&lt;T&gt;</code>
+<ul>
+<li>用于访问动态存储，即堆上的对象；</li>
+<li>每个对象只能有一个 <code>unique_pointer</code>；</li>
+<li>指针与指向对象具有相同的生存期。</li>
+</ul>
+</li>
+<li><code>std::shared_pointer&lt;T&gt;</code>
+<ul>
+<li>用于访问动态存储，即堆上的对象；</li>
+<li>每个对象可以有多个 <code>shared_pointer</code></li>
+<li>只要至少有一个 <code>shared_pointer</code> 指向目标对象，目标对象就存在</li>
+</ul>
+</li>
+<li><code>std::weak_pointer&lt;T&gt;</code>
+<ul>
+<li>用于访问动态存储，即堆上的对象；</li>
+<li>每个对象可以有多个 <code>shared_pointer</code></li>
+</ul>
+</li>
+</ul>
+<p>C++11及以后： <code>nullptr</code></p>
+<ul>
+<li>特殊指针值；</li>
+<li>可隐式转换为 <code>false</code></li>
+<li>在内存中不一定用0表示（取决于平台）</li>
+<li><code>nullptr</code> 表示值不可用
+<ul>
+<li>在初始化时设置指向空指针或有效地址的指针</li>
+<li>取消引用前检查是否为nullptr</li>
+</ul>
+</li>
+</ul>
+<h3 id="指针相关的运算符">指针相关的运算符</h3>
+<p>取地址符 <code>&amp;</code> ：返回内存地址。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> c = <span class="number">65</span>;</span><br><span class="line"><span class="type">char</span> *pc = &amp;c;</span><br></pre></td></tr></table></figure></div>
+<p>解引用（取值）符 <code>*</code> ： 访问地址中的值</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> c = <span class="number">65</span>;</span><br><span class="line"><span class="type">char</span> *pc = &amp;c;</span><br><span class="line">*pc = <span class="number">66</span>;</span><br></pre></td></tr></table></figure></div>
+<p>成员访问符 <code>-&gt;</code> ： 访问指针指向的对象的成员</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">coord</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> x = <span class="number">0</span>;</span><br><span class="line">    <span class="type">char</span> y = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">coord a&#123;<span class="number">1</span>, <span class="number">2</span>&#125;;</span><br><span class="line">coord *pa = &amp;a;</span><br><span class="line"><span class="type">char</span> v = pa-&gt;x;     <span class="comment">// 访问指针pa指向地址中的x成员的值</span></span><br><span class="line"><span class="type">char</span> w = (*pa).y;   <span class="comment">// 解引用后使用.访问成员 </span></span><br></pre></td></tr></table></figure></div>
+<p><code>*</code> 和 <code>&amp;</code> 的语法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">用处</th>
+<th style="text-align:center"><code>*</code></th>
+<th style="text-align:center"><code>&amp;</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">作类型修饰符</td>
+<td style="text-align:center">声明指针：<code>Type *ptr = nullptr</code></td>
+<td style="text-align:center">声明引用：<code>Type &amp;ref = variable</code></td>
+</tr>
+<tr>
+<td style="text-align:center">作一元运算符</td>
+<td style="text-align:center">解引用：<code>value = *pointer</code></td>
+<td style="text-align:center">取地址：<code>pointer = &amp;variable</code></td>
+</tr>
+<tr>
+<td style="text-align:center">作二元运算符</td>
+<td style="text-align:center">乘法：<code>ans = expr1 * expr2</code></td>
+<td style="text-align:center">按位与：<code>bitand = expr1 &amp; expr2</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>指针声明时注意：</em></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* p1, p2;    <span class="comment">// p1 是 int*，p2 是 int</span></span><br><span class="line"><span class="type">int</span> *p1, *p2;    <span class="comment">// p1 是 int*，p2 是 int*</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="const-指针">const 指针</h3>
+<p>目的：</p>
+<ul>
+<li>对于目标只读访问</li>
+<li>防止指针重定向</li>
+</ul>
+<p>语法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">T类型的指针</th>
+<th style="text-align:center">指向的值能否修改</th>
+<th style="text-align:center">指针能否重定向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>T *</code></td>
+<td style="text-align:center">能</td>
+<td style="text-align:center">能</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>T const *</code></td>
+<td style="text-align:center">不能</td>
+<td style="text-align:center">能</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>T * const</code></td>
+<td style="text-align:center">能</td>
+<td style="text-align:center">不能</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>T const * const</code></td>
+<td style="text-align:center">不能</td>
+<td style="text-align:center">不能</td>
+</tr>
+</tbody>
+</table>
+<p><strong>从右向左读：(是否const修饰的) 指针指向一个（是否const修饰的）类型</strong></p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> j = <span class="number">8</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> *cp = &amp;i;</span><br><span class="line">*cp = <span class="number">8</span>;   <span class="comment">//  编译器错误：指向的值是常量</span></span><br><span class="line">cp = &amp;j;   <span class="comment">//  OK</span></span><br><span class="line"><span class="type">int</span> * <span class="type">const</span> pc = &amp;i;</span><br><span class="line">*pc = <span class="number">8</span>;   <span class="comment">//  OK</span></span><br><span class="line">pc = &amp;j;   <span class="comment">//  编译器错误：指针本身是常量</span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> * <span class="type">const</span> cpc = &amp;i;</span><br><span class="line">*cpc = <span class="number">8</span>;  <span class="comment">//  编译器错误：指向的值是常量</span></span><br><span class="line">cpc = &amp;j;  <span class="comment">//  编译器错误：指针本身是常量</span></span><br></pre></td></tr></table></figure></div>
+<hr>
+<p>还有代码风格的一致性问题：使用像是 <code>int const</code> 而不是 <code>const int</code>。</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// const 修饰它的左边</span></span><br><span class="line"><span class="type">int</span> <span class="type">const</span> c = ...;          <span class="comment">// const 修饰它的左边（int）</span></span><br><span class="line"><span class="type">int</span> <span class="type">const</span> &amp;cr = ...;        <span class="comment">// const 修饰它的左边（int）</span></span><br><span class="line"><span class="type">int</span> <span class="type">const</span> *pc = ...;        <span class="comment">// const 修饰它的左边（int）</span></span><br><span class="line"><span class="type">int</span> * <span class="type">const</span> cp = ...;       <span class="comment">// const 修饰它的左边（*）</span></span><br><span class="line"><span class="type">int</span> <span class="type">const</span> * <span class="type">const</span> cpc = ...;<span class="comment">// const 修饰它的左边（int和*）</span></span><br></pre></td></tr></table></figure></div>
+<hr>
+<h3 id="this-指针">this 指针</h3>
+<p><code>this</code>：</p>
+<ul>
+<li>成员函数内部可用</li>
+<li><code>this</code> 返回对象本身的地址</li>
+<li><code>this-&gt;</code> 可用于访问成员</li>
+<li><code>*this</code> 访问对象本身</li>
+</ul>
+<p>如：</p>
+<div class="highlight-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">IntRange</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> l_ = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> r_ = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span></span></span><br><span class="line"><span class="function">    <span class="title">IntRange</span> <span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span>: l_&#123;</span>l&#125;, r_&#123;r&#125; </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (l_ &gt; r_) std::<span class="built_in">swap</span>(l_, r_);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">left</span> <span class="params">()</span>  <span class="type">const</span> </span>&#123; <span class="keyword">return</span> l_; &#125;</span><br><span class="line">    <span class="comment">// 也可以使用“this”访问成员：</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">right</span> <span class="params">()</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> <span class="keyword">this</span>-&gt;r_; &#125;</span><br><span class="line">    <span class="comment">// 返回对象本身的引用</span></span><br><span class="line">    <span class="function">IntRange&amp; <span class="title">shift</span> <span class="params">(<span class="type">int</span> by)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        l_ += by;</span><br><span class="line">        r_ += by;</span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+<h3 id="少使用指针">少使用指针</h3>
+<p>推荐合适使用 <strong>引用</strong> 代替指针。</p>
+<ol>
+<li>指针容易悬空
+<ul>
+<li>悬空：指针指向无效或不可访问的内存地址</li>
+<li>指针中的值可以是任意地址，程序员必须确保指针目标是有效的/仍然存在</li>
+</ul>
+</li>
+<li>容易出现错误参数传递</li>
+<li>指针让代码更难理解
+<ul>
+<li><code>*p = *p * *p + (2 * *p + 1);</code></li>
+</ul>
+</li>
+</ol>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
         </div>
 
@@ -1560,7 +1750,7 @@
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
         <div class="page-title">C++基础语法杂记</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8Ec%E8%AF%AD%E8%A8%80%E5%88%B0c"><span class="nav-text">从C语言到C++</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-%E5%BC%80%E5%8F%91%E8%AE%BE%E7%BD%AE"><span class="nav-text">C++开发设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8-%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83ide"><span class="nav-text">编辑器 &amp; 集成开发环境IDE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8"><span class="nav-text">编译器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8Fhello-world"><span class="nav-text">第一个程序Hello World</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%AF%91hello-cpp"><span class="nav-text">编译hello.cpp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E5%8F%82%E6%95%B0%E6%A0%87%E8%AE%B0"><span class="nav-text">编译器参数标记</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-%E7%9A%84i-o"><span class="nav-text">C++的I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#i-o%E6%B5%81"><span class="nav-text">I&#x2F;O流</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-text">基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-text">变量类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E7%AC%A6"><span class="nav-text">自增自减符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">比较运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">位运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E6%B5%81"><span class="nav-text">控制流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-text">条件结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-text">循环结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%81%9A%E5%90%88"><span class="nav-text">数据类型聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-%E7%9A%84%E9%BB%98%E8%AE%A4%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84-std-vector"><span class="nav-text">C++的默认动态数组 std::vector</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#std-vector%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">std::vector的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#std-vector%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text">std::vector迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#std-vector-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-text">std::vector 的工作原理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2std-string"><span class="nav-text">字符串std::string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="nav-text">函数重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%AE%BE%E8%AE%A1"><span class="nav-text">函数设计</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B-%E9%83%A8%E5%88%86"><span class="nav-text">内存模型（部分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="nav-text">输入和输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">命令行的输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81"><span class="nav-text">输入输出流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">文件的输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E5%92%8C%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"><span class="nav-text">打开和关闭文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="nav-text">读文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-text">写文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%B5%81%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-text">输入流的错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9F%BA%E7%A1%80"><span class="nav-text">自定义类基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E4%BE%8B"><span class="nav-text">引例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E6%88%90%E5%91%98%E7%9A%84%E5%8F%97%E9%99%90%E5%88%B6%E8%AE%BF%E9%97%AE"><span class="nav-text">类成员的受限制访问</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="nav-text">成员函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E6%9C%89%E4%B8%8E%E7%A7%81%E6%9C%89"><span class="nav-text">公有与私有</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const%E9%99%90%E5%AE%9A%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="nav-text">const限定的成员函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">成员函数的定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">成员初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-text">构造函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="nav-text">析构函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E8%8E%B7%E5%8F%96%E5%8D%B3%E5%88%9D%E5%A7%8B%E5%8C%96raii"><span class="nav-text">资源获取即初始化RAII</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%B6%E8%A7%84%E5%88%99"><span class="nav-text">零规则</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8Ec%E8%AF%AD%E8%A8%80%E5%88%B0c"><span class="nav-text">从C语言到C++</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-%E5%BC%80%E5%8F%91%E8%AE%BE%E7%BD%AE"><span class="nav-text">C++开发设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8-%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83ide"><span class="nav-text">编辑器 &amp; 集成开发环境IDE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8"><span class="nav-text">编译器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8Fhello-world"><span class="nav-text">第一个程序Hello World</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%AF%91hello-cpp"><span class="nav-text">编译hello.cpp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E5%8F%82%E6%95%B0%E6%A0%87%E8%AE%B0"><span class="nav-text">编译器参数标记</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-%E7%9A%84i-o"><span class="nav-text">C++的I&#x2F;O</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#i-o%E6%B5%81"><span class="nav-text">I&#x2F;O流</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-text">基本类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-text">变量类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%87%AA%E5%A2%9E%E8%87%AA%E5%87%8F%E7%AC%A6"><span class="nav-text">自增自减符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">比较运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">位运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E6%B5%81"><span class="nav-text">控制流</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-text">条件结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-text">循环结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%81%9A%E5%90%88"><span class="nav-text">数据类型聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8"><span class="nav-text">引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-%E7%9A%84%E9%BB%98%E8%AE%A4%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84-std-vector"><span class="nav-text">C++的默认动态数组 std::vector</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#std-vector%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">std::vector的使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#std-vector%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="nav-text">std::vector迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#std-vector-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-text">std::vector 的工作原理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2std-string"><span class="nav-text">字符串std::string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="nav-text">函数重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%AE%BE%E8%AE%A1"><span class="nav-text">函数设计</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B-%E9%83%A8%E5%88%86"><span class="nav-text">内存模型（部分）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="nav-text">输入和输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">命令行的输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81"><span class="nav-text">输入输出流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text">文件的输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E5%92%8C%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"><span class="nav-text">打开和关闭文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6"><span class="nav-text">读文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-text">写文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E6%B5%81%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-text">输入流的错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9F%BA%E7%A1%80"><span class="nav-text">自定义类基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E4%BE%8B"><span class="nav-text">引例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E6%88%90%E5%91%98%E7%9A%84%E5%8F%97%E9%99%90%E5%88%B6%E8%AE%BF%E9%97%AE"><span class="nav-text">类成员的受限制访问</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="nav-text">成员函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AC%E6%9C%89%E4%B8%8E%E7%A7%81%E6%9C%89"><span class="nav-text">公有与私有</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#const%E9%99%90%E5%AE%9A%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="nav-text">const限定的成员函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">成员函数的定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">初始化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-text">成员初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-text">构造函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="nav-text">析构函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E8%8E%B7%E5%8F%96%E5%8D%B3%E5%88%9D%E5%A7%8B%E5%8C%96raii"><span class="nav-text">资源获取即初始化RAII</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%B6%E8%A7%84%E5%88%99"><span class="nav-text">零规则</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E9%92%88"><span class="nav-text">指针</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%8C%87%E9%92%88%EF%BC%9F"><span class="nav-text">为什么需要指针？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%90%91%E7%B1%BB%E5%9E%8B%E4%B8%BAt%E7%9A%84%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%8C%87%E9%92%88"><span class="nav-text">指向类型为T的对象的指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E7%9B%B8%E5%85%B3%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">指针相关的运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const-%E6%8C%87%E9%92%88"><span class="nav-text">const 指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this-%E6%8C%87%E9%92%88"><span class="nav-text">this 指针</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%91%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88"><span class="nav-text">少使用指针</span></a></li></ol></li></ol>
 
     </div>
 </div>
