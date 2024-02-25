@@ -6,12 +6,12 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="基于YOLOv5的电瓶车识别入门级项目记录" />
     <meta name="hexo-theme-A4" content="v1.8.3" />
-    <link rel="alternate icon" type="image/webp" href="/images/icon1.webp">
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Fingsinz&#39;s space | 风信梓</title>
 
     
         
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
+<link rel="stylesheet" href="/css/highlight/style1.css">
 
         
 <link rel="stylesheet" href="/css/reset.css">
@@ -48,7 +48,12 @@
 
         
     
+
     
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
 
 <meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
@@ -69,6 +74,16 @@
         .post-md code {
             background: #e7f7f3;
             color: #7f688d; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e7f7f3;
+            color: #7f688d; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #000000;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #000000;
         }
         .year-font-color {
             color: #000000 !important;
@@ -165,11 +180,11 @@
             background: white;
         }
 
-        .post-md>table tr:nth-child(odd) td {
+        .post-md table tr:nth-child(odd) td {
             background: white;
         }
 
-        .post-md>table tr:nth-child(even) td {
+        .post-md table tr:nth-child(even) td {
             background: white;
         }
 
@@ -181,6 +196,16 @@
 	        stroke: #000000; /* 边框的颜色 */
         }
         .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
 	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
          }
 
@@ -213,6 +238,8 @@
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
+
+
 <div class="header">
     <div class="header-container">
         <img style="
@@ -220,7 +247,7 @@
         height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
         <div class="header-content">
             <a class="logo" href="/">Fingsinz&#39;s space</a> 
-            <span class="description">不忘初心，方得始终</span> 
+            <span class="description">我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span> 
         </div>
         
     </div>
@@ -270,14 +297,14 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">零 —— 前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">壹 —— 环境准备</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">贰 —— 数据准备</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-1-%E6%95%B0%E6%8D%AE%E9%9B%86%E7%BB%93%E6%9E%84"><span class="post-toc-text">2.1 数据集结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-2-%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="post-toc-text">2.2 处理数据集</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">叁 —— 模型训练及分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-%E9%83%A8%E7%BD%B2yolov5"><span class="post-toc-text">3.1 部署YOLOv5</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-1-%E4%BD%BF%E7%94%A8%E7%A4%BE%E5%8C%BA%E9%95%9C%E5%83%8F%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2yolov5"><span class="post-toc-text">3.1.1 使用社区镜像自动部署YOLOv5</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-2-%E6%89%8B%E5%8A%A8%E9%83%A8%E7%BD%B2yolov5"><span class="post-toc-text">3.1.2 手动部署YOLOv5</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-2-%E4%B8%8A%E4%BC%A0%E6%95%B0%E6%8D%AE"><span class="post-toc-text">3.2 上传数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-%E9%85%8D%E7%BD%AE%E8%AE%AD%E7%BB%83%E5%8F%82%E6%95%B0"><span class="post-toc-text">3.3 配置训练参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-1-%E4%BF%AE%E6%94%B9train-py%E6%96%87%E4%BB%B6"><span class="post-toc-text">3.3.1 修改train.py文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-2-%E4%BF%AE%E6%94%B9val-py%E6%96%87%E4%BB%B6"><span class="post-toc-text">3.3.2 修改val.py文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-3-%E4%BF%AE%E6%94%B9%E6%A8%A1%E5%9E%8B%E9%85%8D%E7%BD%AE"><span class="post-toc-text">3.3.3 修改模型配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-4-%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%83%BD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="post-toc-text">3.4 训练可能出现的问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-5-%E8%AE%AD%E7%BB%83%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="post-toc-text">3.5 训练结果分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-1-%E4%BF%9D%E5%AD%98%E8%AE%AD%E7%BB%83%E7%BB%93%E6%9E%9C"><span class="post-toc-text">3.5.1 保存训练结果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-2-%E6%9B%B2%E7%BA%BF%E7%B1%BB%E5%88%86%E6%9E%90"><span class="post-toc-text">3.5.2 曲线类分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-3-%E6%B7%B7%E6%B7%86%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90"><span class="post-toc-text">3.5.3 混淆矩阵分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-4-%E6%A0%87%E7%AD%BE%E7%9B%B8%E5%85%B3%E5%88%86%E6%9E%90"><span class="post-toc-text">3.5.4 标签相关分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-5-%E8%AE%AD%E7%BB%83%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="post-toc-text">3.5.5 训练验证结果分析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-5-6-%E5%85%B6%E4%BD%99%E5%88%86%E6%9E%90"><span class="post-toc-text">3.5.6 其余分析</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">肆 —— 模型转化处理（基于.onnx文件推理）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-1-%E8%BD%AC%E5%8C%96%E4%B8%BA-onnx%E6%96%87%E4%BB%B6"><span class="post-toc-text">4.1 转化为.onnx文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-2-%E9%80%9A%E8%BF%87c-%E5%88%A9%E7%94%A8-onnx%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E6%8E%A8%E7%90%86%E8%AF%86%E5%88%AB"><span class="post-toc-text">4.2 通过C++利用.onnx文件进行推理识别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-1-%E8%AE%B0%E5%BD%95%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="post-toc-text">4.2.1 记录处理的数据结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-2-%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E5%87%BD%E6%95%B0"><span class="post-toc-text">4.2.2 检测识别函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-3-%E9%A2%84%E6%B5%8B%E7%94%BB%E6%A1%86%E5%87%BD%E6%95%B0"><span class="post-toc-text">4.2.3 预测画框函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-4-%E4%B8%BB%E5%87%BD%E6%95%B0"><span class="post-toc-text">4.2.4 主函数</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">伍 —— 模型转化加速处理（基于.engine文件推理）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-1-%E8%BD%AC%E5%8C%96%E4%B8%BA-engine%E6%96%87%E4%BB%B6"><span class="post-toc-text">5.1 转化为.engine文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-1-%E9%80%9A%E8%BF%87yolov5%E8%87%AA%E5%B8%A6%E7%9A%84export-py%E8%BD%AC%E6%8D%A2"><span class="post-toc-text">5.1.1 通过YOLOv5自带的export.py转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-2-%E9%80%9A%E8%BF%87%E8%87%AA%E5%B7%B1%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E7%9A%84tensorrt%E8%BD%AC%E6%8D%A2"><span class="post-toc-text">5.1.2 通过自己下载安装的TensorRT转换</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-2-%E9%80%9A%E8%BF%87c-%E5%88%A9%E7%94%A8-engine%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E6%8E%A8%E7%90%86%E8%AF%86%E5%88%AB"><span class="post-toc-text">5.2 通过C++利用.engine文件进行推理识别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-1-%E8%AE%B0%E5%BD%95%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="post-toc-text">5.2.1 记录识别结果的数据结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-2-%E6%97%A5%E5%BF%97%E6%A8%A1%E5%9D%97"><span class="post-toc-text">5.2.2 日志模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-3-%E8%AE%A1%E7%AE%97%E5%86%85%E5%AD%98%E5%A4%A7%E5%B0%8F%E6%A8%A1%E5%9D%97"><span class="post-toc-text">5.2.3 计算内存大小模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-4-%E6%A3%80%E6%B5%8B%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9D%97"><span class="post-toc-text">5.2.4 检测识别模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-5-%E4%B8%BB%E5%87%BD%E6%95%B0%E8%AE%BE%E8%AE%A1"><span class="post-toc-text">5.2.5 主函数设计</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">陆 —— 打包软件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-1-%E5%9F%BA%E4%BA%8E-onnx%E6%96%87%E4%BB%B6%E5%9B%BE%E5%83%8F%E6%8E%A8%E7%90%86%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85"><span class="post-toc-text">6.1 基于.onnx文件图像推理程序打包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-2-%E5%9F%BA%E4%BA%8E-engine%E6%96%87%E4%BB%B6%E5%9B%BE%E5%83%8F%E6%8E%A8%E7%90%86%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85"><span class="post-toc-text">6.2 基于.engine文件图像推理程序打包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-3-%E6%95%B4%E4%BD%93%E6%89%93%E5%8C%85"><span class="post-toc-text">6.3 整体打包</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">柒 —— 总结及后话</span></a></li></ol>
             
         
-        <p>一次基于YOLOv5的深度学习项目，在GPU服务器完成模型训练，在Windows 10下进行图像识别推理（C++）。</p>
+        <div class=".article-gallery"><p>一次基于YOLOv5的深度学习项目，在GPU服务器完成模型训练，在Windows 10下进行图像识别推理（C++）。</p>
 <p>关键词：深度学习、YOLOv5、C++推演、TensorRT、OpenCV</p>
 <span id="more"></span>
 <hr>
 <!-- toc -->
 <h1>零 —— 前言</h1>
 <p>此篇博客是我亲手做的一次项目记录（2023.7.3~2023.7.14），在GPU服务器完成基于YOLOv5的模型训练，在Windows 10下将训练得到的权重文件作基本处理转化为.onnx文件和.engine文件分别进行C++下的推理，最后并做了简单界面，效果如下图。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_chengguo.jpg" alt="成品展示"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_chengguo.jpg" title="成品展示" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_chengguo.jpg" alt="成品展示"></a></p>
 <p>本人学术不精，此篇博客可能会因为一些深度学习上的知识不熟悉而造成的表达错误，此博客只是记录此次项目过程，并尽力使其有参考性、使其可复刻。</p>
 <p>项目代码放在<a target="_blank" rel="noopener" href="https://gitee.com/fingsinz/ele-bicycle-detection/">码云Gitee仓库</a></p>
 <p><br><br><br></p>
@@ -289,8 +316,8 @@
 <li><u>OpenCV环境</u>：进行图像处理</li>
 </ul>
 <p>我的环境是CUDA12.0，OpenCV4.5.2，训练所用Python3.8.10，本机Windows 10所用Python3.11.4。</p>
-<p>下载安装CUDA可参考<a target="_blank" rel="noopener" href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/5/#more">这篇博客</a><br>
-配置OpenCV和CUDA环境可参考<a target="_blank" rel="noopener" href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/9/#more">这篇博客</a>。</p>
+<p>下载安装CUDA可参考<a href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/5/#more">这篇博客</a><br>
+配置OpenCV和CUDA环境可参考<a href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/9/#more">这篇博客</a>。</p>
 <p><br><br><br></p>
 <h1>贰 —— 数据准备</h1>
 <h2 id="2-1-数据集结构">2.1 数据集结构</h2>
@@ -298,7 +325,7 @@
 <ul>
 <li><u>校园内电瓶车463张</u>：435张用于训练，28张用于验证</li>
 </ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_dataset.jpg" alt="数据集文件结构"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_dataset.jpg" title="数据集文件结构" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_dataset.jpg" alt="数据集文件结构"></a></p>
 <p>这个数量上和比例上并不良好，也没有设测试集，建议照片尽量多，并按8:1:1的比例分配在训练集、验证集和测试集。</p>
 <ul>
 <li>训练集：用于YOLOv5模型调试神经网络；相当于学生的课本，学生根据课本里的内容来掌握知识。</li>
@@ -306,7 +333,7 @@
 <li>测试集：用来测试网络的实际学习能力；相当于考试，考的题是平常都没有见过，考察学生举一反三的能力。</li>
 </ul>
 <p>数据集的文件结构应如下：</p>
-<pre><code>dataset
+<pre class="line-numbers language-none"><code class="language-none">dataset
 |---images
 |   |---train
 |   |---val
@@ -314,103 +341,95 @@
 |---labels
 |   |---train
 |   |---val
-|   |---test
-</code></pre>
+|   |---test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="2-2-处理数据集">2.2 处理数据集</h2>
 <p>使用<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/550021453">LabelImg</a>进行对图片标记。或自行搜索使用安装教程。</p>
 <p>打标签时，选择YOLO格式，生成的是.txt文件，用于模型训练。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_labeling.jpg" alt="使用LabelImg工具对数据集进行打标签"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_labeling.jpg" title="使用LabelImg工具对数据集进行打标签" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_labeling.jpg" alt="使用LabelImg工具对数据集进行打标签"></a></p>
 <p>打完标签后，在labels文件夹下的train文件夹、val文件夹和test文件夹会生成一个对应images各文件夹的.txt文件，还会生成一个classes.txt文件。故labels文件夹下的各个文件夹会多一个文件。</p>
 <p>最后命名此数据集为<code>eleb</code>。</p>
 <p><br><br><br></p>
 <h1>叁 —— 模型训练及分析</h1>
 <h2 id="3-1-部署yolov5">3.1 部署YOLOv5</h2>
 <p>训练模型需要在专业的GPU加速服务器上运行， <strong>请勿尝试在自己的电脑上跑模型</strong>。</p>
-<p>挑选GPU服务器可参考<a target="_blank" rel="noopener" href="https://fingsinz.space/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/gpuserver/#more">这篇博客</a>。</p>
+<p>挑选GPU服务器可参考<a href="https://fingsinz.space/%E5%85%B6%E4%BB%96%E5%88%86%E4%BA%AB/gpuserver/#more">这篇博客</a>。</p>
 <h3 id="3-1-1-使用社区镜像自动部署yolov5">3.1.1 使用社区镜像自动部署YOLOv5</h3>
 <p>我使用的是AutoDL算力云，其社区镜像默认安装了YOLOv5。在算力市场中寻找合适的地区，GPU型号尽量好，按量计费租用。我此次租用的是：<u>芜湖区-RTX3090</u>，1.58r/h，跑四百多张图片估计是四个小时左右。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_ser.jpg" alt="租用GPU服务器"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_ser.jpg" title="租用GPU服务器" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_ser.jpg" alt="租用GPU服务器"></a></p>
 <p>租用实例后开机，我选择JupyterLab的方式连接服务器。为了方便，我把默认的<code>yolov5</code>文件夹转到（剪贴粘贴）数据盘。有文件如下：</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_yolov5.jpg" alt="yolov5文件夹"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_yolov5.jpg" title="yolov5文件夹" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_yolov5.jpg" alt="yolov5文件夹"></a></p>
 <h3 id="3-1-2-手动部署yolov5">3.1.2 手动部署YOLOv5</h3>
 <p>建议租用Ubuntu系统，在有Python、Git等环境下，服务器新建文件夹，使用git命令克隆<a target="_blank" rel="noopener" href="https://github.com/ultralytics/yolov5">YOLOv5仓库</a>或者网页下载压缩包解压部署。如果有缺少的库可以<code>pip install</code>安装。</p>
-<pre><code class="language-cmd">git clone https://github.com/ultralytics/yolov5.git
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">git clone https://github.com/ultralytics/yolov5.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>至此YOLOv5部署完毕。</p>
 <h2 id="3-2-上传数据">3.2 上传数据</h2>
 <p>将我们准备好的数据集压缩成.zip压缩文件，上传到<code>yolov5/data/eleb</code>（数据集根目录，新建文件夹eleb），由于文件比较大，上传速度也比较慢，比较费时间，也可以在服务器上创建文件夹后多选文件上传。</p>
 <p>在终端上进入<code>yolov5/data</code>运行下面的指令：</p>
-<pre><code class="language-cmd">unzip xx.zip
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">unzip xx.zip<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>如果提示有包没下载就去下载。</p>
 <p>解压后，复制data文件夹下的<code>coco.yaml</code>，并命名为数据集的名字。在上面我将数据集名字命名为<code>eleb</code>，故复制并命名为<code>eleb.yaml</code>。</p>
 <p>将eleb.yaml编辑如下：</p>
-<pre><code class="language-yaml"># 训练集、验证集、测试集路径设置
-path: ./data/eleb    # 数据集根目录
-train: images/train  # 训练集目录
-val: images/val      # 验证集目录
-test:                # 测试集目录，此处没设立
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># 训练集、验证集、测试集路径设置</span>
+<span class="token key atrule">path</span><span class="token punctuation">:</span> ./data/eleb    <span class="token comment"># 数据集根目录</span>
+<span class="token key atrule">train</span><span class="token punctuation">:</span> images/train  <span class="token comment"># 训练集目录</span>
+<span class="token key atrule">val</span><span class="token punctuation">:</span> images/val      <span class="token comment"># 验证集目录</span>
+<span class="token key atrule">test</span><span class="token punctuation">:</span>                <span class="token comment"># 测试集目录，此处没设立</span>
 
-# 标签的类，此项目只有一个类
-names:
-  0: elebike
+<span class="token comment"># 标签的类，此项目只有一个类</span>
+<span class="token key atrule">names</span><span class="token punctuation">:</span>
+  <span class="token key atrule">0</span><span class="token punctuation">:</span> elebike
 
-# Download script/URL (optional) 不管，默认
-download: #https://ultralytics.com/assets/coco128-seg.zip
-
-</code></pre>
+<span class="token comment"># Download script/URL (optional) 不管，默认</span>
+<span class="token key atrule">download</span><span class="token punctuation">:</span> <span class="token comment">#https://ultralytics.com/assets/coco128-seg.zip</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-3-配置训练参数">3.3 配置训练参数</h2>
 <h3 id="3-3-1-修改train-py文件">3.3.1 修改train.py文件</h3>
 <p><strong>回到<code>yolov5/</code>目录，找到<code>train.py</code>文件打开，找到<code>parse_opt()</code>函数，更改部分参数：</strong></p>
-<pre><code class="language-python"># ……
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># ……</span>
 
-# model.yaml是模型配置文件，在文件夹yolov5/models中，此处我使用yolov5l.yaml
-parser.add_argument('--cfg', type=str, default='', help='yolov5l.yaml path')
+<span class="token comment"># model.yaml是模型配置文件，在文件夹yolov5/models中，此处我使用yolov5l.yaml</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--cfg'</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'yolov5l.yaml path'</span><span class="token punctuation">)</span>
     
-# 配置数据集的yaml文件，即eleb.yaml
-parser.add_argument('--data', type=str, default=ROOT / 'data/eleb.yaml', help='dataset.yaml path')
+<span class="token comment"># 配置数据集的yaml文件，即eleb.yaml</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--data'</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">,</span> default<span class="token operator">=</span>ROOT <span class="token operator">/</span> <span class="token string">'data/eleb.yaml'</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'dataset.yaml path'</span><span class="token punctuation">)</span>
     
-# 配置训练轮数，默认300轮
-parser.add_argument('--epochs', type=int, default=300, help='total training epochs')
+<span class="token comment"># 配置训练轮数，默认300轮</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--epochs'</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'total training epochs'</span><span class="token punctuation">)</span>
     
-# 配置训练时所有GPU的总批量大小，为-1则自动
-parser.add_argument('--batch-size', type=int, default=16, help='所有GPU的总批量大小, -1 for autobatch')
+<span class="token comment"># 配置训练时所有GPU的总批量大小，为-1则自动</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--batch-size'</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'所有GPU的总批量大小, -1 for autobatch'</span><span class="token punctuation">)</span>
     
-# 配置训练输入的照片大小，默认为640 × 640
-parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=640, help='train, val image size (pixels)')
+<span class="token comment"># 配置训练输入的照片大小，默认为640 × 640</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--imgsz'</span><span class="token punctuation">,</span> <span class="token string">'--img'</span><span class="token punctuation">,</span> <span class="token string">'--img-size'</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">int</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token number">640</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'train, val image size (pixels)'</span><span class="token punctuation">)</span>
 
-# 下面保持默认即可
+<span class="token comment"># 下面保持默认即可</span>
 	
-# ……
-</code></pre>
+<span class="token comment"># ……</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-3-2-修改val-py文件">3.3.2 修改val.py文件</h3>
 <p><strong>回到<code>yolov5/</code>目录，找到<code>val.py</code>文件打开，找到<code>parse_opt()</code>函数，更改部分参数：</strong></p>
-<pre><code class="language-python"># ……
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># ……</span>
 
-# 配置数据集的yaml文件，即eleb.yaml
-parser.add_argument('--data', type=str, default=ROOT / 'data/eleb.yaml', help='dataset.yaml path')
+<span class="token comment"># 配置数据集的yaml文件，即eleb.yaml</span>
+parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--data'</span><span class="token punctuation">,</span> <span class="token builtin">type</span><span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">,</span> default<span class="token operator">=</span>ROOT <span class="token operator">/</span> <span class="token string">'data/eleb.yaml'</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">'dataset.yaml path'</span><span class="token punctuation">)</span>
 
-# ……
-</code></pre>
+<span class="token comment"># ……</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-3-3-修改模型配置">3.3.3 修改模型配置</h3>
 <p><strong>（3）进入<code>yolov5/models/</code>目录，找到<code>train.py</code>设置的模型配置.yaml文件，我这里使用的是yolov5l模型，打开yolov5l.yaml，修改<code>nc</code>（分类数），此项目修改为1：</strong></p>
-<pre><code class="language-yaml"># ……
-nc: 1  # number of classes
-depth_multiple: 1.0  # model depth multiple
-width_multiple: 1.0  # layer channel multiple
-anchors:
-  - [10,13, 16,30, 33,23]  # P3/8
-  - [30,61, 62,45, 59,119]  # P4/16
-  - [116,90, 156,198, 373,326]  # P5/32
-# ……
-</code></pre>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token comment"># ……</span>
+<span class="token key atrule">nc</span><span class="token punctuation">:</span> <span class="token number">1</span>  <span class="token comment"># number of classes</span>
+<span class="token key atrule">depth_multiple</span><span class="token punctuation">:</span> <span class="token number">1.0</span>  <span class="token comment"># model depth multiple</span>
+<span class="token key atrule">width_multiple</span><span class="token punctuation">:</span> <span class="token number">1.0</span>  <span class="token comment"># layer channel multiple</span>
+<span class="token key atrule">anchors</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">33</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">]</span>  <span class="token comment"># P3/8</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">61</span><span class="token punctuation">,</span> <span class="token number">62</span><span class="token punctuation">,</span><span class="token number">45</span><span class="token punctuation">,</span> <span class="token number">59</span><span class="token punctuation">,</span><span class="token number">119</span><span class="token punctuation">]</span>  <span class="token comment"># P4/16</span>
+  <span class="token punctuation">-</span> <span class="token punctuation">[</span><span class="token number">116</span><span class="token punctuation">,</span><span class="token number">90</span><span class="token punctuation">,</span> <span class="token number">156</span><span class="token punctuation">,</span><span class="token number">198</span><span class="token punctuation">,</span> <span class="token number">373</span><span class="token punctuation">,</span><span class="token number">326</span><span class="token punctuation">]</span>  <span class="token comment"># P5/32</span>
+<span class="token comment"># ……</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>至此训练参数配置完毕。</p>
 <p>启动终端，进入yolov5文件夹，我这里是进入<code>autodl-tmp/yolov5/</code>，输入命令启动训练：</p>
-<pre><code class="language-cmd">python train.py
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">python train.py<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>如下图即开始训练</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_train2.jpg" alt="训练开始"></p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_train.jpg" alt="训练结束"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_train2.jpg" title="训练开始" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_train2.jpg" alt="训练开始"></a></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_train.jpg" title="训练结束" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_train.jpg" alt="训练结束"></a></p>
 <h2 id="3-4-训练可能出现的问题">3.4 训练可能出现的问题</h2>
 <p>如果出现训练过程长时间的<code>R</code>和<code>P</code>值为<code>0</code>或者<code>val/box_loss</code>和<code>val/obj_loss</code>为<code>nan</code>的情况，参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_55249340/article/details/125855686">此篇博客</a>。</p>
 <p>如果仍不能解决，可以考虑重新手动部署YOLOv5，接着修改参数运行train.py启动训练，如果缺少库就pip install安装。</p>
@@ -418,62 +437,61 @@ anchors:
 <p>等待训练结束，在 <code>yolov5/runs/train</code> 文件夹就存放在训练的数据，其中weights文件夹中还存放着此次训练的权重文件，用于后续推理。</p>
 <h3 id="3-5-1-保存训练结果">3.5.1 保存训练结果</h3>
 <p>在训练结果文件夹（我的是<code>runs/train/exp2</code>）中新建.py文件，输入下面代码，接着使用终端进入<code>runs/train/exp2</code>，使用命令<code>python save.py</code>可以变成压缩包，下载压缩包即下载全部训练结果。</p>
-<pre><code class="language-python"># save.py
-import os
-import tarfile
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># save.py</span>
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> tarfile
 
-def recursive_files(dir_name='.', ignore=None):
-    for dir_name,subdirs,files in os.walk(dir_name):
-        if ignore and os.path.basename(dir_name) in ignore: 
-            continue
+<span class="token keyword">def</span> <span class="token function">recursive_files</span><span class="token punctuation">(</span>dir_name<span class="token operator">=</span><span class="token string">'.'</span><span class="token punctuation">,</span> ignore<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> dir_name<span class="token punctuation">,</span>subdirs<span class="token punctuation">,</span>files <span class="token keyword">in</span> os<span class="token punctuation">.</span>walk<span class="token punctuation">(</span>dir_name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> ignore <span class="token keyword">and</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>basename<span class="token punctuation">(</span>dir_name<span class="token punctuation">)</span> <span class="token keyword">in</span> ignore<span class="token punctuation">:</span> 
+            <span class="token keyword">continue</span>
 
-        for file_name in files:
-            if ignore and file_name in ignore:
-                continue
+        <span class="token keyword">for</span> file_name <span class="token keyword">in</span> files<span class="token punctuation">:</span>
+            <span class="token keyword">if</span> ignore <span class="token keyword">and</span> file_name <span class="token keyword">in</span> ignore<span class="token punctuation">:</span>
+                <span class="token keyword">continue</span>
 
-            yield os.path.join(dir_name, file_name)
+            <span class="token keyword">yield</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>dir_name<span class="token punctuation">,</span> file_name<span class="token punctuation">)</span>
 
-def make_tar_file(dir_name='.', tar_file_name='tarfile.tar', ignore=None):
-    tar = tarfile.open(tar_file_name, 'w')
+<span class="token keyword">def</span> <span class="token function">make_tar_file</span><span class="token punctuation">(</span>dir_name<span class="token operator">=</span><span class="token string">'.'</span><span class="token punctuation">,</span> tar_file_name<span class="token operator">=</span><span class="token string">'tarfile.tar'</span><span class="token punctuation">,</span> ignore<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    tar <span class="token operator">=</span> tarfile<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>tar_file_name<span class="token punctuation">,</span> <span class="token string">'w'</span><span class="token punctuation">)</span>
 
-    for file_name in recursive_files(dir_name, ignore):
-        tar.add(file_name)
+    <span class="token keyword">for</span> file_name <span class="token keyword">in</span> recursive_files<span class="token punctuation">(</span>dir_name<span class="token punctuation">,</span> ignore<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        tar<span class="token punctuation">.</span>add<span class="token punctuation">(</span>file_name<span class="token punctuation">)</span>
 
-    tar.close()
+    tar<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 
-dir_name = '.'
-tar_file_name = 'train.tar'
-ignore = {'.ipynb_checkpoints', '__pycache__', tar_file_name}
-make_tar_file(dir_name, tar_file_name, ignore)
-
-</code></pre>
+dir_name <span class="token operator">=</span> <span class="token string">'.'</span>
+tar_file_name <span class="token operator">=</span> <span class="token string">'train.tar'</span>
+ignore <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'.ipynb_checkpoints'</span><span class="token punctuation">,</span> <span class="token string">'__pycache__'</span><span class="token punctuation">,</span> tar_file_name<span class="token punctuation">}</span>
+make_tar_file<span class="token punctuation">(</span>dir_name<span class="token punctuation">,</span> tar_file_name<span class="token punctuation">,</span> ignore<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>将训练结果下载到电脑上，解压有如下文件：</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_results.jpg" alt=""></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_results.jpg" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_results.jpg" alt=""></a></p>
 <h3 id="3-5-2-曲线类分析">3.5.2 曲线类分析</h3>
 <ul>
 <li>P_curve：准确率Precision和置信度Confidence的关系图，当设置某置信度时对应某个类别的识别准确率。随着置信度设置越高，某个类别识别准确率越高。</li>
 </ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_P_curve.png" alt="P曲线"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_P_curve.png" title="P曲线" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_P_curve.png" alt="P曲线"></a></p>
 <ul>
 <li>R_curve：召回率Recall和置信度Confidence的关系图，当设置某置信度时对应某个类别的查找完全的概率。随着置信度设置越高，某个类别能被查找完全的概率越低。</li>
 </ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_R_curve.png" alt="R曲线"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_R_curve.png" title="R曲线" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_R_curve.png" alt="R曲线"></a></p>
 <ul>
 <li>PR_cruve：准确率Precision和召回率Recall的关系图，尽可能希望准确率高的同时召回率也高，即曲线与坐标轴围成的面积越大，模型越好。</li>
 </ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_PR_curve.png" alt="PR曲线"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_PR_curve.png" title="PR曲线" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_PR_curve.png" alt="PR曲线"></a></p>
 <ul>
 <li>F1_curve：精确率和召回率的调和平均数，某个分类对应F1的值，1为最好，0为最差。</li>
 </ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_F1_curve.png" alt="F1曲线"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_F1_curve.png" title="F1曲线" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_F1_curve.png" alt="F1曲线"></a></p>
 <h3 id="3-5-3-混淆矩阵分析">3.5.3 混淆矩阵分析</h3>
 <ul>
 <li>confusion_matrix：矩阵的每一列代表一个类的实例预测，而每一行表示一个实际的类的实例，可以方便地看出机器是否将两个不同的类混淆。</li>
 </ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_confusion_matrix.png" alt="混淆矩阵"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_confusion_matrix.png" title="混淆矩阵" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_confusion_matrix.png" alt="混淆矩阵"></a></p>
 <h3 id="3-5-4-标签相关分析">3.5.4 标签相关分析</h3>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_labels.jpg" alt="标签相关labels.jpg"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_labels.jpg" title="标签相关labels.jpg" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_labels.jpg" alt="标签相关labels.jpg"></a></p>
 <ul>
 <li>左上角为训练集的数据量；</li>
 <li>右上角是框的尺寸和数量；</li>
@@ -481,7 +499,7 @@ make_tar_file(dir_name, tar_file_name, ignore)
 <li>右下角是打标签目标框的高和宽，由图可知多聚集在0.2×0.2</li>
 </ul>
 <h3 id="3-5-5-训练验证结果分析">3.5.5 训练验证结果分析</h3>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_results.png" alt="results.png"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_results.png" title="results.png" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_results.png" alt="results.png"></a></p>
 <p>前面加<code>train</code>为训练集的情况，加<code>val</code>表示验证集的情况。</p>
 <ul>
 <li>
@@ -519,184 +537,167 @@ make_tar_file(dir_name, tar_file_name, ignore)
 <h1>肆 —— 模型转化处理（基于.onnx文件推理）</h1>
 <h2 id="4-1-转化为-onnx文件">4.1 转化为.onnx文件</h2>
 <p>将我们的.pt文件经过服务器上YOLOv5自带的<code>export.py</code>处理后即可得到.onnx文件。即下面的命令格式：</p>
-<pre><code class="language-cmd">python export.py --weights yolov5s.pt --include onnx
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">python export.py --weights yolov5s.pt --include onnx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>我输入的是（位于yolov5文件夹）：</p>
-<pre><code class="language-cmd">python export.py --weights runs/train/exp2/weights/best.pt --include onnx
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">python export.py --weights runs/train/exp2/weights/best.pt --include onnx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="4-2-通过c-利用-onnx文件进行推理识别">4.2 通过C++利用.onnx文件进行推理识别</h2>
 <h3 id="4-2-1-记录处理的数据结构">4.2.1 记录处理的数据结构</h3>
 <p>将置信度阈值<code>confThreshold</code>、NMS非极大值抑制阈值<code>nmsThreshold</code>、目标置信度阈值<code>objThreshold</code>和识别模型路径<code>modelpath</code>打包成结构体，用于识别时参数的配置。</p>
-<pre><code class="language-cpp">// 自定义配置结构
-struct Configuration
-{
-public:
-	float confThreshold; // Confidence threshold
-	float nmsThreshold;  // Non-maximum suppression threshold
-	float objThreshold;  // Object Confidence threshold
-	string modelpath;
-};
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 自定义配置结构</span>
+<span class="token keyword">struct</span> <span class="token class-name">Configuration</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token keyword">float</span> confThreshold<span class="token punctuation">;</span> <span class="token comment">// Confidence threshold</span>
+	<span class="token keyword">float</span> nmsThreshold<span class="token punctuation">;</span>  <span class="token comment">// Non-maximum suppression threshold</span>
+	<span class="token keyword">float</span> objThreshold<span class="token punctuation">;</span>  <span class="token comment">// Object Confidence threshold</span>
+	string modelpath<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>创建<code>YOLOv5</code>类，其成员变量有置信度阈值<code>confThreshold</code>、NMS非极大值抑制阈值<code>nmsThreshold</code>、目标置信度阈值<code>objThreshold</code>，以及输入图片宽度<code>inpWidth</code>、输入图片高度<code>inpHeight</code>两个照片参数，识别种类数<code>num_classes</code>，类名<code>classes</code>；</p>
 <p>主要函数为检测函数<code>detect</code>，辅助函数为预测画框函数<code>drawPred</code>和调整图片大小函数<code>resize_image</code>。</p>
-<pre><code class="language-cpp">// 模型
-class YOLOv5
-{
-public:
-	// 初始化
-	YOLOv5(Configuration config, bool isCuda);
-	void detect(Mat &amp;frame);  // 检测函数
-private:
-	float confThreshold;
-	float nmsThreshold;
-	float objThreshold;
-	int inpWidth;
-	int inpHeight;
-	int num_classes;
-	string classes[1] = { "eleb" };
-	//vector&lt;string&gt; class_names;
-	const bool keep_ratio = true;
-	Net net;   // dnn里的
-	void drawPred(float conf, int left, int top, int right, int bottom, Mat &amp;frame, int classid);
-	Mat resize_image(Mat srcimg, int *newh, int *neww, int *top, int *left);
-};
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 模型</span>
+<span class="token keyword">class</span> <span class="token class-name">YOLOv5</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+	<span class="token comment">// 初始化</span>
+	<span class="token function">YOLOv5</span><span class="token punctuation">(</span>Configuration config<span class="token punctuation">,</span> <span class="token keyword">bool</span> isCuda<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">void</span> <span class="token function">detect</span><span class="token punctuation">(</span>Mat <span class="token operator">&amp;</span>frame<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 检测函数</span>
+<span class="token keyword">private</span><span class="token operator">:</span>
+	<span class="token keyword">float</span> confThreshold<span class="token punctuation">;</span>
+	<span class="token keyword">float</span> nmsThreshold<span class="token punctuation">;</span>
+	<span class="token keyword">float</span> objThreshold<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> inpWidth<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> inpHeight<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> num_classes<span class="token punctuation">;</span>
+	string classes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token string">"eleb"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token comment">//vector&lt;string&gt; class_names;</span>
+	<span class="token keyword">const</span> <span class="token keyword">bool</span> keep_ratio <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+	Net net<span class="token punctuation">;</span>   <span class="token comment">// dnn里的</span>
+	<span class="token keyword">void</span> <span class="token function">drawPred</span><span class="token punctuation">(</span><span class="token keyword">float</span> conf<span class="token punctuation">,</span> <span class="token keyword">int</span> left<span class="token punctuation">,</span> <span class="token keyword">int</span> top<span class="token punctuation">,</span> <span class="token keyword">int</span> right<span class="token punctuation">,</span> <span class="token keyword">int</span> bottom<span class="token punctuation">,</span> Mat <span class="token operator">&amp;</span>frame<span class="token punctuation">,</span> <span class="token keyword">int</span> classid<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	Mat <span class="token function">resize_image</span><span class="token punctuation">(</span>Mat srcimg<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>newh<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>neww<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>top<span class="token punctuation">,</span> <span class="token keyword">int</span> <span class="token operator">*</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-2-2-检测识别函数">4.2.2 检测识别函数</h3>
 <ol>
 <li>进行预处理：对输入图像（帧）进行大小调整和归一化处理，以便为模型做准备。调整后的图像会被转换为Blob，一个具有NCHW 维度（图像数、通道数、高度、宽度）的 4D 矩阵。</li>
 </ol>
-<pre><code class="language-cpp">Mat dstimg = this-&gt;resize_image(frame, &amp;newh, &amp;neww, &amp;padh, &amp;padw);
-Mat blob = blobFromImage(dstimg, 1 / 255.0, Size(this-&gt;inpWidth, this-&gt;inpHeight), Scalar(0, 0, 0), true, false);
-this-&gt;net.setInput(blob);
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">Mat dstimg <span class="token operator">=</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span><span class="token function">resize_image</span><span class="token punctuation">(</span>frame<span class="token punctuation">,</span> <span class="token operator">&amp;</span>newh<span class="token punctuation">,</span> <span class="token operator">&amp;</span>neww<span class="token punctuation">,</span> <span class="token operator">&amp;</span>padh<span class="token punctuation">,</span> <span class="token operator">&amp;</span>padw<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Mat blob <span class="token operator">=</span> <span class="token function">blobFromImage</span><span class="token punctuation">(</span>dstimg<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token number">255.0</span><span class="token punctuation">,</span> <span class="token function">Size</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token operator">-&gt;</span>inpWidth<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span>inpHeight<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token operator">-&gt;</span>net<span class="token punctuation">.</span><span class="token function">setInput</span><span class="token punctuation">(</span>blob<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ol start="2">
 <li>模型推理：在Blob上运行模型以获得输出，即边界框和类别概率列表。</li>
 </ol>
-<pre><code class="language-cpp">vector&lt;Mat&gt; outs;
-this-&gt;net.forward(outs, this-&gt;net.getUnconnectedOutLayersNames());
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">vector<span class="token operator">&lt;</span>Mat<span class="token operator">&gt;</span> outs<span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token operator">-&gt;</span>net<span class="token punctuation">.</span><span class="token function">forward</span><span class="token punctuation">(</span>outs<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span>net<span class="token punctuation">.</span><span class="token function">getUnconnectedOutLayersNames</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ol start="3">
 <li>进行后处理：如果输出超过2维，则会对其进行重塑。对于每个边界框，它会检查对象的置信度是否高于阈值。计算最大类得分，同时检查其是否高于置信度阈值。如果超过了，就会保存边界框、置信度和类ID。</li>
 </ol>
-<pre><code class="language-cpp">for (int i = 0; i &lt; num_proposal; ++i) 
-{
-    // ...
-    if (obj_conf &gt; this-&gt;objThreshold)
-    {
-        // ...
-        if (max_class_socre &gt; this-&gt;confThreshold)
-        {
-            // ...
-            confidences.push_back((float) max_class_socre);
-            boxes.push_back(Rect(left, top, (int) (w * ratiow), (int) (h * ratioh)));
-            classIds.push_back(class_idx);
-        }
-    }
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> num_proposal<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>obj_conf <span class="token operator">&gt;</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span>objThreshold<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">// ...</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>max_class_socre <span class="token operator">&gt;</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span>confThreshold<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment">// ...</span>
+            confidences<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> max_class_socre<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            boxes<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span><span class="token function">Rect</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> top<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>w <span class="token operator">*</span> ratiow<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span> <span class="token punctuation">(</span>h <span class="token operator">*</span> ratioh<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            classIds<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>class_idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="4">
 <li>非最大值抑制 (NMS)：NMS用于移除重叠的边界框。剩余的边界框在原始图像上绘制。</li>
 </ol>
-<pre><code class="language-cpp">vector&lt;int&gt; indices;
-dnn::NMSBoxes(boxes, confidences, this-&gt;confThreshold, this-&gt;nmsThreshold, indices);
-for (size_t i = 0; i &lt; indices.size(); ++i)
-{
-    // ...
-    this-&gt;drawPred(confidences[idx], box.x, box.y, box.x + box.width, box.y + box.height, frame, classIds[idx]);
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> indices<span class="token punctuation">;</span>
+dnn<span class="token double-colon punctuation">::</span><span class="token function">NMSBoxes</span><span class="token punctuation">(</span>boxes<span class="token punctuation">,</span> confidences<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span>confThreshold<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span>nmsThreshold<span class="token punctuation">,</span> indices<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> indices<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    <span class="token keyword">this</span><span class="token operator">-&gt;</span><span class="token function">drawPred</span><span class="token punctuation">(</span>confidences<span class="token punctuation">[</span>idx<span class="token punctuation">]</span><span class="token punctuation">,</span> box<span class="token punctuation">.</span>x<span class="token punctuation">,</span> box<span class="token punctuation">.</span>y<span class="token punctuation">,</span> box<span class="token punctuation">.</span>x <span class="token operator">+</span> box<span class="token punctuation">.</span>width<span class="token punctuation">,</span> box<span class="token punctuation">.</span>y <span class="token operator">+</span> box<span class="token punctuation">.</span>height<span class="token punctuation">,</span> frame<span class="token punctuation">,</span> classIds<span class="token punctuation">[</span>idx<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-2-3-预测画框函数">4.2.3 预测画框函数</h3>
 <p>预测画框函数用于将预测函数所得到的目标区域，经OpenCV的工具在图片上绘制出方框。首先传入的参数有置信度，图片的四个角落点，Mat类型图片和类id，接着借助OpenCV的<code>rectangle</code>函数和<code>putText</code>函数绘制。</p>
-<pre><code class="language-cpp">// 绘制预测目标的边界框
-void YOLOv5::drawPred(float conf, int left, int top, int right, int bottom, Mat &amp;frame, int classid)
-{
-	// 绘制一个显示边界框的矩形
-	rectangle(frame, Point(left, top), Point(right, bottom), Scalar(0, 0, 255), 10);
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 绘制预测目标的边界框</span>
+<span class="token keyword">void</span> <span class="token class-name">YOLOv5</span><span class="token double-colon punctuation">::</span><span class="token function">drawPred</span><span class="token punctuation">(</span><span class="token keyword">float</span> conf<span class="token punctuation">,</span> <span class="token keyword">int</span> left<span class="token punctuation">,</span> <span class="token keyword">int</span> top<span class="token punctuation">,</span> <span class="token keyword">int</span> right<span class="token punctuation">,</span> <span class="token keyword">int</span> bottom<span class="token punctuation">,</span> Mat <span class="token operator">&amp;</span>frame<span class="token punctuation">,</span> <span class="token keyword">int</span> classid<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// 绘制一个显示边界框的矩形</span>
+	<span class="token function">rectangle</span><span class="token punctuation">(</span>frame<span class="token punctuation">,</span> <span class="token function">Point</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> top<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Point</span><span class="token punctuation">(</span>right<span class="token punctuation">,</span> bottom<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	// 得到目标的类名和置信度
-	string label = cv::format("%.2f", conf);
-	label = this-&gt;classes[classid] + ":" + label;
+	<span class="token comment">// 得到目标的类名和置信度</span>
+	string label <span class="token operator">=</span> cv<span class="token double-colon punctuation">::</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"%.2f"</span><span class="token punctuation">,</span> conf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	label <span class="token operator">=</span> <span class="token keyword">this</span><span class="token operator">-&gt;</span>classes<span class="token punctuation">[</span>classid<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">":"</span> <span class="token operator">+</span> label<span class="token punctuation">;</span>
 
-	// 绘制目标的类名和置信度文本
-	int baseLine;
-	Size labelSize = getTextSize(label, FONT_HERSHEY_SIMPLEX, 0.5, 1, &amp;baseLine);
-	top = max(top, labelSize.height);
-	putText(frame, label, Point(left, top), FONT_HERSHEY_SIMPLEX, 0.75, Scalar(0, 255, 0), 1);
-}
-</code></pre>
+	<span class="token comment">// 绘制目标的类名和置信度文本</span>
+	<span class="token keyword">int</span> baseLine<span class="token punctuation">;</span>
+	Size labelSize <span class="token operator">=</span> <span class="token function">getTextSize</span><span class="token punctuation">(</span>label<span class="token punctuation">,</span> FONT_HERSHEY_SIMPLEX<span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>baseLine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	top <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>top<span class="token punctuation">,</span> labelSize<span class="token punctuation">.</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">putText</span><span class="token punctuation">(</span>frame<span class="token punctuation">,</span> label<span class="token punctuation">,</span> <span class="token function">Point</span><span class="token punctuation">(</span>left<span class="token punctuation">,</span> top<span class="token punctuation">)</span><span class="token punctuation">,</span> FONT_HERSHEY_SIMPLEX<span class="token punctuation">,</span> <span class="token number">0.75</span><span class="token punctuation">,</span> <span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-2-4-主函数">4.2.4 主函数</h3>
 <p>本程序通过<code>main</code>函数的参数进行传参。如C/C++语言语法， <code>argc</code> 是argument count的缩写，表示传入main函数中的参数个数，包括这个程序本身； <code>argv</code> 是 argument vector的缩写，表示传入 <code>main</code> 函数中的参数列表，其中 <code>argv[0]</code> 表示这个程序的名字。</p>
-<pre><code class="language-cpp">//yolov5-onnx.cpp
-int main(int argc, const char *argv[])
-{
-	if (argc != 3)
-	{
-		std::cout &lt;&lt; "Run like this:\n    " &lt;&lt; argv[0] &lt;&lt; " yolov5s.onnx input.jpg" &lt;&lt; std::endl;
-		return -1;
-	}
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//yolov5-onnx.cpp</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Run like this:\n    "</span> <span class="token operator">&lt;&lt;</span> argv<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" yolov5s.onnx input.jpg"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
 	
-	Configuration yolo_nets = { 0.3, 0.5, 0.3, argv[1] }; // 初始化数据
-	YOLOv5 yolo_model(yolo_nets, false);
-	Mat srcimg = imread(argv[2]);  // 读入图片
-	yolo_model.detect(srcimg);     // 进行推理
-	imwrite("result.jpg", srcimg); // 输出图片
-	return 0;
-}
-</code></pre>
+	Configuration yolo_nets <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token number">0.3</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">0.3</span><span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">// 初始化数据</span>
+	YOLOv5 <span class="token function">yolo_model</span><span class="token punctuation">(</span>yolo_nets<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	Mat srcimg <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 读入图片</span>
+	yolo_model<span class="token punctuation">.</span><span class="token function">detect</span><span class="token punctuation">(</span>srcimg<span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token comment">// 进行推理</span>
+	<span class="token function">imwrite</span><span class="token punctuation">(</span><span class="token string">"result.jpg"</span><span class="token punctuation">,</span> srcimg<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 输出图片</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>所以当调用该程序时，只需在命令提示符的当前目录下，输入指令格式：</p>
-<pre><code class="language-cmd">yolov5-onnx.exe best.onnx input.jpg
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">yolov5-onnx.exe best.onnx input.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><br><br><br></p>
 <h1>伍 —— 模型转化加速处理（基于.engine文件推理）</h1>
 <h2 id="5-1-转化为-engine文件">5.1 转化为.engine文件</h2>
 <h3 id="5-1-1-通过yolov5自带的export-py转换">5.1.1 通过YOLOv5自带的export.py转换</h3>
 <p>将我们的.pt文件经过服务器上YOLOv5自带的<code>export.py</code>处理后即可得到.engine文件（可能会自动下载TensorRT）。即下面的命令格式：</p>
-<pre><code class="language-cmd">python export.py --weights yolov5s.pt --include engine
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">python export.py --weights yolov5s.pt --include engine<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>我输入的是（位于yolov5文件夹）：</p>
-<pre><code class="language-cmd">python export.py --weights runs/train/exp2/weights/best.pt --include engine
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">python export.py --weights runs/train/exp2/weights/best.pt --include engine<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="5-1-2-通过自己下载安装的tensorrt转换">5.1.2 通过自己下载安装的TensorRT转换</h3>
-<p>在<a target="_blank" rel="noopener" href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/5/#more">安装TensorRT</a>后，在TensorRT文件夹下有一个名为 <code>bin</code> 的文件夹，里面存在一个<code>trtexec.exe</code>文件。可以通过这个文件进行文件转换。在 <code>bin</code> 目录启动命令提示符，命令格式如下：</p>
-<pre><code class="language-cmd">trtexec --onnx=best.onnx --saveEngine=best.engine
-</code></pre>
+<p>在<a href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/5/#more">安装TensorRT</a>后，在TensorRT文件夹下有一个名为 <code>bin</code> 的文件夹，里面存在一个<code>trtexec.exe</code>文件。可以通过这个文件进行文件转换。在 <code>bin</code> 目录启动命令提示符，命令格式如下：</p>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">trtexec --onnx=best.onnx --saveEngine=best.engine<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="5-2-通过c-利用-engine文件进行推理识别">5.2 通过C++利用.engine文件进行推理识别</h2>
 <h3 id="5-2-1-记录识别结果的数据结构">5.2.1 记录识别结果的数据结构</h3>
 <p>一个记录识别结果的结构体，包括检测物体置信度 <code>score</code>，目标预测框 <code>box</code> 和类ID <code>class_id</code> 。</p>
-<pre><code class="language-cpp">struct Result
-{
-	float score;
-	cv::Rect box;
-	int class_id;
-};
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">struct</span> <span class="token class-name">Result</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">float</span> score<span class="token punctuation">;</span>
+	cv<span class="token double-colon punctuation">::</span>Rect box<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> class_id<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="5-2-2-日志模块">5.2.2 日志模块</h3>
 <p>在构建TensorRT Runtime时需要作为参数传入。日志模块必须继承自<code>nvinfer1::ILogger</code>类。</p>
-<pre><code class="language-cpp">// TensorRT需要日志
-// 参考: https://github.com/cyrusbehr/tensorrt-cpp-api
-using Severity = nvinfer1::ILogger::Severity;
-class Logger : public nvinfer1::ILogger
-{
-	void log(Severity severity, const char *msg) noexcept override;
-};
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// TensorRT需要日志</span>
+<span class="token comment">// 参考: https://github.com/cyrusbehr/tensorrt-cpp-api</span>
+<span class="token keyword">using</span> Severity <span class="token operator">=</span> nvinfer1<span class="token double-colon punctuation">::</span>ILogger<span class="token double-colon punctuation">::</span>Severity<span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name">Logger</span> <span class="token operator">:</span> <span class="token base-clause"><span class="token keyword">public</span> nvinfer1<span class="token double-colon punctuation">::</span><span class="token class-name">ILogger</span></span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">void</span> <span class="token function">log</span><span class="token punctuation">(</span>Severity severity<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>msg<span class="token punctuation">)</span> <span class="token keyword">noexcept</span> <span class="token keyword">override</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-void Logger::log(Severity severity, const char *msg) noexcept
-{
-	if (severity &lt;= Severity::kWARNING)
-	{
-		std::cout &lt;&lt; msg &lt;&lt; std::endl;
-	}
-}
+<span class="token keyword">void</span> <span class="token class-name">Logger</span><span class="token double-colon punctuation">::</span><span class="token function">log</span><span class="token punctuation">(</span>Severity severity<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>msg<span class="token punctuation">)</span> <span class="token keyword">noexcept</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>severity <span class="token operator">&lt;=</span> Severity<span class="token double-colon punctuation">::</span>kWARNING<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> msg <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-Logger logger;
-</code></pre>
+Logger logger<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="5-2-3-计算内存大小模块">5.2.3 计算内存大小模块</h3>
 <p>一个计算内存大小的辅助函数。</p>
-<pre><code class="language-cpp">size_t get_memory_size(const nvinfer1::Dims &amp;dims, const int32_t elem_size)
-{
-	return std::accumulate(dims.d, dims.d + dims.nbDims, 1, std::multiplies&lt;int64_t&gt;()) * static_cast&lt;size_t&gt;(elem_size);
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">size_t <span class="token function">get_memory_size</span><span class="token punctuation">(</span><span class="token keyword">const</span> nvinfer1<span class="token double-colon punctuation">::</span>Dims <span class="token operator">&amp;</span>dims<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">int32_t</span> elem_size<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">return</span> std<span class="token double-colon punctuation">::</span><span class="token function">accumulate</span><span class="token punctuation">(</span>dims<span class="token punctuation">.</span>d<span class="token punctuation">,</span> dims<span class="token punctuation">.</span>d <span class="token operator">+</span> dims<span class="token punctuation">.</span>nbDims<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> std<span class="token double-colon punctuation">::</span><span class="token generic-function"><span class="token function">multiplies</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token keyword">int64_t</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token generic-function"><span class="token function">static_cast</span><span class="token generic class-name"><span class="token operator">&lt;</span>size_t<span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>elem_size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="5-2-4-检测识别模块">5.2.4 检测识别模块</h3>
 <p>基于.engine文件的推理识别涉及到显卡的调用，故需用到CUDA的Context。</p>
 <p>CUDA的Context是由CUDA驱动程序创建的数据结构，包含执行CUDA操作所需的所有信息，如设备代码、数据以及线程、内存和硬件设置等资源。每个线程都有一个当前Context，该线程上的所有CUDA操作都在该Context中执行。</p>
@@ -706,319 +707,304 @@ Logger logger;
 <ul>
 <li>首先从<code>engine_file_path</code>指定的文件中加载TensorRT引擎。</li>
 </ul>
-<pre><code class="language-cpp">// 读取TensorRT引擎
-std::ifstream engine_file(engine_file_path, std::ios::binary);
-if (engine_file.fail())
-{
-	std::cout &lt;&lt; "Failed to read model file." &lt;&lt; std::endl;
-}
-engine_file.seekg(0, std::ifstream::end);
-auto fsize = engine_file.tellg();
-engine_file.seekg(0, std::ifstream::beg);
-std::vector&lt;char&gt; engineData(fsize);
-engine_file.read(engineData.data(), fsize);
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 读取TensorRT引擎</span>
+std<span class="token double-colon punctuation">::</span>ifstream <span class="token function">engine_file</span><span class="token punctuation">(</span>engine_file_path<span class="token punctuation">,</span> std<span class="token double-colon punctuation">::</span>ios<span class="token double-colon punctuation">::</span>binary<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>engine_file<span class="token punctuation">.</span><span class="token function">fail</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Failed to read model file."</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+engine_file<span class="token punctuation">.</span><span class="token function">seekg</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> std<span class="token double-colon punctuation">::</span>ifstream<span class="token double-colon punctuation">::</span>end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">auto</span> fsize <span class="token operator">=</span> engine_file<span class="token punctuation">.</span><span class="token function">tellg</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+engine_file<span class="token punctuation">.</span><span class="token function">seekg</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> std<span class="token double-colon punctuation">::</span>ifstream<span class="token double-colon punctuation">::</span>beg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">char</span><span class="token operator">&gt;</span> <span class="token function">engineData</span><span class="token punctuation">(</span>fsize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+engine_file<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>engineData<span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fsize<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>其次，推演运行时 <code>nvinfer1::IRuntime</code> 是一切资源的源头，是第一个需要被初始化的对象，注意运行时的初始化需要将辅助模块中定义好的 <code>logger</code> 作为传入参数。同时这段代码使用 <code>unique_ptr</code> 来跟踪初始化后的运行时对象。引擎 <code>nvinfer1::ICudaEngine</code> 存储了模型的权重参数，它的初始化分2步：首先将模型文件读入内存，然后使用运行时的 <code>deserializeCudaEngine</code> 方法初始化引擎对象。</li>
 </ul>
-<pre><code class="language-cpp">// 初始化IRuntime和ICudaEngine
-std::unique_ptr&lt;nvinfer1::IRuntime&gt; runtime{ nvinfer1::createInferRuntime(logger) };
-std::unique_ptr&lt;nvinfer1::ICudaEngine&gt; mEngine{ runtime-&gt;deserializeCudaEngine(engineData.data(), fsize) };
-if (mEngine.get() == nullptr)
-{
-	std::cout &lt;&lt; "Failed to deserialize CUDA engine." &lt;&lt; std::endl;
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 初始化IRuntime和ICudaEngine</span>
+std<span class="token double-colon punctuation">::</span>unique_ptr<span class="token operator">&lt;</span>nvinfer1<span class="token double-colon punctuation">::</span>IRuntime<span class="token operator">&gt;</span> runtime<span class="token punctuation">{</span> nvinfer1<span class="token double-colon punctuation">::</span><span class="token function">createInferRuntime</span><span class="token punctuation">(</span>logger<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+std<span class="token double-colon punctuation">::</span>unique_ptr<span class="token operator">&lt;</span>nvinfer1<span class="token double-colon punctuation">::</span>ICudaEngine<span class="token operator">&gt;</span> mEngine<span class="token punctuation">{</span> runtime<span class="token operator">-&gt;</span><span class="token function">deserializeCudaEngine</span><span class="token punctuation">(</span>engineData<span class="token punctuation">.</span><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> fsize<span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>mEngine<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Failed to deserialize CUDA engine."</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>最后创建CUDA的context，并为输入和输出绑定分配CUDA内存。引擎的本质是专为TensorRT优化后的模型。可使用<code>createExecutionContext</code> 方法来构建推演环境 <code>nvinfer1::IExecutionContext</code> 。</li>
 </ul>
-<pre><code class="language-cpp">std::unique_ptr&lt;nvinfer1::IExecutionContext&gt; context{ mEngine-&gt;createExecutionContext() };
-if (context.get() == nullptr)
-{
-	std::cout &lt;&lt; "Failed to create CUDA context." &lt;&lt; std::endl;
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>unique_ptr<span class="token operator">&lt;</span>nvinfer1<span class="token double-colon punctuation">::</span>IExecutionContext<span class="token operator">&gt;</span> context<span class="token punctuation">{</span> mEngine<span class="token operator">-&gt;</span><span class="token function">createExecutionContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>context<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Failed to create CUDA context."</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="2">
 <li>准备模型输入</li>
 </ol>
 <ul>
 <li>了解模型结构，通过<a target="_blank" rel="noopener" href="https://netron.app">netron.app</a>输入.onnx文件查看自己的神经网络结构。我这里输入名字为 <code>images</code> ，尺寸为3×640×640；输出名字为 <code>output0</code> ，尺寸为1×25200×6。</li>
 </ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_model.jpg" alt="模型结构"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_model.jpg" title="模型结构" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_model.jpg" alt="模型结构"></a></p>
 <ul>
 <li>TensorRT的模型推演在GPU上进行，需要在显存上为用于计算的数据申请空间。输入尺寸为3×640×640，使用内存大小计算函数得到显存中应当开辟的空间大小，然后使用 <code>cudaMalloc</code> 申请显存。其中 <code>cuda_mem_input</code> 为指向该显存区域的指针。为了方便后续推演，这里使用一个指针数组 <code>bindings</code> 记录下与推演有关的内存区域。</li>
 </ul>
-<pre><code class="language-cpp">// 记录与推演相关的内存区域
-void *bindings[5];
-const char *input_name = "images";
-int32_t input_idx = mEngine-&gt;getBindingIndex(input_name);
-if (input_idx == -1)
-{
-	std::cout &lt;&lt; "ERROR: failed to get input by name: " &lt;&lt; input_name &lt;&lt; std::endl;
-}
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 记录与推演相关的内存区域</span>
+<span class="token keyword">void</span> <span class="token operator">*</span>bindings<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>input_name <span class="token operator">=</span> <span class="token string">"images"</span><span class="token punctuation">;</span>
+<span class="token keyword">int32_t</span> input_idx <span class="token operator">=</span> mEngine<span class="token operator">-&gt;</span><span class="token function">getBindingIndex</span><span class="token punctuation">(</span>input_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>input_idx <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"ERROR: failed to get input by name: "</span> <span class="token operator">&lt;&lt;</span> input_name <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-// 计算显存大小并开辟
-int32_t channels = 3, height = 640, width = 640;
-nvinfer1::Dims4 input_dims { 1, channels, height, width };
-size_t input_mem_size = get_memory_size(input_dims, sizeof(float));
-void* cuda_mem_input { nullptr };
-if (cudaMalloc(&amp;cuda_mem_input, input_mem_size) != cudaSuccess) 
-{
-    std::cout &lt;&lt; "ERROR: input cuda memory allocation failed, size = " &lt;&lt; input_mem_size &lt;&lt; " bytes" &lt;&lt; std::endl;
-}
+<span class="token comment">// 计算显存大小并开辟</span>
+<span class="token keyword">int32_t</span> channels <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">,</span> height <span class="token operator">=</span> <span class="token number">640</span><span class="token punctuation">,</span> width <span class="token operator">=</span> <span class="token number">640</span><span class="token punctuation">;</span>
+nvinfer1<span class="token double-colon punctuation">::</span>Dims4 input_dims <span class="token punctuation">{</span> <span class="token number">1</span><span class="token punctuation">,</span> channels<span class="token punctuation">,</span> height<span class="token punctuation">,</span> width <span class="token punctuation">}</span><span class="token punctuation">;</span>
+size_t input_mem_size <span class="token operator">=</span> <span class="token function">get_memory_size</span><span class="token punctuation">(</span>input_dims<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span><span class="token operator">*</span> cuda_mem_input <span class="token punctuation">{</span> <span class="token keyword">nullptr</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">cudaMalloc</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>cuda_mem_input<span class="token punctuation">,</span> input_mem_size<span class="token punctuation">)</span> <span class="token operator">!=</span> cudaSuccess<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"ERROR: input cuda memory allocation failed, size = "</span> <span class="token operator">&lt;&lt;</span> input_mem_size <span class="token operator">&lt;&lt;</span> <span class="token string">" bytes"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-bindings[0] = cuda_mem_input;
-</code></pre>
+bindings<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> cuda_mem_input<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>同时还需为输出区域计算并开辟内存。模型的输出包含一个或多个对象，必须为每个输出对象分配独立的显存区域。在循环体中，首先通过 <code>getBindingDimensions</code> 获得输出每个对象的维度，然后计算其占据的显存区域大小，并调用 <code>cudaMalloc</code> 函数分配显存，最后将指向该存储区域的指针存入之前创建好的 <code>bindings</code> 。</li>
 </ul>
-<pre><code class="language-cpp">std::vector&lt;std::string&gt; output_node_names{ "output0" };
-std::vector&lt;size_t&gt; output_mem_sizes;
-bool output_mem_initialized = true;
-for (size_t i = 0; i &lt; output_node_names.size(); i++)
-{
-	int32_t output_idx = mEngine-&gt;getBindingIndex(output_node_names[i].c_str());
-	if (output_idx == -1)
-	{
-		std::cout &lt;&lt; "ERROR: failed to get output by name: " &lt;&lt; output_node_names[i] &lt;&lt; std::endl;
-		output_mem_initialized = false;
-		break;
-	}
-	auto output_dims = context-&gt;getBindingDimensions(output_idx);
-	auto output_size = get_memory_size(output_dims, sizeof(float));
-	output_mem_sizes.push_back(output_size);
-	void *cuda_mem_output{ nullptr };
-	if (cudaMalloc(&amp;cuda_mem_output, output_size) != cudaSuccess)
-	{
-		std::cout &lt;&lt; "ERROR: output cuda memory allocation failed, size = " &lt;&lt; output_size &lt;&lt; " bytes" &lt;&lt; std::endl;
-		output_mem_initialized = false;
-		break;
-	}
-	else
-	{
-		bindings[1 + i] = cuda_mem_output;
-	}
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>std<span class="token double-colon punctuation">::</span>string<span class="token operator">&gt;</span> output_node_names<span class="token punctuation">{</span> <span class="token string">"output0"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>size_t<span class="token operator">&gt;</span> output_mem_sizes<span class="token punctuation">;</span>
+<span class="token keyword">bool</span> output_mem_initialized <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> output_node_names<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">int32_t</span> output_idx <span class="token operator">=</span> mEngine<span class="token operator">-&gt;</span><span class="token function">getBindingIndex</span><span class="token punctuation">(</span>output_node_names<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>output_idx <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"ERROR: failed to get output by name: "</span> <span class="token operator">&lt;&lt;</span> output_node_names<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+		output_mem_initialized <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+		<span class="token keyword">break</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">auto</span> output_dims <span class="token operator">=</span> context<span class="token operator">-&gt;</span><span class="token function">getBindingDimensions</span><span class="token punctuation">(</span>output_idx<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">auto</span> output_size <span class="token operator">=</span> <span class="token function">get_memory_size</span><span class="token punctuation">(</span>output_dims<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	output_mem_sizes<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>output_size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">void</span> <span class="token operator">*</span>cuda_mem_output<span class="token punctuation">{</span> <span class="token keyword">nullptr</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">cudaMalloc</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>cuda_mem_output<span class="token punctuation">,</span> output_size<span class="token punctuation">)</span> <span class="token operator">!=</span> cudaSuccess<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"ERROR: output cuda memory allocation failed, size = "</span> <span class="token operator">&lt;&lt;</span> output_size <span class="token operator">&lt;&lt;</span> <span class="token string">" bytes"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+		output_mem_initialized <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+		<span class="token keyword">break</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span>
+	<span class="token punctuation">{</span>
+		bindings<span class="token punctuation">[</span><span class="token number">1</span> <span class="token operator">+</span> i<span class="token punctuation">]</span> <span class="token operator">=</span> cuda_mem_output<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>显存空间初始化完成后，还需要初始化最后一个对象 <code>cudaStream</code> 。它用来在异步操作中同步结果。</li>
 </ul>
-<pre><code class="language-cpp">cudaStream_t stream{ nullptr };
-if (cudaStreamCreate(&amp;stream) != cudaSuccess)
-{
-	std::cout &lt;&lt; "ERROR: cuda stream creation failed." &lt;&lt; std::endl;
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">cudaStream_t stream<span class="token punctuation">{</span> <span class="token keyword">nullptr</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">cudaStreamCreate</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>stream<span class="token punctuation">)</span> <span class="token operator">!=</span> cudaSuccess<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"ERROR: cuda stream creation failed."</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>从<code>image_file_path</code>中读取图像，将其调整为所需尺寸，并复制到GPU内存中。输入图像在进入神经网络之前，首先会进行预处理操作。典型的预处理操作包括：缩放到指定尺寸、减去均值、归一化、除方差。另外如果模型对输入通道的顺序有要求，预处理也会调整通道顺序。YOLOv5的输入大小为640x640像素，通道顺序为RGB， 预处理也非常简单，像素值除以255即可。</li>
 </ul>
-<pre><code class="language-cpp">cv::Mat img_bgr = cv::imread(image_file_path);
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">cv<span class="token double-colon punctuation">::</span>Mat img_bgr <span class="token operator">=</span> cv<span class="token double-colon punctuation">::</span><span class="token function">imread</span><span class="token punctuation">(</span>image_file_path<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 预处理
-cv::resize(img_bgr, img_bgr, cv::Size(width, height));
-int32_t tmp = height * width * channels;
-float *input_buffer = new float[tmp]();
-for (int c = 0; c &lt; channels; c++)
-{
-	for (int j = 0, HW = height * width; j &lt; HW; ++j)
-	{
-		input_buffer[c * HW + j] = static_cast&lt;float&gt;(img_bgr.data[j * channels + 2 - c]) / 255.0f;
-		// 其中 img_bgr.data 为指向像素存储区域的指针，而括号内下表运算中的 +2 实现了BGR数据到RGB的转换。
-	}
-}
-</code></pre>
+<span class="token comment">// 预处理</span>
+cv<span class="token double-colon punctuation">::</span><span class="token function">resize</span><span class="token punctuation">(</span>img_bgr<span class="token punctuation">,</span> img_bgr<span class="token punctuation">,</span> cv<span class="token double-colon punctuation">::</span><span class="token function">Size</span><span class="token punctuation">(</span>width<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int32_t</span> tmp <span class="token operator">=</span> height <span class="token operator">*</span> width <span class="token operator">*</span> channels<span class="token punctuation">;</span>
+<span class="token keyword">float</span> <span class="token operator">*</span>input_buffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">float</span><span class="token punctuation">[</span>tmp<span class="token punctuation">]</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> c <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> c <span class="token operator">&lt;</span> channels<span class="token punctuation">;</span> c<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> HW <span class="token operator">=</span> height <span class="token operator">*</span> width<span class="token punctuation">;</span> j <span class="token operator">&lt;</span> HW<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		input_buffer<span class="token punctuation">[</span>c <span class="token operator">*</span> HW <span class="token operator">+</span> j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token generic-function"><span class="token function">static_cast</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">(</span>img_bgr<span class="token punctuation">.</span>data<span class="token punctuation">[</span>j <span class="token operator">*</span> channels <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">-</span> c<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">255.0f</span><span class="token punctuation">;</span>
+		<span class="token comment">// 其中 img_bgr.data 为指向像素存储区域的指针，而括号内下表运算中的 +2 实现了BGR数据到RGB的转换。</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>数据预处理的操作是在HOST（CPU）侧完成，在推演之前还需要将预处理后的数据拷贝到GPU一侧。</li>
 </ul>
-<pre><code class="language-cpp">if (cudaMemcpyAsync(cuda_mem_input, input_buffer, input_mem_size, cudaMemcpyHostToDevice, stream) != cudaSuccess)
-{
-	std::cout &lt;&lt; "ERROR: CUDA memory copy of input failed, size = " &lt;&lt; input_mem_size &lt;&lt; " bytes" &lt;&lt; std::endl;
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">cudaMemcpyAsync</span><span class="token punctuation">(</span>cuda_mem_input<span class="token punctuation">,</span> input_buffer<span class="token punctuation">,</span> input_mem_size<span class="token punctuation">,</span> cudaMemcpyHostToDevice<span class="token punctuation">,</span> stream<span class="token punctuation">)</span> <span class="token operator">!=</span> cudaSuccess<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"ERROR: CUDA memory copy of input failed, size = "</span> <span class="token operator">&lt;&lt;</span> input_mem_size <span class="token operator">&lt;&lt;</span> <span class="token string">" bytes"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="3">
 <li>运行推理</li>
 </ol>
 <ul>
 <li>使用执行Context的 <code>enqueueV2</code> 方法异步运行模型。 <code>enqueueV2</code> 是真正触发模型推演的操作。参数中的 <code>bindings</code> 是之前记录的指向输入与输出显存的指针数组。 <code>stream</code> 是在初始化资源章节创建的 <code>cudaStream</code> 对象，用于同步数据。</li>
 </ul>
-<pre><code class="language-cpp">bool status = context-&gt;enqueueV2(bindings, stream, nullptr);
-if (!status)
-{
-	std::cout &lt;&lt; "ERROR: TensorRT inference failed." &lt;&lt; std::endl;
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">bool</span> status <span class="token operator">=</span> context<span class="token operator">-&gt;</span><span class="token function">enqueueV2</span><span class="token punctuation">(</span>bindings<span class="token punctuation">,</span> stream<span class="token punctuation">,</span> <span class="token keyword">nullptr</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>status<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"ERROR: TensorRT inference failed."</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="4">
 <li>模型输出后处理</li>
 </ol>
 <ul>
 <li>首先按照输出数据的规格申请输出内存空间。为输出结果 <code>output0</code> 申请了一份内存空间，并将指向这些内存区域的指针存储在 <code>output_buffers</code> 指针数组中。</li>
 </ul>
-<pre><code class="language-cpp">std::vector&lt;float *&gt; output_buffers;
-for (size_t i = 0; i &lt; output_mem_sizes.size(); i++)
-{
-	float *buf = new float[output_mem_sizes[i] / sizeof(float)];
-	output_buffers.push_back(buf);
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">float</span> <span class="token operator">*</span><span class="token operator">&gt;</span> output_buffers<span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> output_mem_sizes<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">float</span> <span class="token operator">*</span>buf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">float</span><span class="token punctuation">[</span>output_mem_sizes<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+	output_buffers<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>接着将输出从GPU内存复制到CPU内存。使用 <code>cudaMemcpyAsync</code> 函数。其中参数 <code>output_buffers</code> 为刚才申请好的内存空间， <code>bindings</code> 为GPU一侧的显存空间， <code>output_mem_sizes</code> 为输出结果所占据的内存大小， <code>cudaMemcpyDeviceToHost</code> 指定了拷贝操作的方向，由于这是一个异步操作，所以要使用 <code>stream</code> 作为同步数据的依据。</li>
 </ul>
-<pre><code class="language-cpp">for (size_t i = 0; i &lt; output_mem_sizes.size(); i++)
-{
-	auto mem_to_host_result = cudaMemcpyAsync(output_buffers[i], bindings[1 + i], output_mem_sizes[i], cudaMemcpyDeviceToHost, stream);
-	if (mem_to_host_result != cudaSuccess)
-	{
-		std::cout &lt;&lt; "ERROR: CUDA memory copy of output " &lt;&lt; i &lt;&lt; " failed, size = " &lt;&lt; output_mem_sizes[i] &lt;&lt; " bytes" &lt;&lt; std::endl;
-	}
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> output_mem_sizes<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">auto</span> mem_to_host_result <span class="token operator">=</span> <span class="token function">cudaMemcpyAsync</span><span class="token punctuation">(</span>output_buffers<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> bindings<span class="token punctuation">[</span><span class="token number">1</span> <span class="token operator">+</span> i<span class="token punctuation">]</span><span class="token punctuation">,</span> output_mem_sizes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> cudaMemcpyDeviceToHost<span class="token punctuation">,</span> stream<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>mem_to_host_result <span class="token operator">!=</span> cudaSuccess<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"ERROR: CUDA memory copy of output "</span> <span class="token operator">&lt;&lt;</span> i <span class="token operator">&lt;&lt;</span> <span class="token string">" failed, size = "</span> <span class="token operator">&lt;&lt;</span> output_mem_sizes<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" bytes"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>等待同步，已经调用了3个异步操作函数，因此这里需要使用同步操作来等待执行真正完成。同步之后，模型推演的结果才真正存储在了内存 <code>output_buffers</code> 中。</li>
 </ul>
-<pre><code class="language-cpp">cudaStreamSynchronize(stream);
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token function">cudaStreamSynchronize</span><span class="token punctuation">(</span>stream<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li>对输出进行后处理。首先定义三个向量分别存储检测获得的物体边界框 <code>boxes</code> 、分值 <code>scores</code> 与类别ID <code>class_ids</code> 。此次训练的YOLOv5模型有1个输出，即 <code>output0</code> 。 其本身是一个巨大的矩阵，其行数为25200，代表模型给出的物体检测结果。为此，可以定义一个指针 <code>p</code> 指向 <code>output0</code> ，然后通过一个循环来轮询结果。 此次训练中， <code>output0</code> 每行具有6个元素：第0~3个元素为物体边界框中心x，物体边界框中心y，物体边界框宽度和物体边界框高度；第4个元素为预测框分值；第5个元素是物体类别ID的概率，可以按照最大值获取到分类结果。</li>
 </ul>
-<pre><code class="language-cpp">std::vector&lt;float&gt; scores;
-std::vector&lt;cv::Rect&gt; boxes;
-std::vector&lt;int&gt; class_ids;
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">float</span><span class="token operator">&gt;</span> scores<span class="token punctuation">;</span>
+std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>cv<span class="token double-colon punctuation">::</span>Rect<span class="token operator">&gt;</span> boxes<span class="token punctuation">;</span>
+std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> class_ids<span class="token punctuation">;</span>
 
-float *p = output_buffers[0]; // 指向output0的第一个元素
-int step = 6, proposal_count = 25200;
-float score_threshold = 0.5, nms_threshold = 0.45; // 分支阈值和NMS阈值
-float scale = 1.0;
-for (size_t i = 0; i &lt; proposal_count; i++)
-{
-	// 置信度低于分数阈值
-	float obj_score = p[4]; // 第4个元素是预测框分值
-	if (obj_score &lt; score_threshold)
-	{
-		p += step;
-		continue;
-	}
+<span class="token keyword">float</span> <span class="token operator">*</span>p <span class="token operator">=</span> output_buffers<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 指向output0的第一个元素</span>
+<span class="token keyword">int</span> step <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">,</span> proposal_count <span class="token operator">=</span> <span class="token number">25200</span><span class="token punctuation">;</span>
+<span class="token keyword">float</span> score_threshold <span class="token operator">=</span> <span class="token number">0.5</span><span class="token punctuation">,</span> nms_threshold <span class="token operator">=</span> <span class="token number">0.45</span><span class="token punctuation">;</span> <span class="token comment">// 分支阈值和NMS阈值</span>
+<span class="token keyword">float</span> scale <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span>size_t i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> proposal_count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// 置信度低于分数阈值</span>
+	<span class="token keyword">float</span> obj_score <span class="token operator">=</span> p<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 第4个元素是预测框分值</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>obj_score <span class="token operator">&lt;</span> score_threshold<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		p <span class="token operator">+=</span> step<span class="token punctuation">;</span>
+		<span class="token keyword">continue</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
 
-	// 判断对象分类
-	int c_id = -1;
-	float c_score = 0;
-	for (size_t j = 1; j &lt; step; j++)
-	{
-		if (p[j] &gt; c_score)
-		{
-			c_score = p[j];
-			c_id = j - 2;
-		}
-	}
+	<span class="token comment">// 判断对象分类</span>
+	<span class="token keyword">int</span> c_id <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token keyword">float</span> c_score <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+	<span class="token keyword">for</span> <span class="token punctuation">(</span>size_t j <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> step<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		<span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&gt;</span> c_score<span class="token punctuation">)</span>
+		<span class="token punctuation">{</span>
+			c_score <span class="token operator">=</span> p<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+			c_id <span class="token operator">=</span> j <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
 	
-	scores.push_back(c_score * obj_score);
-	class_ids.push_back(c_id);
-	boxes.push_back(cv::Rect((p[0] - p[2] / 2) / scale, (p[1] - p[3] / 2) / scale, p[2] / scale, p[3] / scale));
-	p += step; // 指向下一行
-}
-</code></pre>
+	scores<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>c_score <span class="token operator">*</span> obj_score<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	class_ids<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>c_id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	boxes<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>cv<span class="token double-colon punctuation">::</span><span class="token function">Rect</span><span class="token punctuation">(</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">-</span> p<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">/</span> scale<span class="token punctuation">,</span> <span class="token punctuation">(</span>p<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">-</span> p<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">/</span> scale<span class="token punctuation">,</span> p<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">/</span> scale<span class="token punctuation">,</span> p<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">/</span> scale<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	p <span class="token operator">+=</span> step<span class="token punctuation">;</span> <span class="token comment">// 指向下一行</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>使用了OpenCV提供的NMS方法 <code>cv::dnn::NMSBoxes</code> 。其中 <code>boxes</code> 为存储了 <code>Rect</code> 类的向量， <code>scores</code> 为存储了分值的向量， <code>score_threshold</code> 为检测分值阈值， <code>nms_threshold</code> 为NMS操作的阈值， <code>indices</code> 为一个空向量，用来存储NMS的结果。最后按照 <code>indices</code> 给出的物体序号提取最终结果。</li>
 </ul>
-<pre><code class="language-cpp">// 执行非最大值抑制以消除具有较低置信度的冗余重叠框
-std::vector&lt;int&gt; indices;
-cv::dnn::NMSBoxes(boxes, scores, score_threshold, nms_threshold, indices);
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 执行非最大值抑制以消除具有较低置信度的冗余重叠框</span>
+std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">&gt;</span> indices<span class="token punctuation">;</span>
+cv<span class="token double-colon punctuation">::</span>dnn<span class="token double-colon punctuation">::</span><span class="token function">NMSBoxes</span><span class="token punctuation">(</span>boxes<span class="token punctuation">,</span> scores<span class="token punctuation">,</span> score_threshold<span class="token punctuation">,</span> nms_threshold<span class="token punctuation">,</span> indices<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 收集检测结果
-std::vector&lt;Result&gt; results;
-for (auto i : indices) 
-{
-    results.push_back(Result { scores[i], boxes[i], class_ids[i] });
-}
-</code></pre>
+<span class="token comment">// 收集检测结果</span>
+std<span class="token double-colon punctuation">::</span>vector<span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span> results<span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">:</span> indices<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    results<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>Result <span class="token punctuation">{</span> scores<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> boxes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> class_ids<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol start="5">
 <li>保存结果：它将包含绘制结果的图像保存下来。</li>
 </ol>
-<pre><code class="language-cpp">for (auto &amp;r : results)
-{
-	cv::rectangle(img_bgr, r.box, cv::Scalar(0, 255, 255), 5);
-}
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">auto</span> <span class="token operator">&amp;</span>r <span class="token operator">:</span> results<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	cv<span class="token double-colon punctuation">::</span><span class="token function">rectangle</span><span class="token punctuation">(</span>img_bgr<span class="token punctuation">,</span> r<span class="token punctuation">.</span>box<span class="token punctuation">,</span> cv<span class="token double-colon punctuation">::</span><span class="token function">Scalar</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">,</span> <span class="token number">255</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-cv::imwrite("result.jpg", img_bgr);
-</code></pre>
+cv<span class="token double-colon punctuation">::</span><span class="token function">imwrite</span><span class="token punctuation">(</span><span class="token string">"result.jpg"</span><span class="token punctuation">,</span> img_bgr<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="5-2-5-主函数设计">5.2.5 主函数设计</h3>
 <p>此程序主函数与基于.onnx文件推理程序类似，通过<code>main</code>函数的参数进行传参。</p>
-<pre><code class="language-cpp">//yolov5-engine.cpp
-int main(int argc, char const *argv[])
-{
-	if (argc != 3)
-	{
-		std::cout &lt;&lt; "Run like this:\n    " &lt;&lt; argv[0] &lt;&lt; " yolov5s.engine input.jpg" &lt;&lt; std::endl;
-		return -1;
-	}
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//yolov5-engine.cpp</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token keyword">const</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>argc <span class="token operator">!=</span> <span class="token number">3</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		std<span class="token double-colon punctuation">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token string">"Run like this:\n    "</span> <span class="token operator">&lt;&lt;</span> argv<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;&lt;</span> <span class="token string">" yolov5s.engine input.jpg"</span> <span class="token operator">&lt;&lt;</span> std<span class="token double-colon punctuation">::</span>endl<span class="token punctuation">;</span>
+		<span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
 	
-	//...
-	run(argv[1], argv[2]);
+	<span class="token comment">//...</span>
+	<span class="token function">run</span><span class="token punctuation">(</span>argv<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> argv<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	return 0;
-}
-</code></pre>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>所以当调用该程序时，只需在命令提示符的当前目录下，输入指令格式：</p>
-<pre><code class="language-cmd">yolov5-engine.exe best.engine input.jpg
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">yolov5-engine.exe best.engine input.jpg<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><br><br><br></p>
 <h1>陆 —— 打包软件</h1>
 <h2 id="6-1-基于-onnx文件图像推理程序打包">6.1 基于.onnx文件图像推理程序打包</h2>
 <p>打包程序考虑其可用性，在输出文件的时候做了处理：在当前目录输出一张照片，在<code>output/</code>文件夹也输出一张照片并做名字冲突处理。</p>
-<pre><code class="language-cpp">//导出名冲突
-string getUniqueFileName(const std::string &amp;fileName, const std::string &amp;outputDirectory)
-{
-	string baseName, extension;
-	size_t dotIndex = fileName.rfind('.');
-	if (dotIndex != string::npos)
-	{
-		baseName = fileName.substr(0, dotIndex);
-		extension = fileName.substr(dotIndex);
-	}
-	else
-	{
-		baseName = fileName;
-	}
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//导出名冲突</span>
+string <span class="token function">getUniqueFileName</span><span class="token punctuation">(</span><span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string <span class="token operator">&amp;</span>fileName<span class="token punctuation">,</span> <span class="token keyword">const</span> std<span class="token double-colon punctuation">::</span>string <span class="token operator">&amp;</span>outputDirectory<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	string baseName<span class="token punctuation">,</span> extension<span class="token punctuation">;</span>
+	size_t dotIndex <span class="token operator">=</span> fileName<span class="token punctuation">.</span><span class="token function">rfind</span><span class="token punctuation">(</span><span class="token char">'.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>dotIndex <span class="token operator">!=</span> string<span class="token double-colon punctuation">::</span>npos<span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		baseName <span class="token operator">=</span> fileName<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> dotIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		extension <span class="token operator">=</span> fileName<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>dotIndex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">else</span>
+	<span class="token punctuation">{</span>
+		baseName <span class="token operator">=</span> fileName<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
 
-	string newFileName = fileName;
-	int counter = 1;
-	while (ifstream(outputDirectory + newFileName).good())
-	{
-		newFileName = baseName + "_" + to_string(counter) + extension;
-		counter++;
-	}
+	string newFileName <span class="token operator">=</span> fileName<span class="token punctuation">;</span>
+	<span class="token keyword">int</span> counter <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+	<span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token function">ifstream</span><span class="token punctuation">(</span>outputDirectory <span class="token operator">+</span> newFileName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">good</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">{</span>
+		newFileName <span class="token operator">=</span> baseName <span class="token operator">+</span> <span class="token string">"_"</span> <span class="token operator">+</span> <span class="token function">to_string</span><span class="token punctuation">(</span>counter<span class="token punctuation">)</span> <span class="token operator">+</span> extension<span class="token punctuation">;</span>
+		counter<span class="token operator">++</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
 
-	return newFileName;
-}
-</code></pre>
-<pre><code class="language-cpp">// 备份存储
-string dir = "output/"; //文件夹路径
-if (_access(dir.c_str(), 0) == -1)//判断该文件夹是否存在
-{
-	_mkdir(dir.c_str());
-}
+	<span class="token keyword">return</span> newFileName<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 备份存储</span>
+string dir <span class="token operator">=</span> <span class="token string">"output/"</span><span class="token punctuation">;</span> <span class="token comment">//文件夹路径</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">_access</span><span class="token punctuation">(</span>dir<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token comment">//判断该文件夹是否存在</span>
+<span class="token punctuation">{</span>
+	<span class="token function">_mkdir</span><span class="token punctuation">(</span>dir<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-imwrite("result.jpg", srcimg);
-string newname = getUniqueFileName("result.jpg", "output/");
-imwrite("output/" + newname, srcimg);
-
-</code></pre>
-<p>由于主函数设计为可用命令提示符运行，故只需使用Visual Studio的Release版本生成.exe文件，再参考<a target="_blank" rel="noopener" href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/11/#more">此博客</a>进行打包即可。</p>
+<span class="token function">imwrite</span><span class="token punctuation">(</span><span class="token string">"result.jpg"</span><span class="token punctuation">,</span> srcimg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+string newname <span class="token operator">=</span> <span class="token function">getUniqueFileName</span><span class="token punctuation">(</span><span class="token string">"result.jpg"</span><span class="token punctuation">,</span> <span class="token string">"output/"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">imwrite</span><span class="token punctuation">(</span><span class="token string">"output/"</span> <span class="token operator">+</span> newname<span class="token punctuation">,</span> srcimg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由于主函数设计为可用命令提示符运行，故只需使用Visual Studio的Release版本生成.exe文件，再参考<a href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/11/#more">此博客</a>进行打包即可。</p>
 <p>打包之后即可移植到其他PC设备使用。</p>
 <h2 id="6-2-基于-engine文件图像推理程序打包">6.2 基于.engine文件图像推理程序打包</h2>
 <p>同理，打包程序考虑其可用性，在输出文件的时候做了处理：在当前目录输出一张照片，在<code>output/</code>文件夹也输出一张照片并做名字冲突处理。</p>
-<p>由于主函数设计为可用命令提示符运行，故只需使用Visual Studio的Release版本生成.exe文件，再参考<a target="_blank" rel="noopener" href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/11/#more">此博客</a>进行打包即可。</p>
+<p>由于主函数设计为可用命令提示符运行，故只需使用Visual Studio的Release版本生成.exe文件，再参考<a href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/11/#more">此博客</a>进行打包即可。</p>
 <p>注意一点，由于.engine文件需要调用显卡驱动，故不能移植到别的电脑使用（暂时我是没成功）。</p>
 <h2 id="6-3-整体打包">6.3 整体打包</h2>
-<p>此次项目整体打包采用Qt作为前端页面，将上面两个打包好的程序结合，使用时只需调用指定程序模块即可。具体Qt打包可参考<a target="_blank" rel="noopener" href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/10/">此博客</a></p>
+<p>此次项目整体打包采用Qt作为前端页面，将上面两个打包好的程序结合，使用时只需调用指定程序模块即可。具体Qt打包可参考<a href="https://fingsinz.space/%E6%97%A5%E5%B8%B8/10/">此博客</a></p>
 <p>具体代码不细展开，分享于<a target="_blank" rel="noopener" href="https://gitee.com/fingsinz/ele-bicycle-detection/">码云仓库</a>。</p>
 <p><br><br><br></p>
 <h1>柒 —— 总结及后话</h1>
 <p>实际上，如5.1的步骤，将参数改为.trt，即可导出.trt文件。</p>
-<pre><code class="language-cmd">trtexec --onnx=best.onnx --saveEngine=best.trt
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">trtexec --onnx=best.onnx --saveEngine=best.trt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>至于如何根据.trt文件设计算法进一步进行推测识别，此次项目未能完成，有待补充，深度学习很多方面的知识也有待补充。故此次项目仅能作为一个带有启发性的入门级别的项目。</p>
 <p>深度学习是机器学习领域中的一个新的研究方向，旨在让机器能够像人一样具有分析学习能力，能够识别文字、图像和声音等数据。深度学习试图为数据的高层次摘要进行建模，通过使用多个处理层和对这些层的结果进行线性和非线性的转换，来实现对数据的识别和理解。深度学习在搜索技术、数据挖掘、机器翻译、自然语言处理、多媒体学习、语音、推荐和个性化技术等领域都取得了了很多成果。经过这次项目，我感受到了深度学习的有趣，写下这篇博客，用于记录与分享。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     <div class="post-meta">
@@ -1067,6 +1053,13 @@ imwrite("output/" + newname, srcimg);
         
         </i>
     </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
     
         
 
@@ -1103,7 +1096,7 @@ imwrite("output/" + newname, srcimg);
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
-            <span>不忘初心，方得始终。</span>
+            <span>我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span>
             
     
 </div>
@@ -1121,13 +1114,6 @@ imwrite("output/" + newname, srcimg);
 <script src="/js/toc.js"></script>
 
     
-    
-    
-<script src="/js/highlight.min.js"></script>
-
-    
-<script src="/js/highlightjs-line-numbers.js"></script>
-
 
     
 <script src="/js/randomHeaderContent.js"></script>
@@ -1140,14 +1126,18 @@ imwrite("output/" + newname, srcimg);
     
 
     
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
 
 
 
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
 
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
 
 
                 </div>
@@ -1159,6 +1149,7 @@ imwrite("output/" + newname, srcimg);
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
                     </svg>
                 </div>
+            
             
     </body>
 

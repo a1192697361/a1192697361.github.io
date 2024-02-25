@@ -6,12 +6,12 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="使用阿里云对象存储OSS实现图床" />
     <meta name="hexo-theme-A4" content="v1.8.3" />
-    <link rel="alternate icon" type="image/webp" href="/images/icon1.webp">
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Fingsinz&#39;s space | 风信梓</title>
 
     
         
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
+<link rel="stylesheet" href="/css/highlight/style1.css">
 
         
 <link rel="stylesheet" href="/css/reset.css">
@@ -48,7 +48,12 @@
 
         
     
+
     
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
 
 <meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
@@ -69,6 +74,16 @@
         .post-md code {
             background: #e7f7f3;
             color: #7f688d; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e7f7f3;
+            color: #7f688d; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #000000;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #000000;
         }
         .year-font-color {
             color: #000000 !important;
@@ -165,11 +180,11 @@
             background: white;
         }
 
-        .post-md>table tr:nth-child(odd) td {
+        .post-md table tr:nth-child(odd) td {
             background: white;
         }
 
-        .post-md>table tr:nth-child(even) td {
+        .post-md table tr:nth-child(even) td {
             background: white;
         }
 
@@ -181,6 +196,16 @@
 	        stroke: #000000; /* 边框的颜色 */
         }
         .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
 	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
          }
 
@@ -213,6 +238,8 @@
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
+
+
 <div class="header">
     <div class="header-container">
         <img style="
@@ -220,7 +247,7 @@
         height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
         <div class="header-content">
             <a class="logo" href="/">Fingsinz&#39;s space</a> 
-            <span class="description">不忘初心，方得始终</span> 
+            <span class="description">我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span> 
         </div>
         
     </div>
@@ -270,7 +297,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">1.什么是图床</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">2.开启对象存储服务</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">3.使用PicGo工具进行图片上传</span></a></li></ol>
             
         
-        <p>注册登录阿里云👉开启对象存储👉配置Key👉放心上传</p>
+        <div class=".article-gallery"><p>注册登录阿里云👉开启对象存储👉配置Key👉放心上传</p>
 <p>关键词：对象存储OSS</p>
 <span id="more"></span>
 <hr>
@@ -279,7 +306,7 @@
 <p>图床是一种概念，顾名思义用于网络上存放图片。当网站图片过多时，整个网站的存储大小会变得较大，负担也变得较大。为了减轻负担，可以选择把图片置于一种存储容器（图床）中，之后显示图片就只需引用网络链接即可。</p>
 <h1>2.开启对象存储服务</h1>
 <p>进入<a target="_blank" rel="noopener" href="https://cn.aliyun.com/">阿里云官网</a>，点击右上角控制台，搜索对象存储OSS。</p>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/3_1.png" alt="阿里云页面"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/3_1.png" title="阿里云页面" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/3_1.png" alt="阿里云页面"></a></p>
 <p>选择创建Bucket，设置建议如下：</p>
 <ul>
 <li>Bucket名称：自定义</li>
@@ -293,7 +320,7 @@
 <p><a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/">下载地址</a></p>
 <p>下载后选择合适的盘符安装，打开软件。<br>
 初始时可能不显示界面，需要去系统任务栏右键软件图标，选择打开主窗口。</p>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/3_2.png" alt="软件打开"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/3_2.png" title="软件打开" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/3_2.png" alt="软件打开"></a></p>
 <p>接着选择图床设置，此处使用阿里云OSS。</p>
 <p>回到阿里云OSS控制台，移动至右上角悬浮，点击AccessKey管理。创建一个新AccessKey，复制并粘贴到PicGo中。</p>
 <p>配置参数建议如下：</p>
@@ -304,9 +331,14 @@
 <li>设定存储区域：OSS选择的地域</li>
 <li>设定存储路径：图片上传至OSS的文件夹或路径</li>
 </ul>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/3_3.png" alt="配置Key"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/3_3.png" title="配置Key" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/3_3.png" alt="配置Key"></a></p>
 <p>配置完成后即可上传图片，在PicGo的相册中可以获得图片的连接，可在HTML或者Markdown等文件中调用。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     <div class="post-meta">
@@ -339,6 +371,13 @@
         
         </i>
     </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
     
         
 
@@ -375,7 +414,7 @@
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
-            <span>不忘初心，方得始终。</span>
+            <span>我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span>
             
     
 </div>
@@ -393,13 +432,6 @@
 <script src="/js/toc.js"></script>
 
     
-    
-    
-<script src="/js/highlight.min.js"></script>
-
-    
-<script src="/js/highlightjs-line-numbers.js"></script>
-
 
     
 <script src="/js/randomHeaderContent.js"></script>
@@ -412,14 +444,18 @@
     
 
     
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
 
 
 
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
 
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
 
 
                 </div>
@@ -431,6 +467,7 @@
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
                     </svg>
                 </div>
+            
             
     </body>
 

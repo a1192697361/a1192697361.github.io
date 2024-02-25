@@ -6,12 +6,12 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="个人整理的C++学习路线" />
     <meta name="hexo-theme-A4" content="v1.8.3" />
-    <link rel="alternate icon" type="image/webp" href="/images/icon1.webp">
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Fingsinz&#39;s space | 风信梓</title>
 
     
         
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
+<link rel="stylesheet" href="/css/highlight/style1.css">
 
         
 <link rel="stylesheet" href="/css/reset.css">
@@ -48,7 +48,12 @@
 
         
     
+
     
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
 
 <meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
@@ -69,6 +74,16 @@
         .post-md code {
             background: #e7f7f3;
             color: #7f688d; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e7f7f3;
+            color: #7f688d; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #000000;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #000000;
         }
         .year-font-color {
             color: #000000 !important;
@@ -165,11 +180,11 @@
             background: white;
         }
 
-        .post-md>table tr:nth-child(odd) td {
+        .post-md table tr:nth-child(odd) td {
             background: white;
         }
 
-        .post-md>table tr:nth-child(even) td {
+        .post-md table tr:nth-child(even) td {
             background: white;
         }
 
@@ -181,6 +196,16 @@
 	        stroke: #000000; /* 边框的颜色 */
         }
         .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
 	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
          }
 
@@ -213,6 +238,8 @@
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
+
+
 <div class="header">
     <div class="header-container">
         <img style="
@@ -220,7 +247,7 @@
         height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
         <div class="header-content">
             <a class="logo" href="/">Fingsinz&#39;s space</a> 
-            <span class="description">不忘初心，方得始终</span> 
+            <span class="description">我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span> 
         </div>
         
     </div>
@@ -270,7 +297,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#c-%E8%AF%AD%E8%A8%80%E4%BB%8B%E7%BB%8D"><span class="post-toc-text">C++ 语言介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFc"><span class="post-toc-text">什么是C++</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8c"><span class="post-toc-text">为什么使用C++</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#c%E5%92%8Cc-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="post-toc-text">C和C++的区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#c-%E7%89%88%E6%9C%AC"><span class="post-toc-text">C++版本</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AEc-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="post-toc-text">配置C++开发环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85c"><span class="post-toc-text">安装C++</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8"><span class="post-toc-text">编译器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8-%E9%9B%86%E6%88%90%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83-ide"><span class="post-toc-text">编辑器、集成开发环境（IDE）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%BF%90%E8%A1%8C%E7%AC%AC%E4%B8%80%E4%B8%AAc-%E7%A8%8B%E5%BA%8F"><span class="post-toc-text">运行第一个C++程序</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="post-toc-text">基础语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="post-toc-text">基础操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%87%BD%E6%95%B0"><span class="post-toc-text">函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8"><span class="post-toc-text">指针和引用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%B1%BB"><span class="post-toc-text">结构体和类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9E%84%E5%BB%BA%E4%BB%A3%E7%A0%81%E5%BA%93"><span class="post-toc-text">构建代码库</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%AF%AD%E8%A8%80%E6%A6%82%E5%BF%B5"><span class="post-toc-text">语言概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B9%A0%E6%83%AF%E6%9C%AF%E8%AF%AD"><span class="post-toc-text">习惯术语</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%B0%83%E8%AF%95%E5%99%A8"><span class="post-toc-text">调试器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F"><span class="post-toc-text">构建系统</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="post-toc-text">异常处理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%BC%82%E5%B8%B8"><span class="post-toc-text">异常</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A0%87%E5%87%86%E5%BC%82%E5%B8%B8"><span class="post-toc-text">标准异常</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%80%80%E5%87%BA%E4%BB%A3%E7%A0%81"><span class="post-toc-text">退出代码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AE%BF%E9%97%AE%E5%86%B2%E7%AA%81"><span class="post-toc-text">访问冲突</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93stl"><span class="post-toc-text">标准模板库STL</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%B5%81"><span class="post-toc-text">标准输入输出流</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%A4%84%E7%90%86%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4"><span class="post-toc-text">处理日期和时间</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AE%97%E6%B3%95"><span class="post-toc-text">算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="post-toc-text">迭代器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%AE%B9%E5%99%A8"><span class="post-toc-text">容器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="post-toc-text">多线程</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A8%A1%E6%9D%BF%E7%BC%96%E7%A8%8B"><span class="post-toc-text">模板编程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8F%AF%E5%8F%98%E6%A8%A1%E6%9D%BF"><span class="post-toc-text">可变模板</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A8%A1%E6%9D%BF%E4%B8%93%E9%97%A8%E5%8C%96"><span class="post-toc-text">模板专门化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%B1%BB%E5%9E%8B%E7%89%B9%E5%BE%81"><span class="post-toc-text">类型特征</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9B%BF%E6%8D%A2%E5%A4%B1%E8%B4%A5%E4%B8%8D%E6%98%AF%E9%94%99%E8%AF%AF-sfinae"><span class="post-toc-text">替换失败不是错误（SFINAE）</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86"><span class="post-toc-text">包管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%BA%93%E5%92%8C%E6%A1%86%E6%9E%B6%E7%BC%96%E7%A8%8B"><span class="post-toc-text">库和框架编程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#c-%E5%BA%93"><span class="post-toc-text">C++库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A1%86%E6%9E%B6"><span class="post-toc-text">框架</span></a></li></ol></li></ol>
             
         
-        <p>个人整理的C++大概学习路线</p>
+        <div class=".article-gallery"><p>个人整理的C++大概学习路线</p>
 <p>关键词：C++</p>
 <span id="more"></span>
 <hr>
@@ -753,7 +780,12 @@
 <li>gtest/gmock、Qt、Catch2、Orbit Profiler、PyTorch C++</li>
 </ul>
 <embed src="TheRoadOfCPP.pdf" width="100%" height="750" type="application/pdf">
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     <div class="post-meta">
@@ -786,6 +818,13 @@
         
         </i>
     </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
     
         
 
@@ -822,7 +861,7 @@
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
-            <span>不忘初心，方得始终。</span>
+            <span>我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span>
             
     
 </div>
@@ -840,13 +879,6 @@
 <script src="/js/toc.js"></script>
 
     
-    
-    
-<script src="/js/highlight.min.js"></script>
-
-    
-<script src="/js/highlightjs-line-numbers.js"></script>
-
 
     
 <script src="/js/randomHeaderContent.js"></script>
@@ -859,14 +891,18 @@
     
 
     
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
 
 
 
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
 
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
 
 
                 </div>
@@ -878,6 +914,7 @@
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
                     </svg>
                 </div>
+            
             
     </body>
 

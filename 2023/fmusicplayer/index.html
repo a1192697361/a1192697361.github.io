@@ -6,12 +6,12 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="基于Qt的音频播放器程序设计记录" />
     <meta name="hexo-theme-A4" content="v1.8.3" />
-    <link rel="alternate icon" type="image/webp" href="/images/icon1.webp">
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Fingsinz&#39;s space | 风信梓</title>
 
     
         
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
+<link rel="stylesheet" href="/css/highlight/style1.css">
 
         
 <link rel="stylesheet" href="/css/reset.css">
@@ -48,7 +48,12 @@
 
         
     
+
     
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
 
 <meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
@@ -69,6 +74,16 @@
         .post-md code {
             background: #e7f7f3;
             color: #7f688d; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e7f7f3;
+            color: #7f688d; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #000000;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #000000;
         }
         .year-font-color {
             color: #000000 !important;
@@ -165,11 +180,11 @@
             background: white;
         }
 
-        .post-md>table tr:nth-child(odd) td {
+        .post-md table tr:nth-child(odd) td {
             background: white;
         }
 
-        .post-md>table tr:nth-child(even) td {
+        .post-md table tr:nth-child(even) td {
             background: white;
         }
 
@@ -181,6 +196,16 @@
 	        stroke: #000000; /* 边框的颜色 */
         }
         .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
 	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
          }
 
@@ -213,6 +238,8 @@
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
+
+
 <div class="header">
     <div class="header-container">
         <img style="
@@ -220,7 +247,7 @@
         height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
         <div class="header-content">
             <a class="logo" href="/">Fingsinz&#39;s space</a> 
-            <span class="description">不忘初心，方得始终</span> 
+            <span class="description">我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span> 
         </div>
         
     </div>
@@ -270,13 +297,13 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">一、前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">二、模块构思</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">三、模块实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1"><span class="post-toc-text">3.1 界面设计</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-1-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%B7%A5%E7%A8%8B"><span class="post-toc-text">3.1 初始化工程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-3-%E6%92%AD%E6%94%BE-%E6%9A%82%E5%81%9C%E6%A8%A1%E5%9D%97"><span class="post-toc-text">3.3 播放&#x2F;暂停模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-4-%E5%81%9C%E6%AD%A2%E6%A8%A1%E5%9D%97"><span class="post-toc-text">3.4 停止模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-5-%E6%8E%A7%E5%88%B6%E9%9F%B3%E9%A2%91%E8%BF%9B%E5%BA%A6%E6%A8%A1%E5%9D%97"><span class="post-toc-text">3.5 控制音频进度模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-6-%E7%AE%A1%E7%90%86%E9%9F%B3%E4%B9%90%E5%88%97%E8%A1%A8%E6%A8%A1%E5%9D%97"><span class="post-toc-text">3.6 管理音乐列表模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-7-%E9%9F%B3%E9%87%8F%E6%8E%A7%E5%88%B6%E6%A8%A1%E5%9D%97"><span class="post-toc-text">3.7 音量控制模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-8-%E4%BF%A1%E6%81%AF%E6%98%BE%E7%A4%BA%E4%B8%8E%E5%90%8C%E6%AD%A5%E6%A8%A1%E5%9D%97"><span class="post-toc-text">3.8 信息显示与同步模块</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">四、总结</span></a></li></ol>
             
         
-        <p>使用Qt的工具完成一个音频播放器——FMusicPlayer</p>
+        <div class=".article-gallery"><p>使用Qt的工具完成一个音频播放器——FMusicPlayer</p>
 <p>关键词：Qt、C++</p>
 <span id="more"></span>
 <hr>
 <h1>一、前言</h1>
 <p>利用Qt的工具开发一个音乐播放器，界面如下图：</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/fmusicplayer_ui.jpg" alt="界面截图"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/fmusicplayer_ui.jpg" title="界面截图" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/fmusicplayer_ui.jpg" alt="界面截图"></a></p>
 <p>Qt版本5.12.12。该项目十分简单，适合用于练手。</p>
 <h1>二、模块构思</h1>
 <p>根据市场上现有的音乐播放器思考，一个基本的音乐播放器应该具有以下功能：</p>
@@ -308,7 +335,7 @@
 <p>此音乐播放器主要使用Qt现成的QMediaPlayer类和QMediaPlaylist类进行维护。</p>
 <h2 id="3-1-界面设计">3.1 界面设计</h2>
 <p>整体界面设计如图：</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/fmusicplayer_uidesign.jpg" alt="界面设计"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/fmusicplayer_uidesign.jpg" title="界面设计" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/fmusicplayer_uidesign.jpg" alt="界面设计"></a></p>
 <ul>
 <li>
 <p>9个按钮QPushButton，对应各种功能；</p>
@@ -330,13 +357,12 @@
 </li>
 </ul>
 <p>完成后的程序界面：</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/fmusicplayer_ui2.jpg" alt="期望的UI"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/fmusicplayer_ui2.jpg" title="期望的UI" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/fmusicplayer_ui2.jpg" alt="期望的UI"></a></p>
 <h2 id="3-1-初始化工程">3.1 初始化工程</h2>
 <p>此程序使用了Qt的multimedia部件，所以首先在Qt的.pro工程文件中包含multimedia。</p>
-<pre><code>……
+<pre class="line-numbers language-none"><code class="language-none">……
 QT  += multimedia
-……
-</code></pre>
+……<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>接着项目中应该有以下文件：</p>
 <blockquote>
 <p>mainwindow.h<br>
@@ -359,211 +385,186 @@ main.cpp</p>
 </li>
 </ul>
 <p>首先在mainwindow.h中将我们实现的模块添加槽函数声明和成员变量的声明：</p>
-<pre><code class="language-cpp">QMediaPlayer *musicplayer; // 播放器
-QMediaPlaylist *musicplayList; // 播放列表
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">QMediaPlayer <span class="token operator">*</span>musicplayer<span class="token punctuation">;</span> <span class="token comment">// 播放器</span>
+QMediaPlaylist <span class="token operator">*</span>musicplayList<span class="token punctuation">;</span> <span class="token comment">// 播放列表</span>
 
-QString durationTime;// 音频总长度
-QString  positionTime;// 当前播放到位置
-// 槽函数声明略，见源代码
-</code></pre>
+QString durationTime<span class="token punctuation">;</span><span class="token comment">// 音频总长度</span>
+QString  positionTime<span class="token punctuation">;</span><span class="token comment">// 当前播放到位置</span>
+<span class="token comment">// 槽函数声明略，见源代码</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>接着在主窗口构造函数中做一些初始化：</p>
-<pre><code class="language-cpp">// 创建实例
-musicplayer = new QMediaPlayer(this);
-musicplayList = new QMediaPlaylist(this);
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 创建实例</span>
+musicplayer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">QMediaPlayer</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+musicplayList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">QMediaPlaylist</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 循环播放
-musicplayList-&gt;setPlaybackMode(QMediaPlaylist::Loop);
-musicplayer-&gt;setPlaylist(musicplayList);
+<span class="token comment">// 循环播放</span>
+musicplayList<span class="token operator">-&gt;</span><span class="token function">setPlaybackMode</span><span class="token punctuation">(</span>QMediaPlaylist<span class="token double-colon punctuation">::</span>Loop<span class="token punctuation">)</span><span class="token punctuation">;</span>
+musicplayer<span class="token operator">-&gt;</span><span class="token function">setPlaylist</span><span class="token punctuation">(</span>musicplayList<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-// 默认音量，同步音量显示
-ui-&gt;volume-&gt;setValue(50);	
-changedVolume(50);			
-</code></pre>
+<span class="token comment">// 默认音量，同步音量显示</span>
+ui<span class="token operator">-&gt;</span>volume<span class="token operator">-&gt;</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	
+<span class="token function">changedVolume</span><span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span><span class="token punctuation">;</span>			<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-3-播放-暂停模块">3.3 播放/暂停模块</h2>
 <p>当点击播放键时播放音乐，为播放按钮play绑定单击事件，触发playMusic()函数：</p>
-<pre><code class="language-cpp">// 播放音乐
-connect(ui-&gt;play, SIGNAL(clicked()), this, SLOT(playMusic()));
-</code></pre>
-<pre><code class="language-cpp">void MainWindow::playMusic()//播放
-{
-    // 维护播放列表，使其索引正常，正常播放
-    if(musicplayList-&gt;currentIndex()&lt;0)
-        musicplayList-&gt;setCurrentIndex(0);
-    musicplayer-&gt;play();
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 播放音乐</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>ui<span class="token operator">-&gt;</span>play<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">clicked</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">playMusic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">playMusic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//播放</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">// 维护播放列表，使其索引正常，正常播放</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>musicplayList<span class="token operator">-&gt;</span><span class="token function">currentIndex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span>
+        musicplayList<span class="token operator">-&gt;</span><span class="token function">setCurrentIndex</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    musicplayer<span class="token operator">-&gt;</span><span class="token function">play</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>当点击暂停键时暂停音乐，支持记录位置，从上次暂停的位置播放。为暂停按钮绑定单击事件，触发pauseMusic()函数：</p>
-<pre><code class="language-cpp">// 暂停音乐
-connect(ui-&gt;pause, SIGNAL(clicked()), this, SLOT(pauseMusic()));
-</code></pre>
-<pre><code class="language-cpp">void MainWindow::pauseMusic()//暂停播放
-{
-    musicplayer-&gt;pause();
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 暂停音乐</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>ui<span class="token operator">-&gt;</span>pause<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">clicked</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">pauseMusic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">pauseMusic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//暂停播放</span>
+<span class="token punctuation">{</span>
+    musicplayer<span class="token operator">-&gt;</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-4-停止模块">3.4 停止模块</h2>
 <p>当点击停止键时，停止音乐，音乐播放位置归零。为停止按钮绑定单击事件，触发stopMusic()函数：</p>
-<pre><code class="language-cpp">// 停止音乐
-connect(ui-&gt;stop, SIGNAL(clicked()), this, SLOT(stopMusic()));
-</code></pre>
-<pre><code class="language-cpp">void MainWindow::stopMusic()//停止播放
-{
-    musicplayer-&gt;stop();
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 停止音乐</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>ui<span class="token operator">-&gt;</span>stop<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">clicked</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">stopMusic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">stopMusic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">//停止播放</span>
+<span class="token punctuation">{</span>
+    musicplayer<span class="token operator">-&gt;</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-5-控制音频进度模块">3.5 控制音频进度模块</h2>
 <p>播放时，音频进度条应当可以被拖动，并且更新播放的位置。为进度条绑定值修改事件，触发changedPosition()函数，函数参数为进度条传入的位置参数。</p>
-<pre><code class="language-cpp">// 进度条控制
-connect(ui-&gt;timebar, SIGNAL(valueChanged(int)), this, SLOT(changedPosition(int)));
-</code></pre>
-<pre><code class="language-cpp">void MainWindow::changedPosition(int pos)   // 修改播放位置
-{
-    musicplayer-&gt;setPosition(pos);
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 进度条控制</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>ui<span class="token operator">-&gt;</span>timebar<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">valueChanged</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">changedPosition</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">changedPosition</span><span class="token punctuation">(</span><span class="token keyword">int</span> pos<span class="token punctuation">)</span>   <span class="token comment">// 修改播放位置</span>
+<span class="token punctuation">{</span>
+    musicplayer<span class="token operator">-&gt;</span><span class="token function">setPosition</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-6-管理音乐列表模块">3.6 管理音乐列表模块</h2>
 <p>播放器应该可以输入多个文件，接着顺序播放，所以需要维护一个音乐列表。</p>
 <p>首先可以向音乐列表添加音乐，为添加音乐按钮绑定单击事件，绑定addMusic()函数。</p>
-<pre><code class="language-cpp">// 添加文件
-connect(ui-&gt;addMusic, SIGNAL(clicked()), this, SLOT(addMusictoList()));
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 添加文件</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>ui<span class="token operator">-&gt;</span>addMusic<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">clicked</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">addMusictoList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>读取文件时，wav文件是支持的，而mp3文件需要外置解码器的支持，处理mp3文件方法见文章最后。</p>
-<pre><code class="language-cpp">void MainWindow::addMusictoList()
-{
-    QString curPath = QDir::currentPath();
-    QString title = "选择音频文件";
-    QString filter = "音频文件(*.wav *.mp3)";
-    QStringList fileList = QFileDialog::getOpenFileNames(this, title, curPath, filter);
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">addMusictoList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    QString curPath <span class="token operator">=</span> <span class="token class-name">QDir</span><span class="token double-colon punctuation">::</span><span class="token function">currentPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    QString title <span class="token operator">=</span> <span class="token string">"选择音频文件"</span><span class="token punctuation">;</span>
+    QString filter <span class="token operator">=</span> <span class="token string">"音频文件(*.wav *.mp3)"</span><span class="token punctuation">;</span>
+    QStringList fileList <span class="token operator">=</span> <span class="token class-name">QFileDialog</span><span class="token double-colon punctuation">::</span><span class="token function">getOpenFileNames</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> title<span class="token punctuation">,</span> curPath<span class="token punctuation">,</span> filter<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-	// 添加文件少于1个时退出函数
-    if(filter.count() &lt; 1)  return;
-	// 将读取的文件放入musicplayList里
-    for(int i = 0; i &lt; fileList.count(); ++ i)
-    {
-        QString aFile = fileList.at(i);
-        musicplayList-&gt;addMedia(QUrl::fromLocalFile(aFile));
+	<span class="token comment">// 添加文件少于1个时退出函数</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>filter<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">1</span><span class="token punctuation">)</span>  <span class="token keyword">return</span><span class="token punctuation">;</span>
+	<span class="token comment">// 将读取的文件放入musicplayList里</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> fileList<span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token operator">++</span> i<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        QString aFile <span class="token operator">=</span> fileList<span class="token punctuation">.</span><span class="token function">at</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        musicplayList<span class="token operator">-&gt;</span><span class="token function">addMedia</span><span class="token punctuation">(</span><span class="token class-name">QUrl</span><span class="token double-colon punctuation">::</span><span class="token function">fromLocalFile</span><span class="token punctuation">(</span>aFile<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        QFileInfo fileinfo(aFile);
-        ui-&gt;playList-&gt;addItem(fileinfo.fileName());
-    }
-	// 将音乐列表的第一首音频作为待播放音频
-    if(musicplayer-&gt;state() != QMediaPlayer::PlayingState)
-        musicplayList-&gt;setCurrentIndex(0);
-}
-</code></pre>
+        QFileInfo <span class="token function">fileinfo</span><span class="token punctuation">(</span>aFile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ui<span class="token operator">-&gt;</span>playList<span class="token operator">-&gt;</span><span class="token function">addItem</span><span class="token punctuation">(</span>fileinfo<span class="token punctuation">.</span><span class="token function">fileName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+	<span class="token comment">// 将音乐列表的第一首音频作为待播放音频</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>musicplayer<span class="token operator">-&gt;</span><span class="token function">state</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> QMediaPlayer<span class="token double-colon punctuation">::</span>PlayingState<span class="token punctuation">)</span>
+        musicplayList<span class="token operator">-&gt;</span><span class="token function">setCurrentIndex</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>同样还应支持移除音频文件：</p>
-<pre><code class="language-cpp">// 移除文件
-connect(ui-&gt;delMusic, SIGNAL(clicked()), this, SLOT(delMusic()));
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 移除文件</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>ui<span class="token operator">-&gt;</span>delMusic<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">clicked</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">delMusic</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>移除文件时还应判断移除的是否为当前播放音乐，进行相应处理。</p>
-<pre><code class="language-cpp">void MainWindow::delMusic()
-{
-    int pos = ui-&gt;playList-&gt;currentRow(); // 获取选中行
-    QListWidgetItem *item = ui-&gt;playList-&gt;takeItem(pos);
-    delete  item;
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">delMusic</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span> pos <span class="token operator">=</span> ui<span class="token operator">-&gt;</span>playList<span class="token operator">-&gt;</span><span class="token function">currentRow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 获取选中行</span>
+    QListWidgetItem <span class="token operator">*</span>item <span class="token operator">=</span> ui<span class="token operator">-&gt;</span>playList<span class="token operator">-&gt;</span><span class="token function">takeItem</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">delete</span>  item<span class="token punctuation">;</span>
 
 
-    if(musicplayList-&gt;currentIndex() == pos)// 删除是当前播放的音乐时
-    {
-        int nextPos = 0;
-        if(pos &gt;= 1)    nextPos = pos - 1;
-        musicplayList-&gt;removeMedia(pos);
-        if(ui-&gt;playList-&gt;count() &gt; 0)
-        {
-            musicplayList-&gt;setCurrentIndex(nextPos);
-            onPlayListChanged(nextPos);
-        }
-        else
-        {
-            musicplayer-&gt;stop();
-            ui-&gt;playmusic-&gt;setText("无文件");
-        }
-    }
-    else
-        musicplayList-&gt;removeMedia(pos);
-}
-</code></pre>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>musicplayList<span class="token operator">-&gt;</span><span class="token function">currentIndex</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> pos<span class="token punctuation">)</span><span class="token comment">// 删除是当前播放的音乐时</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> nextPos <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pos <span class="token operator">&gt;=</span> <span class="token number">1</span><span class="token punctuation">)</span>    nextPos <span class="token operator">=</span> pos <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        musicplayList<span class="token operator">-&gt;</span><span class="token function">removeMedia</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>ui<span class="token operator">-&gt;</span>playList<span class="token operator">-&gt;</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            musicplayList<span class="token operator">-&gt;</span><span class="token function">setCurrentIndex</span><span class="token punctuation">(</span>nextPos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">onPlayListChanged</span><span class="token punctuation">(</span>nextPos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            musicplayer<span class="token operator">-&gt;</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ui<span class="token operator">-&gt;</span>playmusic<span class="token operator">-&gt;</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"无文件"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+        musicplayList<span class="token operator">-&gt;</span><span class="token function">removeMedia</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>清空文件则是移除文件的简化版，直接将播放列表清空即可。</p>
-<pre><code class="language-cpp">// 清空文件列表
-connect(ui-&gt;clearList, SIGNAL(clicked()), this, SLOT(clearList()));
-</code></pre>
-<pre><code class="language-cpp">void MainWindow::clearList()
-{
-    musicplayList-&gt;clear();	// 清空列表
-    ui-&gt;playList-&gt;clear();	// 更新UI
-    ui-&gt;playmusic-&gt;clear();
-    ui-&gt;time-&gt;clear();
-    ui-&gt;timebar-&gt;setValue(0);
-    musicplayer-&gt;stop();	// 停止播放
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 清空文件列表</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>ui<span class="token operator">-&gt;</span>clearList<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">clicked</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">clearList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">clearList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    musicplayList<span class="token operator">-&gt;</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 清空列表</span>
+    ui<span class="token operator">-&gt;</span>playList<span class="token operator">-&gt;</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 更新UI</span>
+    ui<span class="token operator">-&gt;</span>playmusic<span class="token operator">-&gt;</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ui<span class="token operator">-&gt;</span>time<span class="token operator">-&gt;</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ui<span class="token operator">-&gt;</span>timebar<span class="token operator">-&gt;</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    musicplayer<span class="token operator">-&gt;</span><span class="token function">stop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 停止播放</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>最后还可以添加上一首和下一首的功能，只需简单绑定一下点击事件和调用musicplayList的函数即可。</p>
-<pre><code class="language-cpp">musicplayList-&gt;previous();	// 上一首
-musicplayList-&gt;next();		// 下一首
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">musicplayList<span class="token operator">-&gt;</span><span class="token function">previous</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 上一首</span>
+musicplayList<span class="token operator">-&gt;</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>		<span class="token comment">// 下一首</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h2 id="3-7-音量控制模块">3.7 音量控制模块</h2>
 <p>一个播放器还应该支持音量的调节，而QMediaPlayer支持音量调节，所以绑定滑条值改变事件且调用函数即可，事件返回一个滑条的位置参数。</p>
-<pre><code class="language-cpp">// 控制音量
-connect(ui-&gt;volume, SIGNAL(valueChanged(int)), this, SLOT(changedVolume(int)));
-</code></pre>
-<pre><code class="language-cpp">void MainWindow::changedVolume(int value)
-{
-    musicplayer-&gt;setVolume(value);
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 控制音量</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>ui<span class="token operator">-&gt;</span>volume<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">valueChanged</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">changedVolume</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">changedVolume</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    musicplayer<span class="token operator">-&gt;</span><span class="token function">setVolume</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="3-8-信息显示与同步模块">3.8 信息显示与同步模块</h2>
 <p>根据UI的设计，显示的信息有：当前播放的音频名字、播放时间/完整时间。当播放音频进行切换时，需要更新音频名字、播放时间和音频完整时间等信息。</p>
 <p>为播放列表musicplayList的当前索引变化事件绑定onPlayListChanged()函数，事件返回新的索引号，用此更新播放的音频名字。</p>
-<pre><code class="language-cpp">// 播放音乐变化
-connect(musicplayList, SIGNAL(currentIndexChanged(int)), this, SLOT(onPlayListChanged(int)));
-</code></pre>
-<pre><code class="language-cpp">void MainWindow::onPlayListChanged(int pos)
-{
-    ui-&gt;playList-&gt;setCurrentRow(pos);
-    // 使用QListWidgetItem类取出QListWidget的某一行
-    QListWidgetItem *item = ui-&gt;playList-&gt;currentItem();
-    if(item)
-    {
-		// 更新UI的音频名字
-        ui-&gt;playmusic-&gt;setText(item-&gt;text());
-    }
-}
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 播放音乐变化</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>musicplayList<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">currentIndexChanged</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">onPlayListChanged</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">onPlayListChanged</span><span class="token punctuation">(</span><span class="token keyword">int</span> pos<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ui<span class="token operator">-&gt;</span>playList<span class="token operator">-&gt;</span><span class="token function">setCurrentRow</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 使用QListWidgetItem类取出QListWidget的某一行</span>
+    QListWidgetItem <span class="token operator">*</span>item <span class="token operator">=</span> ui<span class="token operator">-&gt;</span>playList<span class="token operator">-&gt;</span><span class="token function">currentItem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+		<span class="token comment">// 更新UI的音频名字</span>
+        ui<span class="token operator">-&gt;</span>playmusic<span class="token operator">-&gt;</span><span class="token function">setText</span><span class="token punctuation">(</span>item<span class="token operator">-&gt;</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>切换音频时，其总时长也应该变化，需要为播放器musicplayer的播放位置变化durationChanged事件绑定onDurationChanged()函数。函数为计算音频总的时间。</p>
-<pre><code class="language-cpp">// 时长变化
-connect(musicplayer, SIGNAL(durationChanged(qint64)), this, SLOT(onDurationChanged(qint64)));
-</code></pre>
-<pre><code class="language-cpp">void MainWindow::onDurationChanged(qint64 dur)
-{
-    ui-&gt;timebar-&gt;setMaximum(dur);	// 设置进度条的最大值
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 时长变化</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>musicplayer<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">durationChanged</span><span class="token punctuation">(</span>qint64<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">onDurationChanged</span><span class="token punctuation">(</span>qint64<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">onDurationChanged</span><span class="token punctuation">(</span>qint64 dur<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ui<span class="token operator">-&gt;</span>timebar<span class="token operator">-&gt;</span><span class="token function">setMaximum</span><span class="token punctuation">(</span>dur<span class="token punctuation">)</span><span class="token punctuation">;</span>	<span class="token comment">// 设置进度条的最大值</span>
 
-    int secs = int(dur / 1000);
-    int mins = secs / 60;
-    secs %= 60;
-    durationTime = QString::asprintf(" %d : %d ", mins, secs);
-    // UI刷新时间
-    ui-&gt;time-&gt;setText(positionTime + " / " + durationTime);
-}
-</code></pre>
+    <span class="token keyword">int</span> secs <span class="token operator">=</span> <span class="token keyword">int</span><span class="token punctuation">(</span>dur <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> mins <span class="token operator">=</span> secs <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">;</span>
+    secs <span class="token operator">%=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+    durationTime <span class="token operator">=</span> <span class="token class-name">QString</span><span class="token double-colon punctuation">::</span><span class="token function">asprintf</span><span class="token punctuation">(</span><span class="token string">" %d : %d "</span><span class="token punctuation">,</span> mins<span class="token punctuation">,</span> secs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// UI刷新时间</span>
+    ui<span class="token operator">-&gt;</span>time<span class="token operator">-&gt;</span><span class="token function">setText</span><span class="token punctuation">(</span>positionTime <span class="token operator">+</span> <span class="token string">" / "</span> <span class="token operator">+</span> durationTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>至于音频随着播放而位置和进度的刷新，则需要为播放器musicplayer的播放位置变化positionChanged事件绑定onPositionChanged()函数。函数为计算播放的时间。</p>
-<pre><code class="language-cpp">// 播放位置变化
-connect(musicplayer, SIGNAL(positionChanged(qint64)), this, SLOT(onPositionChanged(qint64)));
-</code></pre>
-<pre><code class="language-cpp">void MainWindow::onPositionChanged(qint64 pos)
-{
-	// 进度条滑动到尽头，退出函数
-    if(ui-&gt;timebar-&gt;isSliderDown()) return;
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">// 播放位置变化</span>
+<span class="token function">connect</span><span class="token punctuation">(</span>musicplayer<span class="token punctuation">,</span> <span class="token function">SIGNAL</span><span class="token punctuation">(</span><span class="token function">positionChanged</span><span class="token punctuation">(</span>qint64<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token function">SLOT</span><span class="token punctuation">(</span><span class="token function">onPositionChanged</span><span class="token punctuation">(</span>qint64<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token class-name">MainWindow</span><span class="token double-colon punctuation">::</span><span class="token function">onPositionChanged</span><span class="token punctuation">(</span>qint64 pos<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+	<span class="token comment">// 进度条滑动到尽头，退出函数</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>ui<span class="token operator">-&gt;</span>timebar<span class="token operator">-&gt;</span><span class="token function">isSliderDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
 
-    ui-&gt;timebar-&gt;setSliderPosition(pos);
-    // 计算分和秒
-    int secs = int (pos / 1000);
-    int mins = secs / 60;
-    secs %= 60;
-    positionTime = QString::asprintf(" %d : %d ", mins, secs);
-    // UI刷新时间
-    ui-&gt;time-&gt;setText(positionTime + " / " + durationTime);
-}
-</code></pre>
+    ui<span class="token operator">-&gt;</span>timebar<span class="token operator">-&gt;</span><span class="token function">setSliderPosition</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 计算分和秒</span>
+    <span class="token keyword">int</span> secs <span class="token operator">=</span> <span class="token keyword">int</span> <span class="token punctuation">(</span>pos <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> mins <span class="token operator">=</span> secs <span class="token operator">/</span> <span class="token number">60</span><span class="token punctuation">;</span>
+    secs <span class="token operator">%=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+    positionTime <span class="token operator">=</span> <span class="token class-name">QString</span><span class="token double-colon punctuation">::</span><span class="token function">asprintf</span><span class="token punctuation">(</span><span class="token string">" %d : %d "</span><span class="token punctuation">,</span> mins<span class="token punctuation">,</span> secs<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// UI刷新时间</span>
+    ui<span class="token operator">-&gt;</span>time<span class="token operator">-&gt;</span><span class="token function">setText</span><span class="token punctuation">(</span>positionTime <span class="token operator">+</span> <span class="token string">" / "</span> <span class="token operator">+</span> durationTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1>四、总结</h1>
 <p>该程序源代码放在<a target="_blank" rel="noopener" href="https://gitee.com/fingsinz/fmusicplayer/">Gitee - https://gitee.com/fingsinz/fmusicplayer/</a></p>
 <p>该项目只是一个简单的播放器实现，希望能够帮助萌新认识Qt，提高自己的能力。</p>
@@ -571,7 +572,12 @@ connect(musicplayer, SIGNAL(positionChanged(qint64)), this, SLOT(onPositionChang
 <p><a target="_blank" rel="noopener" href="https://www.codecguide.com/download_kl.htm">K-lite_codec_pack</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.codecguide.com/download_k-lite_codec_pack_basic.htm">K-lite_codec_pack_basic（基础版）</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.codecguide.com/download_k-lite_codec_pack_standard.htm">K-lite_codec_pack_standard（标准版）</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     <div class="post-meta">
@@ -608,6 +614,13 @@ connect(musicplayer, SIGNAL(positionChanged(qint64)), this, SLOT(onPositionChang
         
         </i>
     </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
     
         
 
@@ -644,7 +657,7 @@ connect(musicplayer, SIGNAL(positionChanged(qint64)), this, SLOT(onPositionChang
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
-            <span>不忘初心，方得始终。</span>
+            <span>我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span>
             
     
 </div>
@@ -662,13 +675,6 @@ connect(musicplayer, SIGNAL(positionChanged(qint64)), this, SLOT(onPositionChang
 <script src="/js/toc.js"></script>
 
     
-    
-    
-<script src="/js/highlight.min.js"></script>
-
-    
-<script src="/js/highlightjs-line-numbers.js"></script>
-
 
     
 <script src="/js/randomHeaderContent.js"></script>
@@ -681,14 +687,18 @@ connect(musicplayer, SIGNAL(positionChanged(qint64)), this, SLOT(onPositionChang
     
 
     
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
 
 
 
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
 
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
 
 
                 </div>
@@ -700,6 +710,7 @@ connect(musicplayer, SIGNAL(positionChanged(qint64)), this, SLOT(onPositionChang
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
                     </svg>
                 </div>
+            
             
     </body>
 

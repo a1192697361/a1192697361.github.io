@@ -6,12 +6,12 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="搭建一个自己的简单博客" />
     <meta name="hexo-theme-A4" content="v1.8.3" />
-    <link rel="alternate icon" type="image/webp" href="/images/icon1.webp">
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Fingsinz&#39;s space | 风信梓</title>
 
     
         
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
+<link rel="stylesheet" href="/css/highlight/style1.css">
 
         
 <link rel="stylesheet" href="/css/reset.css">
@@ -48,7 +48,12 @@
 
         
     
+
     
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
 
 <meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
@@ -69,6 +74,16 @@
         .post-md code {
             background: #e7f7f3;
             color: #7f688d; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e7f7f3;
+            color: #7f688d; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #000000;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #000000;
         }
         .year-font-color {
             color: #000000 !important;
@@ -165,11 +180,11 @@
             background: white;
         }
 
-        .post-md>table tr:nth-child(odd) td {
+        .post-md table tr:nth-child(odd) td {
             background: white;
         }
 
-        .post-md>table tr:nth-child(even) td {
+        .post-md table tr:nth-child(even) td {
             background: white;
         }
 
@@ -181,6 +196,16 @@
 	        stroke: #000000; /* 边框的颜色 */
         }
         .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
 	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
          }
 
@@ -213,6 +238,8 @@
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
+
+
 <div class="header">
     <div class="header-container">
         <img style="
@@ -220,7 +247,7 @@
         height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
         <div class="header-content">
             <a class="logo" href="/">Fingsinz&#39;s space</a> 
-            <span class="description">不忘初心，方得始终</span> 
+            <span class="description">我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span> 
         </div>
         
     </div>
@@ -270,7 +297,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">工具准备</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-nodejs"><span class="post-toc-text">1. Nodejs</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-git"><span class="post-toc-text">2. Git</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-%E9%AA%8C%E8%AF%81nodejs%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="post-toc-text">3. 验证Nodejs是否安装成功</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-cnpm"><span class="post-toc-text">4. cnpm</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">安装Hexo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">开始建造你的博客</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%B9-%E5%B0%BD%E9%87%8F%E4%B8%8D%E5%86%8D%E7%A7%BB%E5%8A%A8"><span class="post-toc-text">1. 创建一个新的文件夹，尽量不再移动。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8D%9A%E5%AE%A2"><span class="post-toc-text">2. 初始化博客</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-%E6%9F%A5%E7%9C%8B%E5%8D%9A%E5%AE%A2"><span class="post-toc-text">3. 查看博客</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-%E7%BB%99%E5%8D%9A%E5%AE%A2%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98-next"><span class="post-toc-text">4. 给博客下载主题——Next</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="post-toc-text">5. 修改配置文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">编写你的第一条博客</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">部署你的博客到Github</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-%E5%9C%A8%E5%8D%9A%E5%AE%A2%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%93%E5%BC%80git-bash-%E8%BE%93%E5%85%A5%E4%B8%8B%E9%9D%A2%E7%9A%84%E5%91%BD%E4%BB%A4-%E6%8E%A5%E7%9D%80%E4%BC%9A%E5%87%BA%E7%8E%B0%E4%BD%A0%E7%9A%84%E5%AF%86%E9%92%A5"><span class="post-toc-text">1. 在博客根目录打开Git Bash，输入下面的命令，接着会出现你的密钥。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-%E5%9C%A8github%E9%A1%B5%E9%9D%A2%E7%82%B9%E5%87%BB%E5%A4%B4%E5%83%8F-settings-ssh-and-gpg-keys-new-ssh-key-%E6%8E%A5%E7%9D%80%E6%8A%8A%E5%AF%86%E9%92%A5%E5%A4%8D%E5%88%B6%E4%B8%8A%E5%8E%BB"><span class="post-toc-text">2. 在Github页面点击头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key，接着把密钥复制上去。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-%E5%86%8D%E5%9C%A8git-bash%E4%B8%AD%E6%89%A7%E8%A1%8C%E4%B8%8B%E9%9D%A2%E5%91%BD%E4%BB%A4"><span class="post-toc-text">3. 再在Git Bash中执行下面命令。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-%E7%82%B9%E5%87%BB%E9%A1%B9%E7%9B%AE%E4%BB%93%E5%BA%93-%E5%9C%A8%E5%B7%A6%E4%B8%8A%E8%A7%92%E7%9A%84clone-or-download%E4%B8%AD%E7%82%B9%E5%87%BBuse-ssh-%E5%A4%8D%E5%88%B6git%E5%BC%80%E5%A4%B4%E7%9A%84%E5%9C%B0%E5%9D%80"><span class="post-toc-text">4. 点击项目仓库，在左上角的Clone or download中点击Use SSH，复制git开头的地址。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-%E6%89%93%E5%BC%80%E5%8D%9A%E5%AE%A2%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-%E6%89%BE%E5%88%B0deploy%E4%B8%80%E8%A1%8C-%E6%8C%89%E7%85%A7%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%8C%87%E7%A4%BA%E4%BF%AE%E6%94%B9"><span class="post-toc-text">5. 打开博客配置文件，找到deploy一行，按照下面的指示修改。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-%E5%9C%A8%E5%8D%9A%E5%AE%A2%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%93%E5%BC%80git-bash-%E5%88%86%E5%88%AB%E6%89%A7%E8%A1%8C%E4%B8%8B%E5%88%97%E5%91%BD%E4%BB%A4"><span class="post-toc-text">6. 在博客根目录打开Git Bash，分别执行下列命令。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-%E5%AE%89%E8%A3%85%E4%B8%8A%E4%BC%A0%E6%8F%92%E4%BB%B6"><span class="post-toc-text">7. 安装上传插件。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-%E4%BD%BF%E7%94%A8%E4%B8%8B%E9%9D%A2%E6%8C%87%E4%BB%A4%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2"><span class="post-toc-text">8. 使用下面指令上传博客。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-%E6%89%93%E5%BC%80%E9%A1%B9%E7%9B%AE%E4%BB%93%E5%BA%93-%E9%80%89%E6%8B%A9%E4%B8%8A%E6%96%B9%E7%9A%84settings-%E6%89%BE%E5%88%B0pages-%E5%9C%A8source%E5%A4%84%E9%80%89%E6%8B%A9deploy-from-a-branch-%E4%B9%8B%E5%90%8E%E5%B0%B1%E4%BC%9A%E5%87%BA%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%BD%91%E7%AB%99%E5%9C%B0%E5%9D%80-%E4%BE%BF%E6%98%AF%E5%8D%9A%E5%AE%A2%E5%9C%B0%E5%9D%80"><span class="post-toc-text">9. 打开项目仓库，选择上方的Settings，找到Pages，在Source处选择Deploy from a branch。之后就会出现一个网站地址，便是博客地址。</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">注</span></a></li></ol>
             
         
-        <p>简单几步，基于Hexo搭建一个属于自己的简单博客</p>
+        <div class=".article-gallery"><p>简单几步，基于Hexo搭建一个属于自己的简单博客</p>
 <p>关键词：Hexo、博客</p>
 <span id="more"></span>
 <hr>
@@ -278,10 +305,10 @@
 <h1>工具准备</h1>
 <h2 id="1-nodejs">1. Nodejs</h2>
 <p>Nodejs简单来说就是运行在服务端的JavaScript，博客交互需要用到Nodejs。</p>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_NodejsDonwload.png" alt="Nodejs下载页面"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_NodejsDonwload.png" title="Nodejs下载页面" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_NodejsDonwload.png" alt="Nodejs下载页面"></a></p>
 <p>选择合适的软件版本下载，<a target="_blank" rel="noopener" href="https://nodejs.cn/download/">下载地址：https://nodejs.cn/download/</a></p>
 <p>下载完成后按正常流程安装，可安装在非系统盘，记得选择“Add to PATH”配置PATH环境变量。我的Nodejs安装在<code>E:\Nodejs</code>中。</p>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_Node.png" alt="选择"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_Node.png" title="选择" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_Node.png" alt="选择"></a></p>
 <p>注：为了软件安装简洁可控，还需要对Nodejs的内容（Cache和global）进行规划，具体可参考<a target="_blank" rel="noopener" href="https://juejin.cn/post/7227434605392642104">nodejs的安装及详细环境配置</a>或<a target="_blank" rel="noopener" href="https://blog.csdn.net/Ouchieve_111/article/details/70878090">修改项目默认node_modules路径</a>或<a target="_blank" rel="noopener" href="https://blog.csdn.net/scorpio_meng/article/details/83314675">node安装后的设置(node_global和node_cache) - windows</a>，或自行搜索。</p>
 <h2 id="2-git">2. Git</h2>
 <p>Git是一个分布式版本控制系统，简单理解为它可以帮助我们管理文件各种版本，博客的更新之类的。</p>
@@ -289,47 +316,38 @@
 <p>下载完成后按正常流程安装，可安装在非系统盘，其他选项可以保持默认。我的Git安装在<code>E:\Git</code>中。</p>
 <h2 id="3-验证nodejs是否安装成功">3. 验证Nodejs是否安装成功</h2>
 <p>在桌面鼠标右键，选择菜单中的Git Bash Here。</p>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_%E5%8F%B3%E9%94%AE.jpg" alt="右键菜单"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_%E5%8F%B3%E9%94%AE.jpg" title="右键菜单" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_%E5%8F%B3%E9%94%AE.jpg" alt="右键菜单"></a></p>
 <p>在弹出的窗口中输入以下指令</p>
-<pre><code class="language-bash">node -v
-</code></pre>
-<pre><code class="language-bash">npm -v
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">node</span> <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>若出现了对应的版本号，则说明安装成功。若不出现版本号，则检查Nodejs的安装过程，或者必应搜索相关帮助。</p>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_%E9%AA%8C%E8%AF%81.png" alt="验证Nodejs安装"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_%E9%AA%8C%E8%AF%81.png" title="验证Nodejs安装" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_%E9%AA%8C%E8%AF%81.png" alt="验证Nodejs安装"></a></p>
 <h2 id="4-cnpm">4. cnpm</h2>
 <p>上面的<code>npm -v</code>查看了npm的版本，可以简单理解为npm是一种下载工具。而npm下载一般是通过国外网络下载，速度比较慢。因此需要先通过npm安装cnpm（国内下载），之后就是用cnpm代替npm。</p>
-<pre><code class="language-bash">npm install -g cnpm --registry=https://registry.npm.taobao.org
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> cnpm <span class="token parameter variable">--registry</span><span class="token operator">=</span>https://registry.npm.taobao.org<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>通过查询版本号验证是否安装成功。</p>
-<pre><code class="language-bash">cnpm -v
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cnpm <span class="token parameter variable">-v</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1>安装Hexo</h1>
 <p>Hexo是一种博客框架，通过它可以将简单的Markdown语言转化为带装饰的网页。</p>
 <p>通过下面命令安装Hexo。</p>
-<pre><code class="language-bash">cnpm install hexo-cli -g
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cnpm <span class="token function">install</span> hexo-cli <span class="token parameter variable">-g</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>也可以通过查询版本号确认Hexo是否安装成功。</p>
-<pre><code class="language-bash">hexo -V
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo <span class="token parameter variable">-V</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>Hexo的常用命令：<code>hexo -s</code>本地查看博客，<code>hexo g</code>生成博客，<code>hexo clean</code>删除当前博客所有网页页面。</p>
 <h1>开始建造你的博客</h1>
 <h2 id="1-创建一个新的文件夹-尽量不再移动">1. 创建一个新的文件夹，尽量不再移动。</h2>
 <p>如我在F盘创建了一个文件夹叫<code>15.Blog</code>，就在15.Blog文件夹下右键选择Git Bash。</p>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_%E5%8D%9A%E5%AE%A21.png" alt=""></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_%E5%8D%9A%E5%AE%A21.png" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/4_%E5%8D%9A%E5%AE%A21.png" alt=""></a></p>
 <h2 id="2-初始化博客">2. 初始化博客</h2>
 <p>在窗口中输入命令，等待完成。（如果运行至<code>Install dependencies</code>卡住，可以<code>Ctrl + C</code>结束命令）</p>
-<pre><code class="language-bash">hexo init
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo init<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="3-查看博客">3. 查看博客</h2>
 <p>在窗口中输入命令，查看博客的初始页面。</p>
-<pre><code class="language-bash">hexo s
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="4-给博客下载主题-next">4. 给博客下载主题——Next</h2>
 <p>点击<a target="_blank" rel="noopener" href="https://hexo.io/themes/">此处</a>寻找合适的主题，以Next为例，因为该主题基础、自定义程度高。</p>
 <p>可以用git指令将Github的主题压缩包下载到博客的<code>themes/</code>文件夹中：</p>
-<pre><code class="language-bash">git clone 复制的地址 themes/主题名字
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone 复制的地址 themes/主题名字<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>上面指令意思是将指定地址的内容克隆到本地<code>themes/</code>文件夹并命名为指定名字。<br>
 也可以直接下载压缩包粘贴至<code>themes/</code>文件夹中。</p>
 <h2 id="5-修改配置文件">5. 修改配置文件</h2>
@@ -339,44 +357,41 @@
 <p>注意：有些主题你更换之后是暂时无法预览的，因为有的主题还需要安装它需要的依赖。</p>
 <h1>编写你的第一条博客</h1>
 <p>在博客根目录打开Git Bash，输入下面的指令即可创建文章。</p>
-<pre><code class="language-bash">$ hexo new "文章名字"
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"文章名字"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>每次生成的文章都固定在你的博客根目录下面的<code>source/_posts</code>下，并以Markdown文件形式编写保存。</p>
 <h1>部署你的博客到Github</h1>
 <p>首先需要有一个Github账号，并且新建仓库名为<code>用户名+.github.io</code>。</p>
 <p>接着需要进行一系列的密钥绑定：</p>
 <h2 id="1-在博客根目录打开git-bash-输入下面的命令-接着会出现你的密钥">1. 在博客根目录打开Git Bash，输入下面的命令，接着会出现你的密钥。</h2>
-<pre><code class="language-bash">ssh-keygen -t rsa -C “your_email@youremail.com“
-</code></pre>
-<pre><code class="language-bash">cat ~/.ssh/id_rsa.pub
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ssh-keygen <span class="token parameter variable">-t</span> rsa <span class="token parameter variable">-C</span> “your_email@youremail.com“<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">cat</span> ~/.ssh/id_rsa.pub<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="2-在github页面点击头像-settings-ssh-and-gpg-keys-new-ssh-key-接着把密钥复制上去">2. 在Github页面点击头像-&gt;Settings-&gt;SSH and GPG keys-&gt;New SSH key，接着把密钥复制上去。</h2>
 <h2 id="3-再在git-bash中执行下面命令">3. 再在Git Bash中执行下面命令。</h2>
-<pre><code class="language-bash">ssh -T git@github.com
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> git@github.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>接着提示<code>Are you sure you want to continue connecting (yes/no/[fingerprint])? </code>，输入yes回车即可。</p>
 <h2 id="4-点击项目仓库-在左上角的clone-or-download中点击use-ssh-复制git开头的地址">4. 点击项目仓库，在左上角的Clone or download中点击Use SSH，复制git开头的地址。</h2>
 <h2 id="5-打开博客配置文件-找到deploy一行-按照下面的指示修改">5. 打开博客配置文件，找到deploy一行，按照下面的指示修改。</h2>
-<pre><code>deploy:
+<pre class="line-numbers language-none"><code class="language-none">deploy:
 	type: git
 	repo: 复制到的地址
-	branch: master
-</code></pre>
+	branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="6-在博客根目录打开git-bash-分别执行下列命令">6. 在博客根目录打开Git Bash，分别执行下列命令。</h2>
-<pre><code class="language-bash">git config --global user.name "yourname"
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"yourname"</span>
 
-git config --global user.email "youremail"
-</code></pre>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"youremail"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="7-安装上传插件">7. 安装上传插件。</h2>
-<pre><code class="language-bash">cnpm install hexo-deployer-git --save
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">cnpm <span class="token function">install</span> hexo-deployer-git <span class="token parameter variable">--save</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="8-使用下面指令上传博客">8. 使用下面指令上传博客。</h2>
-<pre><code class="language-bash">hexo d
-</code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="9-打开项目仓库-选择上方的settings-找到pages-在source处选择deploy-from-a-branch-之后就会出现一个网站地址-便是博客地址">9. 打开项目仓库，选择上方的Settings，找到Pages，在Source处选择Deploy from a branch。之后就会出现一个网站地址，便是博客地址。</h2>
 <h1>注</h1>
 <p>如有纰漏，可同步参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/huanhao/p/hexobase.html">此篇博客</a>或自行搜索他人教程相互参考。</p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     <div class="post-meta">
@@ -413,6 +428,13 @@ git config --global user.email "youremail"
         
         </i>
     </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
     
         
 
@@ -449,7 +471,7 @@ git config --global user.email "youremail"
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
-            <span>不忘初心，方得始终。</span>
+            <span>我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span>
             
     
 </div>
@@ -467,13 +489,6 @@ git config --global user.email "youremail"
 <script src="/js/toc.js"></script>
 
     
-    
-    
-<script src="/js/highlight.min.js"></script>
-
-    
-<script src="/js/highlightjs-line-numbers.js"></script>
-
 
     
 <script src="/js/randomHeaderContent.js"></script>
@@ -486,14 +501,18 @@ git config --global user.email "youremail"
     
 
     
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
 
 
 
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
 
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
 
 
                 </div>
@@ -505,6 +524,7 @@ git config --global user.email "youremail"
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
                     </svg>
                 </div>
+            
             
     </body>
 

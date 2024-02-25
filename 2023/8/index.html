@@ -6,12 +6,12 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="Windows下Python3.11.4的安装记录" />
     <meta name="hexo-theme-A4" content="v1.8.3" />
-    <link rel="alternate icon" type="image/webp" href="/images/icon1.webp">
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Fingsinz&#39;s space | 风信梓</title>
 
     
         
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
+<link rel="stylesheet" href="/css/highlight/style1.css">
 
         
 <link rel="stylesheet" href="/css/reset.css">
@@ -48,7 +48,12 @@
 
         
     
+
     
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
 
 <meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
@@ -69,6 +74,16 @@
         .post-md code {
             background: #e7f7f3;
             color: #7f688d; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e7f7f3;
+            color: #7f688d; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #000000;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #000000;
         }
         .year-font-color {
             color: #000000 !important;
@@ -165,11 +180,11 @@
             background: white;
         }
 
-        .post-md>table tr:nth-child(odd) td {
+        .post-md table tr:nth-child(odd) td {
             background: white;
         }
 
-        .post-md>table tr:nth-child(even) td {
+        .post-md table tr:nth-child(even) td {
             background: white;
         }
 
@@ -181,6 +196,16 @@
 	        stroke: #000000; /* 边框的颜色 */
         }
         .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
 	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
          }
 
@@ -213,6 +238,8 @@
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
+
+
 <div class="header">
     <div class="header-container">
         <img style="
@@ -220,7 +247,7 @@
         height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
         <div class="header-content">
             <a class="logo" href="/">Fingsinz&#39;s space</a> 
-            <span class="description">不忘初心，方得始终</span> 
+            <span class="description">我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span> 
         </div>
         
     </div>
@@ -270,7 +297,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">下载Python安装包</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">安装Python</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">测试Python</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">附：更改Python的pip安装路径</span></a></li></ol>
             
         
-        <p>记录一次安装Python</p>
+        <div class=".article-gallery"><p>记录一次安装Python</p>
 <p>关键词：Python</p>
 <span id="more"></span>
 <hr>
@@ -279,32 +306,34 @@
 <p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/windows/">官网</a>选择尽量较新的Python版本下载。</p>
 <h1>安装Python</h1>
 <p>打开下载的Python安装包，选择<code>Customize installation</code>客制化安装，记得勾选下面的“Add python.exe to PATH”。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py1.jpg" alt="安装步骤1"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py1.jpg" title="安装步骤1" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py1.jpg" alt="安装步骤1"></a></p>
 <p>接着默认勾选：</p>
 <ul>
 <li>pip：包管理器，下载包时使用。建议勾选上</li>
 </ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py2.jpg" alt="安装步骤2"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py2.jpg" title="安装步骤2" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py2.jpg" alt="安装步骤2"></a></p>
 <p>再接着更改安装路径，建议安装在非系统盘。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py3.jpg" alt="安装步骤3"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py3.jpg" title="安装步骤3" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py3.jpg" alt="安装步骤3"></a></p>
 <p>等待安装完成即可。</p>
 <h1>测试Python</h1>
 <p>按下<code>Win+R</code>输入<code>cmd</code>打开命令窗口，输入下面命令验证是否安装成功。</p>
-<pre><code class="language-cmd">python -V
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">python -V<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>如果出现版本号，即为安装成功。</p>
 <h1>附：更改Python的pip安装路径</h1>
 <p>建议将pip安装的包放至非系统盘。进入Python的安装路径，如我的在<code>D:\Pyhton\Lib</code>，寻找文件<code>site.py</code>，使用记事本打开。使用<code>ctrl+f</code>查找关键字<code>USER_SITE</code>等字，将路径更改为自定义的路径。我更改情况如下图。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py.jpg" alt="更改路径"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py.jpg" title="更改路径" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py.jpg" alt="更改路径"></a></p>
 <p>更改路径后，打开cmd，使用下面指令安装numpy包。</p>
-<pre><code class="language-cmd">pip install numpy
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">pip install numpy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>安装成功后，再使用下面指令查看numpy包的安装位置。</p>
-<pre><code class="language-cmd">pip show numpy
-</code></pre>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">pip show numpy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>我成功更改pip的安装路径，新下载的numpy包位于<code>D:\Pyhton\Lib\site-packages</code>。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py4.jpg" alt="更改路径后"></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py4.jpg" title="更改路径后" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/8_py4.jpg" alt="更改路径后"></a></p>
+</div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     <div class="post-meta">
@@ -337,6 +366,13 @@
         
         </i>
     </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
     
         
 
@@ -373,7 +409,7 @@
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
-            <span>不忘初心，方得始终。</span>
+            <span>我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span>
             
     
 </div>
@@ -391,13 +427,6 @@
 <script src="/js/toc.js"></script>
 
     
-    
-    
-<script src="/js/highlight.min.js"></script>
-
-    
-<script src="/js/highlightjs-line-numbers.js"></script>
-
 
     
 <script src="/js/randomHeaderContent.js"></script>
@@ -410,14 +439,18 @@
     
 
     
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
 
 
 
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
 
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
 
 
                 </div>
@@ -429,6 +462,7 @@
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
                     </svg>
                 </div>
+            
             
     </body>
 

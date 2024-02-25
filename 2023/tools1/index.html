@@ -6,12 +6,12 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="一个小巧的Markdown编辑工具" />
     <meta name="hexo-theme-A4" content="v1.8.3" />
-    <link rel="alternate icon" type="image/webp" href="/images/icon1.webp">
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Fingsinz&#39;s space | 风信梓</title>
 
     
         
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
+<link rel="stylesheet" href="/css/highlight/style1.css">
 
         
 <link rel="stylesheet" href="/css/reset.css">
@@ -48,7 +48,12 @@
 
         
     
+
     
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
 
 <meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
@@ -69,6 +74,16 @@
         .post-md code {
             background: #e7f7f3;
             color: #7f688d; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e7f7f3;
+            color: #7f688d; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #000000;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #000000;
         }
         .year-font-color {
             color: #000000 !important;
@@ -165,11 +180,11 @@
             background: white;
         }
 
-        .post-md>table tr:nth-child(odd) td {
+        .post-md table tr:nth-child(odd) td {
             background: white;
         }
 
-        .post-md>table tr:nth-child(even) td {
+        .post-md table tr:nth-child(even) td {
             background: white;
         }
 
@@ -181,6 +196,16 @@
 	        stroke: #000000; /* 边框的颜色 */
         }
         .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
 	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
          }
 
@@ -213,6 +238,8 @@
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
+
+
 <div class="header">
     <div class="header-container">
         <img style="
@@ -220,7 +247,7 @@
         height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
         <div class="header-content">
             <a class="logo" href="/">Fingsinz&#39;s space</a> 
-            <span class="description">不忘初心，方得始终</span> 
+            <span class="description">我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span> 
         </div>
         
     </div>
@@ -270,7 +297,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">什么是Markdown</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">MarkText</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">进阶使用</span></a></li></ol>
             
         
-        <p>介绍一个小巧方便的编写Markdown语言工具——MarkText。</p>
+        <div class=".article-gallery"><p>介绍一个小巧方便的编写Markdown语言工具——MarkText。</p>
 <p>关键词：Markdown工具</p>
 <span id="more"></span>
 <hr>
@@ -297,20 +324,20 @@
 <ul>
 <li>MarkText具有多个明暗主题选择，软件菜单内容明确，主打轻便，是一款很不错的小工具。</li>
 </ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A2.jpg" alt="软件界面（明亮主题）"></p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A22.jpg" alt="软件界面（灰暗主题）"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A2.jpg" title="软件界面（明亮主题）" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A2.jpg" alt="软件界面（明亮主题）"></a></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A22.jpg" title="软件界面（灰暗主题）" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%B8%BB%E7%95%8C%E9%9D%A22.jpg" alt="软件界面（灰暗主题）"></a></p>
 <ul>
 <li>使用方法</li>
 </ul>
 <p>输入<code>@</code>选择插入的模块，包括段落、分割线、标题、表格、数学公式、引用块、列表等。如果本身对于Markdown语言有一定基础的话，也可直接建立该模块。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BD%BF%E7%94%A81.jpg" alt="使用过程"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BD%BF%E7%94%A81.jpg" title="使用过程" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BD%BF%E7%94%A81.jpg" alt="使用过程"></a></p>
 <p>在编写完内容后，可以直接保存为Markdown文件（<code>.md</code>后缀），也可以导出为PDF文件和HTML文件。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BF%9D%E5%AD%98.jpg" alt="选择保存"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BF%9D%E5%AD%98.jpg" title="选择保存" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E4%BF%9D%E5%AD%98.jpg" alt="选择保存"></a></p>
 <h1>进阶使用</h1>
 <ul>
 <li>有时候对于PDF文件，会有显示目录大纲的需求，但是该软件直接导出并不能设置，此时需要借助另一个工具：wkhtmltopdf。</li>
 </ul>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="带目录的PDF文件"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" title="带目录的PDF文件" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="带目录的PDF文件"></a></p>
 <ul>
 <li><strong>wkhtmltopdf</strong></li>
 </ul>
@@ -325,24 +352,29 @@
 <li>安装并配置</li>
 </ol>
 <p>安装后，需要记住安装的具体位置，比如我是安装在D盘，位置就是<code>D:\wkhtmltopdf</code>，接着进行系统环境变量的配置。在电脑设置中搜索环境变量，打开编辑页面。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="配置环境变量"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" title="配置环境变量" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F.jpg" alt="配置环境变量"></a></p>
 <p>具体步骤：编辑→新建→输入安装的位置里面的bin文件夹即<code>D:\wkhtmltopdf\bin</code>→确定所有系统设置窗口。</p>
 <p>（添加错误的环境变量并不会对电脑造成严重伤害，但不要胡乱删除环境变量）</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%90%8E.jpg" alt="配置环境变量后"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%90%8E.jpg" title="配置环境变量后" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%90%8E.jpg" alt="配置环境变量后"></a></p>
 <p>再接着确认环境变量是否配置成功：按快捷键<code>win+r</code>，输入cmd，打开黑窗口，在窗口内输入<code>wkhtmltopdf -V</code>（查询wkhtmltopdf的版本），如果出现类似于版本号的数字，则说明添加环境变量成功。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_cmd.jpg" alt="配置成功"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_cmd.jpg" title="配置成功" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_cmd.jpg" alt="配置成功"></a></p>
 <ol start="3">
 <li>软件使用</li>
 </ol>
 <p>在cmd黑窗口切换到想要HTML文件转换为PDF文件的位置，直接输入<code>F:</code>切换到不同的盘，输入<code>cd xx</code>可以进入不同文件夹。如果不知道自己是什么路径，可以先进入所在盘，再打开文件所在文件夹，在地址栏点击获得路径，然后复制粘贴到黑窗口进入。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BF%9B%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="进入工作文件夹"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BF%9B%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" title="进入工作文件夹" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BF%9B%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="进入工作文件夹"></a></p>
 <p>接着回到MarkText软件，将文件导出为HTML文件，保存在特定文件夹，该文件夹应该跟cmd黑窗口进入的文件夹一样。举例时，我将该文件保存为<code>test.html</code>文件在<code>F:\14.Books</code>文件夹。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E5%AF%BC%E5%87%BAHTML.jpg" alt="导出HTML"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E5%AF%BC%E5%87%BAHTML.jpg" title="导出HTML" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E5%AF%BC%E5%87%BAHTML.jpg" alt="导出HTML"></a></p>
 <p>再回到黑窗口，使用命令<code>wkhtmltopdf 目的文件名字 新文件名字</code>转换，我这里应该是<code>wkhtmltopdf test.html test.pdf</code>。等待转换成功。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BD%AC%E6%8D%A2%E6%88%90%E5%8A%9F.jpg" alt="转换成功"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BD%AC%E6%8D%A2%E6%88%90%E5%8A%9F.jpg" title="转换成功" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_%E8%BD%AC%E6%8D%A2%E6%88%90%E5%8A%9F.jpg" alt="转换成功"></a></p>
 <p>此时回到文件夹，就可以看到转换完成的带目录的PDF文件。</p>
-<p><img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_test.jpg" alt="转换成功的PDF文件"></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_test.jpg" title="转换成功的PDF文件" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/tools1_test.jpg" alt="转换成功的PDF文件"></a></p>
+</div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     <div class="post-meta">
@@ -375,6 +407,13 @@
         
         </i>
     </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
     
         
 
@@ -411,7 +450,7 @@
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
-            <span>不忘初心，方得始终。</span>
+            <span>我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span>
             
     
 </div>
@@ -429,13 +468,6 @@
 <script src="/js/toc.js"></script>
 
     
-    
-    
-<script src="/js/highlight.min.js"></script>
-
-    
-<script src="/js/highlightjs-line-numbers.js"></script>
-
 
     
 <script src="/js/randomHeaderContent.js"></script>
@@ -448,14 +480,18 @@
     
 
     
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
 
 
 
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
 
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
 
 
                 </div>
@@ -467,6 +503,7 @@
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
                     </svg>
                 </div>
+            
             
     </body>
 

@@ -6,12 +6,12 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0,  viewport-fit=cover" name="viewport" />
     <meta name="description" content="Windows 10下安装CUDA、TensorRT记录" />
     <meta name="hexo-theme-A4" content="v1.8.3" />
-    <link rel="alternate icon" type="image/webp" href="/images/icon1.webp">
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Fingsinz&#39;s space | 风信梓</title>
 
     
         
-<link rel="stylesheet" href="/css/a11y-dark.min.css">
+<link rel="stylesheet" href="/css/highlight/style1.css">
 
         
 <link rel="stylesheet" href="/css/reset.css">
@@ -48,7 +48,12 @@
 
         
     
+
     
+    
+    <link href="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/css/lightgallery.min.css
+" rel="stylesheet">
 
 <meta name="generator" content="Hexo 6.3.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
@@ -69,6 +74,16 @@
         .post-md code {
             background: #e7f7f3;
             color: #7f688d; 
+        }
+        .post-md pre, .post-md .highlight {
+            background: #e7f7f3;
+            color: #7f688d; 
+        }
+        pre .string, pre .value, pre .inheritance, pre .header, pre .ruby .symbol, pre .xml .cdata {
+            color: #000000;
+        }
+        pre .number, pre .preprocessor, pre .built_in, pre .literal, pre .params, pre .constant {
+            color: #000000;
         }
         .year-font-color {
             color: #000000 !important;
@@ -165,11 +180,11 @@
             background: white;
         }
 
-        .post-md>table tr:nth-child(odd) td {
+        .post-md table tr:nth-child(odd) td {
             background: white;
         }
 
-        .post-md>table tr:nth-child(even) td {
+        .post-md table tr:nth-child(even) td {
             background: white;
         }
 
@@ -181,6 +196,16 @@
 	        stroke: #000000; /* 边框的颜色 */
         }
         .progress-wrap::before {
+	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
+         }
+
+        .return-to-last-progress-wrap::after {
+            color: #000000; /* 箭头的颜色 */
+        }
+        .return-to-last-progress-wrap svg.progress-circle path {
+	        stroke: #000000; /* 边框的颜色 */
+        }
+        .return-to-last-progress-wrap::before {
 	        background-image: linear-gradient(298deg, #6b798e, #6b798e); /* 鼠标滑过的箭头颜色 */
          }
 
@@ -213,6 +238,8 @@
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
+
+
 <div class="header">
     <div class="header-container">
         <img style="
@@ -220,7 +247,7 @@
         height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/img/favicon.webp" width="10%"></img>
         <div class="header-content">
             <a class="logo" href="/">Fingsinz&#39;s space</a> 
-            <span class="description">不忘初心，方得始终</span> 
+            <span class="description">我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span> 
         </div>
         
     </div>
@@ -270,7 +297,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">一、下载CUDA</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-%E7%A1%AE%E5%AE%9A%E9%80%82%E9%85%8D%E6%9C%AC%E6%9C%BA%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8%E7%9A%84cuda%E7%89%88%E6%9C%AC"><span class="post-toc-text">1.确定适配本机显卡驱动的CUDA版本</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%89%88%E6%9C%AC%E7%9A%84cuda"><span class="post-toc-text">2.下载对应版本的CUDA</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-%E5%AE%89%E8%A3%85cuda"><span class="post-toc-text">3.安装CUDA</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">二、下载cuDNN包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-%E9%80%89%E6%8B%A9%E9%80%82%E9%85%8Dcuda%E7%9A%84%E7%89%88%E6%9C%AC%E4%B8%8B%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%9A%84cudnn%E5%8C%85"><span class="post-toc-text">1.选择适配CUDA的版本下载对应的cuDNN包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E4%BD%8D%E7%BD%AE%E8%A7%A3%E5%8E%8Bcudnn%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="post-toc-text">2.选择合适的位置解压cuDNN压缩包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-%E5%A4%8D%E5%88%B6%E6%96%87%E4%BB%B6"><span class="post-toc-text">3.复制文件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E6%88%90%E5%8A%9F"><span class="post-toc-text">4.验证是否成功</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">三、下载TensorRT包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-%E9%80%89%E6%8B%A9%E9%80%82%E9%85%8Dcuda%E7%89%88%E6%9C%AC%E7%9A%84tensorrt%E5%8C%85%E4%B8%8B%E8%BD%BD"><span class="post-toc-text">1.选择适配CUDA版本的TensorRT包下载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%9A%84%E4%BD%8D%E7%BD%AE%E8%A7%A3%E5%8E%8Btensorrt%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="post-toc-text">2.选择合适的位置解压TensorRT压缩包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-%E5%AE%89%E8%A3%85tensorrt"><span class="post-toc-text">3.安装TensorRT</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-%E9%AA%8C%E8%AF%81tensort"><span class="post-toc-text">4.验证TensoRT</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link"><span class="post-toc-text">参考</span></a></li></ol>
             
         
-        <p>GPU：NVIDIA GeFOrce GTX 1050</p>
+        <div class=".article-gallery"><p>GPU：NVIDIA GeFOrce GTX 1050</p>
 <p>关键词：深度学习、YOLOv5、TensorRT、C++推演</p>
 <span id="more"></span>
 <hr>
@@ -278,7 +305,7 @@
 <h1>一、下载CUDA</h1>
 <h2 id="1-确定适配本机显卡驱动的cuda版本">1.确定适配本机显卡驱动的CUDA版本</h2>
 <p>系统搜索打开NVIDIA控制面板，点击帮助，选择系统信息-&gt;组件，找到CUDA字样。此处我的CUDA适配版本为<code>12.0</code>。</p>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_CUDA%E7%89%88%E6%9C%AC.jpg" alt="CUDA版本查看"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_CUDA%E7%89%88%E6%9C%AC.jpg" title="CUDA版本查看" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_CUDA%E7%89%88%E6%9C%AC.jpg" alt="CUDA版本查看"></a></p>
 <h2 id="2-下载对应版本的cuda">2.下载对应版本的CUDA</h2>
 <p><a target="_blank" rel="noopener" href="https://developer.nvidia.com/cuda-toolkit-archive">下载地址 - NVIDIA官网</a></p>
 <h2 id="3-安装cuda">3.安装CUDA</h2>
@@ -287,7 +314,7 @@
 <h2 id="1-选择适配cuda的版本下载对应的cudnn包">1.选择适配CUDA的版本下载对应的cuDNN包</h2>
 <p><a target="_blank" rel="noopener" href="https://developer.nvidia.com/rdp/cudnn-archive">下载地址 - NVIDIA官网</a></p>
 <h2 id="2-选择合适的位置解压cudnn压缩包">2.选择合适的位置解压cuDNN压缩包</h2>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN.jpg" alt="解压cuDNN后的文件"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN.jpg" title="解压cuDNN后的文件" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN.jpg" alt="解压cuDNN后的文件"></a></p>
 <h2 id="3-复制文件">3.复制文件</h2>
 <p>cuDNN属于是CUDA的一个补丁包，因此无需安装。需要将<code>bin</code>、<code>include</code>、<code>lib</code>文件夹中的相关文件拷贝到CUDA安装位置的<code>bin</code>、<code>include</code>、<code>lib的x64</code>文件夹中。</p>
 <p>我的CUDA安装位置是：<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code>。</p>
@@ -297,18 +324,16 @@
 比如我的CUDA安装在<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0</code>，<br>
 那么进入到<code>G:\NVIDIA_GPU_Computing_Toolkit_CUDA_v12.0\extras\demo_suite</code></p>
 <p>接着在cmd窗口输入下面的指令分别运行两个exe文件，结果出现PASS（如图）则验证成功。</p>
-<pre><code class="language-cmd">bandwidthTest.exe
-</code></pre>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN%E9%AA%8C%E8%AF%81.jpg" alt="第一个exe运行结果"></p>
-<pre><code class="language-cmd">deviceQuery.exe
-</code></pre>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN%E9%AA%8C%E8%AF%812.jpg" alt="第二个exe运行结果"></p>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">bandwidthTest.exe<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN%E9%AA%8C%E8%AF%81.jpg" title="第一个exe运行结果" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN%E9%AA%8C%E8%AF%81.jpg" alt="第一个exe运行结果"></a></p>
+<pre class="line-numbers language-cmd" data-language="cmd"><code class="language-cmd">deviceQuery.exe<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN%E9%AA%8C%E8%AF%812.jpg" title="第二个exe运行结果" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_cuDNN%E9%AA%8C%E8%AF%812.jpg" alt="第二个exe运行结果"></a></p>
 <h1>三、下载TensorRT包</h1>
 <h2 id="1-选择适配cuda版本的tensorrt包下载">1.选择适配CUDA版本的TensorRT包下载</h2>
 <p>进入<a target="_blank" rel="noopener" href="https://developer.nvidia.com/nvidia-tensorrt-download">官网</a>，选择较新的大版本，再选择适合自己安装的CUDA版本下载。</p>
 <p>我在此处下载Windows的支持CUDA12.0的版本。</p>
 <h2 id="2-选择合适的位置解压tensorrt压缩包">2.选择合适的位置解压TensorRT压缩包</h2>
-<p><img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_TensorRT.jpg" alt="解压TensorRT后的文件"></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_TensorRT.jpg" title="解压TensorRT后的文件" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/5_TensorRT.jpg" alt="解压TensorRT后的文件"></a></p>
 <h2 id="3-安装tensorrt">3.安装TensorRT</h2>
 <ul>
 <li>将TensorRT的<code>include</code>文件夹中文件复制到CUDA安装位置的<code>include</code>文件夹。</li>
@@ -329,7 +354,12 @@
 <h1>参考</h1>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shanglianlm/article/details/92847719">TensorRT之安装与测试（Windows和Linux环境下安装TensorRT）</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/305854081">Window下Python+CUDA+PyTorch安装</a></p>
-<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+</div><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     <div class="post-meta">
@@ -374,6 +404,13 @@
         
         </i>
     </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
     
         
 
@@ -410,7 +447,7 @@
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
-            <span>不忘初心，方得始终。</span>
+            <span>我在想，时下你所需要的，应该是痛痛快快换个心情，干干脆脆享受人生。</span>
             
     
 </div>
@@ -428,13 +465,6 @@
 <script src="/js/toc.js"></script>
 
     
-    
-    
-<script src="/js/highlight.min.js"></script>
-
-    
-<script src="/js/highlightjs-line-numbers.js"></script>
-
 
     
 <script src="/js/randomHeaderContent.js"></script>
@@ -447,14 +477,18 @@
     
 
     
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
 
 
 
-<script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-</script>
 
+
+<script src="
+https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.0/dist/js/lightgallery.min.js
+"></script>
 
 
                 </div>
@@ -466,6 +500,7 @@
                         <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
                     </svg>
                 </div>
+            
             
     </body>
 
