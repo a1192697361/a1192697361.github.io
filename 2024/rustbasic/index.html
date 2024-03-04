@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="" />
+    <meta name="description" content="Rust 语言学习记录" />
     <meta name="hexo-theme-A4" content="v1.8.3" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Fingsinz&#39;s space | 风信梓</title>
@@ -282,85 +282,125 @@
                     
 
                     
-                            
-
-
-<div class="archive-list">
-  <ul class="archive">
-
-    
-    <span>📌<i>深度学习</i></span>
- 
-    
-
-    
-    
-
-    
-
-    
-  
-    
-        <li>
-        <span class="archive-date">2024-03-02</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2024/DL/">深度学习杂记</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2023-07-18</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2023/yolov5/">基于YOLOv5的电瓶车识别入门级项目记录</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2023-07-14</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2023/9/">Visual Studio2022的OpenCV4.5.2和CUDA12.0项目配置</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2023-07-06</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2023/gpuserver/">关于GPU服务器的选用</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2023-07-06</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2023/7/">YOLOv5由pt文件转onnx文件报错解决</a>
-        </div>
-        </li>
-    
-  
-    
-        <li>
-        <span class="archive-date">2023-07-04</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2023/5/">Windows 10下安装CUDA、TensorRT记录</a>
-        </div>
-        </li>
-    
-  
-  </ul>
-</div>
- 
-                    
                     
                     
                     <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            Rust 语言学习记录
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AErust%E7%8E%AF%E5%A2%83"><span class="post-toc-text">配置Rust环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#windows-%E4%B8%8B%E5%AE%89%E8%A3%85-rust"><span class="post-toc-text">Windows 下安装 Rust</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9C%A8-vscode-%E4%B8%8A%E4%BD%BF%E7%94%A8-rust"><span class="post-toc-text">在 VSCode 上使用 Rust</span></a></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><p>关键词：Rust</p>
+<span id="more"></span>
+<hr>
+<h2 id="配置rust环境">配置Rust环境</h2>
+<h3 id="windows-下安装-rust">Windows 下安装 Rust</h3>
+<p>可执行二进制文件下载地址：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.rust-lang.org/zh-CN/tools/install">https://www.rust-lang.org/zh-CN/tools/install</a></li>
+<li><a target="_blank" rel="noopener" href="https://rustup.rs/">https://rustup.rs/</a></li>
+<li>两个地址下载一个即可。</li>
+</ul>
+<p>点击运行 <code>rustup-init.exe</code>。</p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/rustbasic_install.jpg" title="安装路径提示" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/rustbasic_install.jpg" alt="安装路径提示"></a></p>
+<p>显示默认安装在 C 盘。</p>
+<ul>
+<li>此处已做修改，自定义安装路径。</li>
+</ul>
+<p>自定义安装路径步骤如下：</p>
+<ol>
+<li>创建自定义文件夹，我此处为 <code>D:/rust</code>。在内创建两个文件夹，分别为 <code>.cargo</code> 和 <code>.rustup</code>。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/rustbasic_newpath.jpg" title="创建文件夹" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/rustbasic_newpath.jpg" alt="创建文件夹"></a></p>
+<ol start="2">
+<li>配置环境变量：把新建的文件夹添加到环境变量中。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/rustbasic_cargohome.jpg" title="CargoHome" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/rustbasic_cargohome.jpg" alt="CargoHome"></a></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/rustbasic_rustuphome.jpg" title="RustupHome" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/rustbasic_rustuphome.jpg" alt="RustupHome"></a></p>
+<ol start="3">
+<li>在 <code>PATH</code> 环境变量中加入上两个变量。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/rustbasic_addPath.jpg" title="添加到PATH" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/rustbasic_addPath.jpg" alt="添加到PATH"></a></p>
+<p>至此再打开 <code>rustup-init.exe</code>，观察路径是否修改。</p>
+<h3 id="在-vscode-上使用-rust">在 VSCode 上使用 Rust</h3>
+<p>步骤如下：</p>
+<ol>
+<li>
+<p>在扩展中查找并安装 <code>rust-analyzer</code> 和 <code>Native Debug</code> 两个插件。</p>
+</li>
+<li>
+<p>新建代码文件夹，在终端使用命令生成工程：</p>
+</li>
+</ol>
+<figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo new hello</span><br></pre></td></tr></tbody></table></figure>
+<ol start="3">
+<li>编写代码后，在终端使用命令运行：</li>
+</ol>
+<figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cargo build</span><br><span class="line">cargo run</span><br></pre></td></tr></tbody></table></figure></div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-03-04</span>
+            
+                <span>该篇文章被 Fingsinz</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/Rust/'>
+                            Rust
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E7%AC%94%E8%AE%B0/'>
+                            笔记
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
                     
                     
                     <div class="footer">
