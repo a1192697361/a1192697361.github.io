@@ -302,7 +302,7 @@
     <div class="post-md">
         
             
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80-%E4%BB%8E-socket-%E5%BC%80%E5%A7%8B"><span class="post-toc-text">一、从 socket 开始</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88"><span class="post-toc-text">1.1 服务端干了什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%A6%82%E4%BD%95%E9%85%8D%E5%90%88"><span class="post-toc-text">1.2 客户端如何配合</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-%E8%AF%A5%E8%8A%82%E6%B6%89%E5%8F%8A%E5%87%BD%E6%95%B0%E5%8F%8A%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="post-toc-text">1.3 该节涉及函数及源代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C-%E5%AE%8C%E5%96%84%E4%BB%A3%E7%A0%81-%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99"><span class="post-toc-text">二、完善代码，数据读写</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-%E9%94%99%E8%AF%AF%E6%A3%80%E6%9F%A5%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0"><span class="post-toc-text">2.1 错误检查处理函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99"><span class="post-toc-text">2.2 数据读写</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-%E8%AF%A5%E8%8A%82%E6%B6%89%E5%8F%8A%E5%87%BD%E6%95%B0%E5%8F%8A%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="post-toc-text">2.3 该节涉及函数及源代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%89-%E9%AB%98%E5%B9%B6%E5%8F%91%E4%BD%BF%E7%94%A8epoll"><span class="post-toc-text">三、高并发使用epoll</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-%E4%BB%8Eselect-poll%E5%88%B0epoll"><span class="post-toc-text">3.1 从select、poll到epoll</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-%E5%B0%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%94%B9%E5%86%99%E6%88%90epoll%E7%89%88%E6%9C%AC"><span class="post-toc-text">3.2 将服务器改写成epoll版本</span></a></li></ol></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80-%E4%BB%8Esocket%E5%BC%80%E5%A7%8B"><span class="post-toc-text">一、从socket开始</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%B9%B2%E4%BA%86%E4%BB%80%E4%B9%88"><span class="post-toc-text">1.1 服务端干了什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%A6%82%E4%BD%95%E9%85%8D%E5%90%88"><span class="post-toc-text">1.2 客户端如何配合</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-3-%E8%AF%A5%E8%8A%82%E6%B6%89%E5%8F%8A%E5%87%BD%E6%95%B0%E5%8F%8A%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="post-toc-text">1.3 该节涉及函数及源代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C-%E5%AE%8C%E5%96%84%E4%BB%A3%E7%A0%81-%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99"><span class="post-toc-text">二、完善代码，数据读写</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-%E9%94%99%E8%AF%AF%E6%A3%80%E6%9F%A5%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0"><span class="post-toc-text">2.1 错误检查处理函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99"><span class="post-toc-text">2.2 数据读写</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-%E8%AF%A5%E8%8A%82%E6%B6%89%E5%8F%8A%E5%87%BD%E6%95%B0%E5%8F%8A%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="post-toc-text">2.3 该节涉及函数及源代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%89-%E9%AB%98%E5%B9%B6%E5%8F%91%E4%BD%BF%E7%94%A8epoll"><span class="post-toc-text">三、高并发使用epoll</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-%E4%BB%8Eselect-poll%E5%88%B0epoll"><span class="post-toc-text">3.1 从select、poll到epoll</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-%E5%B0%86%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%94%B9%E5%86%99%E6%88%90epoll%E7%89%88%E6%9C%AC"><span class="post-toc-text">3.2 将服务器改写成epoll版本</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%9B-%E5%B0%81%E8%A3%85%E6%88%90%E7%B1%BB-%E7%A8%8B%E5%BA%8F%E6%A8%A1%E5%9D%97%E5%8C%96"><span class="post-toc-text">四、封装成类，程序模块化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-1-%E5%B0%86socket%E5%92%8Cinetaddress%E5%B0%81%E8%A3%85%E6%88%90%E7%B1%BB"><span class="post-toc-text">4.1 将socket和InetAddress封装成类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-2-%E5%B0%86epoll%E5%B0%81%E8%A3%85%E6%88%90%E7%B1%BB"><span class="post-toc-text">4.2 将epoll封装成类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-3-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="post-toc-text">4.3 目录结构及源代码</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%94-%E5%90%91%E7%9D%80reactor%E6%A8%A1%E5%BC%8F%E8%BD%AC%E5%8F%98"><span class="post-toc-text">五、向着Reactor模式转变</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-1-reactor%E5%92%8Cproactor"><span class="post-toc-text">5.1 Reactor和Proactor</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-2-%E5%8A%A0%E5%85%A5channel%E7%B1%BB"><span class="post-toc-text">5.2 加入Channel类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-3-%E5%8A%A0%E5%85%A5eventloop%E7%B1%BB"><span class="post-toc-text">5.3 加入EventLoop类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-4-%E5%8A%A0%E5%85%A5server%E7%B1%BB"><span class="post-toc-text">5.4 加入Server类</span></a></li></ol></li></ol>
             
         
         <div class=".article-gallery"><p>关键词：C++、Linux</p>
@@ -316,7 +316,7 @@
 </ul>
 <p><em>Linux下操作。</em></p>
 </blockquote>
-<h2 id="一-从-socket-开始">一、从 socket 开始</h2>
+<h2 id="一-从socket开始">一、从socket开始</h2>
 <p>socket，被翻译为套接字，它是计算机之间进行通信的一种约定或一种方式。</p>
 <ul>
 <li>通过 socket 这种约定，一台计算机可以接收其他计算机的数据，也可以向其他计算机发送数据。</li>
@@ -380,7 +380,7 @@
 <ul>
 <li>创建 socket：</li>
 </ul>
-<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">socket</span> <span class="params">(<span class="type">int</span> __domain, <span class="type">int</span> __type, <span class="type">int</span> __protocol)</span></span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* __domain：IP 地址类型，AF_INET 表示 IPv4，AF_INET6 表示 IPv6。</span></span><br><span class="line"><span class="comment">* __type：数据传输方式，SOCK_STREAM 表示流格式、面向链接，多用于 TCP； SOCK_DGRAM 表示数据报格式、无连接，多用于 UDP。</span></span><br><span class="line"><span class="comment">* __protocol：协议，0 表示根据前面两个参数自动推导协议类型。设置为 IPPROTO_TCP 和 IPPTOTO_UDP，分别表示 TCP 和 UDP。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">socket</span> <span class="params">(<span class="type">int</span> __domain, <span class="type">int</span> __type, <span class="type">int</span> __protocol)</span></span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* __domain：IP 地址类型，AF_INET 表示 IPv4，AF_INET6 表示 IPv6。</span></span><br><span class="line"><span class="comment">* __type：数据传输方式，SOCK_STREAM 表示流格式、面向链接，多用于 TCP； SOCK_DGRAM 表示数据报格式、无连接，多用于 UDP。</span></span><br><span class="line"><span class="comment">* __protocol：协议，0 表示根据前面两个参数自动推导协议类型。设置为 IPPROTO_TCP 和 IPPROTO_UDP，分别表示 TCP 和 UDP。</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>初始化：</li>
 </ul>
@@ -555,6 +555,125 @@
 </ol>
 <figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (events[i].events &amp; EPOLLIN)</span><br><span class="line">{</span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)	<span class="comment">// 非阻塞 IO，需要不断读取，直至完毕</span></span><br><span class="line">	{</span><br><span class="line">		<span class="type">ssize_t</span> bytesRead = <span class="built_in">read</span>(events[i].data.fd, buf, <span class="built_in">sizeof</span>(buf));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 正常读取数据</span></span><br><span class="line">		<span class="keyword">if</span> (bytesRead &gt; <span class="number">0</span>)</span><br><span class="line">			<span class="comment">// ...</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 客户端正常中断，继续读取</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (bytesRead == <span class="number">-1</span> <span class="keyword">and</span> errno == EINTR)</span><br><span class="line">			<span class="comment">//...</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 非阻塞 IO，这个条件表示数据全部读取完毕</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (bytesRead == <span class="number">-1</span> <span class="built_in">and</span> ((errno == EAGAIN) <span class="built_in">or</span> (errno == EWOULDBLOCK)))</span><br><span class="line">			<span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// EOF 事件，一般表示客户端断开连接</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (bytesRead == <span class="number">0</span>)</span><br><span class="line">			<span class="comment">// ...</span></span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>该节代码：<a target="_blank" rel="noopener" href="https://github.com/Fingsinz/MakeServerInLinux/tree/master/Day3">Github</a>，<a target="_blank" rel="noopener" href="https://gitee.com/fingsinz/make-server-in-linux/tree/master/Day3">Gitee</a></p>
+<h2 id="四-封装成类-程序模块化">四、封装成类，程序模块化</h2>
+<h3 id="4-1-将socket和inetaddress封装成类">4.1 将socket和InetAddress封装成类</h3>
+<p>当新建服务器 socket 时，需要完成绑定 IP 地址、监听、接受客户端连接等任务，这些任务都封装成 <code>Socket</code> 类来完成。希望简化成以下操作：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 新建服务器 socket</span></span><br><span class="line">Socket *serverSocket = <span class="keyword">new</span> <span class="built_in">Socket</span>();</span><br><span class="line"><span class="comment">// 实例化 IP 地址</span></span><br><span class="line">InetAddress *serverAddr = <span class="keyword">new</span> <span class="built_in">InetAddress</span>(<span class="string">"127.0.0.1"</span>, <span class="number">1234</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 绑定 IP 地址</span></span><br><span class="line">serverSocket-&gt;<span class="built_in">bind</span>(serverAddr);</span><br><span class="line"><span class="comment">// 监听</span></span><br><span class="line">serverSocket-&gt;<span class="built_in">listen</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例化一个客户端地址</span></span><br><span class="line">InetAddress *clientAddr = <span class="keyword">new</span> <span class="built_in">InetAddress</span>();</span><br><span class="line"><span class="comment">// 接受一个客户端连接</span></span><br><span class="line">Socket *clientSocket = <span class="keyword">new</span> <span class="built_in">Socket</span>(serverSocket-&gt;<span class="built_in">accept</span>(clientAddr));</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="4-2-将epoll封装成类">4.2 将epoll封装成类</h3>
+<p>对于 epoll，希望简化操作，封装成类后：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化 epoll</span></span><br><span class="line">Epoll *ep = <span class="keyword">new</span> <span class="built_in">Epoll</span>();</span><br><span class="line"><span class="comment">// 将要监听的 IO 口放入 epoll</span></span><br><span class="line">ep-&gt;<span class="built_in">epoll_add</span>(serverSocket-&gt;<span class="built_in">getFd</span>(), EPOLLIN | EPOLLET);</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">{</span><br><span class="line">	std::vector&lt;epoll_event&gt; events = ep-&gt;<span class="built_in">poll</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> &amp;ev : events)</span><br><span class="line">		<span class="comment">// 处理事件</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="4-3-目录结构及源代码">4.3 目录结构及源代码</h3>
+<p>目录结构如下：</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">client.cpp</span><br><span class="line">server.cpp</span><br><span class="line">util.h</span><br><span class="line">util.cpp</span><br><span class="line">Socket.h</span><br><span class="line">Socket.cpp</span><br><span class="line">InetAddress.h</span><br><span class="line">InetAddress.cpp</span><br><span class="line">Epoll.h</span><br><span class="line">Epoll.cpp</span><br></pre></td></tr></tbody></table></figure>
+<p>该节代码：<a target="_blank" rel="noopener" href="https://github.com/Fingsinz/MakeServerInLinux/tree/master/Day4">Github</a>，<a target="_blank" rel="noopener" href="https://gitee.com/fingsinz/make-server-in-linux/tree/master/Day4">Gitee</a></p>
+<h2 id="五-向着reactor模式转变">五、向着Reactor模式转变</h2>
+<h3 id="5-1-reactor和proactor">5.1 Reactor和Proactor</h3>
+<blockquote>
+<p>Reactor 翻译过来的意思是「反应堆」，这里的反应指的是「对事件反应」。</p>
+<ul>
+<li>当来了一个事件，Reactor 就有相对应的反应/响应。</li>
+</ul>
+<p>事实上，Reactor 模式也叫 Dispatcher 模式，我觉得这个名字更贴合该模式的含义，即 I/O 多路复用监听事件。</p>
+<ul>
+<li>收到事件后，根据事件类型分配（Dispatch）给某个进程 / 线程。</li>
+</ul>
+<p>Reactor 模式主要由 Reactor 和处理资源池这两个核心部分组成。</p>
+<ul>
+<li>Reactor 负责监听和分发事件，事件类型包含连接事件、读写事件；</li>
+<li>处理资源池负责处理事件，如 read -&gt; 业务逻辑 -&gt; send；</li>
+</ul>
+<p>Reactor 模式是灵活多变的，可以应对不同的业务场景，灵活在于：</p>
+<ul>
+<li>Reactor 的数量可以只有一个，也可以有多个；</li>
+<li>处理资源池可以是单个进程 / 线程，也可以是多个进程 / 线程；</li>
+</ul>
+<p>有 3 个方案都是比较经典的，且都有应用在实际的项目中：</p>
+<ul>
+<li>单 Reactor 单进程 / 线程；</li>
+<li>单 Reactor 多线程 / 进程；</li>
+<li>多 Reactor 多进程 / 线程；</li>
+</ul>
+<p>方案具体使用进程还是线程，要看使用的编程语言以及平台有关：</p>
+<ul>
+<li>Java 语言一般使用线程，比如 Netty；</li>
+<li>C 语言使用进程和线程都可以，例如 Nginx 使用的是进程，Memcache 使用的是线程。</li>
+</ul>
+<p>Reactor 是非阻塞同步网络模式，感知的是就绪可读写事件。在每次感知到有事件发生（比如可读就绪事件）后，就需要应用进程主动调用 read 方法来完成数据的读取，也就是要应用进程主动将 socket 接收缓存中的数据读到应用进程内存中，这个过程是同步的，读取完数据后应用进程才能处理数据。</p>
+<p>Proactor 是异步网络模式， 感知的是已完成的读写事件。在发起异步读写请求时，需要传入数据缓冲区的地址（用来存放结果数据）等信息，这样系统内核才可以自动帮我们把数据的读写工作完成，这里的读写工作全程由操作系统来做，并不需要像 Reactor 那样还需要应用进程主动发起 read/write 来读写数据，操作系统完成读写工作后，就会通知应用进程直接处理数据。</p>
+<p>因此，Reactor 可以理解为「来了事件操作系统通知应用进程，让应用进程来处理」，而 Proactor 可以理解为「来了事件操作系统来处理，处理完再通知应用进程」。这里的「事件」就是有新连接、有数据可读、有数据可写的这些 I/O 事件这里的「处理」包含从驱动读取到内核以及从内核读取到用户空间。</p>
+<p>作者：小林coding<br>
+链接：<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26943938/answer/1856426252">https://www.zhihu.com/question/26943938/answer/1856426252</a><br>
+来源：知乎著作权归作者所有。</p>
+</blockquote>
+<p><em>详细请参考游双《Linux高性能服务器编程》第八章第四节、陈硕《Linux多线程服务器编程》第六章第六节。</em></p>
+<p>接下来要将服务器向着 Reactor 模式转变：</p>
+<ol>
+<li>首先将整个服务器抽象成一个 Server 类，这个类中有一个 main-Reactor，里面的核心是一个 EventLoop，这是一个事件循环；</li>
+<li>添加需要监听的事务到这个事件循环内，每次有事件发生时就会通知，在程序中返回给 Channel（自封装的类），然后根据不同的描述符、事件类型以回调函数的方式进行处理。</li>
+</ol>
+<h3 id="5-2-加入channel类">5.2 加入Channel类</h3>
+<p>面对服务器许多服务时，不同的连接类型也将决定不同的处理逻辑，仅仅通过一个文件描述符来区分显然会很麻烦。希望得到文件描述符的更多消息。</p>
+<ul>
+<li>epoll 的 <code>epoll_event</code> 结构体中，<code>data</code> 字段可以放一个 <code>void *</code> 类型的指针，用来保存更多信息。</li>
+</ul>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">union</span> <span class="title class_">epoll_data</span></span><br><span class="line">{</span><br><span class="line">  <span class="type">void</span> *ptr;</span><br><span class="line">  <span class="type">int</span> fd;</span><br><span class="line">  <span class="type">uint32_t</span> u32;</span><br><span class="line">  <span class="type">uint64_t</span> u64;</span><br><span class="line">} <span class="type">epoll_data_t</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">epoll_event</span></span><br><span class="line">{</span><br><span class="line">  <span class="type">uint32_t</span> events;		<span class="comment">/* Epoll events */</span></span><br><span class="line">  <span class="type">epoll_data_t</span> data;	<span class="comment">/* User data variable */</span></span><br><span class="line">} __EPOLL_PACKED;</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>epoll 中的 <code>data</code> 是一个联合类型：
+<ul>
+<li>可以存储一个指针，指向任何一个地址块的内容；</li>
+<li>可以是一个类的对象，就此将一个文件描述符封装成一个 <code>Channel</code> 类，一个 <code>Channel</code> 类始终负责一个文件描述符。对不同的服务、不同的事件类型，都可以在类中进行处理。</li>
+</ul>
+</li>
+</ul>
+<p>设计 <code>Channel</code> 类，核心成员如下：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Channel</span></span><br><span class="line">{</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	EventLoop *loop;</span><br><span class="line">	<span class="type">int</span> fd;</span><br><span class="line">	<span class="type">uint32_t</span> events;</span><br><span class="line">	<span class="type">uint32_t</span> revents;</span><br><span class="line">	<span class="type">bool</span> isEpoll;</span><br><span class="line">	std::function&lt;<span class="type">void</span>()&gt; callback;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><code>loop</code>：指向与之关联的事件循环的指针。</li>
+<li><code>fd</code>：Channel 负责的文件描述符。</li>
+<li><code>events</code>：表示希望监听这个文件描述符的哪些事件。</li>
+<li><code>revents</code>：表示在 <code>epoll</code> 返回该 <code>Channel</code> 时文件描述符正在发生的事件。</li>
+<li><code>isEpoll</code>：表示当前 <code>Channel</code> 是否已经添加到 <code>epoll</code> 红黑树中，区分使用 <code>EPOLL_CTL_ADD</code> 还是 <code>EPOLL_CTL_MOD</code>。</li>
+<li><code>callback</code>：发生事件时执行的回调函数。</li>
+</ul>
+<p>添加 Channel 类可以更加方便简单、多样化地处理 epoll 中发生的事件。同时脱离了底层，将 epoll、文件描述符和事件进行了抽象，形成了事件分发的模型，这也是 Reactor 模式的核心。</p>
+<h3 id="5-3-加入eventloop类">5.3 加入EventLoop类</h3>
+<p>EventLoop 类的定义如下：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">EventLoop</span> {</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    Epoll *ep;</span><br><span class="line">    <span class="type">bool</span> quit;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">EventLoop</span>();</span><br><span class="line">    ~<span class="built_in">EventLoop</span>();</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">loop</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">updateChannel</span><span class="params">(Channel*)</span></span>;</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><code>ep</code>：指向Epoll类实例的指针；</li>
+<li><code>quit</code>：指示程序是否应该退出；</li>
+<li><code>loop()</code>：事件循环函数，调用开始事件驱动，即原来调用 <code>epoll_wait</code> 函数的死循环；</li>
+<li><code>updateChannel()</code>：更新 Channel。</li>
+</ul>
+<p>将需要监听的事务加入到事件循环中，每次有事件发生就会通知，返回到 Channel，然后根据不同的描述符、事件类型以回调函数方式进行处理：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">EventLoop::loop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	<span class="keyword">while</span> (!quit)</span><br><span class="line">	{</span><br><span class="line">		<span class="comment">// 使用epoll实例轮询事件</span></span><br><span class="line">		std::vector&lt;Channel *&gt; channels = ep-&gt;<span class="built_in">poll</span>();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 处理每个Channel的事件</span></span><br><span class="line">		<span class="keyword">for</span> (Channel *channel : channels)</span><br><span class="line">			channel-&gt;<span class="built_in">handleEvent</span>();</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="5-4-加入server类">5.4 加入Server类</h3>
+<p>服务器类 <code>Server</code> 的核心成员如下：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Server</span></span><br><span class="line">{</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    EventLoop *loop;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Server</span>(EventLoop*);</span><br><span class="line">    ~<span class="built_in">Server</span>();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">handleReadEvent</span><span class="params">(<span class="type">int</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">newConnection</span><span class="params">(Socket *serv_sock)</span></span>;</span><br><span class="line">};</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><code>loop</code>：事件循环对象。</li>
+<li><code>handleReadEvent()</code>：处理读事件。</li>
+<li><code>newConnection()</code>：处理新连接。</li>
+</ul>
+<p>之后启动服务器的操作抽象为：</p>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EventLoop *loop = <span class="keyword">new</span> <span class="built_in">EventLoop</span>();</span><br><span class="line">Server *server = <span class="keyword">new</span> <span class="built_in">Server</span>(loop);</span><br><span class="line">loop-&gt;<span class="built_in">loop</span>();</span><br></pre></td></tr></tbody></table></figure>
+<p>这个版本服务器内只有一个 <code>EventLoop</code>，当其中有可读事件发生时，可以拿到该描述符对应的 <code>Channel</code>。</p>
+<p>在新建 Channel 时，根据 Channel 描述符的不同分别绑定了两个回调函数：</p>
+<ul>
+<li><code>newConnection()</code> 函数被绑定到服务器socket上；
+<ul>
+<li>如果服务器 socket 有可读事件，Channel 里的 <code>handleEvent()</code> 函数实际上会调用 Server 类的 <code>newConnection()</code> 新建连接。</li>
+</ul>
+</li>
+<li><code>handlrReadEvent()</code> 被绑定到新接受的客户端socket上。
+<ul>
+<li>如果客户端 socket 有可读事件，Channel 里的 <code>handleEvent()</code> 函数实际上会调用 Server 类的 <code>handleReadEvent()</code> 响应客户端请求。</li>
+</ul>
+</li>
+</ul>
+<p>至此，根据抽象出的 <code>EventLoop</code> 和 <code>Channel</code>，构成了事件驱动模型。这两个类和服务器核心 <code>Server</code> 已经没有任何关系，经过完善后可以被任何程序复用，达到了事件驱动的设计思想，现在的服务器也可以看成一个最简易的 Reactor 模式服务器。</p>
+<p><em>需要注意的是，目前该服务器的内存管理一塌糊涂。</em></p>
+<p>该节代码：<a target="_blank" rel="noopener" href="https://github.com/Fingsinz/MakeServerInLinux/tree/master/Day5">Github</a>，<a target="_blank" rel="noopener" href="https://gitee.com/fingsinz/make-server-in-linux/tree/master/Day5">Gitee</a></p>
 </div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
