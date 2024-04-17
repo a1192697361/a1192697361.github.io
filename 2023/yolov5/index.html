@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="基于YOLOv5的电瓶车识别入门级项目记录" />
-    <meta name="hexo-theme-A4" content="v1.8.3" />
+    <meta name="hexo-theme-A4" content="v1.8.9" />
     <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
     <title>Fingsinz&#39;s space | 风信梓</title>
 
@@ -48,6 +48,10 @@
 
         
     
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
 
     
     
@@ -395,7 +399,7 @@
 <p>在训练结果文件夹（我的是<code>runs/train/exp2</code>）中新建.py文件，输入下面代码，接着使用终端进入<code>runs/train/exp2</code>，使用命令<code>python save.py</code>可以变成压缩包，下载压缩包即下载全部训练结果。</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># save.py</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> tarfile</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">recursive_files</span>(<span class="params">dir_name=<span class="string">'.'</span>, ignore=<span class="literal">None</span></span>):</span><br><span class="line">    <span class="keyword">for</span> dir_name,subdirs,files <span class="keyword">in</span> os.walk(dir_name):</span><br><span class="line">        <span class="keyword">if</span> ignore <span class="keyword">and</span> os.path.basename(dir_name) <span class="keyword">in</span> ignore: </span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> file_name <span class="keyword">in</span> files:</span><br><span class="line">            <span class="keyword">if</span> ignore <span class="keyword">and</span> file_name <span class="keyword">in</span> ignore:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">yield</span> os.path.join(dir_name, file_name)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">make_tar_file</span>(<span class="params">dir_name=<span class="string">'.'</span>, tar_file_name=<span class="string">'tarfile.tar'</span>, ignore=<span class="literal">None</span></span>):</span><br><span class="line">    tar = tarfile.<span class="built_in">open</span>(tar_file_name, <span class="string">'w'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> file_name <span class="keyword">in</span> recursive_files(dir_name, ignore):</span><br><span class="line">        tar.add(file_name)</span><br><span class="line"></span><br><span class="line">    tar.close()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">dir_name = <span class="string">'.'</span></span><br><span class="line">tar_file_name = <span class="string">'train.tar'</span></span><br><span class="line">ignore = {<span class="string">'.ipynb_checkpoints'</span>, <span class="string">'__pycache__'</span>, tar_file_name}</span><br><span class="line">make_tar_file(dir_name, tar_file_name, ignore)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <p>将训练结果下载到电脑上，解压有如下文件：</p>
-<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_results.jpg" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_results.jpg" alt></a></p>
+<p><a target="_blank" rel="noopener" href="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_results.jpg" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-img.oss-cn-hangzhou.aliyuncs.com/blog/yolov5_results.jpg" alt=""></a></p>
 <h3 id="3-5-2-曲线类分析">3.5.2 曲线类分析</h3>
 <ul>
 <li>P_curve：准确率Precision和置信度Confidence的关系图，当设置某置信度时对应某个类别的识别准确率。随着置信度设置越高，某个类别识别准确率越高。</li>
@@ -776,6 +780,13 @@
                     </svg>
                 </div>
             
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
             
     </body>
 
