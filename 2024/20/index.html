@@ -306,7 +306,7 @@
     <div class="post-md">
         
             
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#wsl-%E7%AE%80%E4%BB%8B"><span class="post-toc-text">WSL 简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#wsl-%E7%9A%84%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="post-toc-text">WSL 的前提条件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85-linux"><span class="post-toc-text">安装 Linux</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%BF%90%E8%A1%8C%E5%B9%B6%E9%85%8D%E7%BD%AE-wsl-2"><span class="post-toc-text">运行并配置 WSL 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B3%A8%E9%94%80-wsl-2"><span class="post-toc-text">注销 WSL 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#references"><span class="post-toc-text">References</span></a></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#wsl-%E7%AE%80%E4%BB%8B"><span class="post-toc-text">WSL 简介</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#wsl-%E7%9A%84%E5%89%8D%E6%8F%90%E6%9D%A1%E4%BB%B6"><span class="post-toc-text">WSL 的前提条件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85-linux"><span class="post-toc-text">安装 Linux</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%BF%90%E8%A1%8C%E5%B9%B6%E9%85%8D%E7%BD%AE-wsl"><span class="post-toc-text">运行并配置 WSL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%87%E7%BA%A7%E5%88%B0-wsl-2"><span class="post-toc-text">升级到 WSL 2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B3%A8%E9%94%80-wsl"><span class="post-toc-text">注销 WSL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#references"><span class="post-toc-text">References</span></a></li></ol>
             
         
         <div class=".article-gallery"><p>关键词：Linux</p>
@@ -319,10 +319,9 @@
 <li>WSL 1 实现了 Linux 兼容层，将 Linux 系统调用转换为 Windows NT 系统调用；</li>
 <li>WSL 2 则利用 Windows 的 Hyper-V 功能，通过虚拟化技术直接运行 Linux 虚拟机，更接近原生 Linux 操作系统体验。</li>
 </ul>
-<p><em>此纪录为 WSL 2 的安装记录。</em></p>
 <h2 id="wsl-的前提条件">WSL 的前提条件</h2>
 <ol>
-<li>检查 Windows 版本，WSL 2 需要 Windows 10 1903 （内部版本 18362）或更高版本（x64）。如果版本较低，请更新 Windows 10 系统。（设置 → 关于可以看）</li>
+<li>检查 Windows 版本，WSL 需要 Windows 10 1903 （内部版本 18362）或更高版本（x64）。如果版本较低，请更新 Windows 10 系统。（设置 → 关于可以看）</li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/20_WindowsVersion.jpg" title="Windows版本" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/20_WindowsVersion.jpg" alt="Windows版本"></a></p>
 <ol start="2">
@@ -351,7 +350,7 @@
 <li>运行 <code>ubuntu.exe</code>，过程中需要注册账号名和密码。</li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/20_install.jpg" title="安装成功" class="gallery-item" style="box-shadow: none;"> <img src="https://fblog-1257020106.cos.ap-shanghai.myqcloud.com/imgs/20_install.jpg" alt="安装成功"></a></p>
-<h2 id="运行并配置-wsl-2">运行并配置 WSL 2</h2>
+<h2 id="运行并配置-wsl">运行并配置 WSL</h2>
 <ol>
 <li>直接使用 cmd 输入 <code>wsl</code> 可进入默认 WSL，输入 <code>wsl --list</code> 查看安装了的 Linux 版本。</li>
 </ol>
@@ -384,13 +383,27 @@
 <li>添加 gcc/g++ 环境</li>
 </ol>
 <figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install build-essential</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="注销-wsl-2">注销 WSL 2</h2>
-<p>在 cmd 中输入 <code>wsl --unregister &lt;Linux&gt;</code> 进行删除 WSL 2。</p>
+<h2 id="升级到-wsl-2">升级到 WSL 2</h2>
+<p>先使用下面的命令检查自己的 WSL：</p>
+<figure class="highlight cmd"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl -l --v</span><br></pre></td></tr></tbody></table></figure>
+<p>如果版本不是 2 而想升级到 2 的步骤如下：</p>
+<ol>
+<li>
+<p>下载 Linux 内核更新包：<a target="_blank" rel="noopener" href="https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi">下载地址</a></p>
+</li>
+<li>
+<p>接着运行下载到的更新包。</p>
+</li>
+</ol>
+<p><em>在升级后，我再进入 WSL 时出现了“参考的对象类型不支持尝试的操作”的情况，解决方式参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/marin1993/article/details/119841299">CSDN</a></em></p>
+<h2 id="注销-wsl">注销 WSL</h2>
+<p>在 cmd 中输入 <code>wsl --unregister &lt;Linux&gt;</code> 进行删除 WSL。</p>
 <h2 id="references">References</h2>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://docs.eesast.com/docs/tools/wsl">WSL 安装与使用</a></li>
 <li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/wsl/install">如何使用 WSL 在 Windows 上安装 Linux</a></li>
 <li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46092061/article/details/118878697">Ubuntu18.04…5 配置国内镜像源：解决E: Failed to fetch</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">下载 Linux 内核更新包</a></li>
 </ul>
 </div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
